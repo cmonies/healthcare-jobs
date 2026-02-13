@@ -1,0 +1,48 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-b border-creme-300/50 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 group">
+      <span class="text-sapphire-500 text-2xl">♥</span>
+      <span class="text-xl font-semibold text-gray-900 group-hover:text-sapphire-500 transition-colors">
+        designwith.care
+      </span>
+    </a>
+
+    <div class="flex items-center gap-8">
+      <a
+        href="/jobs"
+        class:list={[
+          "text-sm font-medium transition-colors",
+          currentPath === "/jobs" ? "text-sapphire-500" : "text-gray-600 hover:text-sapphire-500"
+        ]}
+      >
+        Jobs
+      </a>
+      <a
+        href="#newsletter"
+        class="text-sm font-medium text-gray-600 hover:text-sapphire-500 transition-colors"
+      >
+        Newsletter
+      </a>
+      <a
+        href="https://discord.gg/designwithcare"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-medium text-gray-600 hover:text-sapphire-500 transition-colors"
+      >
+        Community
+      </a>
+      <a
+        href="https://github.com/designwithcare/jobs"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-sapphire-500 border border-sapphire-500 px-4 py-1.5 rounded-full hover:bg-sapphire-500 hover:text-white transition-all font-medium"
+      >
+        Contribute
+      </a>
+    </div>
+  </nav>
+</header>
