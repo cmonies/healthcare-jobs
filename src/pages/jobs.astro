@@ -8,6 +8,7 @@ import jobs from '../data/jobs.json';
 
 const levels = [...new Set(jobs.map(j => j.level))];
 const locationTypes = [...new Set(jobs.map(j => j.locationType))];
+const locations = [...new Set(jobs.map(j => j.location))].sort();
 
 const levelCounts: Record<string, number> = {};
 levels.forEach(l => { levelCounts[l] = jobs.filter(j => j.level === l).length; });
@@ -23,18 +24,37 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
     <p class="animate-fade-in stagger-1 text-base text-gray-500 dark:text-gray-400"><span id="visible-count">{jobs.length}</span> healthcare UX roles from companies that care</p>
   </section>
 
-  <!-- Search -->
+  <!-- Search & Location -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-4">
-    <div class="animate-fade-in stagger-2 relative max-w-2xl">
-      <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-      </svg>
-      <input
-        id="search-input"
-        type="text"
-        placeholder="Search by title, company, location, or tag..."
-        class="w-full pl-11 pr-4 py-3 rounded-xl border border-creme-300/60 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-sapphire-300 dark:focus:border-sapphire-700 focus:ring-2 focus:ring-sapphire-100 dark:focus:ring-sapphire-900/50 transition-[border-color,box-shadow] duration-150"
-      />
+    <div class="animate-fade-in stagger-2 flex flex-col sm:flex-row gap-3 max-w-2xl">
+      <div class="relative flex-1">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+        </svg>
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search by title, company, or tag..."
+          class="w-full pl-11 pr-4 py-3 rounded-xl border border-creme-300/60 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-sapphire-300 dark:focus:border-sapphire-700 focus:ring-2 focus:ring-sapphire-100 dark:focus:ring-sapphire-900/50 transition-[border-color,box-shadow] duration-150"
+        />
+      </div>
+      <div class="relative sm:w-48">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+        </svg>
+        <select
+          id="location-select"
+          class="w-full appearance-none pl-9 pr-8 py-3 rounded-xl border border-creme-300/60 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:border-sapphire-300 dark:focus:border-sapphire-700 focus:ring-2 focus:ring-sapphire-100 dark:focus:ring-sapphire-900/50 transition-[border-color,box-shadow] duration-150 cursor-pointer"
+        >
+          <option value="">All locations</option>
+          {locations.map(loc => (
+            <option value={loc}>{loc}</option>
+          ))}
+        </select>
+        <svg class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -67,6 +87,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
           data-delay={String(Math.min(i * 30, 300))}
           data-level={job.level}
           data-location-type={job.locationType}
+          data-location={job.location}
           data-search={`${job.title} ${job.company} ${job.location} ${job.tags.join(' ')}`.toLowerCase()}
         >
           <JobCard {...job} />
@@ -129,10 +150,12 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
   const items = document.querySelectorAll('.job-item');
   const noResults = document.getElementById('no-results');
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const locationSelect = document.getElementById('location-select') as HTMLSelectElement;
   const visibleCount = document.getElementById('visible-count');
 
   let activeFilter = 'all';
   let searchQuery = '';
+  let activeLocation = '';
 
   function applyFilters() {
     let visible = 0;
@@ -140,13 +163,18 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
       const el = item as HTMLElement;
       let show = true;
 
-      // Filter
+      // Level / location type filter
       if (activeFilter !== 'all') {
         if (activeFilter.startsWith('level:')) {
           show = el.dataset.level === activeFilter.split(':')[1];
         } else if (activeFilter.startsWith('location:')) {
           show = el.dataset.locationType === activeFilter.split(':')[1];
         }
+      }
+
+      // Location dropdown
+      if (show && activeLocation) {
+        show = el.dataset.location === activeLocation;
       }
 
       // Search
@@ -177,6 +205,11 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 
   searchInput?.addEventListener('input', () => {
     searchQuery = searchInput.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  locationSelect?.addEventListener('change', () => {
+    activeLocation = locationSelect.value;
     applyFilters();
   });
 </script>
