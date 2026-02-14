@@ -54,39 +54,70 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
   @tailwind components;
   @tailwind utilities;
 
+  /* Custom easing curves (stronger than defaults) */
+  :root {
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  /* Button press feedback */
+  a[class*="rounded-full"][class*="bg-sapphire"],
+  button[type="submit"] {
+    transition: background-color 150ms ease, transform 100ms var(--ease-out-cubic);
+  }
+  a[class*="rounded-full"][class*="bg-sapphire"]:active,
+  button[type="submit"]:active {
+    transform: scale(0.97);
+  }
+
   /* Stagger fade-in animations */
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(12px) scale(0.98);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
   .animate-fade-up {
     opacity: 0;
-    animation: fadeUp 0.6s ease-out forwards;
+    animation: fadeUp 0.25s var(--ease-out-quart) forwards;
+    will-change: transform, opacity;
   }
 
   .stagger-1 { animation-delay: 0ms; }
-  .stagger-2 { animation-delay: 100ms; }
-  .stagger-3 { animation-delay: 200ms; }
-  .stagger-4 { animation-delay: 300ms; }
-  .stagger-5 { animation-delay: 400ms; }
-  .stagger-6 { animation-delay: 500ms; }
+  .stagger-2 { animation-delay: 60ms; }
+  .stagger-3 { animation-delay: 120ms; }
+  .stagger-4 { animation-delay: 180ms; }
+  .stagger-5 { animation-delay: 240ms; }
+  .stagger-6 { animation-delay: 300ms; }
 
   /* Intersection observer reveal — hidden by default, JS adds .visible */
   .js-ready .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateY(10px);
+    transition: opacity 0.2s var(--ease-out-cubic), transform 0.2s var(--ease-out-cubic);
+    will-change: transform, opacity;
   }
   .js-ready .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Accessibility: respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up {
+      animation: none;
+      opacity: 1;
+    }
+    .js-ready .reveal {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 </style>
 
