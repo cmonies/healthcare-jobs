@@ -63,7 +63,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
     <div class="grid gap-3" id="jobs-list">
       {jobs.map(job => (
         <div
-          class="job-item reveal"
+          class="job-item"
           data-level={job.level}
           data-location-type={job.locationType}
           data-search={`${job.title} ${job.company} ${job.tags.join(' ')}`.toLowerCase()}
