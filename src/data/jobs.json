@@ -9,19 +9,12 @@
     "location": "USA",
     "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
     "postedDate": "2026-02-14",
-    "tags": ["telehealth", "B2C", "startup", "design systems"]
-  },
-  {
-    "id": "oscar-health-product-designer-network",
-    "title": "Product Designer, Network",
-    "company": "Oscar Health",
-    "companyUrl": "https://hioscar.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://www.builtinnyc.com/job/product-designer-network/7670999",
-    "postedDate": "2026-02-14",
-    "tags": ["health insurance", "B2C", "startup", "enterprise"]
+    "tags": [
+      "telehealth",
+      "B2C",
+      "startup",
+      "design systems"
+    ]
   },
   {
     "id": "athenahealth-ux-designer",
@@ -33,7 +26,12 @@
     "location": "USA",
     "url": "https://athenahealth.wd1.myworkdayjobs.com/external/job/remote---ma/ux-designer_r14330",
     "postedDate": "2026-02-13",
-    "tags": ["EHR", "B2B", "enterprise", "medical reference"]
+    "tags": [
+      "EHR",
+      "B2B",
+      "enterprise",
+      "medical reference"
+    ]
   },
   {
     "id": "cvs-health-staff-ui-ux-designer",
@@ -45,7 +43,12 @@
     "location": "USA",
     "url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/job/Staff-UI-UX-Designer_R0794059",
     "postedDate": "2026-02-12",
-    "tags": ["pharmacy", "health insurance", "B2C", "enterprise"]
+    "tags": [
+      "pharmacy",
+      "health insurance",
+      "B2C",
+      "enterprise"
+    ]
   },
   {
     "id": "3m-ux-designer-healthcare",
@@ -57,7 +60,12 @@
     "location": "USA",
     "url": "https://3m.wd1.myworkdayjobs.com/en-US/Search/job/Remote-United-States/UX-Designer---New-Health-Care-Company-_R01122107",
     "postedDate": "2026-02-11",
-    "tags": ["medical devices", "B2B", "enterprise", "spinoff"]
+    "tags": [
+      "medical devices",
+      "B2B",
+      "enterprise",
+      "spinoff"
+    ]
   },
   {
     "id": "edwards-lifesciences-product-designer",
@@ -69,7 +77,12 @@
     "location": "Irvine, CA",
     "url": "https://edwards.wd5.myworkdayjobs.com/en-US/edwardscareers/job/USA---California--Irvine/Distinguished-Product-Designer--UX-UI---Digital-Innovation_Req-44687",
     "postedDate": "2026-02-10",
-    "tags": ["medical devices", "B2B", "enterprise", "digital innovation"]
+    "tags": [
+      "medical devices",
+      "B2B",
+      "enterprise",
+      "digital innovation"
+    ]
   },
   {
     "id": "ge-healthcare-senior-staff-ux-designer",
@@ -81,7 +94,12 @@
     "location": "USA",
     "url": "https://gehc.wd5.myworkdayjobs.com/en-US/GEHC_ExternalSite/job/Senior-Staff-UX-Designer_R4032349-1",
     "postedDate": "2026-02-09",
-    "tags": ["medical devices", "B2B", "enterprise", "AI"]
+    "tags": [
+      "medical devices",
+      "B2B",
+      "enterprise",
+      "AI"
+    ]
   },
   {
     "id": "cigna-evernorth-ux-designer",
@@ -93,7 +111,12 @@
     "location": "USA",
     "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/Connecticut-Work-at-Home/Enterprise-Design-Systems---UX-Designer---Evernorth-Health-Services---Hybrid_24002576",
     "postedDate": "2026-02-08",
-    "tags": ["health insurance", "design systems", "B2B", "enterprise"]
+    "tags": [
+      "health insurance",
+      "design systems",
+      "B2B",
+      "enterprise"
+    ]
   },
   {
     "id": "modern-health-senior-product-designer",
@@ -105,7 +128,12 @@
     "location": "USA",
     "url": "https://boards.greenhouse.io/modernhealth/jobs/4587489002",
     "postedDate": "2026-02-13",
-    "tags": ["mental health", "B2B", "startup", "telehealth"]
+    "tags": [
+      "mental health",
+      "B2B",
+      "startup",
+      "telehealth"
+    ]
   },
   {
     "id": "headspace-product-designer",
@@ -117,7 +145,12 @@
     "location": "USA",
     "url": "https://job-boards.greenhouse.io/hs/jobs/6583489",
     "postedDate": "2026-02-12",
-    "tags": ["mental health", "B2C", "startup", "meditation"]
+    "tags": [
+      "mental health",
+      "B2C",
+      "startup",
+      "meditation"
+    ]
   },
   {
     "id": "teladoc-senior-product-designer",
@@ -129,7 +162,12 @@
     "location": "USA",
     "url": "https://careers.teladochealth.com/jobs/senior-product-designer",
     "postedDate": "2026-02-11",
-    "tags": ["telehealth", "B2C", "enterprise", "virtual care"]
+    "tags": [
+      "telehealth",
+      "B2C",
+      "enterprise",
+      "virtual care"
+    ]
   },
   {
     "id": "zocdoc-lead-product-designer",
@@ -141,7 +179,12 @@
     "location": "New York, NY",
     "url": "https://careers.zocdoc.com/jobs/lead-product-designer",
     "postedDate": "2026-02-14",
-    "tags": ["healthcare booking", "B2C", "startup", "marketplace"]
+    "tags": [
+      "healthcare booking",
+      "B2C",
+      "startup",
+      "marketplace"
+    ]
   },
   {
     "id": "flatiron-health-senior-product-designer",
@@ -153,7 +196,12 @@
     "location": "New York, NY",
     "url": "https://careers.flatiron.com/jobs/senior-product-designer",
     "postedDate": "2026-02-10",
-    "tags": ["oncology", "B2B", "enterprise", "data platform"]
+    "tags": [
+      "oncology",
+      "B2B",
+      "enterprise",
+      "data platform"
+    ]
   },
   {
     "id": "tempus-product-designer",
@@ -165,19 +213,12 @@
     "location": "Chicago, IL",
     "url": "https://careers.tempus.com/jobs/product-designer",
     "postedDate": "2026-02-09",
-    "tags": ["oncology", "AI", "B2B", "precision medicine"]
-  },
-  {
-    "id": "color-health-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Color Health",
-    "companyUrl": "https://color.com",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/color/staff-product-designer",
-    "postedDate": "2026-02-13",
-    "tags": ["genomics", "B2B", "startup", "testing"]
+    "tags": [
+      "oncology",
+      "AI",
+      "B2B",
+      "precision medicine"
+    ]
   },
   {
     "id": "virta-health-senior-product-designer",
@@ -189,43 +230,12 @@
     "location": "USA",
     "url": "https://jobs.ashbyhq.com/virtahealth/senior-product-designer",
     "postedDate": "2026-02-08",
-    "tags": ["diabetes", "B2C", "startup", "telehealth"]
-  },
-  {
-    "id": "noom-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Noom",
-    "companyUrl": "https://noom.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://boards.greenhouse.io/noom/jobs/lead-product-designer",
-    "postedDate": "2026-02-12",
-    "tags": ["weight management", "B2C", "startup", "behavioral health"]
-  },
-  {
-    "id": "spring-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Spring Health",
-    "companyUrl": "https://springhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://careers.springhealth.com/jobs/senior-product-designer",
-    "postedDate": "2026-02-11",
-    "tags": ["mental health", "B2B", "startup", "telehealth"]
-  },
-  {
-    "id": "lyra-health-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Lyra Health",
-    "companyUrl": "https://lyrahealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://careers.lyrahealth.com/job/remote/lead-product-designer/43250/75979853152",
-    "postedDate": "2026-02-10",
-    "tags": ["mental health", "B2B", "startup", "therapy"]
+    "tags": [
+      "diabetes",
+      "B2C",
+      "startup",
+      "telehealth"
+    ]
   },
   {
     "id": "one-medical-product-designer",
@@ -237,31 +247,12 @@
     "location": "San Francisco, CA",
     "url": "https://careers.onemedical.com/jobs/product-designer",
     "postedDate": "2026-02-09",
-    "tags": ["primary care", "B2C", "startup", "telehealth"]
-  },
-  {
-    "id": "devoted-health-ux-product-designer",
-    "title": "UX Product Designer",
-    "company": "Devoted Health",
-    "companyUrl": "https://devoted.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/devoted/0c814522-7a66-460a-91e8-8c19fec5d482",
-    "postedDate": "2026-02-14",
-    "tags": ["health insurance", "B2C", "startup", "Medicare"]
-  },
-  {
-    "id": "hinge-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://careers.hingehealth.com/jobs/senior-product-designer",
-    "postedDate": "2026-02-13",
-    "tags": ["musculoskeletal", "B2B", "startup", "digital therapy"]
+    "tags": [
+      "primary care",
+      "B2C",
+      "startup",
+      "telehealth"
+    ]
   },
   {
     "id": "omada-health-product-designer",
@@ -273,7 +264,12 @@
     "location": "USA",
     "url": "https://careers.omadahealth.com/jobs/product-designer",
     "postedDate": "2026-02-12",
-    "tags": ["chronic care", "B2B", "startup", "digital therapy"]
+    "tags": [
+      "chronic care",
+      "B2B",
+      "startup",
+      "digital therapy"
+    ]
   },
   {
     "id": "sword-health-staff-product-designer",
@@ -285,7 +281,12 @@
     "location": "USA",
     "url": "https://careers.swordhealth.com/jobs/staff-product-designer",
     "postedDate": "2026-02-11",
-    "tags": ["physical therapy", "B2B", "startup", "AI"]
+    "tags": [
+      "physical therapy",
+      "B2B",
+      "startup",
+      "AI"
+    ]
   },
   {
     "id": "abridge-senior-product-designer",
@@ -297,66 +298,11 @@
     "location": "USA",
     "url": "https://jobs.ashbyhq.com/abridge/6aab826b-a60a-434e-889d-e4648f289305",
     "postedDate": "2026-02-10",
-    "tags": ["AI", "clinical documentation", "B2B", "startup"]
-  },
-  {
-    "id": "cityblock-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Cityblock Health",
-    "companyUrl": "https://cityblock.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://boards.greenhouse.io/cityblockhealth/jobs/7065759002",
-    "postedDate": "2026-02-09",
-    "tags": ["community health", "B2B", "startup", "Medicaid"]
-  },
-  {
-    "id": "cerebral-product-designer",
-    "title": "Product Designer",
-    "company": "Cerebral",
-    "companyUrl": "https://cerebral.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://careers.cerebral.com/jobs/product-designer",
-    "postedDate": "2026-02-14",
-    "tags": ["mental health", "B2C", "startup", "telehealth"]
-  },
-  {
-    "id": "transcarent-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Transcarent",
-    "companyUrl": "https://transcarent.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://careers.transcarent.com/jobs/lead-product-designer",
-    "postedDate": "2026-02-13",
-    "tags": ["health benefits", "B2B", "startup", "employer"]
-  },
-  {
-    "id": "included-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Included Health",
-    "companyUrl": "https://includedhealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://careers.includedhealth.com/jobs/senior-product-designer",
-    "postedDate": "2026-02-08",
-    "tags": ["telehealth", "B2B", "startup", "virtual care"]
-  },
-  {
-    "id": "aledade-ux-designer",
-    "title": "UX Designer",
-    "company": "Aledade",
-    "companyUrl": "https://aledade.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://careers.aledade.com/jobs/ux-designer",
-    "postedDate": "2026-02-12",
-    "tags": ["primary care", "B2B", "startup", "value-based care"]
+    "tags": [
+      "AI",
+      "clinical documentation",
+      "B2B",
+      "startup"
+    ]
   }
 ]
