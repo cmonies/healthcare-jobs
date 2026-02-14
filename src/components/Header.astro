@@ -32,8 +32,11 @@ const currentPath = Astro.url.pathname;
         Community
       </a>
       <DarkModeToggle />
-      <a href="https://github.com/designwithcare/jobs" target="_blank" rel="noopener noreferrer" class="text-sm text-sapphire-500 border border-sapphire-500 px-4 py-1.5 rounded-full hover:bg-sapphire-500 hover:text-white transition-all font-medium">
-        Contribute
+      <a
+        href="/submit"
+        class="text-sm text-sapphire-500 border border-sapphire-500 px-4 py-1.5 rounded-full hover:bg-sapphire-500 hover:text-white transition-all font-medium"
+      >
+        Submit a Job
       </a>
     </div>
 
@@ -53,7 +56,7 @@ const currentPath = Astro.url.pathname;
       <a href="/jobs" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Jobs</a>
       <a href="#newsletter" id="mobile-newsletter-link" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Newsletter</a>
       <a href="https://discord.gg/designwithcare" target="_blank" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Community</a>
-      <a href="https://github.com/designwithcare/jobs" target="_blank" class="block text-sm text-sapphire-500 font-medium py-1">Contribute →</a>
+      <a href="/submit" class="block text-sm text-sapphire-500 font-medium py-1">Submit a Job →</a>
     </div>
   </div>
 </header>

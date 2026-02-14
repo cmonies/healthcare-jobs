@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Submit a Job — designwith.care" description="Submit a healthcare UX job listing to the community-curated board.">
+  <Header />
+
+  <section class="max-w-2xl mx-auto px-6 pt-12 pb-20">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Submit a job</h1>
+      <p class="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
+        Know of a great healthcare UX role? Add it to the board. Every submission is reviewed before publishing.
+      </p>
+    </div>
+
+    <form id="job-form" class="space-y-6">
+      <!-- Job Title -->
+      <div>
+        <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Job Title <span class="text-red-400">*</span></label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          placeholder="e.g., Senior UX Designer"
+          class="form-input"
+        />
+      </div>
+
+      <!-- Company -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Company <span class="text-red-400">*</span></label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            required
+            placeholder="e.g., Oscar Health"
+            class="form-input"
+          />
+        </div>
+        <div>
+          <label for="companyUrl" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Company Website <span class="text-red-400">*</span></label>
+          <input
+            type="url"
+            id="companyUrl"
+            name="companyUrl"
+            required
+            placeholder="https://company.com"
+            class="form-input"
+          />
+        </div>
+      </div>
+
+      <!-- Job URL -->
+      <div>
+        <label for="url" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Job Posting URL <span class="text-red-400">*</span></label>
+        <input
+          type="url"
+          id="url"
+          name="url"
+          required
+          placeholder="https://company.com/careers/job-link"
+          class="form-input"
+        />
+        <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Direct link to the active job listing</p>
+      </div>
+
+      <!-- Level + Location Type -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="level" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Level <span class="text-red-400">*</span></label>
+          <select id="level" name="level" required class="form-input">
+            <option value="">Select level</option>
+            <option value="Junior">Junior</option>
+            <option value="Mid">Mid</option>
+            <option value="Senior">Senior</option>
+            <option value="Staff">Staff</option>
+            <option value="Lead">Lead</option>
+            <option value="Principal">Principal</option>
+            <option value="Director">Director</option>
+          </select>
+        </div>
+        <div>
+          <label for="locationType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Location Type <span class="text-red-400">*</span></label>
+          <select id="locationType" name="locationType" required class="form-input">
+            <option value="">Select type</option>
+            <option value="Remote">🌍 Remote</option>
+            <option value="Hybrid">🏢 Hybrid</option>
+            <option value="Onsite">📍 Onsite</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label for="location" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Location <span class="text-red-400">*</span></label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          required
+          placeholder="e.g., San Francisco, CA or USA"
+          class="form-input"
+        />
+      </div>
+
+      <!-- Tags -->
+      <div>
+        <label for="tags" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Tags</label>
+        <input
+          type="text"
+          id="tags"
+          name="tags"
+          placeholder="e.g., telehealth, mental health, B2C"
+          class="form-input"
+        />
+        <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Comma-separated. Helps people find relevant roles.</p>
+      </div>
+
+      <!-- Verification -->
+      <div class="bg-creme-100 dark:bg-gray-800/50 rounded-xl p-5 space-y-3">
+        <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Before submitting, please confirm:</p>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" required class="mt-0.5 rounded border-gray-300 dark:border-gray-600 text-sapphire-500 focus:ring-sapphire-500" />
+          <span class="text-sm text-gray-600 dark:text-gray-400">This is a direct company listing (not a recruiter/staffing agency)</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" required class="mt-0.5 rounded border-gray-300 dark:border-gray-600 text-sapphire-500 focus:ring-sapphire-500" />
+          <span class="text-sm text-gray-600 dark:text-gray-400">The job posting is currently active</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" required class="mt-0.5 rounded border-gray-300 dark:border-gray-600 text-sapphire-500 focus:ring-sapphire-500" />
+          <span class="text-sm text-gray-600 dark:text-gray-400">This is a UX/design role at a healthcare or health-tech company</span>
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="w-full py-3 bg-sapphire-500 text-white font-semibold rounded-full hover:bg-sapphire-600 transition-colors text-sm"
+      >
+        Submit for review
+      </button>
+
+      <p class="text-xs text-center text-gray-400 dark:text-gray-500">
+        Submissions are reviewed by maintainers before being published. You can also
+        <a href="https://github.com/designwithcare/jobs/issues/new?template=job-submission.yml" target="_blank" class="text-sapphire-500 hover:underline">submit via GitHub</a>.
+      </p>
+    </form>
+
+    <!-- Success state -->
+    <div id="success-msg" class="hidden text-center py-16">
+      <div class="text-5xl mb-4">🎉</div>
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Submitted!</h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-6">Your listing has been submitted for review. We'll add it to the board once approved.</p>
+      <a href="/jobs" class="text-sapphire-500 font-medium hover:underline">← Back to jobs</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 0.875rem;
+    color: #111827;
+    transition: all 0.15s;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: #7EA2E1;
+    box-shadow: 0 0 0 3px rgba(15, 82, 186, 0.1);
+  }
+  .form-input::placeholder {
+    color: #9ca3af;
+  }
+  :global(.dark) .form-input {
+    background: #111827;
+    border-color: #374151;
+    color: #f3f4f6;
+  }
+  :global(.dark) .form-input::placeholder {
+    color: #6b7280;
+  }
+  :global(.dark) .form-input:focus {
+    border-color: #5383D7;
+    box-shadow: 0 0 0 3px rgba(15, 82, 186, 0.2);
+  }
+  select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('job-form') as HTMLFormElement;
+  const successMsg = document.getElementById('success-msg');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const title = data.get('title');
+    const company = data.get('company');
+    const companyUrl = data.get('companyUrl');
+    const url = data.get('url');
+    const level = data.get('level');
+    const locationType = data.get('locationType');
+    const location = data.get('location');
+    const tags = data.get('tags');
+
+    // Build GitHub issue URL as fallback
+    const issueTitle = encodeURIComponent(`Add: ${title} at ${company}`);
+    const issueBody = encodeURIComponent(
+      `**Job Title:** ${title}\n**Company:** ${company}\n**Company URL:** ${companyUrl}\n**Job URL:** ${url}\n**Level:** ${level}\n**Location Type:** ${locationType}\n**Location:** ${location}\n**Tags:** ${tags || 'N/A'}\n\n_Submitted via designwith.care_`
+    );
+
+    // For now, open as GitHub issue. Later: POST to serverless function that creates a PR.
+    window.open(
+      `https://github.com/designwithcare/jobs/issues/new?title=${issueTitle}&body=${issueBody}&labels=job-submission`,
+      '_blank'
+    );
+
+    form.style.display = 'none';
+    successMsg?.classList.remove('hidden');
+  });
+</script>
