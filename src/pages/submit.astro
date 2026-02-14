@@ -179,8 +179,9 @@ import Footer from '../components/Footer.astro';
           </label>
         </div>
 
-        <!-- Cloudflare Turnstile widget placeholder -->
-        <div id="turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAACckLBTY6z74gBae" data-theme="auto"></div>
+        <!-- Cloudflare Turnstile widget -->
+        <div id="turnstile-container"></div>
+        <input type="hidden" id="turnstile-token" name="turnstile-token" value="" />
 
         <!-- Error messages (hidden by default) -->
         <div id="error-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400"></div>
@@ -257,7 +258,19 @@ import Footer from '../components/Footer.astro';
   }
 </style>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+
+<script is:inline>
+  function onTurnstileLoad() {
+    turnstile.render('#turnstile-container', {
+      sitekey: '0x4AAAAAACckLBTY6z74gBae',
+      theme: 'auto',
+      callback: function(token) {
+        document.getElementById('turnstile-token').value = token;
+      },
+    });
+  }
+</script>
 
 <script>
   const form = document.getElementById('job-form') as HTMLFormElement;
@@ -277,7 +290,7 @@ import Footer from '../components/Footer.astro';
     const data = new FormData(form);
 
     // Get Turnstile token
-    const turnstileToken = (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value || '';
+    const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value || '';
 
     const payload: Record<string, string> = {
       submitterName: data.get('submitterName') as string,
