@@ -13,18 +13,18 @@ const featuredJobs = jobs.slice(0, 10);
   <Header />
 
   <!-- Hero -->
-  <section class="w-full lg:w-full lg:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-20 pb-16 text-center">
-    <div class="inline-flex items-center gap-2 bg-sapphire-50 dark:bg-sapphire-900/30 text-sapphire-500 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+  <section class="w-full lg:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-20 pb-16 text-center">
+    <div class="animate-fade-up stagger-1 inline-flex items-center gap-2 bg-sapphire-50 dark:bg-sapphire-900/30 text-sapphire-500 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
       <span>♥</span> Open source &amp; community-driven
     </div>
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight max-w-3xl mx-auto">
+    <h1 class="animate-fade-up stagger-2 text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight max-w-3xl mx-auto">
       Change how people<br />experience
       <span class="text-sapphire-500">care</span>
     </h1>
-    <p class="text-lg text-gray-500 dark:text-gray-400 mt-6 max-w-xl mx-auto leading-relaxed">
+    <p class="animate-fade-up stagger-3 text-lg text-gray-500 dark:text-gray-400 mt-6 max-w-xl mx-auto leading-relaxed">
       Find your next healthcare UX role — sourced by the community, open to everyone.
     </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+    <div class="animate-fade-up stagger-4 flex flex-col sm:flex-row justify-center gap-4 mt-8">
       <a
         href="/jobs"
         class="px-6 py-3 bg-sapphire-500 text-white font-semibold rounded-full hover:bg-sapphire-600 transition-colors text-sm"
@@ -43,37 +43,43 @@ const featuredJobs = jobs.slice(0, 10);
   <!-- Value Props -->
   <section class="w-full lg:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-20">
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-creme-300/60 dark:border-gray-800">
-        <div class="text-3xl mb-4">🌱</div>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Open source</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-          The entire job board runs on GitHub. Anyone can submit a listing via pull request. Transparent, free, and community-owned.
-        </p>
+      <div class="reveal" data-delay="0">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-creme-300/60 dark:border-gray-800 h-full">
+          <div class="text-3xl mb-4">🌱</div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Open source</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+            The entire job board runs on GitHub. Anyone can submit a listing via pull request. Transparent, free, and community-owned.
+          </p>
+        </div>
       </div>
-      <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-creme-300/60 dark:border-gray-800">
-        <div class="text-3xl mb-4">💙</div>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Design for impact</h3>
-        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-          Healthcare UX is one of the most impactful design domains. Find roles where your work genuinely improves people's lives.
-        </p>
+      <div class="reveal" data-delay="100">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-creme-300/60 dark:border-gray-800 h-full">
+          <div class="text-3xl mb-4">💙</div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Design for impact</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+            Healthcare UX is one of the most impactful design domains. Find roles where your work genuinely improves people's lives.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Featured Jobs -->
   <section class="w-full lg:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-20">
-    <div class="flex items-center justify-between mb-8">
+    <div class="reveal flex items-center justify-between mb-8" data-delay="0">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest jobs</h2>
       <a href="/jobs" class="text-sm font-medium text-sapphire-500 hover:text-sapphire-600 transition-colors">
         View all →
       </a>
     </div>
     <div class="grid gap-3">
-      {featuredJobs.map(job => (
-        <JobCard {...job} />
+      {featuredJobs.map((job, i) => (
+        <div class="reveal" data-delay={String(i * 50)}>
+          <JobCard {...job} />
+        </div>
       ))}
     </div>
-    <div class="text-center mt-8">
+    <div class="reveal text-center mt-8" data-delay="500">
       <a
         href="/jobs"
         class="inline-flex px-6 py-3 bg-sapphire-500 text-white font-semibold rounded-full hover:bg-sapphire-600 transition-colors text-sm"
@@ -85,7 +91,9 @@ const featuredJobs = jobs.slice(0, 10);
 
   <!-- Newsletter -->
   <section class="w-full lg:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-10">
-    <Newsletter />
+    <div class="reveal" data-delay="0">
+      <Newsletter />
+    </div>
   </section>
 
   <Footer />
