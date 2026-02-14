@@ -1,27 +1,32 @@
 # designwith.care
 
-Healthcare UX job board & community. Curated by the community, open source forever.
+Healthcare UX job board — curated by the community, open source forever.
 
-🌐 **[designwith.care](https://designwith.care)** *(coming soon)*
+🌐 **[designwith.care](https://designwith.care)** · [Preview](https://healthcare-jobs-ten.vercel.app)
 
 ## What is this?
 
-A free, open-source job board specifically for **UX designers working in healthcare**. No recruiter spam, no paid listings — just real jobs from companies building products that matter.
+A free, open-source job board for **UX designers working in healthcare**. No recruiter spam, no paid listings — just real jobs from companies building products that matter.
 
 Healthcare UX is a growing field with unique challenges: regulatory constraints, accessibility requirements, life-or-death stakes. Designers in this space deserve a dedicated place to find work.
 
 ## Features
 
 - 🏥 **Healthcare-focused** — only UX/design roles at health & health-tech companies
-- 🌍 **Community-curated** — anyone can submit a job via the contribute form
+- 🌍 **Community-sourced** — anyone can submit a job via the submit form
 - 🔓 **Open source** — built in the open, maintained by the community
-- ⚡ **Fast** — static site, no bloat, loads instantly
+- 🛡️ **Spam-protected** — Cloudflare Turnstile, server-side rate limiting, honeypot fields, manual review queue
+- ⚡ **Fast** — static site with server endpoints, loads instantly
 - ♿ **Accessible** — semantic HTML, proper contrast, keyboard navigable
+- 🌙 **Dark mode** — automatic based on system preference, with manual toggle
 
 ## Tech Stack
 
-- [Astro](https://astro.build) 5 — static site framework
+- [Astro](https://astro.build) 5 — static site framework with server endpoints
 - [Tailwind CSS](https://tailwindcss.com) — utility-first styling
+- [Cloudflare Pages](https://pages.cloudflare.com) — hosting + Workers for API
+- [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) — bot protection
+- [Cloudflare KV](https://developers.cloudflare.com/kv/) — server-side rate limiting
 - Jobs stored as JSON (`src/data/jobs.json`)
 
 ## Getting Started
@@ -40,6 +45,28 @@ npm run dev
 
 Open [http://localhost:4321](http://localhost:4321) to see the site.
 
+## Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+│   ├── Header.astro
+│   ├── Footer.astro
+│   ├── JobCard.astro
+│   └── Newsletter.astro
+├── data/
+│   └── jobs.json     # Job listings data
+├── layouts/
+│   └── Layout.astro  # Base layout with animations
+├── pages/
+│   ├── index.astro   # Homepage
+│   ├── jobs.astro    # All jobs with search + filters
+│   ├── submit.astro  # Job submission form
+│   └── api/
+│       └── submit.ts # Server-side submission endpoint
+└── env.d.ts          # TypeScript env bindings
+```
+
 ## Contributing
 
 We'd love your help! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to:
@@ -51,9 +78,9 @@ We'd love your help! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how t
 
 ## Adding a Job
 
-The easiest way: use the **Contribute** button on the website to submit a job. It creates a GitHub issue that a maintainer will review and merge.
+The easiest way: use the **Submit a Job** button on the website. Submissions are reviewed before publishing.
 
-You can also submit a PR directly — add your job to `src/data/jobs.json` following the existing schema:
+You can also submit a PR directly — add your job to `src/data/jobs.json` following the schema:
 
 ```json
 {
@@ -65,10 +92,25 @@ You can also submit a PR directly — add your job to `src/data/jobs.json` follo
   "locationType": "Remote",
   "location": "USA",
   "url": "https://company.com/careers/job-link",
-  "postedDate": "2026-02-13",
+  "postedDate": "2026-02-14",
   "tags": ["health insurance", "consumer", "B2C"]
 }
 ```
+
+**Levels:** Junior, Mid, Senior, Staff, Lead, Principal, Director
+**Location types:** Remote, Hybrid, Onsite
+
+## Environment Variables
+
+For the submission API to work, set these in your hosting provider:
+
+| Variable | Description |
+|----------|-------------|
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key |
+| `GITHUB_TOKEN` | GitHub fine-grained token (Issues read/write) |
+| `GITHUB_REPO` | Repository for issue creation (e.g. `cmonies/healthcare-jobs`) |
+
+KV namespace `SUBMISSIONS_KV` is required for server-side rate limiting (Cloudflare only).
 
 ## License
 
@@ -76,4 +118,4 @@ You can also submit a PR directly — add your job to `src/data/jobs.json` follo
 
 ---
 
-Made with care by the healthcare design community 💙
+Made with care by [carmen.cv](https://carmen.cv) for the healthcare design community 💙
