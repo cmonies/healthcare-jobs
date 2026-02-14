@@ -182,7 +182,9 @@ import Footer from '../components/Footer.astro';
         <!-- Cloudflare Turnstile widget placeholder -->
         <div id="turnstile-container" class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="auto"></div>
 
-        <!-- Rate limit warning (hidden by default) -->
+        <!-- Error messages (hidden by default) -->
+        <div id="error-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400"></div>
+
         <div id="rate-limit-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400">
           You've reached the maximum of 5 submissions per 24 hours for this email. Please try again later.
         </div>
@@ -255,90 +257,80 @@ import Footer from '../components/Footer.astro';
   }
 </style>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
-  // --- Rate limiting (client-side, localStorage) ---
-  const RATE_LIMIT_KEY = 'dwc_submissions';
-  const MAX_PER_DAY = 5;
-
-  function getSubmissions(): Record<string, number[]> {
-    try {
-      return JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || '{}');
-    } catch { return {}; }
-  }
-
-  function checkRateLimit(email: string): boolean {
-    const subs = getSubmissions();
-    const now = Date.now();
-    const dayAgo = now - 24 * 60 * 60 * 1000;
-    const emailSubs = (subs[email] || []).filter(t => t > dayAgo);
-    return emailSubs.length < MAX_PER_DAY;
-  }
-
-  function recordSubmission(email: string) {
-    const subs = getSubmissions();
-    const now = Date.now();
-    const dayAgo = now - 24 * 60 * 60 * 1000;
-    subs[email] = [...(subs[email] || []).filter(t => t > dayAgo), now];
-    localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(subs));
-  }
-
-  // --- Form handling ---
   const form = document.getElementById('job-form') as HTMLFormElement;
   const successMsg = document.getElementById('success-msg');
   const rateLimitMsg = document.getElementById('rate-limit-msg');
   const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const errorMsg = document.getElementById('error-msg');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Disable button, show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.classList.add('opacity-75');
+
     const data = new FormData(form);
 
-    // Honeypot check — if filled, silently "succeed"
-    if (data.get('website_url')) {
-      form.style.display = 'none';
-      successMsg?.classList.remove('hidden');
-      return;
+    // Get Turnstile token
+    const turnstileToken = (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value || '';
+
+    const payload: Record<string, string> = {
+      submitterName: data.get('submitterName') as string,
+      submitterEmail: data.get('submitterEmail') as string,
+      title: data.get('title') as string,
+      company: data.get('company') as string,
+      companyUrl: data.get('companyUrl') as string,
+      url: data.get('url') as string,
+      level: data.get('level') as string,
+      locationType: data.get('locationType') as string,
+      location: data.get('location') as string,
+      tags: data.get('tags') as string || '',
+      website_url: data.get('website_url') as string || '',
+      turnstileToken,
+    };
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json() as { ok: boolean; error?: string };
+
+      if (result.ok) {
+        form.style.display = 'none';
+        successMsg?.classList.remove('hidden');
+      } else if (res.status === 429) {
+        rateLimitMsg?.classList.remove('hidden');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Limit reached';
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        // Show error
+        if (errorMsg) {
+          errorMsg.textContent = result.error || 'Something went wrong. Please try again.';
+          errorMsg.classList.remove('hidden');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit for review';
+        submitBtn.classList.remove('opacity-75');
+        // Reset Turnstile
+        if (window.turnstile) window.turnstile.reset();
+      }
+    } catch (err) {
+      if (errorMsg) {
+        errorMsg.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.classList.remove('hidden');
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit for review';
+      submitBtn.classList.remove('opacity-75');
     }
-
-    const email = (data.get('submitterEmail') as string || '').toLowerCase().trim();
-
-    // Rate limit check
-    if (!checkRateLimit(email)) {
-      rateLimitMsg?.classList.remove('hidden');
-      submitBtn.disabled = true;
-      submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
-      return;
-    }
-
-    const title = data.get('title');
-    const company = data.get('company');
-    const companyUrl = data.get('companyUrl');
-    const url = data.get('url');
-    const level = data.get('level');
-    const locationType = data.get('locationType');
-    const location = data.get('location');
-    const tags = data.get('tags');
-    const submitterName = data.get('submitterName');
-
-    // Build GitHub issue URL
-    const issueTitle = encodeURIComponent(`Add: ${title} at ${company}`);
-    const issueBody = encodeURIComponent(
-      `**Job Title:** ${title}\n**Company:** ${company}\n**Company URL:** ${companyUrl}\n**Job URL:** ${url}\n**Level:** ${level}\n**Location Type:** ${locationType}\n**Location:** ${location}\n**Tags:** ${tags || 'N/A'}\n\n---\n**Submitted by:** ${submitterName} (${email})\n_Submitted via designwith.care_`
-    );
-
-    // Record the submission for rate limiting
-    recordSubmission(email);
-
-    // Open as GitHub issue (later: POST to serverless function)
-    window.open(
-      `https://github.com/designwithcare/jobs/issues/new?title=${issueTitle}&body=${issueBody}&labels=job-submission`,
-      '_blank'
-    );
-
-    form.style.display = 'none';
-    successMsg?.classList.remove('hidden');
   });
 </script>
-
-<!-- Cloudflare Turnstile (uncomment when you have a site key) -->
-<!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
