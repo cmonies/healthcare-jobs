@@ -15,6 +15,17 @@ const currentPath = Astro.url.pathname;
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
       <a
+        href="/"
+        class:list={[
+          "text-sm font-medium transition-colors",
+          currentPath === "/"
+            ? "text-sapphire-500"
+            : "text-gray-600 dark:text-gray-400 hover:text-sapphire-500"
+        ]}
+      >
+        Home
+      </a>
+      <a
         href="/jobs"
         class:list={[
           "text-sm font-medium transition-colors",
@@ -53,6 +64,7 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-creme-300/50 dark:border-gray-800 bg-white dark:bg-gray-900">
     <div class="px-6 py-4 space-y-3">
+      <a href="/" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Home</a>
       <a href="/jobs" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Jobs</a>
       <a href="#newsletter" id="mobile-newsletter-link" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Newsletter</a>
       <a href="https://discord.gg/designwithcare" target="_blank" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Community</a>

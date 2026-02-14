@@ -32,39 +32,72 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="block bg-white dark:bg-gray-900 rounded-2xl p-6 border border-creme-300/60 dark:border-gray-800 hover:border-sapphire-200 dark:hover:border-sapphire-800 hover:shadow-lg hover:shadow-sapphire-500/5 transition-all duration-200 group"
+  class="block border-b border-creme-300/60 dark:border-gray-800 hover:bg-creme-50 dark:hover:bg-gray-800/50 transition-all duration-200 group py-5 px-2 md:px-4"
 >
-  <div class="flex items-start justify-between gap-4">
+  <!-- Desktop: horizontal row -->
+  <div class="hidden md:flex items-center gap-6">
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-1">
-        <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">{company}</span>
-        <span class="text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400 dark:text-gray-500">{timeLabel}</span>
-      </div>
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors truncate">
+      <h3 class="text-base font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors truncate">
         {title}
       </h3>
-      <div class="flex items-center gap-3 mt-3 flex-wrap">
-        <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${levelColors[level] || 'bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
-          {level}
-        </span>
-        <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
-          {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
-        </span>
+      <div class="flex items-center gap-2 mt-2">
+        <span class="text-sm text-gray-500 dark:text-gray-400">{company}</span>
+        {tags.length > 0 && (
+          <div class="hidden xl:flex items-center gap-1.5">
+            {tags.slice(0, 2).map(tag => (
+              <span class="text-xs text-gray-400 dark:text-gray-500 bg-creme-100 dark:bg-gray-800 px-2 py-0.5 rounded-full capitalize">{tag}</span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
-    <div class="text-gray-300 dark:text-gray-600 group-hover:text-sapphire-500 transition-colors mt-1 shrink-0">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+    <span class={`text-xs font-medium px-2.5 py-1 rounded-full shrink-0 ${levelColors[level] || 'bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
+      {level}
+    </span>
+
+    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1 shrink-0 w-48">
+      {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
+    </span>
+
+    <span class="text-xs text-gray-400 dark:text-gray-500 shrink-0 w-14 text-right">{timeLabel}</span>
+
+    <div class="text-gray-300 dark:text-gray-600 group-hover:text-sapphire-500 transition-colors shrink-0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 17L17 7" /><path d="M7 7h10v10" />
       </svg>
     </div>
   </div>
 
-  {tags.length > 0 && (
-    <div class="flex gap-2 mt-4 flex-wrap">
-      {tags.map(tag => (
-        <span class="text-xs text-gray-400 dark:text-gray-500 bg-creme-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">{tag}</span>
-      ))}
+  <!-- Mobile/Tablet: stacked layout -->
+  <div class="md:hidden">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">{company}</span>
+          {tags.length > 0 && tags.map(tag => (
+            <span class="text-xs text-gray-400 dark:text-gray-500 bg-creme-100 dark:bg-gray-800 px-2 py-0.5 rounded-full capitalize">{tag}</span>
+          ))}
+          <span class="text-gray-300 dark:text-gray-600">·</span>
+          <span class="text-xs text-gray-400 dark:text-gray-500">{timeLabel}</span>
+        </div>
+        <h3 class="text-base font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors">
+          {title}
+        </h3>
+      </div>
+      <div class="text-gray-300 dark:text-gray-600 group-hover:text-sapphire-500 transition-colors mt-1 shrink-0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+        </svg>
+      </div>
     </div>
-  )}
+    <div class="flex items-center gap-3 mt-3 flex-wrap">
+      <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${levelColors[level] || 'bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
+        {level}
+      </span>
+      <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
+        {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
+      </span>
+    </div>
+  </div>
 </a>
