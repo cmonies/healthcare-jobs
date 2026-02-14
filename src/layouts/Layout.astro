@@ -38,6 +38,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
     <script is:inline>
+      document.documentElement.classList.add('js-ready');
       const t = localStorage.getItem('theme');
       if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
@@ -141,10 +142,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
 </style>
 
 <script is:inline>
-  // Mark that JS is running — without this class, .reveal elements stay visible (graceful fallback)
-  document.documentElement.classList.add('js-ready');
-
-  // Intersection observer for scroll-triggered reveals
+  // Intersection observer for scroll-triggered reveals (js-ready added in <head>)
   document.addEventListener('DOMContentLoaded', function() {
     var reveals = document.querySelectorAll('.reveal');
     if (!reveals.length) return;
