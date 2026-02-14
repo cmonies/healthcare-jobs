@@ -14,12 +14,12 @@ interface Props {
 const { title, company, level, locationType, location, url, postedDate, tags } = Astro.props;
 
 const levelColors: Record<string, string> = {
-  'Junior': 'bg-green-50 text-green-700',
-  'Mid': 'bg-blue-50 text-blue-700',
-  'Senior': 'bg-purple-50 text-purple-700',
-  'Staff': 'bg-orange-50 text-orange-700',
-  'Lead': 'bg-rose-50 text-rose-700',
-  'Principal': 'bg-amber-50 text-amber-700',
+  'Junior': 'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+  'Mid': 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+  'Senior': 'bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+  'Staff': 'bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+  'Lead': 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400',
+  'Principal': 'bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
 };
 
 const locationIcon = locationType === 'Remote' ? '🌍' : locationType === 'Hybrid' ? '🏢' : '📍';
@@ -32,28 +32,28 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="block bg-white rounded-2xl p-6 border border-creme-300/60 hover:border-sapphire-200 hover:shadow-lg hover:shadow-sapphire-500/5 transition-all duration-200 group"
+  class="block bg-white dark:bg-gray-900 rounded-2xl p-6 border border-creme-300/60 dark:border-gray-800 hover:border-sapphire-200 dark:hover:border-sapphire-800 hover:shadow-lg hover:shadow-sapphire-500/5 transition-all duration-200 group"
 >
   <div class="flex items-start justify-between gap-4">
     <div class="flex-1 min-w-0">
       <div class="flex items-center gap-2 mb-1">
-        <span class="text-sm text-gray-500 font-medium">{company}</span>
-        <span class="text-gray-300">·</span>
-        <span class="text-xs text-gray-400">{timeLabel}</span>
+        <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">{company}</span>
+        <span class="text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400 dark:text-gray-500">{timeLabel}</span>
       </div>
-      <h3 class="text-lg font-semibold text-gray-900 group-hover:text-sapphire-500 transition-colors truncate">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors truncate">
         {title}
       </h3>
       <div class="flex items-center gap-3 mt-3 flex-wrap">
-        <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${levelColors[level] || 'bg-gray-50 text-gray-600'}`}>
+        <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${levelColors[level] || 'bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
           {level}
         </span>
-        <span class="text-sm text-gray-500 flex items-center gap-1">
+        <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
           {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
         </span>
       </div>
     </div>
-    <div class="text-gray-300 group-hover:text-sapphire-500 transition-colors mt-1 shrink-0">
+    <div class="text-gray-300 dark:text-gray-600 group-hover:text-sapphire-500 transition-colors mt-1 shrink-0">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 17L17 7" /><path d="M7 7h10v10" />
       </svg>
@@ -63,7 +63,7 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
   {tags.length > 0 && (
     <div class="flex gap-2 mt-4 flex-wrap">
       {tags.map(tag => (
-        <span class="text-xs text-gray-400 bg-creme-100 px-2 py-0.5 rounded-full">{tag}</span>
+        <span class="text-xs text-gray-400 dark:text-gray-500 bg-creme-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">{tag}</span>
       ))}
     </div>
   )}

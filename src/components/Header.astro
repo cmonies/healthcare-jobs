@@ -1,48 +1,79 @@
 ---
+import DarkModeToggle from './DarkModeToggle.astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="border-b border-creme-300/50 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+<header class="border-b border-creme-300/50 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 group">
       <span class="text-sapphire-500 text-2xl">♥</span>
-      <span class="text-xl font-semibold text-gray-900 group-hover:text-sapphire-500 transition-colors">
+      <span class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors">
         designwith.care
       </span>
     </a>
 
-    <div class="flex items-center gap-8">
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
       <a
         href="/jobs"
         class:list={[
           "text-sm font-medium transition-colors",
-          currentPath === "/jobs" ? "text-sapphire-500" : "text-gray-600 hover:text-sapphire-500"
+          currentPath === "/jobs" || currentPath === "/jobs/"
+            ? "text-sapphire-500"
+            : "text-gray-600 dark:text-gray-400 hover:text-sapphire-500"
         ]}
       >
         Jobs
       </a>
-      <a
-        href="#newsletter"
-        class="text-sm font-medium text-gray-600 hover:text-sapphire-500 transition-colors"
-      >
+      <a href="#newsletter" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors">
         Newsletter
       </a>
-      <a
-        href="https://discord.gg/designwithcare"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm font-medium text-gray-600 hover:text-sapphire-500 transition-colors"
-      >
+      <a href="https://discord.gg/designwithcare" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors">
         Community
       </a>
-      <a
-        href="https://github.com/designwithcare/jobs"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm text-sapphire-500 border border-sapphire-500 px-4 py-1.5 rounded-full hover:bg-sapphire-500 hover:text-white transition-all font-medium"
-      >
+      <DarkModeToggle />
+      <a href="https://github.com/designwithcare/jobs" target="_blank" rel="noopener noreferrer" class="text-sm text-sapphire-500 border border-sapphire-500 px-4 py-1.5 rounded-full hover:bg-sapphire-500 hover:text-white transition-all font-medium">
         Contribute
       </a>
     </div>
+
+    <!-- Mobile -->
+    <div class="flex md:hidden items-center gap-2">
+      <DarkModeToggle />
+      <button id="mobile-menu-btn" class="p-2 text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors" aria-label="Toggle menu">
+        <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+        <svg id="menu-close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
   </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-creme-300/50 dark:border-gray-800 bg-white dark:bg-gray-900">
+    <div class="px-6 py-4 space-y-3">
+      <a href="/jobs" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Jobs</a>
+      <a href="#newsletter" id="mobile-newsletter-link" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Newsletter</a>
+      <a href="https://discord.gg/designwithcare" target="_blank" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Community</a>
+      <a href="https://github.com/designwithcare/jobs" target="_blank" class="block text-sm text-sapphire-500 font-medium py-1">Contribute →</a>
+    </div>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-open-icon');
+  const closeIcon = document.getElementById('menu-close-icon');
+  const newsletterLink = document.getElementById('mobile-newsletter-link');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  newsletterLink?.addEventListener('click', () => {
+    menu?.classList.add('hidden');
+    openIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+  });
+</script>
