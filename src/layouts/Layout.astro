@@ -78,30 +78,38 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
   .stagger-5 { animation-delay: 400ms; }
   .stagger-6 { animation-delay: 500ms; }
 
-  /* Intersection observer reveal */
-  .reveal {
+  /* Intersection observer reveal — hidden by default, JS adds .visible */
+  .js-ready .reveal {
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   }
-  .reveal.visible {
+  .js-ready .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
 </style>
 
 <script is:inline>
+  // Mark that JS is running — without this class, .reveal elements stay visible (graceful fallback)
+  document.documentElement.classList.add('js-ready');
+
   // Intersection observer for scroll-triggered reveals
-  document.addEventListener('DOMContentLoaded', () => {
-    const reveals = document.querySelectorAll('.reveal');
+  document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
     if (!reveals.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: just show everything
+      reveals.forEach(function(el) { el.classList.add('visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          // Add stagger delay based on sibling index
-          const el = entry.target as HTMLElement;
-          const delay = el.dataset.delay || '0';
+          var el = entry.target;
+          var delay = el.dataset.delay || '0';
           el.style.transitionDelay = delay + 'ms';
           el.classList.add('visible');
           observer.unobserve(el);
@@ -109,6 +117,6 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach(function(el) { observer.observe(el); });
   });
 </script>
