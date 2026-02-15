@@ -4,31 +4,31 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Report an Issue — designjobs" description="Found a broken link or something wrong? Let us know.">
+<Layout title="Feedback — designjobs" description="Report an issue, request a feature, or share feedback.">
   <Header />
 
   <main id="main-content">
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-20">
     <div id="form-container" class="max-w-2xl mx-auto">
       <div class="mb-10 text-center">
-        <h1 class="animate-fade-in stagger-1 text-3xl font-bold text-slate-900 dark:text-white mb-3">Report an issue</h1>
+        <h1 class="animate-fade-in stagger-1 text-3xl font-bold text-slate-900 dark:text-white mb-3">Send feedback</h1>
         <p class="animate-fade-in stagger-1 text-base text-slate-500 dark:text-slate-400">
-          Found a broken link, wrong info, or something else? Let us know and we'll fix it.
+          Found a bug, have an idea, or just want to say something? We're listening.
         </p>
       </div>
 
       <form id="report-form" class="animate-fade-in stagger-2 space-y-6">
         <!-- Reporter Info -->
-        <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-4">
+        <div class="bg-slate-50 dark:bg-surface-card border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-4">
           <p class="text-base font-medium text-slate-700 dark:text-slate-300">Your information</p>
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
-              <label for="reporterName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Name</label>
-              <input type="text" id="reporterName" name="reporterName" placeholder="Optional" class="form-input" />
+              <label for="reporterName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Name <span class="text-red-400">*</span></label>
+              <input type="text" id="reporterName" name="reporterName" required placeholder="Full name" class="form-input" />
             </div>
             <div>
-              <label for="reporterEmail" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Email</label>
-              <input type="email" id="reporterEmail" name="reporterEmail" placeholder="Optional — for follow-up" class="form-input" />
+              <label for="reporterEmail" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Email <span class="text-red-400">*</span></label>
+              <input type="email" id="reporterEmail" name="reporterEmail" required placeholder="you@example.com" class="form-input" />
             </div>
           </div>
         </div>
@@ -39,43 +39,65 @@ import Footer from '../components/Footer.astro';
           <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
         </div>
 
-        <!-- Issue Type -->
+        <!-- Feedback Category -->
         <div>
-          <label for="issueType" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">What's the issue? <span class="text-red-400">*</span></label>
-          <select id="issueType" name="issueType" required class="form-input">
-            <option value="">Select type</option>
-            <option value="dead-link">Dead or broken job link</option>
-            <option value="wrong-info">Wrong job information</option>
-            <option value="spam">Spam or fake listing</option>
-            <option value="site-bug">Website bug or display issue</option>
-            <option value="other">Other</option>
+          <label for="category" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">What kind of feedback? <span class="text-red-400">*</span></label>
+          <select id="category" name="category" required class="form-input">
+            <option value="">Select category</option>
+            <optgroup label="Report an issue">
+              <option value="dead-link">🔗 Dead or broken job link</option>
+              <option value="wrong-info">📝 Wrong job information</option>
+              <option value="spam">🚫 Spam or fake listing</option>
+              <option value="site-bug">🐛 Website bug or display issue</option>
+            </optgroup>
+            <optgroup label="Suggest something">
+              <option value="feature-request">💡 Feature request</option>
+              <option value="enhancement">✨ Enhancement to existing feature</option>
+              <option value="content">📄 Content or copy suggestion</option>
+            </optgroup>
+            <option value="other">💬 Other</option>
           </select>
         </div>
 
-        <!-- Page URL -->
-        <div>
-          <label for="pageUrl" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Page or job URL <span class="text-red-400">*</span></label>
+        <!-- Page URL (contextual — required for bugs, optional for features) -->
+        <div id="url-field">
+          <label for="pageUrl" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+            <span id="url-label">Related page or URL</span>
+          </label>
           <input
             type="url"
             id="pageUrl"
             name="pageUrl"
-            required
-            placeholder="https://health.designjobs.cv/jobs or the job listing URL"
+            placeholder="https://health.designjobs.cv/..."
             class="form-input"
           />
-          <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Link to the page or job listing with the issue</p>
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-1" id="url-hint">Link to the relevant page (optional for feature requests)</p>
+        </div>
+
+        <!-- Title (for feature requests) -->
+        <div id="title-field" class="hidden">
+          <label for="title" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Short title <span class="text-red-400">*</span></label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="e.g., Add salary range filter"
+            class="form-input"
+          />
         </div>
 
         <!-- Description -->
         <div>
-          <label for="description" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Describe the issue <span class="text-red-400">*</span></label>
+          <label for="description" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+            <span id="desc-label">Tell us more</span> <span class="text-red-400">*</span>
+          </label>
           <textarea
             id="description"
             name="description"
             required
             rows="4"
             maxlength="650"
-            placeholder="What's wrong? What did you expect to see?"
+            placeholder="What's wrong? What did you expect?"
             class="form-input"
             style="max-height: 200px;"
           ></textarea>
@@ -95,31 +117,31 @@ import Footer from '../components/Footer.astro';
           id="submit-btn"
           class="w-full py-3 bg-brand-500 text-white font-semibold rounded-2xl hover:bg-brand-600 transition-colors text-sm"
         >
-          Submit report
+          Send feedback
         </button>
 
         <p class="text-xs text-center text-slate-400 dark:text-slate-500">
-          Reports help us keep the board accurate. Thank you!
+          All feedback creates a GitHub issue so the community can track it.
         </p>
       </form>
 
     </div>
 
-    <!-- Success state — replaces entire form container -->
+    <!-- Success state -->
     <div id="success-msg" class="hidden max-w-lg mx-auto text-center py-24">
       <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-50 dark:bg-green-900/30 mb-6">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 6 9 17l-5-5" />
         </svg>
       </div>
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Thanks for reporting!</h2>
-      <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">We'll look into it and fix things up.</p>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Thanks for your feedback!</h2>
+      <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">We've created a GitHub issue to track this. The community can follow along and contribute.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-3">
         <a href="/jobs" class="px-6 py-3 bg-brand-500 text-white font-semibold rounded-2xl hover:bg-brand-600 transition-colors text-sm">
           Browse jobs
         </a>
         <a href="/report" class="px-6 py-3 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold rounded-2xl hover:border-brand-200 hover:text-brand-500 transition-[color,border-color] duration-150 text-sm">
-          Report another
+          Send more feedback
         </a>
       </div>
     </div>
@@ -188,12 +210,77 @@ import Footer from '../components/Footer.astro';
 </script>
 
 <script>
-  // Character counter
-  const desc = document.getElementById('description') as HTMLTextAreaElement;
-  const charCount = document.getElementById('char-count');
-  desc?.addEventListener('input', () => {
-    if (charCount) charCount.textContent = String(desc.value.length);
+  // Category-dependent form behavior
+  const categorySelect = document.getElementById('category') as HTMLSelectElement;
+  const urlField = document.getElementById('url-field');
+  const urlInput = document.getElementById('pageUrl') as HTMLInputElement;
+  const urlLabel = document.getElementById('url-label');
+  const urlHint = document.getElementById('url-hint');
+  const titleField = document.getElementById('title-field');
+  const titleInput = document.getElementById('title') as HTMLInputElement;
+  const descLabel = document.getElementById('desc-label');
+  const descInput = document.getElementById('description') as HTMLTextAreaElement;
+
+  const bugTypes = ['dead-link', 'wrong-info', 'spam', 'site-bug'];
+  const featureTypes = ['feature-request', 'enhancement', 'content'];
+
+  categorySelect?.addEventListener('change', () => {
+    const val = categorySelect.value;
+    const isBug = bugTypes.includes(val);
+    const isFeature = featureTypes.includes(val);
+
+    // URL field: required for bugs, optional for features
+    if (isBug) {
+      urlInput.required = true;
+      urlLabel!.innerHTML = 'Page or job URL <span class="text-red-400">*</span>';
+      urlHint!.textContent = 'Link to the page or job listing with the issue';
+      urlInput.placeholder = 'https://health.designjobs.cv/jobs or the job listing URL';
+    } else {
+      urlInput.required = false;
+      urlLabel!.textContent = 'Related page or URL';
+      urlHint!.textContent = 'Optional — link to anything relevant';
+      urlInput.placeholder = 'https://...';
+    }
+
+    // Title field: show for features
+    if (isFeature) {
+      titleField!.classList.remove('hidden');
+      titleInput.required = true;
+    } else {
+      titleField!.classList.add('hidden');
+      titleInput.required = false;
+    }
+
+    // Description placeholder
+    if (isFeature) {
+      descLabel!.textContent = 'Describe your idea';
+      descInput.placeholder = 'What problem does this solve? How would it work?';
+    } else if (isBug) {
+      descLabel!.textContent = 'Describe the issue';
+      descInput.placeholder = 'What\'s wrong? What did you expect to see?';
+    } else {
+      descLabel!.textContent = 'Tell us more';
+      descInput.placeholder = 'Share your thoughts...';
+    }
   });
+
+  // Character counter
+  const charCount = document.getElementById('char-count');
+  descInput?.addEventListener('input', () => {
+    if (charCount) charCount.textContent = String(descInput.value.length);
+  });
+
+  // GitHub label mapping
+  const labelMap: Record<string, string[]> = {
+    'dead-link': ['bug', 'dead-link'],
+    'wrong-info': ['bug', 'wrong-info'],
+    'spam': ['bug', 'spam'],
+    'site-bug': ['bug'],
+    'feature-request': ['enhancement'],
+    'enhancement': ['enhancement'],
+    'content': ['enhancement', 'content'],
+    'other': [],
+  };
 
   const form = document.getElementById('report-form') as HTMLFormElement;
   const formContainer = document.getElementById('form-container');
@@ -209,15 +296,18 @@ import Footer from '../components/Footer.astro';
     submitBtn.classList.add('opacity-75');
 
     const data = new FormData(form);
+    const category = data.get('category') as string;
     const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || '';
 
     const payload = {
       type: 'bug-report',
       reporterName: data.get('reporterName') as string || '',
       reporterEmail: data.get('reporterEmail') as string || '',
-      issueType: data.get('issueType') as string,
-      pageUrl: data.get('pageUrl') as string,
+      issueType: category,
+      title: data.get('title') as string || '',
+      pageUrl: data.get('pageUrl') as string || '',
       description: data.get('description') as string,
+      labels: labelMap[category] || [],
       website_url: data.get('website_url') as string || '',
       turnstileToken,
     };
@@ -240,7 +330,7 @@ import Footer from '../components/Footer.astro';
           errorMsg.classList.remove('hidden');
         }
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit report';
+        submitBtn.textContent = 'Send feedback';
         submitBtn.classList.remove('opacity-75');
         if (window.turnstile) window.turnstile.reset();
       }
@@ -250,7 +340,7 @@ import Footer from '../components/Footer.astro';
         errorMsg.classList.remove('hidden');
       }
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit report';
+      submitBtn.textContent = 'Send feedback';
       submitBtn.classList.remove('opacity-75');
     }
   });

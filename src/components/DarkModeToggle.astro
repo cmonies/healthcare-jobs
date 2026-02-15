@@ -33,12 +33,32 @@
     toggle?.setAttribute('aria-checked', String(dark));
   }
 
-  // Init
+  function toggleWithTransition() {
+    const next = !document.documentElement.classList.contains('dark');
+
+    // Use View Transitions API if available (Chrome 111+, Safari 18+)
+    if (document.startViewTransition) {
+      document.startViewTransition(() => setDark(next));
+    } else {
+      // Fallback: overlay fade
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;pointer-events:none;opacity:0;background:' + (next ? '#131416' : '#FAF7F0');
+      document.body.appendChild(overlay);
+      overlay.animate([
+        { opacity: 0 },
+        { opacity: 1, offset: 0.4 },
+        { opacity: 1, offset: 0.6 },
+        { opacity: 0 }
+      ], { duration: 400, easing: 'ease-in-out' }).onfinish = () => overlay.remove();
+      // Apply the change at the midpoint
+      setTimeout(() => setDark(next), 160);
+    }
+  }
+
+  // Init (no animation on load)
   const stored = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   setDark(stored === 'dark' || (!stored && prefersDark));
 
-  toggle?.addEventListener('click', () => {
-    setDark(!document.documentElement.classList.contains('dark'));
-  });
+  toggle?.addEventListener('click', toggleWithTransition);
 </script>

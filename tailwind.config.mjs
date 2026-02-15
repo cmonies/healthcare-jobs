@@ -41,6 +41,15 @@ export default {
           900: '#08090A',
           950: '#000000',
         },
+        // Dark mode surfaces (Carmen-picked 2026-02-15)
+        surface: {
+          page: '#131416',
+          header: '#0d0f12',
+          footer: '#0d0f12',
+          card: '#161718',
+          newsletter: '#161718',
+          'card-hover': '#090d20',
+        },
         // Keep sapphire for backwards compat during transition
         sapphire: {
           50: '#EEF0FE',

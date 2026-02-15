@@ -51,7 +51,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
       }
     </script>
   </head>
-  <body class="bg-warm-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
+  <body class="bg-warm-50 dark:bg-surface-page text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium">
       Skip to main content
     </a>
@@ -69,6 +69,21 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
+  /* Dark mode toggle transition (View Transitions API) */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 350ms;
+    animation-timing-function: ease-in-out;
+  }
+  ::view-transition-old(root) {
+    animation-name: fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: fade-in;
+  }
+  @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
   /* Button press feedback */
   a[class*="rounded-full"][class*="bg-sapphire"],
