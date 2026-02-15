@@ -10,7 +10,7 @@ export function GET(context: APIContext) {
     items: jobs.map(job => ({
       title: `${job.title} at ${job.company}`,
       link: job.url,
-      pubDate: new Date(job.postedDate),
+      ...(job.postedDate ? { pubDate: new Date(job.postedDate) } : {}),
       description: `${job.level} · ${job.locationType}${job.location !== 'USA' ? ` · ${job.location}` : ''} — ${job.tags.join(', ')}`,
     })),
   });
