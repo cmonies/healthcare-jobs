@@ -1,4 +1,5 @@
 ---
+import DarkModeToggle from './DarkModeToggle.astro';
 ---
 
 <footer role="contentinfo" class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 mt-8">
@@ -34,11 +35,12 @@
       </div>
     </div>
 
-    <div class="border-t border-slate-100 dark:border-slate-800 mt-8 pt-6 text-center">
+    <div class="border-t border-slate-100 dark:border-slate-800 mt-8 pt-6 flex items-center justify-between">
       <p class="text-xs text-slate-400 dark:text-slate-500">
         Made with care by <a href="https://carmen.cv/" target="_blank" class="text-brand-500 hover:underline">carmen.cv</a> for the healthcare design community · Open source on
         <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" class="text-brand-500 hover:underline">GitHub</a>
       </p>
+      <DarkModeToggle />
     </div>
   </div>
 </footer>

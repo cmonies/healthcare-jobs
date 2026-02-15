@@ -1,5 +1,4 @@
 ---
-import DarkModeToggle from './DarkModeToggle.astro';
 const currentPath = Astro.url.pathname;
 ---
 
@@ -42,7 +41,6 @@ const currentPath = Astro.url.pathname;
       <a href="https://discord.gg/designwithcare" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors">
         Community
       </a>
-      <DarkModeToggle />
       <a
         href="/submit"
         class="text-sm bg-brand-500 text-white px-5 py-2 rounded-xl hover:bg-brand-600 transition-colors font-medium shadow-soft"
@@ -53,7 +51,6 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile -->
     <div class="flex md:hidden items-center gap-2">
-      <DarkModeToggle />
       <button id="mobile-menu-btn" class="p-2 text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
         <svg id="menu-close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
