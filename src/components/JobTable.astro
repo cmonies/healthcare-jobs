@@ -1,0 +1,51 @@
+---
+import JobCard from './JobCard.astro';
+
+interface Job {
+  title: string;
+  company: string;
+  companyUrl: string;
+  level: string;
+  locationType: string;
+  location: string;
+  url: string;
+  postedDate: string;
+  tags: string[];
+}
+
+interface Props {
+  jobs: Job[];
+  /** Add data attributes for filtering (jobs page) */
+  filterable?: boolean;
+  /** Max stagger delay in ms */
+  maxDelay?: number;
+  /** Delay step per item in ms */
+  delayStep?: number;
+  id?: string;
+}
+
+const { jobs, filterable = false, maxDelay = 300, delayStep = 40, id } = Astro.props;
+---
+
+<div
+  class="bg-white dark:bg-slate-800 rounded-3xl shadow-soft overflow-hidden divide-y divide-slate-100 dark:divide-slate-700/50"
+  id={id}
+  role="list"
+  aria-label="Job listings"
+>
+  {jobs.map((job, i) => (
+    <div
+      role="listitem"
+      class:list={["reveal", filterable && "job-item"]}
+      data-delay={String(Math.min(i * delayStep, maxDelay))}
+      {...(filterable ? {
+        "data-level": job.level,
+        "data-location-type": job.locationType,
+        "data-location": job.location,
+        "data-search": `${job.title} ${job.company} ${job.location} ${job.tags.join(' ')}`.toLowerCase(),
+      } : {})}
+    >
+      <JobCard {...job} />
+    </div>
+  ))}
+</div>

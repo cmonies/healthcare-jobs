@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import JobCard from '../components/JobCard.astro';
+import JobTable from '../components/JobTable.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
@@ -104,13 +104,7 @@ const featuredJobs = jobs.slice(0, 8);
         View all →
       </a>
     </div>
-    <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-soft overflow-hidden">
-      {featuredJobs.map((job, i) => (
-        <div class="reveal" data-delay={String(Math.min(i * 40, 200))}>
-          <JobCard {...job} />
-        </div>
-      ))}
-    </div>
+    <JobTable jobs={featuredJobs} maxDelay={200} />
     <div class="reveal text-center mt-10" data-delay="200">
       <a
         href="/jobs"

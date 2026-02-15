@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import JobCard from '../components/JobCard.astro';
+import JobTable from '../components/JobTable.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
@@ -115,21 +115,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 
   <!-- Jobs List -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-20">
-    <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-soft overflow-hidden" id="jobs-list" role="list" aria-label="Job listings">
-      {jobs.map((job, i) => (
-        <div
-          role="listitem"
-          class="job-item reveal"
-          data-delay={String(Math.min(i * 30, 300))}
-          data-level={job.level}
-          data-location-type={job.locationType}
-          data-location={job.location}
-          data-search={`${job.title} ${job.company} ${job.location} ${job.tags.join(' ')}`.toLowerCase()}
-        >
-          <JobCard {...job} />
-        </div>
-      ))}
-    </div>
+    <JobTable jobs={jobs} filterable id="jobs-list" delayStep={30} />
     <p id="no-results" class="text-center text-slate-400 py-12 hidden">
       No jobs match your search. Try different keywords or filters!
     </p>
