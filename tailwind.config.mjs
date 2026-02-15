@@ -20,12 +20,12 @@ export default {
         },
         // Warmer creme — more linen
         warm: {
-          50: '#FEFCFA',
-          100: '#FDF8F3',
-          200: '#FAF0E4',
-          300: '#F5E6D3',
-          400: '#EDD9C2',
-          500: '#E8D0B5',
+          50: '#FFEDCC',
+          100: '#FFE4B5',
+          200: '#FFD89E',
+          300: '#FFCC87',
+          400: '#FFC070',
+          500: '#FFB459',
         },
         // Warm grays for light, cool neutrals for dark
         slate: {
