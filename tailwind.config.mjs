@@ -39,7 +39,7 @@ export default {
           700: '#3F3F46',
           800: '#27272A',
           900: '#18181B',
-          950: '#09090B',
+          950: '#181818',
         },
         // Keep sapphire for backwards compat during transition
         sapphire: {
