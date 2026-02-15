@@ -115,7 +115,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 
   <!-- Jobs List -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-20">
-    <div class="grid gap-3" id="jobs-list" role="list" aria-label="Job listings">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-soft overflow-hidden" id="jobs-list" role="list" aria-label="Job listings">
       {jobs.map((job, i) => (
         <div
           role="listitem"
