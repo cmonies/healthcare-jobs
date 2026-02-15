@@ -20,7 +20,7 @@ export default {
         },
         // Warmer creme — more linen
         warm: {
-          50: '#FFEDCC',
+          50: '#FFF1D6',
           100: '#FFE4B5',
           200: '#FFD89E',
           300: '#FFCC87',
