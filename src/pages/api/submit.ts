@@ -38,7 +38,8 @@ async function createGitHubIssue(
   token: string,
   repo: string,
   title: string,
-  body: string
+  body: string,
+  labels: string[] = ['job-submission']
 ): Promise<{ ok: boolean; url?: string; error?: string }> {
   const res = await fetch(`https://api.github.com/repos/${repo}/issues`, {
     method: 'POST',
@@ -51,7 +52,7 @@ async function createGitHubIssue(
     body: JSON.stringify({
       title,
       body,
-      labels: ['job-submission'],
+      labels,
     }),
   });
 
@@ -83,8 +84,12 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       });
     }
 
+    const isBugReport = body.type === 'bug-report';
+
     // 2. Required fields validation
-    const required = ['submitterName', 'submitterEmail', 'title', 'company', 'companyUrl', 'url', 'level', 'locationType', 'location'];
+    const required = isBugReport
+      ? ['issueType', 'pageUrl', 'description']
+      : ['submitterName', 'submitterEmail', 'title', 'company', 'companyUrl', 'url', 'level', 'locationType', 'location'];
     for (const field of required) {
       if (!body[field]?.trim()) {
         return new Response(JSON.stringify({ ok: false, error: `Missing required field: ${field}` }), {
@@ -94,17 +99,20 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       }
     }
 
-    // 3. Email format validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.submitterEmail)) {
-      return new Response(JSON.stringify({ ok: false, error: 'Invalid email address' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+    // 3. Email format validation (only required for job submissions)
+    if (!isBugReport) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(body.submitterEmail)) {
+        return new Response(JSON.stringify({ ok: false, error: 'Invalid email address' }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
     }
 
     // 4. URL validation
-    for (const urlField of ['companyUrl', 'url']) {
+    const urlFields = isBugReport ? ['pageUrl'] : ['companyUrl', 'url'];
+    for (const urlField of urlFields) {
       try {
         new URL(body[urlField]);
       } catch {
@@ -127,8 +135,8 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       }
     }
 
-    // 6. Rate limiting (server-side via KV)
-    if (KV) {
+    // 6. Rate limiting (server-side via KV, job submissions only)
+    if (KV && !isBugReport) {
       const { allowed, count } = await checkRateLimit(KV, body.submitterEmail);
       if (!allowed) {
         return new Response(JSON.stringify({
@@ -143,24 +151,51 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
 
     // 7. Create GitHub issue
     if (GITHUB_TOKEN) {
-      const issueTitle = `Add: ${body.title} at ${body.company}`;
-      const issueBody = [
-        `**Job Title:** ${body.title}`,
-        `**Company:** ${body.company}`,
-        `**Company URL:** ${body.companyUrl}`,
-        `**Job URL:** ${body.url}`,
-        `**Level:** ${body.level}`,
-        `**Location Type:** ${body.locationType}`,
-        `**Location:** ${body.location}`,
-        `**Tags:** ${body.tags || 'N/A'}`,
-        '',
-        '---',
-        `**Submitted by:** ${body.submitterName} (${body.submitterEmail})`,
-        `**IP:** ${clientAddress || 'unknown'}`,
-        '_Submitted via designwith.care_',
-      ].join('\n');
+      let issueTitle: string;
+      let issueBody: string;
+      let labels: string[];
 
-      const result = await createGitHubIssue(GITHUB_TOKEN, GITHUB_REPO, issueTitle, issueBody);
+      if (isBugReport) {
+        const issueTypeLabels: Record<string, string> = {
+          'dead-link': 'dead-link',
+          'wrong-info': 'wrong-info',
+          'spam': 'spam-report',
+          'site-bug': 'site-bug',
+          'other': 'other',
+        };
+        issueTitle = `Bug: ${body.issueType} — ${body.pageUrl}`;
+        issueBody = [
+          `**Issue Type:** ${body.issueType}`,
+          `**Page URL:** ${body.pageUrl}`,
+          `**Description:** ${body.description}`,
+          '',
+          '---',
+          body.reporterName ? `**Reported by:** ${body.reporterName}${body.reporterEmail ? ` (${body.reporterEmail})` : ''}` : '**Reported by:** Anonymous',
+          `**IP:** ${clientAddress || 'unknown'}`,
+          '_Reported via designwith.care/report_',
+        ].join('\n');
+        labels = ['bug-report', issueTypeLabels[body.issueType] || 'other'];
+      } else {
+        issueTitle = `Add: ${body.title} at ${body.company}`;
+        issueBody = [
+          `**Job Title:** ${body.title}`,
+          `**Company:** ${body.company}`,
+          `**Company URL:** ${body.companyUrl}`,
+          `**Job URL:** ${body.url}`,
+          `**Level:** ${body.level}`,
+          `**Location Type:** ${body.locationType}`,
+          `**Location:** ${body.location}`,
+          `**Tags:** ${body.tags || 'N/A'}`,
+          '',
+          '---',
+          `**Submitted by:** ${body.submitterName} (${body.submitterEmail})`,
+          `**IP:** ${clientAddress || 'unknown'}`,
+          '_Submitted via designwith.care_',
+        ].join('\n');
+        labels = ['job-submission'];
+      }
+
+      const result = await createGitHubIssue(GITHUB_TOKEN, GITHUB_REPO, issueTitle, issueBody, labels);
       if (!result.ok) {
         console.error('GitHub issue creation failed:', result.error);
         return new Response(JSON.stringify({ ok: false, error: 'Failed to create submission. Please try again.' }), {
@@ -169,8 +204,8 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
         });
       }
 
-      // Record successful submission for rate limiting
-      if (KV) {
+      // Record successful submission for rate limiting (job submissions only)
+      if (KV && !isBugReport) {
         await incrementRateLimit(KV, body.submitterEmail);
       }
 

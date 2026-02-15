@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Report an Issue — designwith.care" description="Found a broken link or something wrong? Let us know.">
+  <Header />
+
+  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-20">
+    <div class="max-w-2xl mx-auto">
+      <div class="mb-10 text-center">
+        <h1 class="animate-fade-in stagger-1 text-3xl font-bold text-gray-900 dark:text-white mb-3">Report an issue</h1>
+        <p class="animate-fade-in stagger-1 text-base text-gray-500 dark:text-gray-400">
+          Found a broken link, wrong info, or something else? Let us know and we'll fix it.
+        </p>
+      </div>
+
+      <form id="report-form" class="animate-fade-in stagger-2 space-y-6">
+        <!-- Reporter Info -->
+        <div class="bg-creme-100 dark:bg-gray-800/50 rounded-xl p-5 space-y-4">
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Your information</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="reporterName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Your Name</label>
+              <input type="text" id="reporterName" name="reporterName" placeholder="Optional" class="form-input" />
+            </div>
+            <div>
+              <label for="reporterEmail" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Your Email</label>
+              <input type="email" id="reporterEmail" name="reporterEmail" placeholder="Optional — for follow-up" class="form-input" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Honeypot -->
+        <div class="absolute opacity-0 pointer-events-none" aria-hidden="true" tabindex="-1">
+          <label for="website_url">Website</label>
+          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- Issue Type -->
+        <div>
+          <label for="issueType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">What's the issue? <span class="text-red-400">*</span></label>
+          <select id="issueType" name="issueType" required class="form-input">
+            <option value="">Select type</option>
+            <option value="dead-link">Dead or broken job link</option>
+            <option value="wrong-info">Wrong job information</option>
+            <option value="spam">Spam or fake listing</option>
+            <option value="site-bug">Website bug or display issue</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Page URL -->
+        <div>
+          <label for="pageUrl" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Page or job URL <span class="text-red-400">*</span></label>
+          <input
+            type="url"
+            id="pageUrl"
+            name="pageUrl"
+            required
+            placeholder="https://designwith.care/jobs or the job listing URL"
+            class="form-input"
+          />
+          <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Link to the page or job listing with the issue</p>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Describe the issue <span class="text-red-400">*</span></label>
+          <textarea
+            id="description"
+            name="description"
+            required
+            rows="4"
+            placeholder="What's wrong? What did you expect to see?"
+            class="form-input"
+          ></textarea>
+        </div>
+
+        <!-- Turnstile -->
+        <div id="turnstile-container"></div>
+        <input type="hidden" id="turnstile-token" name="turnstile-token" value="" />
+
+        <!-- Error -->
+        <div id="error-msg" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-sm text-red-600 dark:text-red-400"></div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full py-3 bg-sapphire-500 text-white font-semibold rounded-full hover:bg-sapphire-600 transition-colors text-sm"
+        >
+          Submit report
+        </button>
+
+        <p class="text-xs text-center text-gray-400 dark:text-gray-500">
+          Reports help us keep the board accurate. Thank you!
+        </p>
+      </form>
+
+      <!-- Success -->
+      <div id="success-msg" class="hidden text-center py-16">
+        <div class="text-5xl mb-4">🙏</div>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Thanks for reporting!</h2>
+        <p class="text-gray-500 dark:text-gray-400 mb-6">We'll look into it and fix things up.</p>
+        <a href="/jobs" class="text-sapphire-500 font-medium hover:underline">← Back to jobs</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 0.875rem;
+    color: #111827;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: #7EA2E1;
+    box-shadow: 0 0 0 3px rgba(15, 82, 186, 0.1);
+  }
+  .form-input::placeholder {
+    color: #9ca3af;
+  }
+  :global(.dark) .form-input {
+    background: #111827;
+    border-color: #374151;
+    color: #f3f4f6;
+  }
+  :global(.dark) .form-input::placeholder {
+    color: #6b7280;
+  }
+  :global(.dark) .form-input:focus {
+    border-color: #5383D7;
+    box-shadow: 0 0 0 3px rgba(15, 82, 186, 0.2);
+  }
+  select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+  }
+  textarea.form-input {
+    resize: vertical;
+    min-height: 100px;
+  }
+</style>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+
+<script is:inline>
+  function onTurnstileLoad() {
+    turnstile.render('#turnstile-container', {
+      sitekey: '0x4AAAAAACckLBTY6z74gBae',
+      theme: 'auto',
+      callback: function(token) {
+        document.getElementById('turnstile-token').value = token;
+      },
+    });
+  }
+</script>
+
+<script>
+  const form = document.getElementById('report-form') as HTMLFormElement;
+  const successMsg = document.getElementById('success-msg');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const errorMsg = document.getElementById('error-msg');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.classList.add('opacity-75');
+
+    const data = new FormData(form);
+    const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || '';
+
+    const payload = {
+      type: 'bug-report',
+      reporterName: data.get('reporterName') as string || '',
+      reporterEmail: data.get('reporterEmail') as string || '',
+      issueType: data.get('issueType') as string,
+      pageUrl: data.get('pageUrl') as string,
+      description: data.get('description') as string,
+      website_url: data.get('website_url') as string || '',
+      turnstileToken,
+    };
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json() as { ok: boolean; error?: string };
+
+      if (result.ok) {
+        form.style.display = 'none';
+        successMsg?.classList.remove('hidden');
+      } else {
+        if (errorMsg) {
+          errorMsg.textContent = result.error || 'Something went wrong. Please try again.';
+          errorMsg.classList.remove('hidden');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit report';
+        submitBtn.classList.remove('opacity-75');
+        if (window.turnstile) window.turnstile.reset();
+      }
+    } catch (err) {
+      if (errorMsg) {
+        errorMsg.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.classList.remove('hidden');
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit report';
+      submitBtn.classList.remove('opacity-75');
+    }
+  });
+</script>
