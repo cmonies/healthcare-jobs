@@ -12,6 +12,20 @@ const featuredJobs = jobs.slice(0, 10);
 <Layout title="designwith.care — Healthcare UX Jobs">
   <Header />
 
+  <!-- JSON-LD: Website + Organization structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "designwith.care",
+    "url": "https://designwith.care",
+    "description": "Healthcare UX jobs, curated by the community. Open source and free forever.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://designwith.care/jobs?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  })} />
+
   <!-- Hero -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-20 pb-16 text-center">
     <div class="animate-fade-up stagger-1 inline-flex items-center gap-2 bg-sapphire-50 dark:bg-sapphire-900/30 text-sapphire-500 text-sm font-medium px-4 py-1.5 rounded-full mb-6">

@@ -1,0 +1,25 @@
+# designwith.care
+
+> Healthcare UX jobs, curated by the community. Open source and free forever.
+
+designwith.care is a job board focused exclusively on UX, product design, and design research roles at healthcare and health-tech companies. Jobs are sourced from company career pages and verified for accuracy.
+
+## Pages
+
+- /: Homepage with featured jobs and value proposition
+- /jobs: All job listings with search, location filter, and level/type filters
+- /submit: Submit a new job listing for review
+- /report: Report broken links or issues
+- /rss.xml: RSS feed of all job listings
+
+## Data
+
+- Jobs are stored in JSON format and updated 3x/week (Mon, Wed, Fri)
+- Each job includes: title, company, level, location, location type, tags, direct application URL, and posted date
+- All job URLs are verified via automated browser validation before publishing
+
+## Open Source
+
+Source code: https://github.com/cmonies/healthcare-jobs
+Built with Astro, Tailwind CSS, deployed on Vercel.
+Created by carmen.cv for the healthcare design community.

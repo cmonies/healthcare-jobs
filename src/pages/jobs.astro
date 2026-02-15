@@ -17,8 +17,38 @@ const locationCounts: Record<string, number> = {};
 locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationType === lt).length; });
 ---
 
-<Layout title="All Jobs — designwith.care">
+<Layout title="All Jobs — designwith.care" description={`${jobs.length} healthcare UX jobs from companies that care. Browse product designer, UX designer, and UX researcher roles at health-tech companies.`}>
   <Header />
+
+  <!-- JSON-LD: JobPosting structured data for search engines -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Healthcare UX Jobs",
+    "description": `${jobs.length} healthcare UX design roles from companies that care`,
+    "numberOfItems": jobs.length,
+    "itemListElement": jobs.slice(0, 50).map((job, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "JobPosting",
+        "title": job.title,
+        "datePosted": job.postedDate,
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": job.company,
+          "sameAs": job.companyUrl
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": job.locationType === 'Remote' ? { "@type": "PostalAddress", "addressCountry": "US" } : { "@type": "PostalAddress", "addressLocality": job.location }
+        },
+        "jobLocationType": job.locationType === 'Remote' ? "TELECOMMUTE" : undefined,
+        "url": job.url,
+        "employmentType": "FULL_TIME"
+      }
+    }))
+  })} />
 
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-6">
     <h1 class="animate-fade-in stagger-1 text-3xl font-bold text-gray-900 dark:text-white mb-2">All jobs</h1>
@@ -34,7 +64,8 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
         </svg>
         <input
           id="search-input"
-          type="text"
+          type="search"
+          aria-label="Search jobs by title, company, location, or tag"
           placeholder="Search by title, company, location, or tag..."
           class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-sapphire-300 dark:focus:border-sapphire-700 focus:ring-2 focus:ring-sapphire-100 dark:focus:ring-sapphire-900/50 transition-[border-color,box-shadow] duration-150"
         />
@@ -45,6 +76,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
         </svg>
         <select
           id="location-select"
+          aria-label="Filter by location"
           class="w-full appearance-none pl-9 pr-8 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:border-sapphire-300 dark:focus:border-sapphire-700 focus:ring-2 focus:ring-sapphire-100 dark:focus:ring-sapphire-900/50 transition-[border-color,box-shadow] duration-150 cursor-pointer"
         >
           <option value="">All locations</option>
@@ -81,9 +113,10 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 
   <!-- Jobs List -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-20">
-    <div class="grid gap-3" id="jobs-list">
+    <div class="grid gap-3" id="jobs-list" role="list" aria-label="Job listings">
       {jobs.map((job, i) => (
         <div
+          role="listitem"
           class="job-item reveal"
           data-delay={String(Math.min(i * 30, 300))}
           data-level={job.level}
