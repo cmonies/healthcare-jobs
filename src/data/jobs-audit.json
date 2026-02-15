@@ -58,5 +58,65 @@
     "discoveredAt": "2026-02-15T18:54:00Z",
     "verifiedAt": "2026-02-15T18:54:16Z",
     "verificationMethod": "web_fetch"
+  },
+  {
+    "id": "spring-health-senior-product-designer-member-growth",
+    "title": "Senior Product Designer, Member Growth",
+    "company": "Spring Health",
+    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4650623005",
+    "publishedAt": "2026-02-15T11:37:18.838064",
+    "sourceUrl": "https://job-boards.greenhouse.io/springhealth66",
+    "sourceQuery": "site:job-boards.greenhouse.io product designer healthcare 2026",
+    "discoveredAt": "2026-02-15T19:29:00Z",
+    "verifiedAt": "2026-02-15T19:29:29Z",
+    "verificationMethod": "web_fetch"
+  },
+  {
+    "id": "redox-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Redox",
+    "url": "https://jobs.lever.co/redoxengine/daac8d18-daa4-4d30-b3db-8107088e0df8",
+    "publishedAt": "2026-02-15T11:37:18.838079",
+    "sourceUrl": "https://jobs.lever.co/redoxengine/daac8d18-daa4-4d30-b3db-8107088e0df8",
+    "sourceQuery": "site:jobs.lever.co product designer healthcare",
+    "discoveredAt": "2026-02-15T19:29:00Z",
+    "verifiedAt": "2026-02-15T19:29:30Z",
+    "verificationMethod": "web_fetch"
+  },
+  {
+    "id": "atropos-health-product-designer",
+    "title": "Product Designer",
+    "company": "Atropos Health",
+    "url": "https://jobs.ashbyhq.com/atroposhealth/f5e728f4-828e-4c5a-8cdf-2fc47b3611cd",
+    "publishedAt": "2026-02-15T11:37:18.838085",
+    "sourceUrl": "https://jobs.ashbyhq.com/atroposhealth/f5e728f4-828e-4c5a-8cdf-2fc47b3611cd",
+    "sourceQuery": "site:jobs.ashbyhq.com product designer health",
+    "discoveredAt": "2026-02-15T19:29:48Z",
+    "verifiedAt": "2026-02-15T19:29:48Z",
+    "verificationMethod": "needs-browser"
+  },
+  {
+    "id": "3y-health-ai-product-designer",
+    "title": "AI Product Designer",
+    "company": "3Y Health",
+    "url": "https://jobs.ashbyhq.com/3y-health/336909dc-704f-4653-9722-d8dfc99e98a8",
+    "publishedAt": "2026-02-15T11:37:18.838090",
+    "sourceUrl": "https://jobs.ashbyhq.com/3y-health/336909dc-704f-4653-9722-d8dfc99e98a8",
+    "sourceQuery": "site:jobs.ashbyhq.com product designer health",
+    "discoveredAt": "2026-02-15T19:29:48Z",
+    "verifiedAt": "2026-02-15T19:29:48Z",
+    "verificationMethod": "needs-browser"
+  },
+  {
+    "id": "intuscare-senior-ux-researcher",
+    "title": "Senior UX Researcher",
+    "company": "IntusCare",
+    "url": "https://jobs.ashbyhq.com/intus/13777068-4374-47fe-8aa3-858de1c2ab2a",
+    "publishedAt": "2026-02-15T11:37:18.838094",
+    "sourceUrl": "https://jobs.ashbyhq.com/intus/13777068-4374-47fe-8aa3-858de1c2ab2a",
+    "sourceQuery": "UX researcher healthcare site:jobs.ashbyhq.com",
+    "discoveredAt": "2026-02-15T19:30:02Z",
+    "verifiedAt": "2026-02-15T19:30:02Z",
+    "verificationMethod": "needs-browser"
   }
 ]
