@@ -3,27 +3,25 @@
 
 <button
   id="dark-mode-toggle"
-  class="relative inline-flex items-center h-7 w-12 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-700 transition-colors cursor-pointer shrink-0"
+  class="relative inline-flex items-center h-7 w-12 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 transition-colors cursor-pointer shrink-0"
   aria-label="Toggle dark mode"
   role="switch"
   aria-checked="false"
 >
-  <!-- Track icons -->
-  <span class="absolute left-1.5 text-amber-400 transition-opacity opacity-100 dark:opacity-0" aria-hidden="true">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+  <!-- Thumb with icon inside -->
+  <span
+    id="toggle-thumb"
+    class="inline-flex items-center justify-center h-5 w-5 rounded-full bg-white dark:bg-slate-600 shadow-sm transform transition-transform translate-x-0.5 dark:translate-x-[1.375rem]"
+  >
+    <!-- Sun (light mode) -->
+    <svg class="h-3 w-3 text-amber-500 dark:hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
     </svg>
-  </span>
-  <span class="absolute right-1.5 text-brand-300 transition-opacity opacity-0 dark:opacity-100" aria-hidden="true">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <!-- Moon (dark mode) -->
+    <svg class="h-3 w-3 text-brand-300 hidden dark:block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </span>
-  <!-- Thumb -->
-  <span
-    id="toggle-thumb"
-    class="inline-block h-5 w-5 rounded-full bg-white shadow-sm transform transition-transform translate-x-0.5 dark:translate-x-[1.375rem]"
-  ></span>
 </button>
 
 <script is:inline>

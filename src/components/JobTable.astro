@@ -24,11 +24,11 @@ interface Props {
   id?: string;
 }
 
-const { jobs, filterable = false, maxDelay = 300, delayStep = 40, id } = Astro.props;
+const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.props;
 ---
 
 <div
-  class="bg-white dark:bg-slate-800 rounded-3xl shadow-soft overflow-hidden divide-y divide-slate-100 dark:divide-slate-700/50"
+  class="bg-white dark:bg-slate-950 rounded-3xl shadow-soft overflow-hidden"
   id={id}
   role="list"
   aria-label="Job listings"
@@ -36,7 +36,7 @@ const { jobs, filterable = false, maxDelay = 300, delayStep = 40, id } = Astro.p
   {jobs.map((job, i) => (
     <div
       role="listitem"
-      class:list={["reveal", filterable && "job-item"]}
+      class:list={["reveal job-row border-b border-slate-100 dark:border-slate-700/30", filterable && "job-item"]}
       data-delay={String(Math.min(i * delayStep, maxDelay))}
       {...(filterable ? {
         "data-level": job.level,

@@ -20,7 +20,7 @@ export default {
         },
         // Warmer creme — more linen
         warm: {
-          50: '#FFF7E6',
+          50: '#FAF7F0',
           100: '#FFE4B5',
           200: '#FFD89E',
           300: '#FFCC87',
@@ -36,10 +36,10 @@ export default {
           400: '#A1A1AA',
           500: '#71717A',
           600: '#52525B',
-          700: '#3F3F46',
-          800: '#1E1E1E',
-          900: '#18181B',
-          950: '#181818',
+          700: '#232326',
+          800: '#131313',
+          900: '#08090A',
+          950: '#000000',
         },
         // Keep sapphire for backwards compat during transition
         sapphire: {

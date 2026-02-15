@@ -16,7 +16,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#FFF7E6" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#181818" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="format-detection" content="telephone=no" />
@@ -51,7 +51,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
       }
     </script>
   </head>
-  <body class="bg-warm-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
+  <body class="bg-warm-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium">
       Skip to main content
     </a>
@@ -127,13 +127,21 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
   /* Intersection observer reveal — hidden by default, JS adds .visible */
   .js-ready .reveal {
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.2s var(--ease-out-cubic), transform 0.2s var(--ease-out-cubic);
+    transform: translateY(8px);
+    transition: opacity 150ms var(--ease-out-quart), transform 150ms var(--ease-out-quart);
     will-change: transform, opacity;
   }
   .js-ready .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  /* List items: opacity only, no vertical shift — snappier for repeated elements */
+  .js-ready .reveal.reveal-fade {
+    transform: none;
+    transition: opacity 120ms var(--ease-out-cubic);
+  }
+  .js-ready .reveal.reveal-fade.visible {
+    transform: none;
   }
 
   /* Accessibility: respect reduced motion */
@@ -143,7 +151,8 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
       animation: none;
       opacity: 1;
     }
-    .js-ready .reveal {
+    .js-ready .reveal,
+    .js-ready .reveal.reveal-fade {
       transition: none;
       opacity: 1;
       transform: none;
