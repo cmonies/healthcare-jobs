@@ -6,7 +6,8 @@ import JobCard from '../components/JobCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
-const levels = [...new Set(jobs.map(j => j.level))];
+const levelOrder = ['Mid', 'Senior', 'Staff', 'Lead', 'Principal', 'Director'];
+const levels = levelOrder.filter(l => jobs.some(j => j.level === l));
 const locationTypes = [...new Set(jobs.map(j => j.locationType))];
 const locations = [...new Set(jobs.map(j => j.location))].sort();
 
