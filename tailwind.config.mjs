@@ -7,16 +7,16 @@ export default {
       colors: {
         // Warmer, softer blue — inviting, not corporate
         brand: {
-          50: '#F0F4FF',
-          100: '#DDE6FD',
-          200: '#BCCDFB',
-          300: '#93AEF8',
-          400: '#6B8FF5',
-          500: '#4A6CF7',  // Primary — warm periwinkle
-          600: '#3B56D4',
-          700: '#2D42B0',
-          800: '#1F2E8C',
-          900: '#141E5A',
+          50: '#EEF0FE',
+          100: '#D9DEFE',
+          200: '#B3BCFD',
+          300: '#8D9AFC',
+          400: '#5872FA',
+          500: '#244BF8',  // Primary
+          600: '#1C3CD6',
+          700: '#152EB3',
+          800: '#0F2091',
+          900: '#0A1560',
         },
         // Warmer creme — more linen
         warm: {
@@ -43,16 +43,16 @@ export default {
         },
         // Keep sapphire for backwards compat during transition
         sapphire: {
-          50: '#F0F4FF',
-          100: '#DDE6FD',
-          200: '#BCCDFB',
-          300: '#93AEF8',
-          400: '#6B8FF5',
-          500: '#4A6CF7',
-          600: '#3B56D4',
-          700: '#2D42B0',
-          800: '#1F2E8C',
-          900: '#141E5A',
+          50: '#EEF0FE',
+          100: '#D9DEFE',
+          200: '#B3BCFD',
+          300: '#8D9AFC',
+          400: '#5872FA',
+          500: '#244BF8',
+          600: '#1C3CD6',
+          700: '#152EB3',
+          800: '#0F2091',
+          900: '#0A1560',
         },
         creme: {
           50: '#FEFCFA',
