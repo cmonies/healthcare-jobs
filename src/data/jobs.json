@@ -470,5 +470,130 @@
       "startup"
     ],
     "_notes": "Page title confirmed 'Senior Product Designer'. Active EEO application form present. Company is Allara Health (PCOS/hormonal health). No posted date found on page; using discovery date as approximate."
+  },
+  {
+    "id": "overjet-lead-ai-product-designer-flagship",
+    "title": "Lead AI Product Designer, Flagship Product",
+    "company": "Overjet",
+    "companyUrl": "https://www.overjet.com",
+    "level": "Lead",
+    "locationType": "Hybrid",
+    "location": "San Mateo, CA",
+    "url": "https://jobs.ashbyhq.com/Overjet/c76fd02b-11e1-4630-bfb1-2f5fedb82295",
+    "postedDate": "",
+    "tags": [
+      "dental AI",
+      "B2B",
+      "enterprise",
+      "AI",
+      "diagnostic imaging"
+    ]
+  },
+  {
+    "id": "overjet-lead-ai-product-designer-new-product",
+    "title": "Lead AI Product Designer, New Product",
+    "company": "Overjet",
+    "companyUrl": "https://www.overjet.com",
+    "level": "Lead",
+    "locationType": "Hybrid",
+    "location": "San Mateo, CA",
+    "url": "https://jobs.ashbyhq.com/Overjet/d34856aa-2e72-4a96-9e12-dece535938ae",
+    "postedDate": "",
+    "tags": [
+      "dental AI",
+      "B2B",
+      "enterprise",
+      "AI",
+      "RCM",
+      "0-to-1"
+    ]
+  },
+  {
+    "id": "spring-health-senior-product-designer-member-growth",
+    "title": "Senior Product Designer, Member Growth",
+    "company": "Spring Health",
+    "companyUrl": "https://www.springhealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4650623005",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "mental health",
+      "B2C",
+      "consumer",
+      "startup"
+    ],
+    "_notes": "Page title confirmed 'Senior Product Designer, Member Growth'. Active listing with full JD. Must be based in Seattle metro, hybrid 2-3 days/week. 5+ years experience required. Reports to Senior Design Manager of Member Growth. No posted date found; using discovery date."
+  },
+  {
+    "id": "redox-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Redox",
+    "companyUrl": "https://www.redoxengine.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.lever.co/redoxengine/daac8d18-daa4-4d30-b3db-8107088e0df8",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "EHR",
+      "B2B",
+      "enterprise",
+      "AI"
+    ],
+    "_notes": "Full JD confirmed. Healthcare interoperability platform processing 1.2B messages/month. $156k-$184k base. 5+ years experience. Figma required. Lever page fully renders with Apply button."
+  },
+  {
+    "id": "atropos-health-product-designer",
+    "title": "Product Designer",
+    "company": "Atropos Health",
+    "companyUrl": "https://www.atroposhealth.com",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/atroposhealth/f5e728f4-828e-4c5a-8cdf-2fc47b3611cd",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "AI",
+      "clinical trials",
+      "B2B",
+      "startup"
+    ],
+    "_notes": "Ashby page title confirmed 'Product Designer @ Atropos Health'. Ashby is JS-rendered so full JD not visible via web_fetch. Atropos Health uses AI for real-world evidence in healthcare. Described as 'first Product Designer' role. Needs browser verification for full details."
+  },
+  {
+    "id": "3y-health-ai-product-designer",
+    "title": "AI Product Designer",
+    "company": "3Y Health",
+    "companyUrl": "https://www.3yhealth.com",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/3y-health/336909dc-704f-4653-9722-d8dfc99e98a8",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "AI",
+      "B2B",
+      "startup"
+    ],
+    "_notes": "Ashby page title confirmed 'AI Product Designer @ 3Y Health'. Backed by $200M+ from Founders Fund, General Catalyst, Softbank, 8VC. Designing agentic AI systems for healthcare. Needs browser verification for full details including location/remote status."
+  },
+  {
+    "id": "intuscare-senior-ux-researcher",
+    "title": "Senior UX Researcher",
+    "company": "IntusCare",
+    "companyUrl": "https://www.intuscare.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/intus/13777068-4374-47fe-8aa3-858de1c2ab2a",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "B2B",
+      "enterprise",
+      "startup"
+    ],
+    "_notes": "Ashby page title confirmed 'Senior UX Researcher @ IntusCare'. IntusCare is a healthcare analytics company focused on PACE programs for elderly care. Partners with product design, PM, engineering, and clinical experts. Needs browser verification for full details."
   }
 ]
