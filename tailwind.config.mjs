@@ -27,19 +27,19 @@ export default {
           400: '#EDD9C2',
           500: '#E8D0B5',
         },
-        // Warm grays instead of cool
+        // Warm grays for light, cool neutrals for dark
         slate: {
           50: '#FAFAF9',
           100: '#F5F5F4',
           200: '#E7E5E4',
           300: '#D6D3D1',
-          400: '#A8A29E',
-          500: '#78716C',
-          600: '#57534E',
-          700: '#44403C',
-          800: '#292524',
-          900: '#1C1917',
-          950: '#0C0A09',
+          400: '#A1A1AA',
+          500: '#71717A',
+          600: '#52525B',
+          700: '#3F3F46',
+          800: '#27272A',
+          900: '#18181B',
+          950: '#09090B',
         },
         // Keep sapphire for backwards compat during transition
         sapphire: {
