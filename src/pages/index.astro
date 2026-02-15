@@ -9,19 +9,19 @@ import jobs from '../data/jobs.json';
 const featuredJobs = jobs.slice(0, 10);
 ---
 
-<Layout title="designwith.care — Healthcare UX Jobs">
+<Layout title="designjobs — Healthcare UX Jobs">
   <Header />
 
   <!-- JSON-LD: Website + Organization structured data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "designwith.care",
-    "url": "https://designwith.care",
+    "name": "designjobs",
+    "url": "https://health.designjobs.cv",
     "description": "Healthcare UX jobs, curated by the community. Open source and free forever.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://designwith.care/jobs?q={search_term_string}",
+      "target": "https://health.designjobs.cv/jobs?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   })} />

@@ -4,9 +4,9 @@ import jobs from '../data/jobs.json';
 
 export function GET(context: APIContext) {
   return rss({
-    title: 'designwith.care — Healthcare UX Jobs',
+    title: 'designjobs — Healthcare UX Jobs',
     description: 'Healthcare UX jobs, curated by the community.',
-    site: context.site || 'https://designwith.care',
+    site: context.site || 'https://health.designjobs.cv',
     items: jobs.map(job => ({
       title: `${job.title} at ${job.company}`,
       link: job.url,

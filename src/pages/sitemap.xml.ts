@@ -1,7 +1,7 @@
 import type { APIContext } from 'astro';
 
 export function GET(context: APIContext) {
-  const site = context.site || new URL('https://designwith.care');
+  const site = context.site || new URL('https://health.designjobs.cv');
   const pages = ['', '/jobs', '/submit', '/report'];
   
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

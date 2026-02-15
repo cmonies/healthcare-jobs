@@ -47,7 +47,7 @@ async function createGitHubIssue(
       Authorization: `Bearer ${token}`,
       Accept: 'application/vnd.github+json',
       'Content-Type': 'application/json',
-      'User-Agent': 'designwith.care',
+      'User-Agent': 'health.designjobs.cv',
     },
     body: JSON.stringify({
       title,
@@ -172,7 +172,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           '---',
           body.reporterName ? `**Reported by:** ${body.reporterName}${body.reporterEmail ? ` (${body.reporterEmail})` : ''}` : '**Reported by:** Anonymous',
           `**IP:** ${clientAddress || 'unknown'}`,
-          '_Reported via designwith.care/report_',
+          '_Reported via health.designjobs.cv/report_',
         ].join('\n');
         labels = ['bug-report', issueTypeLabels[body.issueType] || 'other'];
       } else {
@@ -190,7 +190,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           '---',
           `**Submitted by:** ${body.submitterName} (${body.submitterEmail})`,
           `**IP:** ${clientAddress || 'unknown'}`,
-          '_Submitted via designwith.care_',
+          '_Submitted via health.designjobs.cv_',
         ].join('\n');
         labels = ['job-submission'];
       }

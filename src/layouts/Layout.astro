@@ -5,7 +5,7 @@ interface Props {
 }
 
 const { title, description = "Healthcare UX jobs, curated by the community. Open source and free forever." } = Astro.props;
-const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
+const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv');
 ---
 
 <!doctype html>
@@ -25,18 +25,18 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designwith.care');
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl.href} />
-    <meta property="og:site_name" content="designwith.care" />
-    <meta property="og:image" content="https://designwith.care/og-image.png" />
+    <meta property="og:site_name" content="designjobs" />
+    <meta property="og:image" content="https://health.designjobs.cv/og-image.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://designwith.care/og-image.png" />
+    <meta name="twitter:image" content="https://health.designjobs.cv/og-image.png" />
 
     <link rel="canonical" href={canonicalUrl.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" type="application/rss+xml" title="designwith.care Jobs Feed" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="designjobs Healthcare Jobs Feed" href="/rss.xml" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

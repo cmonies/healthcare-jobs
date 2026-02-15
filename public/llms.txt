@@ -1,8 +1,8 @@
-# designwith.care
+# designjobs — Healthcare
 
 > Healthcare UX jobs, curated by the community. Open source and free forever.
 
-designwith.care is a job board focused exclusively on UX, product design, and design research roles at healthcare and health-tech companies. Jobs are sourced from company career pages and verified for accuracy.
+health.designjobs.cv is the healthcare vertical of designjobs, a job board platform for design roles. This vertical focuses exclusively on UX, product design, and design research roles at healthcare and health-tech companies. Jobs are sourced from company career pages and verified for accuracy.
 
 ## Pages
 
@@ -18,8 +18,12 @@ designwith.care is a job board focused exclusively on UX, product design, and de
 - Each job includes: title, company, level, location, location type, tags, direct application URL, and posted date
 - All job URLs are verified via automated browser validation before publishing
 
+## Other Verticals
+
+designjobs.cv will expand to cover additional design job verticals including AI and trade-based UX roles.
+
 ## Open Source
 
 Source code: https://github.com/cmonies/healthcare-jobs
 Built with Astro, Tailwind CSS, deployed on Vercel.
-Created by carmen.cv for the healthcare design community.
+Created by carmen.cv for the design community.
