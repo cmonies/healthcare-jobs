@@ -1,29 +1,51 @@
-# designjobs — Healthcare
+# designjobs — Healthcare UX Jobs
 
 > Healthcare UX jobs, curated by the community. Open source and free forever.
 
-health.designjobs.cv is the healthcare vertical of designjobs, a job board platform for design roles. This vertical focuses exclusively on UX, product design, and design research roles at healthcare and health-tech companies. Jobs are sourced from company career pages and verified for accuracy.
+## About
+
+health.designjobs.cv is the healthcare vertical of designjobs, a community-curated job board for design roles. This vertical focuses exclusively on UX, product design, and design research roles at healthcare and health-tech companies.
+
+## Current Stats
+
+- 24 verified job listings
+- 19 companies represented
+- Levels: Mid, Senior, Staff, Lead, Director
+- Location types: Remote, Hybrid, Onsite
+- Updated 3x/week (Monday, Wednesday, Friday)
 
 ## Pages
 
-- /: Homepage with featured jobs and value proposition
-- /jobs: All job listings with search, location filter, and level/type filters
-- /submit: Submit a new job listing for review
-- /report: Report broken links or issues
-- /rss.xml: RSS feed of all job listings
+- / — Homepage with featured jobs and value proposition
+- /jobs — All job listings with search, location filter, and level/type filters
+- /submit — Submit a new job listing for community review
+- /report — Report broken links, wrong info, or site bugs
+- /rss.xml — RSS feed of all job listings
+- /sitemap.xml — XML sitemap
 
-## Data
+## How It Works
 
-- Jobs are stored in JSON format and updated 3x/week (Mon, Wed, Fri)
-- Each job includes: title, company, level, location, location type, tags, direct application URL, and posted date
-- All job URLs are verified via automated browser validation before publishing
+1. Jobs are sourced from company career pages via community submissions and automated discovery
+2. Every job URL is verified via automated browser validation before publishing
+3. Listings are checked for accuracy 3x/week; dead links are automatically removed
+4. Anyone can submit a job or report an issue
 
-## Other Verticals
+## Job Data Format
 
-designjobs.cv will expand to cover additional design job verticals including AI and trade-based UX roles.
+Each job includes: title, company, company URL, seniority level, location type (Remote/Hybrid/Onsite), location, tags (e.g. telehealth, mental health, B2C), direct application URL, and posted date.
+
+## Companies Hiring (Current)
+
+Abridge, Blink Health, CVS Health, Candid Health, Flo Health, GE HealthCare, Garner Health, Headway, Included Health, Layer Health, Omada Health, OpenAI, PointClickCare, Qualified Health, Ro, Samsung Research America, Solace, Virta Health, athenahealth
 
 ## Open Source
 
-Source code: https://github.com/cmonies/healthcare-jobs
-Built with Astro, Tailwind CSS, deployed on Vercel.
-Created by carmen.cv for the design community.
+- Source: https://github.com/cmonies/healthcare-jobs
+- Built with: Astro 5, Tailwind CSS, deployed on Vercel
+- Created by: carmen.cv
+
+## Contact
+
+- Report issues: /report
+- Submit jobs: /submit
+- Email: hello@freddiesocial.com

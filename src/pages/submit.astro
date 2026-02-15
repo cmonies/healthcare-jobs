@@ -7,6 +7,7 @@ import Footer from '../components/Footer.astro';
 <Layout title="Submit a Job — designjobs" description="Submit a healthcare UX job listing to the community-curated board.">
   <Header />
 
+  <main id="main-content">
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pt-12 pb-20">
     <div id="form-container" class="max-w-2xl mx-auto">
       <div class="mb-10 text-center">
@@ -48,7 +49,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Honeypot (hidden from humans) -->
-        <div class="absolute opacity-0 pointer-events-none" aria-hidden="true" tabindex="-1">
+        <div class="!absolute !opacity-0 !h-0 !overflow-hidden pointer-events-none" aria-hidden="true" tabindex="-1">
           <label for="website_url">Website</label>
           <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
         </div>
@@ -225,6 +226,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
+  </main>
 
   <Footer />
 </Layout>

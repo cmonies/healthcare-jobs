@@ -20,6 +20,7 @@ const levelColors: Record<string, string> = {
   'Staff': 'bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
   'Lead': 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400',
   'Principal': 'bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+  'Director': 'bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-400',
 };
 
 const locationIcon = locationType === 'Remote' ? '🌍' : locationType === 'Hybrid' ? '🏢' : '📍';
@@ -32,70 +33,70 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="block border-b border-gray-200 dark:border-gray-800 hover:bg-creme-50 dark:hover:bg-gray-800/50 transition-colors duration-150 group py-5 px-2 md:px-4"
+  class="block border-b border-slate-100 dark:border-slate-700/50 last:border-b-0 hover:bg-warm-50 dark:hover:bg-slate-700/30 transition-colors duration-150 group py-4 px-5 md:px-6"
 >
   <!-- Desktop: horizontal row -->
   <div class="hidden md:flex items-center gap-6">
     <div class="flex-1 min-w-0">
-      <h3 class="text-base font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors truncate">
+      <h3 class="text-[15px] font-semibold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors truncate">
         {title}
       </h3>
-      <div class="flex items-center gap-2 mt-2">
-        <span class="text-sm text-gray-500 dark:text-gray-400">{company}</span>
+      <div class="flex items-center gap-2 mt-1.5">
+        <span class="text-sm text-slate-500 dark:text-slate-400">{company}</span>
         {tags.length > 0 && (
           <div class="hidden xl:flex items-center gap-1.5">
             {tags.slice(0, 2).map(tag => (
-              <span class="text-xs text-gray-400 dark:text-gray-500 bg-creme-100 dark:bg-gray-800 px-2 py-0.5 rounded-full capitalize">{tag}</span>
+              <span class="text-xs text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-slate-800 px-2 py-0.5 rounded-lg capitalize">{tag}</span>
             ))}
           </div>
         )}
       </div>
     </div>
 
-    <span class={`text-xs font-medium px-2.5 py-1 rounded-full shrink-0 ${levelColors[level] || 'bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
+    <span class={`text-xs font-medium px-2.5 py-1 rounded-lg shrink-0 ${levelColors[level] || 'bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-400'}`}>
       {level}
     </span>
 
-    <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1 shrink-0 w-48">
+    <span class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1 shrink-0 w-48">
       {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
     </span>
 
-    <span class="text-xs text-gray-400 dark:text-gray-500 shrink-0 w-14 text-right">{timeLabel}</span>
+    <span class="text-xs text-slate-400 dark:text-slate-500 shrink-0 w-14 text-right">{timeLabel}</span>
 
-    <div class="text-gray-300 dark:text-gray-600 group-hover:text-sapphire-500 transition-colors shrink-0">
+    <div class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 transition-colors shrink-0">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 17L17 7" /><path d="M7 7h10v10" />
       </svg>
     </div>
   </div>
 
-  <!-- Mobile/Tablet: stacked layout -->
+  <!-- Mobile: stacked layout -->
   <div class="md:hidden">
     <div class="flex items-start justify-between gap-3">
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-1 flex-wrap">
-          <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">{company}</span>
+          <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">{company}</span>
           {tags.length > 0 && tags.map(tag => (
-            <span class="text-xs text-gray-400 dark:text-gray-500 bg-creme-100 dark:bg-gray-800 px-2 py-0.5 rounded-full capitalize">{tag}</span>
+            <span class="text-xs text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-slate-800 px-2 py-0.5 rounded-lg capitalize">{tag}</span>
           ))}
-          <span class="text-gray-300 dark:text-gray-600">·</span>
-          <span class="text-xs text-gray-400 dark:text-gray-500">{timeLabel}</span>
+          <span class="text-slate-300 dark:text-slate-600">·</span>
+          <span class="text-xs text-slate-400 dark:text-slate-500">{timeLabel}</span>
         </div>
-        <h3 class="text-base font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors">
+        <h3 class="text-[15px] font-semibold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">
           {title}
         </h3>
       </div>
-      <div class="text-gray-300 dark:text-gray-600 group-hover:text-sapphire-500 transition-colors mt-1 shrink-0">
+      <div class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 transition-colors mt-1 shrink-0">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M7 17L17 7" /><path d="M7 7h10v10" />
         </svg>
       </div>
     </div>
-    <div class="flex items-center gap-3 mt-3 flex-wrap">
-      <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${levelColors[level] || 'bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400'}`}>
+    <div class="flex items-center gap-3 mt-2.5 flex-wrap">
+      <span class={`text-xs font-medium px-2.5 py-1 rounded-lg ${levelColors[level] || 'bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-400'}`}>
         {level}
       </span>
-      <span class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
+      <span class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
         {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
       </span>
     </div>

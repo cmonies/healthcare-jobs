@@ -20,6 +20,8 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 <Layout title="All Jobs — designjobs" description={`${jobs.length} healthcare UX jobs from companies that care. Browse product designer, UX designer, and UX researcher roles at health-tech companies.`}>
   <Header />
 
+  <main id="main-content">
+
   <!-- JSON-LD: JobPosting structured data for search engines -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -56,7 +58,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
   </section>
 
   <!-- Search & Location -->
-  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-4">
+  <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-4" role="search" aria-label="Search and filter jobs">
     <div class="animate-fade-in stagger-2 flex flex-col sm:flex-row gap-3 max-w-2xl">
       <div class="relative flex-1">
         <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -93,7 +95,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 
   <!-- Filters -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-8">
-    <div class="animate-fade-in stagger-2 flex flex-wrap gap-2" id="filters">
+    <div class="animate-fade-in stagger-2 flex gap-2 overflow-x-auto pb-2 -mb-2 scrollbar-hide flex-nowrap sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0" id="filters">
       <button class="filter-btn active" data-filter="all">
         All <span class="filter-count">{jobs.length}</span>
       </button>
@@ -138,10 +140,15 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
     <Newsletter />
   </section>
 
+  </main>
+
   <Footer />
 </Layout>
 
 <style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
   .filter-btn {
     display: inline-flex;
     align-items: center;
@@ -150,6 +157,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 500;
+    white-space: nowrap;
     border: 1px solid #e5e7eb;
     color: #6b7280;
     background: white;

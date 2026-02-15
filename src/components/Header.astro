@@ -3,47 +3,49 @@ import DarkModeToggle from './DarkModeToggle.astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header role="banner" class="border-b border-creme-300/50 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md sticky top-0 z-50">
+<header role="banner" class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-100 dark:border-slate-800">
   <nav aria-label="Main navigation" class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 group">
-      <span class="text-sapphire-500 text-2xl">♥</span>
-      <span class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-sapphire-500 transition-colors">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="text-brand-500 text-xl font-bold">dj</span>
+      <span class="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">
         designjobs
       </span>
-      <span class="text-xs font-medium text-sapphire-500 bg-sapphire-50 dark:bg-sapphire-900/30 px-2 py-0.5 rounded-full">health</span>
+      <span class="text-[11px] font-semibold text-brand-500 bg-brand-50 dark:bg-brand-900/20 px-2 py-0.5 rounded-lg uppercase tracking-wide">health</span>
     </a>
 
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
       <a
         href="/"
+        aria-current={currentPath === "/" ? "page" : undefined}
         class:list={[
           "text-sm font-medium transition-colors",
           currentPath === "/"
-            ? "text-sapphire-500"
-            : "text-gray-600 dark:text-gray-400 hover:text-sapphire-500"
+            ? "text-brand-500"
+            : "text-slate-500 dark:text-slate-400 hover:text-brand-500"
         ]}
       >
         Home
       </a>
       <a
         href="/jobs"
+        aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined}
         class:list={[
           "text-sm font-medium transition-colors",
           currentPath === "/jobs" || currentPath === "/jobs/"
-            ? "text-sapphire-500"
-            : "text-gray-600 dark:text-gray-400 hover:text-sapphire-500"
+            ? "text-brand-500"
+            : "text-slate-500 dark:text-slate-400 hover:text-brand-500"
         ]}
       >
         Jobs
       </a>
-      <a href="https://discord.gg/designwithcare" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors">
+      <a href="https://discord.gg/designwithcare" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors">
         Community
       </a>
       <DarkModeToggle />
       <a
         href="/submit"
-        class="text-sm text-sapphire-500 border border-sapphire-500 px-4 py-1.5 rounded-full hover:bg-sapphire-500 hover:text-white transition-[background-color,color,border-color] duration-150 font-medium"
+        class="text-sm bg-brand-500 text-white px-5 py-2 rounded-xl hover:bg-brand-600 transition-colors font-medium shadow-soft"
       >
         Submit a Job
       </a>
@@ -52,7 +54,7 @@ const currentPath = Astro.url.pathname;
     <!-- Mobile -->
     <div class="flex md:hidden items-center gap-2">
       <DarkModeToggle />
-      <button id="mobile-menu-btn" class="p-2 text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="p-2 text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
         <svg id="menu-close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
       </button>
@@ -60,12 +62,12 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-creme-300/50 dark:border-gray-800 bg-white dark:bg-gray-900">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
     <div class="px-6 py-4 space-y-3">
-      <a href="/" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Home</a>
-      <a href="/jobs" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Jobs</a>
-      <a href="https://discord.gg/designwithcare" target="_blank" class="block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-sapphire-500 transition-colors py-1">Community</a>
-      <a href="/submit" class="block text-sm text-sapphire-500 font-medium py-1">Submit a Job →</a>
+      <a href="/" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Home</a>
+      <a href="/jobs" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Jobs</a>
+      <a href="https://discord.gg/designwithcare" target="_blank" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Community</a>
+      <a href="/submit" class="block text-sm text-brand-500 font-medium py-1">Submit a Job →</a>
     </div>
   </div>
 </header>
@@ -76,8 +78,10 @@ const currentPath = Astro.url.pathname;
   const openIcon = document.getElementById('menu-open-icon');
   const closeIcon = document.getElementById('menu-close-icon');
   btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
     menu?.classList.toggle('hidden');
     openIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', String(!isOpen));
   });
 </script>
