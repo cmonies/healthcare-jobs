@@ -19,8 +19,8 @@ import Footer from '../components/Footer.astro';
 
       <form id="job-form" class="animate-fade-in stagger-2 space-y-6">
         <!-- Submitter Info -->
-        <div class="bg-[#F1F1F1] dark:bg-slate-800/50 rounded-xl p-5 space-y-4">
-          <p class="text-sm font-medium text-slate-700 dark:text-slate-300">Your information</p>
+        <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-4">
+          <p class="text-base font-medium text-slate-700 dark:text-slate-300">Your information</p>
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label for="submitterName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Your Name <span class="text-red-400">*</span></label>
@@ -160,28 +160,28 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Verification -->
-        <div class="bg-[#F1F1F1] dark:bg-slate-800/50 rounded-xl p-5 space-y-3">
-          <p class="text-sm font-medium text-slate-700 dark:text-slate-300">Before submitting, please confirm:</p>
+        <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-3">
+          <p class="text-base font-medium text-slate-700 dark:text-slate-300">Before submitting, please confirm:</p>
           <label class="flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" name="confirm_direct" required class="mt-0.5 rounded border-slate-300 dark:border-slate-600 text-brand-500 focus:ring-brand-500" />
+            <input type="checkbox" name="confirm_direct" required class="mt-0.5" />
             <span class="text-sm text-slate-600 dark:text-slate-400">This is a direct company listing (not a recruiter/staffing agency)</span>
           </label>
           <label class="flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" name="confirm_active" required class="mt-0.5 rounded border-slate-300 dark:border-slate-600 text-brand-500 focus:ring-brand-500" />
+            <input type="checkbox" name="confirm_active" required class="mt-0.5" />
             <span class="text-sm text-slate-600 dark:text-slate-400">The job posting is currently active</span>
           </label>
           <label class="flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" name="confirm_healthcare" required class="mt-0.5 rounded border-slate-300 dark:border-slate-600 text-brand-500 focus:ring-brand-500" />
+            <input type="checkbox" name="confirm_healthcare" required class="mt-0.5" />
             <span class="text-sm text-slate-600 dark:text-slate-400">This is a UX/design role at a healthcare or health-tech company</span>
           </label>
           <label class="flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" name="confirm_real" required class="mt-0.5 rounded border-slate-300 dark:border-slate-600 text-brand-500 focus:ring-brand-500" />
+            <input type="checkbox" name="confirm_real" required class="mt-0.5" />
             <span class="text-sm text-slate-600 dark:text-slate-400">This is a real job posting, not spam or a test submission</span>
           </label>
         </div>
 
         <!-- Cloudflare Turnstile widget -->
-        <div id="turnstile-container"></div>
+        <div id="turnstile-container" class="[&_iframe]:rounded-xl"></div>
         <input type="hidden" id="turnstile-token" name="turnstile-token" value="" />
 
         <!-- Error messages (hidden by default) -->
@@ -234,7 +234,7 @@ import Footer from '../components/Footer.astro';
 <style>
   .form-input {
     width: 100%;
-    padding: 0.625rem 0.875rem;
+    padding: 0.75rem 1rem;
     border-radius: 0.75rem;
     border: 1px solid #E7E5E4;
     background: white;
@@ -245,13 +245,13 @@ import Footer from '../components/Footer.astro';
   .form-input:focus {
     outline: none;
     border-color: #8D9AFC;
-    box-shadow: 0 0 0 3px rgba(36, 75, 248, 0.1);
+    box-shadow: 0 0 0 2px rgba(36, 75, 248, 0.12);
   }
   .form-input::placeholder {
     color: #A1A1AA;
   }
   :global(.dark) .form-input {
-    background: #18181B;
+    background: #131313;
     border-color: #232326;
     color: #F5F5F4;
   }
@@ -260,7 +260,46 @@ import Footer from '../components/Footer.astro';
   }
   :global(.dark) .form-input:focus {
     border-color: #5872FA;
-    box-shadow: 0 0 0 3px rgba(36, 75, 248, 0.2);
+    box-shadow: 0 0 0 2px rgba(36, 75, 248, 0.2);
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid #D6D3D1;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+  }
+  input[type="checkbox"]:checked {
+    background: #4A6CF7;
+    border-color: #4A6CF7;
+  }
+  input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.3);
+  }
+  :global(.dark) input[type="checkbox"] {
+    background: #131313;
+    border-color: #232326;
+  }
+  :global(.dark) input[type="checkbox"]:checked {
+    background: #4A6CF7;
+    border-color: #4A6CF7;
   }
   select.form-input {
     appearance: none;
@@ -277,7 +316,7 @@ import Footer from '../components/Footer.astro';
   function onTurnstileLoad() {
     turnstile.render('#turnstile-container', {
       sitekey: '0x4AAAAAACckLBTY6z74gBae',
-      theme: 'auto',
+      theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
       callback: function(token) {
         document.getElementById('turnstile-token').value = token;
       },
