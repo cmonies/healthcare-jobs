@@ -18,70 +18,49 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // First, get the list UUID
-    const listsRes = await fetch(`${LISTMONK_URL}/api/public/lists`);
-    const lists = await listsRes.json() as Array<{ uuid: string; name: string }>;
-    
-    if (!lists.length) {
+    if (!LISTMONK_PASS) {
       return new Response(JSON.stringify({ ok: false, error: 'Newsletter not configured yet.' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    const listUuid = lists[0].uuid;
+    const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
 
-    // Try the public subscription API first
-    const subRes = await fetch(`${LISTMONK_URL}/api/public/subscription`, {
+    // Create subscriber via admin API
+    const res = await fetch(`${LISTMONK_URL}/api/subscribers`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${auth}`,
+      },
       body: JSON.stringify({
         email,
         name: '',
-        list_uuids: [listUuid],
+        status: 'enabled',
+        lists: [1],
+        preconfirm_subscriptions: true,
       }),
     });
 
-    if (subRes.ok) {
+    const data = await res.json() as { data?: { id: number }; message?: string };
+
+    if (res.ok) {
       return new Response(JSON.stringify({ ok: true }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    // Fallback: use admin API if public API fails
-    if (LISTMONK_PASS) {
-      const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
-      
-      // Create subscriber via admin API
-      const adminRes = await fetch(`${LISTMONK_URL}/api/subscribers`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Basic ${auth}`,
-        },
-        body: JSON.stringify({
-          email,
-          name: '',
-          status: 'enabled',
-          lists: [1], // Default list ID is 1
-          preconfirm_subscriptions: false,
-        }),
+    // 409 = already subscribed — still a success from user's perspective
+    if (res.status === 409) {
+      return new Response(JSON.stringify({ ok: true }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
       });
-
-      const adminData = await adminRes.json() as { data?: { id: number }; message?: string };
-      
-      if (adminRes.ok || adminRes.status === 409) {
-        // 409 = already subscribed, still a success
-        return new Response(JSON.stringify({ ok: true }), {
-          status: 200,
-          headers: { 'Content-Type': 'application/json' },
-        });
-      }
-
-      console.error('Listmonk admin API error:', adminData.message);
     }
 
+    console.error('Listmonk error:', res.status, data.message);
     return new Response(JSON.stringify({ ok: false, error: 'Could not subscribe. Please try again.' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
