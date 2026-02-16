@@ -43,12 +43,12 @@ export default {
         },
         // Dark mode surfaces (Carmen-picked 2026-02-15)
         surface: {
-          page: '#131416',
-          header: '#0d0f12',
-          footer: '#0d0f12',
+          page: '#0F0F0F',
+          header: '#161718',
+          footer: '#0C0D0D',
           card: '#161718',
           newsletter: '#161718',
-          'card-hover': '#090d20',
+          'card-hover': '#090D20',
         },
         // Keep sapphire for backwards compat during transition
         sapphire: {
