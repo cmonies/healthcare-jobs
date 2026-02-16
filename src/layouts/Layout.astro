@@ -41,10 +41,8 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Fontshare fonts for testing -->
-    <link rel="preconnect" href="https://api.fontshare.com" />
-    <link href="https://api.fontshare.com/v2/css?f[]=sentient@1&f[]=satoshi@1&f[]=general-sans@1&f[]=cabinet-grotesk@1&f[]=supreme@1&f[]=zodiak@1&f[]=recia@1&f[]=space-grotesk@1&f[]=rowan@1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Be Vietnam Pro is loaded via Google Fonts above -->
     <title>{title}</title>
     <script is:inline>
       document.documentElement.classList.add('js-ready');
@@ -60,96 +58,6 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     </a>
     <slot />
 
-    <!-- Font Tester Panel -->
-    <div id="font-panel" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#1a1a2e;color:#e0e0e0;border-radius:16px;padding:20px;width:280px;font-family:system-ui,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.4);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);font-size:13px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-        <span style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#888;">Font Tester</span>
-        <button id="font-panel-toggle" style="background:none;border:none;color:#666;cursor:pointer;font-size:16px;padding:0;line-height:1;" title="Minimize">−</button>
-      </div>
-      <div id="font-panel-body">
-        <div id="font-options" style="display:flex;flex-direction:column;gap:6px;"></div>
-        <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:11px;color:#666;margin-bottom:6px;">Preview</div>
-          <div id="font-preview" style="font-size:22px;font-weight:600;line-height:1.3;color:#fff;">Design roles that improve lives</div>
-        </div>
-      </div>
-    </div>
-
-    <script is:inline>
-    (function() {
-      var fonts = [
-        { name: 'Inter', family: "'Inter', system-ui, sans-serif", type: 'sans' },
-        { name: 'Satoshi', family: "'Satoshi', system-ui, sans-serif", type: 'sans' },
-        { name: 'General Sans', family: "'General Sans', system-ui, sans-serif", type: 'sans' },
-        { name: 'Cabinet Grotesk', family: "'Cabinet Grotesk', system-ui, sans-serif", type: 'sans' },
-        { name: 'Supreme', family: "'Supreme', system-ui, sans-serif", type: 'sans' },
-        { name: 'Space Grotesk', family: "'Space Grotesk', system-ui, sans-serif", type: 'sans' },
-        { name: 'Be Vietnam Pro', family: "'Be Vietnam Pro', system-ui, sans-serif", type: 'sans' },
-        { name: 'Rowan', family: "'Rowan', system-ui, sans-serif", type: 'sans' },
-        { name: 'Sentient', family: "'Sentient', Georgia, serif", type: 'serif' },
-        { name: 'Zodiak', family: "'Zodiak', Georgia, serif", type: 'serif' },
-        { name: 'Recia', family: "'Recia', Georgia, serif", type: 'serif' },
-      ];
-
-      var current = localStorage.getItem('font-test') || 'Inter';
-      var container = document.getElementById('font-options');
-      var preview = document.getElementById('font-preview');
-      var panel = document.getElementById('font-panel');
-      var toggle = document.getElementById('font-panel-toggle');
-      var body = document.getElementById('font-panel-body');
-
-      // Minimize toggle
-      var minimized = false;
-      toggle.addEventListener('click', function() {
-        minimized = !minimized;
-        body.style.display = minimized ? 'none' : 'block';
-        toggle.textContent = minimized ? '+' : '−';
-        panel.style.width = minimized ? 'auto' : '280px';
-      });
-
-      function applyFont(fontName) {
-        var font = fonts.find(function(f) { return f.name === fontName; });
-        if (!font) return;
-        document.documentElement.style.setProperty('--font-active', font.family);
-        document.body.style.fontFamily = font.family;
-        // Also update all headings, paragraphs, links, buttons
-        var els = document.querySelectorAll('h1,h2,h3,h4,h5,h6,p,a,button,span,div,li,td,th,input,textarea,select,label');
-        for (var i = 0; i < els.length; i++) {
-          els[i].style.fontFamily = 'inherit';
-        }
-        document.body.style.fontFamily = font.family;
-        preview.style.fontFamily = font.family;
-        current = fontName;
-        localStorage.setItem('font-test', fontName);
-        renderButtons();
-      }
-
-      function renderButtons() {
-        container.innerHTML = '';
-        var lastType = '';
-        fonts.forEach(function(font) {
-          if (font.type !== lastType) {
-            var label = document.createElement('div');
-            label.style.cssText = 'font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#555;margin-top:' + (lastType ? '10px' : '0') + ';margin-bottom:2px;';
-            label.textContent = font.type === 'sans' ? 'Sans-Serif' : 'Serif';
-            container.appendChild(label);
-            lastType = font.type;
-          }
-          var btn = document.createElement('button');
-          var isActive = font.name === current;
-          btn.style.cssText = 'display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:10px;border:1px solid ' + (isActive ? 'rgba(88,114,250,0.5)' : 'rgba(255,255,255,0.06)') + ';background:' + (isActive ? 'rgba(88,114,250,0.12)' : 'rgba(255,255,255,0.03)') + ';color:' + (isActive ? '#8D9AFC' : '#ccc') + ';cursor:pointer;transition:all 0.15s ease;font-size:13px;';
-          btn.innerHTML = '<span style="font-family:' + font.family + ';font-weight:500;">' + font.name + '</span>' + (isActive ? '<span style="font-size:10px;">●</span>' : '');
-          btn.addEventListener('click', function() { applyFont(font.name); });
-          btn.addEventListener('mouseenter', function() { if (font.name !== current) btn.style.background = 'rgba(255,255,255,0.06)'; });
-          btn.addEventListener('mouseleave', function() { if (font.name !== current) btn.style.background = 'rgba(255,255,255,0.03)'; });
-          container.appendChild(btn);
-        });
-      }
-
-      renderButtons();
-      applyFont(current);
-    })();
-    </script>
   </body>
 </html>
 
