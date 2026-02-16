@@ -199,7 +199,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       const result = await createGitHubIssue(GITHUB_TOKEN, GITHUB_REPO, issueTitle, issueBody, labels);
       if (!result.ok) {
         console.error('GitHub issue creation failed:', result.error);
-        return new Response(JSON.stringify({ ok: false, error: 'Failed to create submission. Please try again.' }), {
+        return new Response(JSON.stringify({ ok: false, error: 'Failed to create submission. Debug: ' + (result.error || 'unknown').substring(0, 200) }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
         });
