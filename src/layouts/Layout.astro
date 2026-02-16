@@ -87,10 +87,18 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
           ]
         },
         {
+          label: 'Nav Accent',
+          controls: [
+            { id: 'health-pill-bg', label: 'HEALTH pill bg', initial: '#244BF8', target: 'header .bg-brand-50, header .dark\\:bg-brand-900\\/20', prop: 'backgroundColor' },
+            { id: 'health-pill-text', label: 'HEALTH pill text', initial: '#244BF8', target: 'header .text-brand-500', prop: 'color' },
+          ]
+        },
+        {
           label: 'Cards / Sections',
           controls: [
             { id: 'card-bg', label: 'Cards', initial: '#161718', targets: '.dark\\:bg-surface-card, [class*="bg-white"]', prop: 'backgroundColor', darkOnly: true },
             { id: 'card-hover', label: 'Card Hover', initial: '#090d20', info: '(job row hover)' },
+            { id: 'row-hover', label: 'Row Hover', initial: '#090d20', info: '(job row on hover)' },
             { id: 'newsletter-bg', label: 'Newsletter', initial: '#161718', target: '#newsletter', prop: 'backgroundColor' },
             { id: 'jobs-list-bg', label: 'Jobs List', initial: '#161718', target: '[role="list"][aria-label="Job listings"]', prop: 'backgroundColor' },
           ]
@@ -129,9 +137,26 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
           var els = document.querySelectorAll(ctrl.targets);
           els.forEach(function(el) { el.style.setProperty(ctrl.prop || 'background-color', color, 'important'); });
         }
-        // Special: card hover needs CSS variable
-        if (ctrl.id === 'card-hover') {
-          document.documentElement.style.setProperty('--color-card-hover', color);
+        // Special cases using CSS variables + style injection
+        if (ctrl.id === 'card-hover' || ctrl.id === 'row-hover') {
+          // Inject/update a style tag for hover states
+          var styleId = 'color-tuner-hovers';
+          var styleEl = document.getElementById(styleId) || (function() {
+            var s = document.createElement('style');
+            s.id = styleId;
+            document.head.appendChild(s);
+            return s;
+          })();
+          var hoverColor = values['row-hover'] || values['card-hover'] || '#090d20';
+          styleEl.textContent = '.dark .job-row:hover, .dark [role="listitem"]:hover { background-color: ' + hoverColor + ' !important; }';
+        }
+        if (ctrl.id === 'health-pill-bg') {
+          var pills = document.querySelectorAll('header span[class*="brand-50"], header span[class*="brand-900"]');
+          pills.forEach(function(el) { el.style.setProperty('background-color', color, 'important'); });
+        }
+        if (ctrl.id === 'health-pill-text') {
+          var pills = document.querySelectorAll('header span[class*="text-brand-500"]');
+          pills.forEach(function(el) { el.style.setProperty('color', color, 'important'); });
         }
       }
 
@@ -190,8 +215,11 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
         output += 'footer: \\'' + values['footer-bg'] + '\\',\\n';
         output += 'card: \\'' + values['card-bg'] + '\\',\\n';
         output += 'card-hover: \\'' + values['card-hover'] + '\\',\\n';
+        output += 'row-hover: \\'' + values['row-hover'] + '\\',\\n';
         output += 'newsletter: \\'' + values['newsletter-bg'] + '\\',\\n';
         output += 'jobs-list: \\'' + values['jobs-list-bg'] + '\\',\\n';
+        output += 'health-pill-bg: \\'' + values['health-pill-bg'] + '\\',\\n';
+        output += 'health-pill-text: \\'' + values['health-pill-text'] + '\\',\\n';
         navigator.clipboard.writeText(output.replace(/\\n/g, '\\n'));
         copyBtn.textContent = 'Copied!';
         setTimeout(function() { copyBtn.textContent = 'Copy'; }, 1500);
