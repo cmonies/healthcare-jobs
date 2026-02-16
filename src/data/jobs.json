@@ -595,5 +595,55 @@
       "startup"
     ],
     "_notes": "Ashby page title confirmed 'Senior UX Researcher @ IntusCare'. IntusCare is a healthcare analytics company focused on PACE programs for elderly care. Partners with product design, PM, engineering, and clinical experts. Needs browser verification for full details."
+  },
+  {
+    "id": "nourish-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Nourish",
+    "companyUrl": "https://usenourish.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "url": "https://job-boards.greenhouse.io/usenourish/jobs/4535318008",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "B2C",
+      "consumer",
+      "startup",
+      "AI"
+    ]
+  },
+  {
+    "id": "baba-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Baba",
+    "companyUrl": "https://jobs.ashbyhq.com/baba",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "url": "https://jobs.ashbyhq.com/baba/262c3826-39e0-49aa-891f-03211a8af128",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "AI",
+      "B2B",
+      "startup",
+      "clinical"
+    ]
+  },
+  {
+    "id": "weave-product-designer-analytics",
+    "title": "Product Designer, Analytics",
+    "company": "Weave",
+    "companyUrl": "https://www.getweave.com",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "India",
+    "url": "https://jobs.ashbyhq.com/weave/290cffde-dca4-4691-808b-a160bfd51111",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "B2B",
+      "enterprise",
+      "AI"
+    ]
   }
 ]
