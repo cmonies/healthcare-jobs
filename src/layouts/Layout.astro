@@ -59,170 +59,93 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     <slot />
 
     <!-- Dark Mode Color Tuner -->
-    <div id="color-panel" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#1a1a2e;color:#e0e0e0;border-radius:16px;padding:20px;width:300px;font-family:system-ui,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.4);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);font-size:13px;max-height:80vh;overflow-y:auto;">
+    <div id="cpanel" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#1a1a2e;color:#e0e0e0;border-radius:16px;padding:20px;width:300px;font-family:system-ui,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.4);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);font-size:13px;max-height:80vh;overflow-y:auto;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
         <span style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#888;">Dark Mode Colors</span>
         <div style="display:flex;gap:8px;align-items:center;">
-          <button id="color-panel-copy" style="background:none;border:none;color:#5872FA;cursor:pointer;font-size:11px;font-weight:600;" title="Copy values">Copy</button>
-          <button id="color-panel-toggle" style="background:none;border:none;color:#666;cursor:pointer;font-size:16px;padding:0;line-height:1;" title="Minimize">−</button>
+          <button id="cp-copy" style="background:none;border:none;color:#5872FA;cursor:pointer;font-size:11px;font-weight:600;">Copy</button>
+          <button id="cp-min" style="background:none;border:none;color:#666;cursor:pointer;font-size:16px;padding:0;line-height:1;">−</button>
         </div>
       </div>
-      <div id="color-panel-body"></div>
+      <div id="cp-body"></div>
     </div>
-
     <script is:inline>
-    (function() {
-      var groups = [
-        {
-          label: 'Page Background',
-          controls: [
-            { id: 'page-bg', label: 'Background', initial: '#131416', target: 'body', prop: 'backgroundColor' },
-          ]
-        },
-        {
-          label: 'Header / Footer',
-          controls: [
-            { id: 'header-bg', label: 'Header', initial: '#0d0f12', target: 'header[role="banner"]', prop: 'backgroundColor' },
-            { id: 'footer-bg', label: 'Footer', initial: '#0d0f12', target: 'footer[role="contentinfo"]', prop: 'backgroundColor' },
-          ]
-        },
-        {
-          label: 'Nav Accent',
-          controls: [
-            { id: 'health-pill-bg', label: 'HEALTH pill bg', initial: '#244BF8', target: 'header .bg-brand-50, header .dark\\:bg-brand-900\\/20', prop: 'backgroundColor' },
-            { id: 'health-pill-text', label: 'HEALTH pill text', initial: '#244BF8', target: 'header .text-brand-500', prop: 'color' },
-          ]
-        },
-        {
-          label: 'Cards / Sections',
-          controls: [
-            { id: 'card-bg', label: 'Cards', initial: '#161718', targets: '.dark\\:bg-surface-card, [class*="bg-white"]', prop: 'backgroundColor', darkOnly: true },
-            { id: 'card-hover', label: 'Card Hover', initial: '#090d20', info: '(job row hover)' },
-            { id: 'row-hover', label: 'Row Hover', initial: '#090d20', info: '(job row on hover)' },
-            { id: 'newsletter-bg', label: 'Newsletter', initial: '#161718', target: '#newsletter', prop: 'backgroundColor' },
-            { id: 'jobs-list-bg', label: 'Jobs List', initial: '#161718', target: '[role="list"][aria-label="Job listings"]', prop: 'backgroundColor' },
-          ]
-        },
+    (function(){
+      var V={};
+      var defs=[
+        ['Page Background','page-bg','Background','#131416'],
+        ['Header / Footer','header-bg','Header','#0d0f12'],
+        [null,'footer-bg','Footer','#0d0f12'],
+        ['Nav Accent','health-pill-bg','HEALTH pill bg','#244BF8'],
+        [null,'health-pill-text','HEALTH pill text','#244BF8'],
+        ['Cards / Sections','card-bg','Cards','#161718'],
+        [null,'row-hover','Row Hover','#090d20'],
+        [null,'newsletter-bg','Newsletter','#161718'],
+        [null,'jobs-list-bg','Jobs List','#161718'],
       ];
-
-      var body = document.getElementById('color-panel-body');
-      var toggle = document.getElementById('color-panel-toggle');
-      var copyBtn = document.getElementById('color-panel-copy');
-      var panel = document.getElementById('color-panel');
-      var minimized = false;
-      var values = {};
-
-      toggle.addEventListener('click', function() {
-        minimized = !minimized;
-        body.style.display = minimized ? 'none' : 'block';
-        toggle.textContent = minimized ? '+' : '−';
-        panel.style.width = minimized ? 'auto' : '300px';
-      });
-
-      // Only show in dark mode
-      function checkDark() {
-        var isDark = document.documentElement.classList.contains('dark');
-        panel.style.display = isDark ? 'block' : 'block'; // show always for now, colors apply in dark
+      function apply(id,c){
+        V[id]=c;
+        var d=document;
+        try{
+          if(id==='page-bg') d.body.style.setProperty('background-color',c,'important');
+          if(id==='header-bg'){var h=d.querySelector('header');if(h)h.style.setProperty('background-color',c,'important');}
+          if(id==='footer-bg'){var f=d.querySelector('footer');if(f)f.style.setProperty('background-color',c,'important');}
+          if(id==='card-bg'){
+            d.querySelectorAll('[class*="bg-surface-card"],[class*="bg-white"]').forEach(function(e){e.style.setProperty('background-color',c,'important');});
+          }
+          if(id==='row-hover'){
+            var s=d.getElementById('cp-hover-style');
+            if(!s){s=d.createElement('style');s.id='cp-hover-style';d.head.appendChild(s);}
+            s.textContent='[role="listitem"]:hover{background-color:'+c+' !important;}';
+          }
+          if(id==='newsletter-bg'){var n=d.getElementById('newsletter');if(n)n.style.setProperty('background-color',c,'important');}
+          if(id==='jobs-list-bg'){var j=d.querySelector('[aria-label="Job listings"]');if(j)j.style.setProperty('background-color',c,'important');}
+          if(id==='health-pill-bg'){
+            d.querySelectorAll('header span[class*="brand-50"],header span[class*="brand-900"]').forEach(function(e){e.style.setProperty('background-color',c,'important');});
+          }
+          if(id==='health-pill-text'){
+            d.querySelectorAll('header span[class*="brand-500"]').forEach(function(e){e.style.setProperty('color',c,'important');});
+          }
+        }catch(err){}
       }
-      checkDark();
-      new MutationObserver(checkDark).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
-      function applyColor(ctrl, color) {
-        values[ctrl.id] = color;
-        if (ctrl.target) {
-          var els = document.querySelectorAll(ctrl.target);
-          els.forEach(function(el) { el.style.setProperty(ctrl.prop || 'background-color', color, 'important'); });
+      var body=document.getElementById('cp-body');
+      var lastGroup='';
+      defs.forEach(function(d){
+        var group=d[0],id=d[1],label=d[2],init=d[3];
+        V[id]=init;
+        if(group){
+          var t=document.createElement('div');
+          t.style.cssText='font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:8px;'+(lastGroup?'margin-top:14px;':'');
+          t.textContent=group;
+          body.appendChild(t);
+          lastGroup=group;
         }
-        if (ctrl.targets) {
-          var els = document.querySelectorAll(ctrl.targets);
-          els.forEach(function(el) { el.style.setProperty(ctrl.prop || 'background-color', color, 'important'); });
-        }
-        // Special cases using CSS variables + style injection
-        if (ctrl.id === 'card-hover' || ctrl.id === 'row-hover') {
-          // Inject/update a style tag for hover states
-          var styleId = 'color-tuner-hovers';
-          var styleEl = document.getElementById(styleId) || (function() {
-            var s = document.createElement('style');
-            s.id = styleId;
-            document.head.appendChild(s);
-            return s;
-          })();
-          var hoverColor = values['row-hover'] || values['card-hover'] || '#090d20';
-          styleEl.textContent = '.dark .job-row:hover, .dark [role="listitem"]:hover { background-color: ' + hoverColor + ' !important; }';
-        }
-        if (ctrl.id === 'health-pill-bg') {
-          var pills = document.querySelectorAll('header span[class*="brand-50"], header span[class*="brand-900"]');
-          pills.forEach(function(el) { el.style.setProperty('background-color', color, 'important'); });
-        }
-        if (ctrl.id === 'health-pill-text') {
-          var pills = document.querySelectorAll('header span[class*="text-brand-500"]');
-          pills.forEach(function(el) { el.style.setProperty('color', color, 'important'); });
-        }
-      }
-
-      groups.forEach(function(group) {
-        var section = document.createElement('div');
-        section.style.cssText = 'margin-bottom:14px;';
-        var title = document.createElement('div');
-        title.style.cssText = 'font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:8px;';
-        title.textContent = group.label;
-        section.appendChild(title);
-
-        group.controls.forEach(function(ctrl) {
-          values[ctrl.id] = ctrl.initial;
-          var row = document.createElement('div');
-          row.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:6px;';
-
-          var colorInput = document.createElement('input');
-          colorInput.type = 'color';
-          colorInput.value = ctrl.initial;
-          colorInput.style.cssText = 'width:32px;height:24px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:transparent;cursor:pointer;padding:0;';
-
-          var label = document.createElement('span');
-          label.style.cssText = 'flex:1;font-size:12px;color:#aaa;';
-          label.textContent = ctrl.label + (ctrl.info ? ' ' + ctrl.info : '');
-
-          var hex = document.createElement('input');
-          hex.type = 'text';
-          hex.value = ctrl.initial;
-          hex.style.cssText = 'width:72px;font-size:11px;font-family:monospace;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:3px 6px;color:#ccc;text-align:center;';
-
-          colorInput.addEventListener('input', function() {
-            hex.value = colorInput.value;
-            applyColor(ctrl, colorInput.value);
-          });
-          hex.addEventListener('change', function() {
-            if (/^#[0-9a-fA-F]{6}$/.test(hex.value)) {
-              colorInput.value = hex.value;
-              applyColor(ctrl, hex.value);
-            }
-          });
-
-          row.appendChild(colorInput);
-          row.appendChild(label);
-          row.appendChild(hex);
-          section.appendChild(row);
-        });
-
-        body.appendChild(section);
+        var row=document.createElement('div');
+        row.style.cssText='display:flex;align-items:center;gap:10px;margin-bottom:6px;';
+        var ci=document.createElement('input');
+        ci.type='color';ci.value=init;
+        ci.style.cssText='width:32px;height:24px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:transparent;cursor:pointer;padding:0;';
+        var lb=document.createElement('span');
+        lb.style.cssText='flex:1;font-size:12px;color:#aaa;';
+        lb.textContent=label;
+        var hx=document.createElement('input');
+        hx.type='text';hx.value=init;
+        hx.style.cssText='width:72px;font-size:11px;font-family:monospace;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:3px 6px;color:#ccc;text-align:center;';
+        ci.addEventListener('input',function(){hx.value=ci.value;apply(id,ci.value);});
+        hx.addEventListener('change',function(){if(/^#[0-9a-fA-F]{6}$/.test(hx.value)){ci.value=hx.value;apply(id,hx.value);}});
+        row.appendChild(ci);row.appendChild(lb);row.appendChild(hx);
+        body.appendChild(row);
       });
-
-      // Copy button — outputs tailwind config format
-      copyBtn.addEventListener('click', function() {
-        var output = 'Dark mode colors:\\n';
-        output += 'page: \\'' + values['page-bg'] + '\\',\\n';
-        output += 'header: \\'' + values['header-bg'] + '\\',\\n';
-        output += 'footer: \\'' + values['footer-bg'] + '\\',\\n';
-        output += 'card: \\'' + values['card-bg'] + '\\',\\n';
-        output += 'card-hover: \\'' + values['card-hover'] + '\\',\\n';
-        output += 'row-hover: \\'' + values['row-hover'] + '\\',\\n';
-        output += 'newsletter: \\'' + values['newsletter-bg'] + '\\',\\n';
-        output += 'jobs-list: \\'' + values['jobs-list-bg'] + '\\',\\n';
-        output += 'health-pill-bg: \\'' + values['health-pill-bg'] + '\\',\\n';
-        output += 'health-pill-text: \\'' + values['health-pill-text'] + '\\',\\n';
-        navigator.clipboard.writeText(output.replace(/\\n/g, '\\n'));
-        copyBtn.textContent = 'Copied!';
-        setTimeout(function() { copyBtn.textContent = 'Copy'; }, 1500);
+      var mn=document.getElementById('cp-min'),minimized=false;
+      mn.addEventListener('click',function(){
+        minimized=!minimized;
+        body.style.display=minimized?'none':'block';
+        mn.textContent=minimized?'+':'−';
+      });
+      document.getElementById('cp-copy').addEventListener('click',function(){
+        var o='';for(var k in V)o+=k+': '+V[k]+'\n';
+        navigator.clipboard.writeText(o);
+        this.textContent='Copied!';var self=this;setTimeout(function(){self.textContent='Copy';},1500);
       });
     })();
     </script>
