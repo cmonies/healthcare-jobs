@@ -58,6 +58,146 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     </a>
     <slot />
 
+    <!-- Dark Mode Color Tuner -->
+    <div id="color-panel" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#1a1a2e;color:#e0e0e0;border-radius:16px;padding:20px;width:300px;font-family:system-ui,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.4);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);font-size:13px;max-height:80vh;overflow-y:auto;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <span style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#888;">Dark Mode Colors</span>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button id="color-panel-copy" style="background:none;border:none;color:#5872FA;cursor:pointer;font-size:11px;font-weight:600;" title="Copy values">Copy</button>
+          <button id="color-panel-toggle" style="background:none;border:none;color:#666;cursor:pointer;font-size:16px;padding:0;line-height:1;" title="Minimize">−</button>
+        </div>
+      </div>
+      <div id="color-panel-body"></div>
+    </div>
+
+    <script is:inline>
+    (function() {
+      var groups = [
+        {
+          label: 'Page Background',
+          controls: [
+            { id: 'page-bg', label: 'Background', initial: '#131416', target: 'body', prop: 'backgroundColor' },
+          ]
+        },
+        {
+          label: 'Header / Footer',
+          controls: [
+            { id: 'header-bg', label: 'Header', initial: '#0d0f12', target: 'header[role="banner"]', prop: 'backgroundColor' },
+            { id: 'footer-bg', label: 'Footer', initial: '#0d0f12', target: 'footer[role="contentinfo"]', prop: 'backgroundColor' },
+          ]
+        },
+        {
+          label: 'Cards / Sections',
+          controls: [
+            { id: 'card-bg', label: 'Cards', initial: '#161718', targets: '.dark\\:bg-surface-card, [class*="bg-white"]', prop: 'backgroundColor', darkOnly: true },
+            { id: 'card-hover', label: 'Card Hover', initial: '#090d20', info: '(job row hover)' },
+            { id: 'newsletter-bg', label: 'Newsletter', initial: '#161718', target: '#newsletter', prop: 'backgroundColor' },
+            { id: 'jobs-list-bg', label: 'Jobs List', initial: '#161718', target: '[role="list"][aria-label="Job listings"]', prop: 'backgroundColor' },
+          ]
+        },
+      ];
+
+      var body = document.getElementById('color-panel-body');
+      var toggle = document.getElementById('color-panel-toggle');
+      var copyBtn = document.getElementById('color-panel-copy');
+      var panel = document.getElementById('color-panel');
+      var minimized = false;
+      var values = {};
+
+      toggle.addEventListener('click', function() {
+        minimized = !minimized;
+        body.style.display = minimized ? 'none' : 'block';
+        toggle.textContent = minimized ? '+' : '−';
+        panel.style.width = minimized ? 'auto' : '300px';
+      });
+
+      // Only show in dark mode
+      function checkDark() {
+        var isDark = document.documentElement.classList.contains('dark');
+        panel.style.display = isDark ? 'block' : 'block'; // show always for now, colors apply in dark
+      }
+      checkDark();
+      new MutationObserver(checkDark).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+      function applyColor(ctrl, color) {
+        values[ctrl.id] = color;
+        if (ctrl.target) {
+          var els = document.querySelectorAll(ctrl.target);
+          els.forEach(function(el) { el.style.setProperty(ctrl.prop || 'background-color', color, 'important'); });
+        }
+        if (ctrl.targets) {
+          var els = document.querySelectorAll(ctrl.targets);
+          els.forEach(function(el) { el.style.setProperty(ctrl.prop || 'background-color', color, 'important'); });
+        }
+        // Special: card hover needs CSS variable
+        if (ctrl.id === 'card-hover') {
+          document.documentElement.style.setProperty('--color-card-hover', color);
+        }
+      }
+
+      groups.forEach(function(group) {
+        var section = document.createElement('div');
+        section.style.cssText = 'margin-bottom:14px;';
+        var title = document.createElement('div');
+        title.style.cssText = 'font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:8px;';
+        title.textContent = group.label;
+        section.appendChild(title);
+
+        group.controls.forEach(function(ctrl) {
+          values[ctrl.id] = ctrl.initial;
+          var row = document.createElement('div');
+          row.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:6px;';
+
+          var colorInput = document.createElement('input');
+          colorInput.type = 'color';
+          colorInput.value = ctrl.initial;
+          colorInput.style.cssText = 'width:32px;height:24px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:transparent;cursor:pointer;padding:0;';
+
+          var label = document.createElement('span');
+          label.style.cssText = 'flex:1;font-size:12px;color:#aaa;';
+          label.textContent = ctrl.label + (ctrl.info ? ' ' + ctrl.info : '');
+
+          var hex = document.createElement('input');
+          hex.type = 'text';
+          hex.value = ctrl.initial;
+          hex.style.cssText = 'width:72px;font-size:11px;font-family:monospace;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:3px 6px;color:#ccc;text-align:center;';
+
+          colorInput.addEventListener('input', function() {
+            hex.value = colorInput.value;
+            applyColor(ctrl, colorInput.value);
+          });
+          hex.addEventListener('change', function() {
+            if (/^#[0-9a-fA-F]{6}$/.test(hex.value)) {
+              colorInput.value = hex.value;
+              applyColor(ctrl, hex.value);
+            }
+          });
+
+          row.appendChild(colorInput);
+          row.appendChild(label);
+          row.appendChild(hex);
+          section.appendChild(row);
+        });
+
+        body.appendChild(section);
+      });
+
+      // Copy button — outputs tailwind config format
+      copyBtn.addEventListener('click', function() {
+        var output = 'Dark mode colors:\\n';
+        output += 'page: \\'' + values['page-bg'] + '\\',\\n';
+        output += 'header: \\'' + values['header-bg'] + '\\',\\n';
+        output += 'footer: \\'' + values['footer-bg'] + '\\',\\n';
+        output += 'card: \\'' + values['card-bg'] + '\\',\\n';
+        output += 'card-hover: \\'' + values['card-hover'] + '\\',\\n';
+        output += 'newsletter: \\'' + values['newsletter-bg'] + '\\',\\n';
+        output += 'jobs-list: \\'' + values['jobs-list-bg'] + '\\',\\n';
+        navigator.clipboard.writeText(output.replace(/\\n/g, '\\n'));
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function() { copyBtn.textContent = 'Copy'; }, 1500);
+      });
+    })();
+    </script>
   </body>
 </html>
 
