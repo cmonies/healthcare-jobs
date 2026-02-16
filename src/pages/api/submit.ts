@@ -88,7 +88,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
 
     // 2. Required fields validation
     const required = isBugReport
-      ? ['issueType', 'pageUrl', 'description']
+      ? ['issueType', 'description']
       : ['submitterName', 'submitterEmail', 'title', 'company', 'companyUrl', 'url', 'level', 'locationType', 'location'];
     for (const field of required) {
       if (!body[field]?.trim()) {
@@ -110,9 +110,10 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       }
     }
 
-    // 4. URL validation
+    // 4. URL validation (skip empty optional fields)
     const urlFields = isBugReport ? ['pageUrl'] : ['companyUrl', 'url'];
     for (const urlField of urlFields) {
+      if (!body[urlField]?.trim()) continue;
       try {
         new URL(body[urlField]);
       } catch {
@@ -163,7 +164,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           'site-bug': 'site-bug',
           'other': 'other',
         };
-        issueTitle = `Bug: ${body.issueType} — ${body.pageUrl}`;
+        issueTitle = body.title ? `Feedback: ${body.title}` : `Feedback: ${body.issueType}${body.pageUrl ? ' — ' + body.pageUrl : ''}`;
         issueBody = [
           `**Issue Type:** ${body.issueType}`,
           `**Page URL:** ${body.pageUrl}`,
