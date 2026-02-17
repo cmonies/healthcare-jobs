@@ -71,21 +71,18 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
     </div>
   </div>
 
-  <!-- Mobile: stacked layout -->
+  <!-- Mobile: stacked layout — title first -->
   <div class="md:hidden">
     <div class="flex items-start justify-between gap-3">
       <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1 flex-wrap">
-          <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">{company}</span>
-          {tags.length > 0 && tags.map(tag => (
-            <span class="text-xs text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-slate-800 px-2 py-0.5 rounded-lg capitalize border border-slate-200 dark:border-slate-700">{tag}</span>
-          ))}
-          <span class="text-slate-300 dark:text-slate-600">·</span>
-          <span class="text-xs text-slate-400 dark:text-slate-500">{timeLabel}</span>
-        </div>
         <h3 class="text-[15px] font-semibold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">
           {title}
         </h3>
+        <div class="flex items-center gap-2 mt-1 flex-wrap">
+          <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">{company}</span>
+          <span class="text-slate-300 dark:text-slate-600">·</span>
+          <span class="text-xs text-slate-400 dark:text-slate-500">{timeLabel}</span>
+        </div>
       </div>
       <div class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 transition-colors mt-1 shrink-0">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -100,6 +97,9 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
       <span class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
         <span aria-hidden="true">{locationIcon}</span> {locationType}{location !== 'USA' ? ` · ${location}` : ''}
       </span>
+      {tags.length > 0 && tags.slice(0, 2).map(tag => (
+        <span class="text-xs text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-slate-800 px-2 py-0.5 rounded-lg capitalize border border-slate-200 dark:border-slate-700">{tag}</span>
+      ))}
     </div>
   </div>
 </a>

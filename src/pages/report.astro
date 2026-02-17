@@ -65,7 +65,7 @@ import Footer from '../components/Footer.astro';
             <span id="url-label">Related page or URL</span>
           </label>
           <input
-            type="url"
+            type="text"
             id="pageUrl"
             name="pageUrl"
             placeholder="https://health.designjobs.cv/..."
@@ -299,13 +299,20 @@ import Footer from '../components/Footer.astro';
     const category = data.get('category') as string;
     const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || '';
 
+    function normalizeUrl(val: string): string {
+      val = val.trim();
+      if (!val) return val;
+      if (!/^https?:\/\//i.test(val)) val = 'https://' + val;
+      return val;
+    }
+
     const payload = {
       type: 'bug-report',
       reporterName: data.get('reporterName') as string || '',
       reporterEmail: data.get('reporterEmail') as string || '',
       issueType: category,
       title: data.get('title') as string || '',
-      pageUrl: data.get('pageUrl') as string || '',
+      pageUrl: normalizeUrl(data.get('pageUrl') as string || ''),
       description: data.get('description') as string,
       labels: labelMap[category] || [],
       website_url: data.get('website_url') as string || '',

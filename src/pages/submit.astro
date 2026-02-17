@@ -83,7 +83,7 @@ import Footer from '../components/Footer.astro';
           <div>
             <label for="companyUrl" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Company Website <span class="text-red-400">*</span></label>
             <input
-              type="url"
+              type="text"
               id="companyUrl"
               name="companyUrl"
               required
@@ -97,7 +97,7 @@ import Footer from '../components/Footer.astro';
         <div>
           <label for="url" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Job Posting URL <span class="text-red-400">*</span></label>
           <input
-            type="url"
+            type="text"
             id="url"
             name="url"
             required
@@ -345,13 +345,21 @@ import Footer from '../components/Footer.astro';
     // Get Turnstile token
     const turnstileToken = (document.getElementById('turnstile-token') as HTMLInputElement)?.value || (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value || '';
 
+    // Auto-prepend https:// if user didn't include a protocol
+    function normalizeUrl(val: string): string {
+      val = val.trim();
+      if (!val) return val;
+      if (!/^https?:\/\//i.test(val)) val = 'https://' + val;
+      return val;
+    }
+
     const payload: Record<string, string> = {
       submitterName: data.get('submitterName') as string,
       submitterEmail: data.get('submitterEmail') as string,
       title: data.get('title') as string,
       company: data.get('company') as string,
-      companyUrl: data.get('companyUrl') as string,
-      url: data.get('url') as string,
+      companyUrl: normalizeUrl(data.get('companyUrl') as string),
+      url: normalizeUrl(data.get('url') as string),
       level: data.get('level') as string,
       locationType: data.get('locationType') as string,
       location: data.get('location') as string,
