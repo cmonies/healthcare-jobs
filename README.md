@@ -30,9 +30,8 @@ Join the conversation — share jobs, ask questions, connect with other healthca
 
 - [Astro](https://astro.build) 5 — static site framework with server endpoints
 - [Tailwind CSS](https://tailwindcss.com) — utility-first styling
-- [Cloudflare Pages](https://pages.cloudflare.com) — hosting + Workers for API
+- [Vercel](https://vercel.com) — hosting
 - [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) — bot protection
-- [Cloudflare KV](https://developers.cloudflare.com/kv/) — server-side rate limiting
 - Jobs stored as JSON (`src/data/jobs.json`)
 
 ## Getting Started
@@ -118,8 +117,6 @@ For the submission API to work, set these in your hosting provider:
 | `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key |
 | `GITHUB_TOKEN` | GitHub fine-grained token (Issues read/write) |
 | `GITHUB_REPO` | Repository for issue creation (e.g. `cmonies/healthcare-jobs`) |
-
-KV namespace `SUBMISSIONS_KV` is required for server-side rate limiting (Cloudflare only).
 
 ## License
 
