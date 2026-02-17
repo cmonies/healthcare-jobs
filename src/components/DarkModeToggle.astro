@@ -2,6 +2,7 @@
 ---
 
 <button
+  type="button"
   id="dark-mode-toggle"
   class="relative inline-flex items-center h-7 w-12 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 transition-colors cursor-pointer shrink-0"
   aria-label="Toggle dark mode"
@@ -35,6 +36,13 @@
 
   function toggleWithTransition() {
     const next = !document.documentElement.classList.contains('dark');
+
+    // Skip animation for users who prefer reduced motion
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      setDark(next);
+      return;
+    }
 
     // Use View Transitions API if available (Chrome 111+, Safari 18+)
     if (document.startViewTransition) {

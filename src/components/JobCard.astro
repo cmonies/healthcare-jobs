@@ -33,6 +33,7 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
   href={url}
   target="_blank"
   rel="noopener noreferrer"
+  aria-label={`${title} at ${company} (opens in a new tab)`}
   class="block hover:bg-brand-100 dark:hover:bg-surface-card-hover transition-[background-color] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] group py-4 px-5 md:px-6"
 >
   <!-- Desktop: horizontal row -->
@@ -58,7 +59,7 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
     </span>
 
     <span class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1 shrink-0 w-48">
-      {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
+      <span aria-hidden="true">{locationIcon}</span> {locationType}{location !== 'USA' ? ` · ${location}` : ''}
     </span>
 
     <span class="text-xs text-slate-400 dark:text-slate-500 shrink-0 w-14 text-right">{timeLabel}</span>
@@ -97,7 +98,7 @@ const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAg
         {level}
       </span>
       <span class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
-        {locationIcon} {locationType}{location !== 'USA' ? ` · ${location}` : ''}
+        <span aria-hidden="true">{locationIcon}</span> {locationType}{location !== 'USA' ? ` · ${location}` : ''}
       </span>
     </div>
   </div>

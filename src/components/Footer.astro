@@ -7,8 +7,8 @@ import DarkModeToggle from './DarkModeToggle.astro';
     <div class="grid md:grid-cols-3 gap-8">
       <div>
         <div class="flex items-center mb-3">
-          <img src="/logo.svg" alt="Designjobs Health" class="h-6 dark:hidden" />
-          <img src="/logo-dark.svg" alt="Designjobs Health" class="h-6 hidden dark:block" />
+          <img src="/logo.svg" alt="Design Jobs" class="h-6 dark:hidden" />
+          <img src="/logo-dark.svg" alt="Design Jobs" class="h-6 hidden dark:block" />
         </div>
         <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
           Healthcare UX jobs, by the community. Open source and free forever.
@@ -20,14 +20,14 @@ import DarkModeToggle from './DarkModeToggle.astro';
         <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
           <li><a href="/jobs" class="hover:text-brand-500 transition-colors">All Jobs</a></li>
           <li><a href="#newsletter" class="hover:text-brand-500 transition-colors">Newsletter</a></li>
-          <li><a href="https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q" target="_blank" class="hover:text-brand-500 transition-colors">Join our Slack</a></li>
+          <li><a href="https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">Join our Slack <span class="sr-only">(opens in a new tab)</span></a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Contribute</h4>
         <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="https://github.com/cmonies/healthcare-jobs" target="_blank" class="hover:text-brand-500 transition-colors">GitHub Repo</a></li>
+          <li><a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">GitHub Repo <span class="sr-only">(opens in a new tab)</span></a></li>
           <li><a href="/submit" class="hover:text-brand-500 transition-colors">Submit a Job</a></li>
           <li><a href="/report" class="hover:text-brand-500 transition-colors">Feedback</a></li>
         </ul>
@@ -36,8 +36,8 @@ import DarkModeToggle from './DarkModeToggle.astro';
 
     <div class="border-t border-slate-100 dark:border-slate-700/50 mt-8 pt-6 flex items-center justify-between">
       <p class="text-xs text-slate-400 dark:text-slate-500">
-        Made with care by <a href="https://carmen.cv/" target="_blank" class="text-brand-500 hover:underline">carmen.cv</a> for the healthcare design community · Open source on
-        <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" class="text-brand-500 hover:underline">GitHub</a>
+        Made with care by <a href="https://carmen.cv/" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline">carmen.cv <span class="sr-only">(opens in a new tab)</span></a> for the healthcare design community · Open source on
+        <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline">GitHub <span class="sr-only">(opens in a new tab)</span></a>
       </p>
       <DarkModeToggle />
     </div>

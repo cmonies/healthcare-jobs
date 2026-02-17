@@ -5,8 +5,8 @@ const currentPath = Astro.url.pathname;
 <header role="banner" class="bg-white/80 dark:bg-surface-header/90 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-100 dark:border-slate-700/50">
   <nav aria-label="Main navigation" class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center group">
-      <img src="/logo.svg" alt="Designjobs Health" class="h-6 dark:hidden" />
-      <img src="/logo-dark.svg" alt="Designjobs Health" class="h-6 hidden dark:block" />
+      <img src="/logo.svg" alt="Design Jobs" class="h-6 dark:hidden" />
+      <img src="/logo-dark.svg" alt="Design Jobs" class="h-6 hidden dark:block" />
     </a>
 
     <!-- Desktop nav -->
@@ -38,9 +38,10 @@ const currentPath = Astro.url.pathname;
       <a
         href="https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q"
         target="_blank"
+        rel="noopener noreferrer"
         class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors"
       >
-        Join Slack
+        Join Slack <span class="sr-only">(opens in a new tab)</span>
       </a>
       <a
         href="/submit"
@@ -52,7 +53,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile -->
     <div class="flex md:hidden items-center gap-2">
-      <button id="mobile-menu-btn" class="p-2 text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button type="button" id="mobile-menu-btn" class="p-2 text-slate-500 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
         <svg id="menu-close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
       </button>
@@ -60,11 +61,11 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700/50 bg-white dark:bg-surface-header">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700/50 bg-white dark:bg-surface-header" role="dialog" aria-modal="true" aria-label="Mobile menu">
     <div class="px-6 py-4 space-y-3">
       <a href="/" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Home</a>
       <a href="/jobs" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Jobs</a>
-      <a href="https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q" target="_blank" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Join Slack</a>
+      <a href="https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q" target="_blank" rel="noopener noreferrer" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Join Slack <span class="sr-only">(opens in a new tab)</span></a>
       <a href="/submit" class="block text-sm text-brand-500 font-medium py-1">Submit a Job →</a>
     </div>
   </div>
@@ -75,11 +76,42 @@ const currentPath = Astro.url.pathname;
   const menu = document.getElementById('mobile-menu');
   const openIcon = document.getElementById('menu-open-icon');
   const closeIcon = document.getElementById('menu-close-icon');
-  btn?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
-    menu?.classList.toggle('hidden');
-    openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
-    btn?.setAttribute('aria-expanded', String(!isOpen));
+
+  let lastFocus: Element | null = null;
+
+  function openMenu() {
+    lastFocus = document.activeElement;
+    menu?.classList.remove('hidden');
+    openIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    btn?.setAttribute('aria-expanded', 'true');
+    btn?.setAttribute('aria-label', 'Close menu');
+    const first = menu?.querySelector('a, button');
+    (first as HTMLElement)?.focus();
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    openIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    btn?.setAttribute('aria-expanded', 'false');
+    btn?.setAttribute('aria-label', 'Open menu');
+    (lastFocus as HTMLElement)?.focus?.();
+  }
+
+  function isOpen() {
+    return menu && !menu.classList.contains('hidden');
+  }
+
+  btn?.addEventListener('click', () => (isOpen() ? closeMenu() : openMenu()));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) closeMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!isOpen()) return;
+    if (menu?.contains(e.target as Node) || btn?.contains(e.target as Node)) return;
+    closeMenu();
   });
 </script>

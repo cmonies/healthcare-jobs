@@ -27,15 +27,13 @@ interface Props {
 const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.props;
 ---
 
-<div
-  class="bg-white dark:bg-surface-card rounded-3xl shadow-soft overflow-hidden"
+<ul
+  class="bg-white dark:bg-surface-card rounded-3xl shadow-soft overflow-hidden list-none"
   id={id}
-  role="list"
   aria-label="Job listings"
 >
   {jobs.map((job, i) => (
-    <div
-      role="listitem"
+    <li
       class:list={["reveal job-row border-b border-slate-100 dark:border-slate-700/30", filterable && "job-item"]}
       data-delay={String(Math.min(i * delayStep, maxDelay))}
       {...(filterable ? {
@@ -46,6 +44,6 @@ const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.p
       } : {})}
     >
       <JobCard {...job} />
-    </div>
+    </li>
   ))}
-</div>
+</ul>

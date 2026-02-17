@@ -165,8 +165,24 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     transform: none;
   }
 
+  /* Global focus visible styles */
+  :where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 2px solid #244BF8;
+    outline-offset: 2px;
+  }
+
   /* Accessibility: respect reduced motion */
   @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none !important;
+    }
     .animate-fade-up,
     .animate-fade-in {
       animation: none;
