@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Design Jobs is a community-sourced healthcare UX jobs board. Open source, verified listings, and free forever. Find design roles where your work actually matters." } = Astro.props;
+const { title, description = "Healthcare UX jobs, curated by the community. Open source, verified listings, free forever." } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv');
 ---
 
@@ -26,7 +26,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl.href} />
-    <meta property="og:site_name" content="designjobs" />
+    <meta property="og:site_name" content="Designjobs Health" />
     <meta property="og:image" content="https://health.designjobs.cv/og-image.png" />
 
     <!-- Twitter -->
