@@ -48,6 +48,12 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Be Vietnam Pro is loaded via Google Fonts above -->
     <title>{title}</title>
+
+    <!-- Cloudflare Web Analytics — free, no cookies, privacy-first -->
+    {import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token": "${import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN}"}`}></script>
+    )}
+
     <script is:inline>
       document.documentElement.classList.add('js-ready');
       const t = localStorage.getItem('theme');
