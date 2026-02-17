@@ -61,10 +61,10 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700/50 bg-white dark:bg-surface-header" role="dialog" aria-modal="true" aria-label="Mobile menu">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700/50 bg-white dark:bg-surface-header" role="region" aria-label="Mobile menu">
     <div class="px-6 py-4 space-y-3">
-      <a href="/" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Home</a>
-      <a href="/jobs" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Jobs</a>
+      <a href="/" aria-current={currentPath === "/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Home</a>
+      <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Jobs</a>
       <a href="https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q" target="_blank" rel="noopener noreferrer" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Join Slack <span class="sr-only">(opens in a new tab)</span></a>
       <a href="/submit" class="block text-sm text-brand-500 font-medium py-1">Submit a Job →</a>
     </div>

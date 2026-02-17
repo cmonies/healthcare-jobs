@@ -32,6 +32,7 @@
     document.documentElement.classList.toggle('dark', dark);
     localStorage.setItem('theme', dark ? 'dark' : 'light');
     toggle?.setAttribute('aria-checked', String(dark));
+    toggle?.setAttribute('aria-label', dark ? 'Dark mode: on' : 'Dark mode: off');
   }
 
   function toggleWithTransition() {
