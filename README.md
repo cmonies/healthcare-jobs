@@ -2,7 +2,7 @@
 
 Healthcare UX job board — curated by the community, open source forever.
 
-🌐 **[designwith.care](https://designwith.care)** · [Preview](https://healthcare-jobs-ten.vercel.app)
+🌐 **[designwith.care](https://designwith.care)**
 
 ## What is this?
 
@@ -19,6 +19,12 @@ Healthcare UX is a growing field with unique challenges: regulatory constraints,
 - ⚡ **Fast** — static site with server endpoints, loads instantly
 - ♿ **Accessible** — semantic HTML, proper contrast, keyboard navigable
 - 🌙 **Dark mode** — automatic based on system preference, with manual toggle
+
+## Community
+
+Join the conversation — share jobs, ask questions, connect with other healthcare designers:
+
+💬 **[Join our Slack](https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q)**
 
 ## Tech Stack
 
@@ -53,7 +59,9 @@ src/
 │   ├── Header.astro
 │   ├── Footer.astro
 │   ├── JobCard.astro
-│   └── Newsletter.astro
+│   ├── JobTable.astro
+│   ├── Newsletter.astro
+│   └── DarkModeToggle.astro
 ├── data/
 │   └── jobs.json     # Job listings data
 ├── layouts/
@@ -62,6 +70,7 @@ src/
 │   ├── index.astro   # Homepage
 │   ├── jobs.astro    # All jobs with search + filters
 │   ├── submit.astro  # Job submission form
+│   ├── report.astro  # Feedback form
 │   └── api/
 │       └── submit.ts # Server-side submission endpoint
 └── env.d.ts          # TypeScript env bindings

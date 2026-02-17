@@ -2,6 +2,12 @@
 
 First off — thank you! This project exists because of people like you. Whether you're submitting a job, fixing a bug, or suggesting a feature, every contribution matters.
 
+## Community
+
+Join our Slack to connect with other healthcare designers, share jobs, and discuss contributions:
+
+💬 **[Join Slack](https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q)**
+
 ## Code of Conduct
 
 Be kind, be respectful, be constructive. We're building something for a community that cares about people's health — let's treat each other with the same care.
@@ -10,7 +16,7 @@ Be kind, be respectful, be constructive. We're building something for a communit
 
 ### 🎯 Submit a Job Listing
 
-**Easiest way:** Use the **Contribute** button on [designwith.care](https://designwith.care). It'll create a GitHub issue with the job details for a maintainer to review.
+**Easiest way:** Use the **Submit a Job** button on [designwith.care](https://designwith.care). It creates a GitHub issue with the job details for a maintainer to review.
 
 **Via Pull Request:**
 
@@ -44,7 +50,7 @@ Be kind, be respectful, be constructive. We're building something for a communit
 
 ### 🐛 Report a Bug
 
-[Open an issue](https://github.com/cmonies/healthcare-jobs/issues/new) with:
+Use the **Feedback** link on the site, or [open an issue](https://github.com/cmonies/healthcare-jobs/issues/new) with:
 - What you expected to happen
 - What actually happened
 - Browser/device info if relevant
@@ -72,6 +78,8 @@ npm install
 npm run dev
 ```
 
+Open [http://localhost:4321](http://localhost:4321) to see the site.
+
 ## What Makes a Good Contribution
 
 - **Jobs:** Verified, active listings at real healthcare companies
@@ -84,7 +92,7 @@ All contributions are reviewed by a maintainer before merging. We aim to review 
 
 ## Questions?
 
-Open an issue or reach out — we're happy to help.
+Drop a message in [Slack](https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q) or [open an issue](https://github.com/cmonies/healthcare-jobs/issues/new) — we're happy to help.
 
 ---
 
