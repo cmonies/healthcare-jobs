@@ -1,0 +1,30 @@
+---
+const posthogKey = import.meta.env.PUBLIC_POSTHOG_KEY || '';
+const posthogHost = import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
+---
+
+{posthogKey && (
+  <script is:inline
+    data-posthog-key={posthogKey}
+    data-posthog-host={posthogHost}
+  >
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing identify alias people.set people.set_once set_config reset get_config get_property getFeatureFlag getFeatureFlagPayload isFeatureEnabled onFeatureFlags reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+    // Read config from script tag data attributes
+    var scriptTag = document.currentScript;
+    var key = scriptTag.getAttribute('data-posthog-key');
+    var host = scriptTag.getAttribute('data-posthog-host');
+
+    if (key) {
+      posthog.init(key, {
+        api_host: host,
+        person_profiles: 'identified_only',
+        persistence: 'memory',          // No cookies — stores in memory only
+        disable_cookie: true,            // Explicitly disable cookies
+        capture_pageview: true,          // Auto-track page views
+        capture_pageleave: true,         // Track when users leave
+        autocapture: true                // Auto-track clicks, inputs, etc.
+      });
+    }
+  </script>
+)}
