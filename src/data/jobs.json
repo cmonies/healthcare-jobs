@@ -645,5 +645,22 @@
       "enterprise",
       "AI"
     ]
+  },
+  {
+    "id": "ladder-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "Ladder",
+    "companyUrl": "https://www.ladderlife.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/ladder/6cbf504f-5987-4721-a487-7a82eaf5fcf9",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "insurtech",
+      "life insurance",
+      "B2C",
+      "startup"
+    ]
   }
 ]
