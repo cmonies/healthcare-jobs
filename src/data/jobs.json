@@ -386,23 +386,6 @@
     ]
   },
   {
-    "id": "virta-health-lead-product-designer-care-delivery",
-    "title": "Lead Product Designer, Care Delivery",
-    "company": "Virta Health",
-    "companyUrl": "https://www.virtahealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/virtahealth/fe90861d-ef26-4543-9e67-fcabf57cad5c",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "B2C",
-      "consumer",
-      "telehealth",
-      "startup"
-    ]
-  },
-  {
     "id": "hone-health-product-designer-products-integrations",
     "title": "Product Designer, Products & Integrations",
     "company": "Hone Health",
@@ -661,6 +644,42 @@
       "life insurance",
       "B2C",
       "startup"
+    ]
+  },
+  {
+    "id": "cohere-health-sr-product-designer",
+    "title": "Sr. Product Designer",
+    "company": "Cohere Health",
+    "companyUrl": "https://coherehealth.com",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "Hyderabad, India",
+    "url": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
+    "postedDate": "2026-02-18",
+    "tags": [
+      "healthcare AI",
+      "prior authorization",
+      "design systems",
+      "enterprise",
+      "B2B"
+    ]
+  },
+  {
+    "id": "betterhelp-product-designer-design-systems",
+    "title": "Product Designer, Design Systems",
+    "company": "BetterHelp",
+    "companyUrl": "https://www.betterhelp.com",
+    "level": "Mid-Senior",
+    "locationType": "On-site",
+    "location": "San Jose, CA",
+    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5023307008",
+    "postedDate": "2026-02-18",
+    "tags": [
+      "mental health",
+      "telehealth",
+      "design systems",
+      "B2C",
+      "AI"
     ]
   }
 ]
