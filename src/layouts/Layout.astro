@@ -1,5 +1,6 @@
 ---
 import Analytics from '../components/Analytics.astro';
+import ColorController from '../components/ColorController';
 
 interface Props {
   title: string;
@@ -64,6 +65,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
       Skip to main content
     </a>
     <slot />
+    <ColorController client:load />
     <Analytics />
   </body>
 </html>
@@ -72,6 +74,73 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://health.designjobs.cv')
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  /* === Color Controller Overrides === */
+  /* When CSS vars are set by Leva, they override Tailwind classes */
+  body {
+    background-color: var(--cc-bg, inherit) !important;
+    color: var(--cc-text-primary, inherit);
+  }
+
+  /* Header */
+  header[role="banner"] {
+    background-color: var(--cc-header-bg) !important;
+    border-bottom-color: var(--cc-header-border) !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Footer */
+  footer[role="contentinfo"] {
+    background-color: var(--cc-footer-bg) !important;
+  }
+
+  /* Job table card */
+  ul[aria-label="Job listings"] {
+    background-color: var(--cc-table-bg) !important;
+  }
+
+  /* Job row borders */
+  .job-row {
+    border-bottom-color: var(--cc-table-border) !important;
+  }
+
+  /* Job row hover */
+  .job-row a:hover {
+    background-color: var(--cc-table-row-hover) !important;
+  }
+
+  /* Brand-colored elements */
+  a[aria-current="page"],
+  .text-brand-500,
+  a:hover.hover\:text-brand-500 {
+    color: var(--cc-brand) !important;
+  }
+
+  /* Brand buttons (Submit a Job, etc.) */
+  a.bg-brand-500,
+  .bg-brand-500 {
+    background-color: var(--cc-brand) !important;
+  }
+  a.bg-brand-500:hover,
+  .bg-brand-500:hover,
+  .hover\:bg-brand-600:hover {
+    background-color: var(--cc-brand-hover) !important;
+  }
+
+  /* Newsletter section */
+  #newsletter {
+    background-color: var(--cc-newsletter-bg) !important;
+    color: var(--cc-newsletter-text) !important;
+  }
+  #newsletter h2 {
+    color: var(--cc-newsletter-text) !important;
+  }
+
+  /* Secondary text */
+  .text-slate-500,
+  .text-slate-400 {
+    color: var(--cc-text-secondary, currentColor);
+  }
 
   /* Custom easing curves (stronger than defaults) */
   :root {
