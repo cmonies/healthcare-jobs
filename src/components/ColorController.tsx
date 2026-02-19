@@ -1,39 +1,96 @@
-import { useControls, folder, Leva } from 'leva';
-import { useEffect } from 'react';
+import { useControls, folder, Leva, button } from 'leva';
+import { useEffect, useState } from 'react';
+
+const LIGHT_DEFAULTS = {
+  background: '#FAF7F0',
+  textPrimary: '#08090A',
+  textSecondary: '#71717A',
+  headerBg: '#FFFFFF',
+  headerBorder: '#F5F5F4',
+  footerBg: '#FFFFFF',
+  brandPrimary: '#244BF8',
+  brandHover: '#1C3CD6',
+  brandLight: '#D9DEFE',
+  tableBg: '#FFFFFF',
+  tableRowBorder: '#F5F5F4',
+  tableRowHover: '#EEF0FE',
+  newsletterBg: '#244BF8',
+  newsletterText: '#FFFFFF',
+};
+
+const DARK_DEFAULTS = {
+  background: '#0F0F0F',
+  textPrimary: '#F5F5F4',
+  textSecondary: '#A1A1AA',
+  headerBg: '#161718',
+  headerBorder: '#232326',
+  footerBg: '#0C0D0D',
+  brandPrimary: '#5872FA',
+  brandHover: '#244BF8',
+  brandLight: '#090D20',
+  tableBg: '#161718',
+  tableRowBorder: '#232326',
+  tableRowHover: '#090D20',
+  newsletterBg: '#161718',
+  newsletterText: '#FFFFFF',
+};
+
+function useDarkMode() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    const check = () => setDark(document.documentElement.classList.contains('dark'));
+    check();
+    const obs = new MutationObserver(check);
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => obs.disconnect();
+  }, []);
+  return dark;
+}
 
 export default function ColorController() {
-  const colors = useControls({
+  const isDark = useDarkMode();
+  const defaults = isDark ? DARK_DEFAULTS : LIGHT_DEFAULTS;
+
+  const [colors, set] = useControls(() => ({
     'Page': folder({
-      background: { value: '#FAF7F0', label: 'Background' },
-      textPrimary: { value: '#08090A', label: 'Text Primary' },
-      textSecondary: { value: '#71717A', label: 'Text Secondary' },
+      background: { value: defaults.background, label: 'Background' },
+      textPrimary: { value: defaults.textPrimary, label: 'Text Primary' },
+      textSecondary: { value: defaults.textSecondary, label: 'Text Secondary' },
     }),
     'Header': folder({
-      headerBg: { value: '#FFFFFF', label: 'Background' },
-      headerBorder: { value: '#F5F5F4', label: 'Border' },
+      headerBg: { value: defaults.headerBg, label: 'Background' },
+      headerBorder: { value: defaults.headerBorder, label: 'Border' },
     }),
     'Footer': folder({
-      footerBg: { value: '#FFFFFF', label: 'Background' },
+      footerBg: { value: defaults.footerBg, label: 'Background' },
     }),
     'Brand / Accent': folder({
-      brandPrimary: { value: '#244BF8', label: 'Primary' },
-      brandHover: { value: '#1C3CD6', label: 'Hover' },
-      brandLight: { value: '#EEF0FE', label: 'Light / Hover Row' },
+      brandPrimary: { value: defaults.brandPrimary, label: 'Primary' },
+      brandHover: { value: defaults.brandHover, label: 'Hover' },
+      brandLight: { value: defaults.brandLight, label: 'Light / Hover Row' },
     }),
     'Job Table': folder({
-      tableBg: { value: '#FFFFFF', label: 'Card Background' },
-      tableRowBorder: { value: '#F5F5F4', label: 'Row Divider' },
-      tableRowHover: { value: '#D9DEFE', label: 'Row Hover' },
+      tableBg: { value: defaults.tableBg, label: 'Card Background' },
+      tableRowBorder: { value: defaults.tableRowBorder, label: 'Row Divider' },
+      tableRowHover: { value: defaults.tableRowHover, label: 'Row Hover' },
     }),
     'Newsletter CTA': folder({
-      newsletterBg: { value: '#244BF8', label: 'Background' },
-      newsletterText: { value: '#FFFFFF', label: 'Text' },
+      newsletterBg: { value: defaults.newsletterBg, label: 'Background' },
+      newsletterText: { value: defaults.newsletterText, label: 'Text' },
     }),
-  });
+    'Reset to defaults': button(() => {
+      const d = document.documentElement.classList.contains('dark') ? DARK_DEFAULTS : LIGHT_DEFAULTS;
+      set(d);
+    }),
+  }), [isDark]);
+
+  // Reset values when dark mode toggles
+  useEffect(() => {
+    set(defaults);
+  }, [isDark]);
 
   useEffect(() => {
     const root = document.documentElement;
-    // Page
     document.body.style.backgroundColor = colors.background;
     root.style.setProperty('--cc-text-primary', colors.textPrimary);
     root.style.setProperty('--cc-text-secondary', colors.textSecondary);
