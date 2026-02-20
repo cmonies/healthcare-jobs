@@ -70,10 +70,10 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
           type="text"
           aria-label="Search jobs by title, company, location, or tag"
           placeholder="Search by title, company, or tag..."
-          class="w-full pl-11 pr-10 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-card text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-brand-300 dark:focus:border-brand-700 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-900/50 transition-[border-color,box-shadow] duration-150"
+          class="w-full pl-11 pr-10 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-card text-base md:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-brand-300 dark:focus:border-brand-700 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-900/50 transition-[border-color,box-shadow] duration-150"
         />
-        <button id="search-clear" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" aria-label="Clear search">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button id="search-clear" class="hidden absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" aria-label="Clear search" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 6 6 18" /><path d="m6 6 12 12" />
           </svg>
         </button>
@@ -87,7 +87,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
         <select
           id="location-select"
           aria-label="Filter by location"
-          class="w-full appearance-none pl-9 pr-8 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-card text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:border-brand-300 dark:focus:border-brand-700 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-900/50 transition-[border-color,box-shadow] duration-150 cursor-pointer"
+          class="w-full appearance-none pl-9 pr-8 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-card text-base md:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:border-brand-300 dark:focus:border-brand-700 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-900/50 transition-[border-color,box-shadow] duration-150 cursor-pointer"
         >
           <option value="">All locations</option>
           {locations.map(loc => (
@@ -442,10 +442,12 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
     saveFilters();
   });
 
-  searchClear?.addEventListener('click', () => {
-    if (searchInput) searchInput.value = '';
+  searchClear?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (searchInput) { searchInput.value = ''; searchInput.focus(); }
     searchQuery = '';
-    searchClear.classList.add('hidden');
+    searchClear!.classList.add('hidden');
     applyFilters();
     saveFilters();
   });
