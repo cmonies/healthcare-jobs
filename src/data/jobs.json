@@ -454,8 +454,7 @@
       "B2C",
       "consumer",
       "startup"
-    ],
-    "_notes": "Page title confirmed 'Senior Product Designer'. Active EEO application form present. Company is Allara Health (PCOS/hormonal health). No posted date found on page; using discovery date as approximate."
+    ]
   },
   {
     "id": "overjet-lead-ai-product-designer-flagship",
@@ -509,8 +508,7 @@
       "B2C",
       "consumer",
       "startup"
-    ],
-    "_notes": "Page title confirmed 'Senior Product Designer, Member Growth'. Active listing with full JD. Must be based in Seattle metro, hybrid 2-3 days/week. 5+ years experience required. Reports to Senior Design Manager of Member Growth. No posted date found; using discovery date."
+    ]
   },
   {
     "id": "redox-senior-product-designer",
@@ -527,8 +525,7 @@
       "B2B",
       "enterprise",
       "AI"
-    ],
-    "_notes": "Full JD confirmed. Healthcare interoperability platform processing 1.2B messages/month. $156k-$184k base. 5+ years experience. Figma required. Lever page fully renders with Apply button."
+    ]
   },
   {
     "id": "atropos-health-product-designer",
@@ -545,8 +542,7 @@
       "clinical trials",
       "B2B",
       "startup"
-    ],
-    "_notes": "Ashby page title confirmed 'Product Designer @ Atropos Health'. Ashby is JS-rendered so full JD not visible via web_fetch. Atropos Health uses AI for real-world evidence in healthcare. Described as 'first Product Designer' role. Needs browser verification for full details."
+    ]
   },
   {
     "id": "3y-health-ai-product-designer",
@@ -562,8 +558,7 @@
       "AI",
       "B2B",
       "startup"
-    ],
-    "_notes": "Ashby page title confirmed 'AI Product Designer @ 3Y Health'. Backed by $200M+ from Founders Fund, General Catalyst, Softbank, 8VC. Designing agentic AI systems for healthcare. Needs browser verification for full details including location/remote status."
+    ]
   },
   {
     "id": "intuscare-senior-ux-researcher",
@@ -579,8 +574,7 @@
       "B2B",
       "enterprise",
       "startup"
-    ],
-    "_notes": "Ashby page title confirmed 'Senior UX Researcher @ IntusCare'. IntusCare is a healthcare analytics company focused on PACE programs for elderly care. Partners with product design, PM, engineering, and clinical experts. Needs browser verification for full details."
+    ]
   },
   {
     "id": "nourish-staff-product-designer",
