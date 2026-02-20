@@ -41,8 +41,8 @@
     "company": "Pomelo Care",
     "companyUrl": "https://www.pomelocare.com",
     "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY (+ San Francisco, Seattle, Boston, Chicago, DC hubs)",
+    "locationType": "Remote",
+    "location": "USA",
     "url": "https://job-boards.greenhouse.io/pomelocare/jobs/5744101004",
     "postedDate": "2026-02-20",
     "tags": [
@@ -68,40 +68,6 @@
       "B2C",
       "startup",
       "design systems"
-    ]
-  },
-  {
-    "id": "athenahealth-ux-designer",
-    "title": "UX Designer",
-    "company": "athenahealth",
-    "companyUrl": "https://athenahealth.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://athenahealth.wd1.myworkdayjobs.com/external/job/remote---ma/ux-designer_r14330",
-    "postedDate": "2026-02-13",
-    "tags": [
-      "EHR",
-      "B2B",
-      "enterprise",
-      "medical reference"
-    ]
-  },
-  {
-    "id": "cvs-health-staff-ui-ux-designer",
-    "title": "Staff UI/UX Designer",
-    "company": "CVS Health",
-    "companyUrl": "https://cvshealth.com",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://cvshealth.wd1.myworkdayjobs.com/en-US/CVS_Health_Careers/job/Staff-UI-UX-Designer_R0794059",
-    "postedDate": "2026-02-12",
-    "tags": [
-      "pharmacy",
-      "health insurance",
-      "B2C",
-      "enterprise"
     ]
   },
   {
@@ -371,23 +337,6 @@
       "pharma",
       "B2C",
       "consumer",
-      "startup"
-    ]
-  },
-  {
-    "id": "qualified-health-product-designer",
-    "title": "Product Designer (UI/UX)",
-    "company": "Qualified Health",
-    "companyUrl": "https://www.qualifiedhealth.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/qualifiedhealth/jobs/4947649008",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "AI",
-      "B2B",
-      "enterprise",
       "startup"
     ]
   },
