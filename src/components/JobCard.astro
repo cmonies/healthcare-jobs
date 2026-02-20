@@ -25,8 +25,9 @@ const levelColors: Record<string, string> = {
 
 const locationIcon = locationType === 'Remote' ? '🌍' : locationType === 'Hybrid' ? '🏢' : '📍';
 
-const daysAgo = Math.floor((Date.now() - new Date(postedDate).getTime()) / (1000 * 60 * 60 * 24));
-const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAgo}d ago`;
+const parsedDate = postedDate ? new Date(postedDate).getTime() : NaN;
+const daysAgo = Number.isNaN(parsedDate) ? null : Math.floor((Date.now() - parsedDate) / (1000 * 60 * 60 * 24));
+const timeLabel = daysAgo === null ? '' : daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAgo}d ago`;
 ---
 
 <a
