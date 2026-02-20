@@ -99,7 +99,10 @@ const featuredJobs = jobs.slice(0, 8);
   <!-- Featured Jobs -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-24">
     <div class="reveal flex items-center justify-between mb-6" data-delay="0">
-      <h2 class="text-xl font-bold text-slate-900 dark:text-white">Latest jobs</h2>
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Latest jobs</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">{jobs.length} healthcare design roles currently open</p>
+      </div>
       <a href="/jobs" class="text-sm font-medium text-brand-500 hover:text-brand-600 transition-colors">
         View all →
       </a>
