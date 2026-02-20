@@ -172,7 +172,6 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           '',
           '---',
           body.reporterName ? `**Reported by:** ${body.reporterName}${body.reporterEmail ? ` (${body.reporterEmail})` : ''}` : '**Reported by:** Anonymous',
-          `**IP:** ${clientAddress || 'unknown'}`,
           '_Reported via health.designjobs.cv/report_',
         ].join('\n');
         labels = ['bug-report', issueTypeLabels[body.issueType] || 'other'];
@@ -190,7 +189,6 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           '',
           '---',
           `**Submitted by:** ${body.submitterName} (${body.submitterEmail})`,
-          `**IP:** ${clientAddress || 'unknown'}`,
           '_Submitted via health.designjobs.cv_',
         ].join('\n');
         labels = ['job-submission'];
@@ -199,7 +197,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       const result = await createGitHubIssue(GITHUB_TOKEN, GITHUB_REPO, issueTitle, issueBody, labels);
       if (!result.ok) {
         console.error('GitHub issue creation failed:', result.error);
-        return new Response(JSON.stringify({ ok: false, error: 'Failed to create submission. Debug: ' + (result.error || 'unknown').substring(0, 200) }), {
+        return new Response(JSON.stringify({ ok: false, error: 'Failed to create submission. Please try again later.' }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
         });
