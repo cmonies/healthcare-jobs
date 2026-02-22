@@ -1,5 +1,4 @@
-# Contributing to designwith.care
-
+# Contributing to Health Design Jobs
 First off — thank you! This project exists because of people like you. Whether you're submitting a job, fixing a bug, or suggesting a feature, every contribution matters.
 
 ## Community
@@ -16,7 +15,7 @@ Be kind, be respectful, be constructive. We're building something for a communit
 
 ### 🎯 Submit a Job Listing
 
-**Easiest way:** Use the **Submit a Job** button on [designwith.care](https://designwith.care). It creates a GitHub issue with the job details for a maintainer to review.
+**Easiest way:** Use the **Submit a Job** button on [Health Design Jobs](https://health.designjobs.cv/jobs). It creates a GitHub issue with the job details for a maintainer to review.
 
 **Via Pull Request:**
 

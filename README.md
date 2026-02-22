@@ -1,8 +1,7 @@
-# designwith.care
-
+# Health Design Jobs
 Healthcare UX job board — curated by the community, open source forever.
 
-🌐 **[designwith.care](https://designwith.care)**
+🌐 **[Health Design Jobs](https://health.designjobs.cv/jobs)**
 
 ## What is this?
 
