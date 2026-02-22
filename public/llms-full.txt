@@ -1,10 +1,12 @@
-# designjobs — Healthcare UX Jobs (Full Context)
+# Health Health Design Jobs — Healthcare UX Jobs
 
-Design Jobs is a community-sourced healthcare UX jobs board. Open source, verified listings, and free forever. Find design roles where your work actually matters.
+(Full Context)
+
+Health Design Jobs is a community-sourced healthcare UX jobs board. Open source, verified listings, and free forever. Find design roles where your work actually matters.
 
 ## Overview
 
-designjobs (health.designjobs.cv) is a free, open-source job board focused exclusively on UX and product design roles at healthcare and health-tech companies. It is community-built, community-maintained, and has no paywalls, ads, or recruiter spam.
+Health Design Jobs (health.designjobs.cv) is a free, open-source job board focused exclusively on UX and product design roles at healthcare and health-tech companies. It is community-built, community-maintained, and has no paywalls, ads, or recruiter spam.
 
 ## How It Works
 
