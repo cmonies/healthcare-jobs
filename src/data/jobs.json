@@ -1,5 +1,164 @@
 [
   {
+    "id": "oura-staff-designer-womens-health",
+    "title": "Staff Designer, Women's Health",
+    "company": "Ōura",
+    "companyUrl": "https://ouraring.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4110516009",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "women's health",
+      "reproductive health",
+      "wearables",
+      "consumer",
+      "B2C"
+    ]
+  },
+  {
+    "id": "oura-staff-designer-fitness",
+    "title": "Staff Designer, Fitness",
+    "company": "Ōura",
+    "companyUrl": "https://ouraring.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4074617009",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "fitness",
+      "wearables",
+      "consumer",
+      "B2C"
+    ]
+  },
+  {
+    "id": "oura-staff-product-designer-enterprise",
+    "title": "Staff Product Designer, Enterprise Products",
+    "company": "Ōura",
+    "companyUrl": "https://ouraring.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4068982009",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "enterprise",
+      "B2B",
+      "population health",
+      "wearables",
+      "data visualization"
+    ]
+  },
+  {
+    "id": "betterhelp-senior-mixed-methods-user-researcher",
+    "title": "Senior Mixed-Methods User Researcher",
+    "company": "BetterHelp",
+    "companyUrl": "https://www.betterhelp.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5023260008",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "mental health",
+      "UX research",
+      "mixed-methods",
+      "telehealth",
+      "B2C"
+    ]
+  },
+  {
+    "id": "grow-therapy-senior-staff-product-designer",
+    "title": "Senior/Staff Product Designer",
+    "company": "Grow Therapy",
+    "companyUrl": "https://growtherapy.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/growtherapy/jobs/4583852005",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "mental health",
+      "telehealth",
+      "marketplace",
+      "B2C",
+      "startup",
+      "AI"
+    ]
+  },
+  {
+    "id": "pearl-health-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Pearl Health",
+    "companyUrl": "https://www.pearlhealth.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/pearlhealth/134fee37-87f9-4591-9c93-f7928d6f58ea",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "primary care",
+      "value-based care",
+      "B2B",
+      "enterprise",
+      "startup"
+    ]
+  },
+  {
+    "id": "virta-health-lead-product-designer-activation",
+    "title": "Lead Product Designer, Activation",
+    "company": "Virta Health",
+    "companyUrl": "https://www.virtahealth.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/virtahealth/7bdb819f-888a-40d2-9aaa-d0b9563aca7c",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "metabolic health",
+      "diabetes",
+      "telehealth",
+      "B2C",
+      "startup"
+    ]
+  },
+  {
+    "id": "leona-health-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "Leona Health",
+    "companyUrl": "https://leonahealth.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/leona/3af3517b-deca-4eac-a6b8-48d6aa82f4a7",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "healthcare access",
+      "health tech",
+      "B2C",
+      "startup"
+    ]
+  },
+  {
+    "id": "silna-health-product-designer-founding",
+    "title": "Product Designer (Founding)",
+    "company": "Silna Health",
+    "companyUrl": "https://silnahealth.com",
+    "level": "Mid-Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/silnahealth.com/3dbe92eb-df43-44c9-8768-6201bd189cb8",
+    "postedDate": "2026-02-23",
+    "tags": [
+      "health tech",
+      "startup",
+      "founding role"
+    ]
+  },
+  {
     "id": "hinge-health-staff-product-designer-home-explore-sf",
     "title": "Staff Product Designer, Home & Explore",
     "company": "Hinge Health",
@@ -136,56 +295,6 @@
       "B2C",
       "enterprise",
       "design systems"
-    ]
-  },
-  {
-    "id": "pointclickcare-senior-ux-designer-life-sciences",
-    "title": "Senior UX Designer, Life Sciences",
-    "company": "PointClickCare",
-    "companyUrl": "https://pointclickcare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/pointclickcare/97bd5d26-f407-48b9-a92b-b3ba9f9a511d",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "EHR",
-      "B2B",
-      "enterprise",
-      "AI"
-    ]
-  },
-  {
-    "id": "pointclickcare-senior-ux-designer-contract",
-    "title": "Senior UX Designer (Contract)",
-    "company": "PointClickCare",
-    "companyUrl": "https://pointclickcare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/pointclickcare/bfbd7a88-b27d-485b-82e7-523686939b9f",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "EHR",
-      "B2B",
-      "enterprise"
-    ]
-  },
-  {
-    "id": "pointclickcare-content-designer-ux-contract",
-    "title": "Content Designer (UX) (12-month Contract)",
-    "company": "PointClickCare",
-    "companyUrl": "https://pointclickcare.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/pointclickcare/28e8b44d-2c01-4021-8fe2-ab66e2832431",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "EHR",
-      "B2B",
-      "enterprise",
-      "content design"
     ]
   },
   {
@@ -524,40 +633,6 @@
       "mental health",
       "B2C",
       "consumer",
-      "startup"
-    ]
-  },
-  {
-    "id": "redox-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Redox",
-    "companyUrl": "https://www.redoxengine.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/redoxengine/daac8d18-daa4-4d30-b3db-8107088e0df8",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "EHR",
-      "B2B",
-      "enterprise",
-      "AI"
-    ]
-  },
-  {
-    "id": "atropos-health-product-designer",
-    "title": "Product Designer",
-    "company": "Atropos Health",
-    "companyUrl": "https://www.atroposhealth.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/atroposhealth/f5e728f4-828e-4c5a-8cdf-2fc47b3611cd",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "AI",
-      "clinical trials",
-      "B2B",
       "startup"
     ]
   },
