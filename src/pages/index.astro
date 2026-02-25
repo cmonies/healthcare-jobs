@@ -6,7 +6,7 @@ import JobTable from '../components/JobTable.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
-const featuredJobs = jobs.slice(0, 8);
+const featuredJobs = [...jobs].sort((a, b) => b.postedDate.localeCompare(a.postedDate)).slice(0, 8);
 ---
 
 <Layout title="Design Jobs - Healthcare Design Jobs">
