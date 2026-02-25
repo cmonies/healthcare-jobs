@@ -17,7 +17,7 @@ const locationCounts: Record<string, number> = {};
 locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationType === lt).length; });
 ---
 
-<Layout title="All Jobs — Design Jobs" description={`${jobs.length} healthcare UX jobs from companies that care. Browse product designer, UX designer, and UX researcher roles at health-tech companies.`}>
+<Layout title="All Jobs — Design Jobs" description="Browse open healthcare UX jobs at companies building products that matter. Curated product designer, UX designer, and researcher roles at health-tech companies — verified listings, updated regularly.">
   <Header />
 
   <main id="main-content" tabindex="-1">
@@ -27,7 +27,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Healthcare UX Jobs",
-    "description": `${jobs.length} healthcare UX design roles from companies that care`,
+    "description": "Curated healthcare UX design roles from companies building products that matter",
     "numberOfItems": jobs.length,
     "itemListElement": jobs.slice(0, 50).map((job, i) => ({
       "@type": "ListItem",
