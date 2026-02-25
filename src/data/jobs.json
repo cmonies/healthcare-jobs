@@ -2,7 +2,7 @@
   {
     "id": "oura-staff-designer-womens-health",
     "title": "Staff Designer, Women's Health",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -20,7 +20,7 @@
   {
     "id": "oura-staff-designer-fitness",
     "title": "Staff Designer, Fitness",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -37,7 +37,7 @@
   {
     "id": "oura-staff-product-designer-enterprise",
     "title": "Staff Product Designer, Enterprise Products",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -769,6 +769,79 @@
       "design systems",
       "B2C",
       "AI"
+    ]
+  },
+  {
+    "id": "artera-product-designer",
+    "title": "Product Designer",
+    "company": "Artera",
+    "companyUrl": "https://artera.ai",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "Santa Barbara, CA / Wayne, PA",
+    "url": "https://jobs.lever.co/artera-2/cfd44848-ab2c-4171-b67a-1a20b8944ec1",
+    "postedDate": "2026-02-25",
+    "tags": [
+      "patient communications",
+      "healthcare AI",
+      "AI",
+      "enterprise",
+      "B2B",
+      "SaaS"
+    ]
+  },
+  {
+    "id": "k-health-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "K Health",
+    "companyUrl": "https://khealth.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/khealthcareers/jobs/5811671004",
+    "postedDate": "2026-02-25",
+    "tags": [
+      "primary care",
+      "clinical AI",
+      "AI",
+      "telehealth",
+      "B2C"
+    ]
+  },
+  {
+    "id": "garner-health-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Garner Health",
+    "companyUrl": "https://garnerhealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/5754093004",
+    "postedDate": "2026-02-25",
+    "tags": [
+      "benefits navigation",
+      "design systems",
+      "enterprise",
+      "B2B",
+      "growth"
+    ]
+  },
+  {
+    "id": "seed-health-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "Seed Health",
+    "companyUrl": "https://seed.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/seed/jobs/7581632003",
+    "postedDate": "2026-02-25",
+    "tags": [
+      "microbiome",
+      "consumer health",
+      "DTC",
+      "B2C",
+      "startup"
     ]
   }
 ]
