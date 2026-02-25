@@ -6,6 +6,9 @@ import JobTable from '../components/JobTable.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
+// Default sort: newest first (by postedDate descending)
+const sortedJobs = [...jobs].sort((a, b) => b.postedDate.localeCompare(a.postedDate));
+
 const levelOrder = ['Mid', 'Senior', 'Staff', 'Lead', 'Principal', 'Director'];
 const levels = levelOrder.filter(l => jobs.some(j => j.level === l));
 const locationTypes = [...new Set(jobs.map(j => j.locationType))];
@@ -164,7 +167,7 @@ locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationTy
 
   <!-- Jobs List -->
   <section class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto px-6 pb-20">
-    <JobTable jobs={jobs} filterable id="jobs-list" delayStep={30} />
+    <JobTable jobs={sortedJobs} filterable id="jobs-list" delayStep={30} />
     <div id="no-results" class="text-center py-12 hidden">
       <p class="text-slate-400 mb-4">No jobs match your current filters.</p>
       <button id="clear-all-filters" class="px-5 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 bg-transparent border border-slate-200 dark:border-slate-700 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
