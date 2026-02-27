@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "qualified-health-product-designer",
+    "title": "Product Designer",
+    "company": "Qualified Health",
+    "companyUrl": "https://www.qualified.com",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "Palo Alto, CA",
+    "url": "https://job-boards.greenhouse.io/qualifiedhealth/jobs/5113771008",
+    "postedDate": null,
+    "tags": [
+      "clinical AI",
+      "value-based care",
+      "enterprise",
+      "healthcare data",
+      "AI"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/qualifiedhealth",
+    "_verifiedAt": "2026-02-27",
+    "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error."
+  }
+]
