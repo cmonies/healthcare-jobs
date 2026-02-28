@@ -25,9 +25,7 @@ const levelColors: Record<string, string> = {
 
 const locationIcon = locationType === 'Remote' ? '🌍' : locationType === 'Hybrid' ? '🏢' : '📍';
 
-const parsedDate = postedDate ? new Date(postedDate).getTime() : NaN;
-const daysAgo = Number.isNaN(parsedDate) ? null : Math.floor((Date.now() - parsedDate) / (1000 * 60 * 60 * 24));
-const timeLabel = daysAgo === null ? '' : daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1d ago' : `${daysAgo}d ago`;
+// Date label is computed client-side so it stays accurate without rebuilding
 ---
 
 <a
@@ -63,7 +61,7 @@ const timeLabel = daysAgo === null ? '' : daysAgo === 0 ? 'Today' : daysAgo === 
       <span aria-hidden="true">{locationIcon}</span> {locationType}{location !== 'USA' ? ` · ${location}` : ''}
     </span>
 
-    <span class="text-xs text-slate-400 dark:text-slate-500 shrink-0 w-14 text-right">{timeLabel}</span>
+    <span class="text-xs text-slate-400 dark:text-slate-500 shrink-0 w-14 text-right job-date" data-posted={postedDate || ''}></span>
 
     <div class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 transition-colors shrink-0">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -82,7 +80,7 @@ const timeLabel = daysAgo === null ? '' : daysAgo === 0 ? 'Today' : daysAgo === 
         <div class="flex items-center gap-2 mt-1 flex-wrap">
           <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">{company}</span>
           <span class="text-slate-300 dark:text-slate-600">·</span>
-          <span class="text-xs text-slate-400 dark:text-slate-500">{timeLabel}</span>
+          <span class="text-xs text-slate-400 dark:text-slate-500 job-date" data-posted={postedDate || ''}></span>
         </div>
       </div>
       <div class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 transition-colors mt-1 shrink-0">
@@ -104,3 +102,20 @@ const timeLabel = daysAgo === null ? '' : daysAgo === 0 ? 'Today' : daysAgo === 
     </div>
   </div>
 </a>
+
+<script>
+  function updateJobDates() {
+    const now = Date.now();
+    document.querySelectorAll<HTMLElement>('.job-date[data-posted]').forEach(el => {
+      const raw = el.dataset.posted;
+      if (!raw) return;
+      const ms = new Date(raw).getTime();
+      if (isNaN(ms)) return;
+      const days = Math.floor((now - ms) / (1000 * 60 * 60 * 24));
+      el.textContent = days === 0 ? 'Today' : days === 1 ? '1d ago' : `${days}d ago`;
+    });
+  }
+  updateJobDates();
+  // Re-run after any dynamic content loads (e.g. view transitions)
+  document.addEventListener('astro:page-load', updateJobDates);
+</script>
