@@ -7,7 +7,7 @@ import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
 // Default sort: newest first (by postedDate descending)
-const sortedJobs = [...jobs].sort((a, b) => b.postedDate.localeCompare(a.postedDate));
+const sortedJobs = [...jobs].sort((a, b) => (b.postedDate || '').localeCompare(a.postedDate || ''));
 
 const levelOrder = ['Mid', 'Senior', 'Staff', 'Lead', 'Principal', 'Director'];
 const levels = levelOrder.filter(l => jobs.some(j => j.level === l));
