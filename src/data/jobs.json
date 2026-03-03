@@ -1,5 +1,20 @@
 [
   {
+    "title": "Product Designer",
+    "company": "August Health",
+    "companyUrl": "https://www.augusthealth.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://www.augusthealth.com/careers?ashby_jid=72ce1490-fa1b-477e-bb63-70720973bbf8",
+    "postedDate": "",
+    "tags": [
+      "healthcare",
+      "product"
+    ],
+    "_verifiedAt": "2026-03-03"
+  },
+  {
     "id": "maven-clinic-senior-brand-designer",
     "title": "Senior Brand Designer",
     "company": "Maven Clinic",
