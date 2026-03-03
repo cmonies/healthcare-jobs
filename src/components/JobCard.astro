@@ -79,8 +79,12 @@ const locationIcon = locationType === 'Remote' ? '🌍' : locationType === 'Hybr
         </h3>
         <div class="flex items-center gap-2 mt-1 flex-wrap">
           <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">{company}</span>
-          <span class="text-slate-300 dark:text-slate-600">·</span>
-          <span class="text-xs text-slate-400 dark:text-slate-500 job-date" data-posted={postedDate || ''}></span>
+          {postedDate && (
+            <>
+              <span class="text-slate-300 dark:text-slate-600">·</span>
+              <span class="text-xs text-slate-400 dark:text-slate-500 job-date" data-posted={postedDate}></span>
+            </>
+          )}
         </div>
       </div>
       <div class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 transition-colors mt-1 shrink-0">
