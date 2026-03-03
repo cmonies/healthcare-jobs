@@ -1,5 +1,31 @@
 [
   {
+    "id": "maven-clinic-senior-brand-designer",
+    "title": "Senior Brand Designer",
+    "company": "Maven Clinic",
+    "companyUrl": "https://mavenclinic.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "New York, NY (+ SF, Seattle, Boston, Chicago, DC)",
+    "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8422947002",
+    "postedDate": null,
+    "salary": "$125,000 - $145,000",
+    "tags": [
+      "brand design",
+      "visual identity",
+      "healthcare",
+      "womens health",
+      "Figma",
+      "Adobe Creative Suite",
+      "performance marketing",
+      "digital design"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic/jobs/8422947002",
+    "_searchQuery": "community-submitted",
+    "_verifiedAt": "2026-03-03",
+    "_verificationNote": "Verified live on Greenhouse. Maven Clinic virtual clinic for women/families. Senior Brand Designer, 6+ yrs, Adobe+Figma. Hybrid NY or quarterly WTDs. $125-145K + equity."
+  },
+  {
     "id": "sleep-doctor-ux-designer-service",
     "title": "User Experience Designer, Service (Short Term Assignment)",
     "company": "Sleep Doctor",
