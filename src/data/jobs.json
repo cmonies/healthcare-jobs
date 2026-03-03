@@ -46,7 +46,7 @@
   {
     "id": "oura-staff-designer-womens-health",
     "title": "Staff Designer, Women's Health",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -64,7 +64,7 @@
   {
     "id": "oura-staff-designer-fitness",
     "title": "Staff Designer, Fitness",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -81,7 +81,7 @@
   {
     "id": "oura-staff-product-designer-enterprise",
     "title": "Staff Product Designer, Enterprise Products",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -851,5 +851,27 @@
       "B2C",
       "startup"
     ]
+  },
+  {
+    "id": "zocdoc-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Zocdoc",
+    "companyUrl": "https://www.zocdoc.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "California; New York, NY",
+    "url": "https://www.zocdoc.com/about/careers-list/?job_id=Senior-Product-Designer-7612536",
+    "postedDate": null,
+    "tags": [
+      "healthcare marketplace",
+      "consumer",
+      "product design",
+      "B2B",
+      "ads tooling"
+    ],
+    "_sourceUrl": "https://www.zocdoc.com/about/careers-list/?job_id=Senior-Product-Designer-7612536",
+    "_searchQuery": "manual-add",
+    "_verifiedAt": "2026-03-02",
+    "_verificationNote": "Manually added per Carmen. Page confirmed live via browser snapshot. Greenhouse application form present. NYC salary range $148k-$185k. Hybrid at Soho office. 5+ years required."
   }
 ]
