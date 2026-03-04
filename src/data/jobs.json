@@ -1,5 +1,185 @@
 [
   {
+    "id": "hinge-health-staff-product-designer-exercise",
+    "title": "Staff Product Designer, Exercise Experience",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2295",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "B2C",
+      "consumer"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-product-designer-program-foundations",
+    "title": "Product Designer, Program Foundations",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2404",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "B2C",
+      "product design"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-staff-product-designer-sf",
+    "title": "Staff Product Designer",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2483",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "B2C",
+      "product design"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-staff-ux-motion-designer",
+    "title": "Staff UX Motion Designer",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2442",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "motion design",
+      "UX"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-senior-product-designer-design-systems-india",
+    "title": "Senior Product Designer, Design Systems",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Bengaluru, India",
+    "url": "https://careers.hingehealth.com/jobs/2201",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "design systems",
+      "India"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-staff-content-designer",
+    "title": "Staff Content Designer",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2443",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "content design",
+      "UX writing"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-senior-product-designer-india",
+    "title": "Senior Product Designer",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Bengaluru, India",
+    "url": "https://careers.hingehealth.com/jobs/2357",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "B2C",
+      "India"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-growth-visual-designer",
+    "title": "Growth Visual Designer",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2486",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "visual design",
+      "growth"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-motion-designer",
+    "title": "Motion Designer",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2367",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "motion design",
+      "commercial"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
+    "id": "hinge-health-creative-director-commercial",
+    "title": "Creative Director, Commercial",
+    "company": "Hinge Health",
+    "companyUrl": "https://hingehealth.com",
+    "level": "Lead",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://careers.hingehealth.com/jobs/2461",
+    "postedDate": "2026-03-04",
+    "tags": [
+      "digital health",
+      "musculoskeletal",
+      "creative direction",
+      "marketing"
+    ],
+    "_verifiedAt": "2026-03-04"
+  },
+  {
     "title": "Product Designer",
     "company": "August Health",
     "companyUrl": "https://www.augusthealth.com",
