@@ -1,5 +1,27 @@
 [
   {
+    "id": "omada-health-staff-product-designer-new",
+    "title": "Staff Product Designer",
+    "company": "Omada Health",
+    "companyUrl": "https://www.omadahealth.com",
+    "level": "Staff",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/omadahealth/jobs/7685188",
+    "postedDate": "2026-03-09",
+    "tags": [
+      "B2C",
+      "consumer",
+      "telehealth",
+      "AI",
+      "behavior change",
+      "chronic disease"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth",
+    "_verifiedAt": "2026-03-09",
+    "_notes": "NEW listing (job ID 7685188) — different from existing entry omada-health-staff-product-designer (7235663). Marked 'New' on the Omada job board. Full job description confirmed live via web_fetch."
+  },
+  {
     "id": "bevel-product-designer",
     "title": "Product Designer",
     "company": "Bevel",
@@ -198,21 +220,6 @@
     "_verifiedAt": "2026-03-04"
   },
   {
-    "title": "Product Designer",
-    "company": "August Health",
-    "companyUrl": "https://www.augusthealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://www.augusthealth.com/careers?ashby_jid=72ce1490-fa1b-477e-bb63-70720973bbf8",
-    "postedDate": "",
-    "tags": [
-      "healthcare",
-      "product"
-    ],
-    "_verifiedAt": "2026-03-03"
-  },
-  {
     "id": "maven-clinic-senior-brand-designer",
     "title": "Senior Brand Designer",
     "company": "Maven Clinic",
@@ -285,7 +292,7 @@
   {
     "id": "oura-staff-designer-womens-health",
     "title": "Staff Designer, Women's Health",
-    "company": "\u014cura",
+    "company": "Ōura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -304,7 +311,7 @@
   {
     "id": "oura-staff-designer-fitness",
     "title": "Staff Designer, Fitness",
-    "company": "\u014cura",
+    "company": "Ōura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -322,7 +329,7 @@
   {
     "id": "oura-staff-product-designer-enterprise",
     "title": "Staff Product Designer, Enterprise Products",
-    "company": "\u014cura",
+    "company": "Ōura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -449,24 +456,6 @@
       "founding role"
     ],
     "_verifiedAt": "2026-02-23"
-  },
-  {
-    "id": "hinge-health-staff-product-designer-home-explore-sf",
-    "title": "Staff Product Designer, Home & Explore",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2329?lang=en-us&iis=LinkedIn&iisn=LinkedIn&mode=apply",
-    "postedDate": "2026-02-21",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "B2C",
-      "consumer"
-    ],
-    "_verifiedAt": "2026-02-21"
   },
   {
     "id": "spring-health-senior-product-designer-member-growth-sf",
@@ -610,24 +599,6 @@
       "B2C",
       "startup",
       "consumer"
-    ],
-    "_verifiedAt": "2026-02-14"
-  },
-  {
-    "id": "omada-health-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Omada Health",
-    "companyUrl": "https://www.omadahealth.com",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/omadahealth/jobs/7235663",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "B2C",
-      "consumer",
-      "telehealth",
-      "AI"
     ],
     "_verifiedAt": "2026-02-14"
   },
@@ -834,24 +805,6 @@
     "locationType": "Remote",
     "location": "USA",
     "url": "https://job-boards.greenhouse.io/honehealth/jobs/4986145008",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "telehealth",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "allara-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Allara Health",
-    "companyUrl": "https://www.allarahealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://job-boards.greenhouse.io/allarahealth/jobs/4814433008",
     "postedDate": "2026-02-15",
     "tags": [
       "telehealth",
@@ -1137,27 +1090,5 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-25"
-  },
-  {
-    "id": "zocdoc-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Zocdoc",
-    "companyUrl": "https://www.zocdoc.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "California; New York, NY",
-    "url": "https://www.zocdoc.com/about/careers-list/?job_id=Senior-Product-Designer-7612536",
-    "postedDate": null,
-    "tags": [
-      "healthcare marketplace",
-      "consumer",
-      "product design",
-      "B2B",
-      "ads tooling"
-    ],
-    "_sourceUrl": "https://www.zocdoc.com/about/careers-list/?job_id=Senior-Product-Designer-7612536",
-    "_searchQuery": "manual-add",
-    "_verifiedAt": "2026-03-02",
-    "_verificationNote": "Manually added per Carmen. Page confirmed live via browser snapshot. Greenhouse application form present. NYC salary range $148k-$185k. Hybrid at Soho office. 5+ years required."
   }
 ]
