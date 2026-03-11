@@ -40,186 +40,6 @@
     ]
   },
   {
-    "id": "hinge-health-staff-product-designer-exercise",
-    "title": "Staff Product Designer, Exercise Experience",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2295",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "B2C",
-      "consumer"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-product-designer-program-foundations",
-    "title": "Product Designer, Program Foundations",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2404",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "B2C",
-      "product design"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-staff-product-designer-sf",
-    "title": "Staff Product Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2483",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "B2C",
-      "product design"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-staff-ux-motion-designer",
-    "title": "Staff UX Motion Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2442",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "motion design",
-      "UX"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-senior-product-designer-design-systems-india",
-    "title": "Senior Product Designer, Design Systems",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Bengaluru, India",
-    "url": "https://careers.hingehealth.com/jobs/2201",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "design systems",
-      "India"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-staff-content-designer",
-    "title": "Staff Content Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2443",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "content design",
-      "UX writing"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-senior-product-designer-india",
-    "title": "Senior Product Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Bengaluru, India",
-    "url": "https://careers.hingehealth.com/jobs/2357",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "B2C",
-      "India"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-growth-visual-designer",
-    "title": "Growth Visual Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2486",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "visual design",
-      "growth"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-motion-designer",
-    "title": "Motion Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2367",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "motion design",
-      "commercial"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
-    "id": "hinge-health-creative-director-commercial",
-    "title": "Creative Director, Commercial",
-    "company": "Hinge Health",
-    "companyUrl": "https://hingehealth.com",
-    "level": "Lead",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://careers.hingehealth.com/jobs/2461",
-    "postedDate": "2026-03-04",
-    "tags": [
-      "digital health",
-      "musculoskeletal",
-      "creative direction",
-      "marketing"
-    ],
-    "_verifiedAt": "2026-03-04"
-  },
-  {
     "id": "maven-clinic-senior-brand-designer",
     "title": "Senior Brand Designer",
     "company": "Maven Clinic",
@@ -710,23 +530,6 @@
     "_verifiedAt": "2026-02-14"
   },
   {
-    "id": "solace-product-designer",
-    "title": "Product Designer",
-    "company": "Solace",
-    "companyUrl": "https://www.solace.health",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/Solace/6dc32ee4-b858-46d0-b627-2998edc68c9d",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-14"
-  },
-  {
     "id": "openai-lead-product-designer-health-ai",
     "title": "Lead Product Designer, Health AI",
     "company": "OpenAI",
@@ -830,26 +633,6 @@
       "enterprise",
       "AI",
       "diagnostic imaging"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "overjet-lead-ai-product-designer-new-product",
-    "title": "Lead AI Product Designer, New Product",
-    "company": "Overjet",
-    "companyUrl": "https://www.overjet.com",
-    "level": "Lead",
-    "locationType": "Hybrid",
-    "location": "San Mateo, CA",
-    "url": "https://jobs.ashbyhq.com/Overjet/d34856aa-2e72-4a96-9e12-dece535938ae",
-    "postedDate": "",
-    "tags": [
-      "dental AI",
-      "B2B",
-      "enterprise",
-      "AI",
-      "RCM",
-      "0-to-1"
     ],
     "_verifiedAt": "2026-02-15"
   },
@@ -992,25 +775,6 @@
       "design systems",
       "enterprise",
       "B2B"
-    ],
-    "_verifiedAt": "2026-02-18"
-  },
-  {
-    "id": "betterhelp-product-designer-design-systems",
-    "title": "Product Designer, Design Systems",
-    "company": "BetterHelp",
-    "companyUrl": "https://www.betterhelp.com",
-    "level": "Mid-Senior",
-    "locationType": "On-site",
-    "location": "San Jose, CA",
-    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5023307008",
-    "postedDate": "2026-02-18",
-    "tags": [
-      "mental health",
-      "telehealth",
-      "design systems",
-      "B2C",
-      "AI"
     ],
     "_verifiedAt": "2026-02-18"
   },
