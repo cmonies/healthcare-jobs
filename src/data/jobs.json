@@ -19,7 +19,7 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth",
     "_verifiedAt": "2026-03-09",
-    "_notes": "NEW listing (job ID 7685188) — different from existing entry omada-health-staff-product-designer (7235663). Marked 'New' on the Omada job board. Full job description confirmed live via web_fetch."
+    "_notes": "NEW listing (job ID 7685188) \u2014 different from existing entry omada-health-staff-product-designer (7235663). Marked 'New' on the Omada job board. Full job description confirmed live via web_fetch."
   },
   {
     "id": "bevel-product-designer",
@@ -112,7 +112,7 @@
   {
     "id": "oura-staff-designer-womens-health",
     "title": "Staff Designer, Women's Health",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -131,7 +131,7 @@
   {
     "id": "oura-staff-designer-fitness",
     "title": "Staff Designer, Fitness",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -149,7 +149,7 @@
   {
     "id": "oura-staff-product-designer-enterprise",
     "title": "Staff Product Designer, Enterprise Products",
-    "company": "Ōura",
+    "company": "\u014cura",
     "companyUrl": "https://ouraring.com",
     "level": "Staff",
     "locationType": "Hybrid",
@@ -331,24 +331,6 @@
       "design systems"
     ],
     "_verifiedAt": "2026-02-14"
-  },
-  {
-    "id": "abridge-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Abridge",
-    "companyUrl": "https://abridge.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA & New York, NY",
-    "url": "https://jobs.ashbyhq.com/abridge/6aab826b-a60a-434e-889d-e4648f289305",
-    "postedDate": "2026-02-10",
-    "tags": [
-      "AI",
-      "clinical documentation",
-      "B2B",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-10"
   },
   {
     "id": "included-health-staff-product-designer-growth-visual",
