@@ -12,7 +12,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "bevel-product-designer",
@@ -22,107 +22,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-staff-product-designer-exercise",
-      "company": "Hinge Health",
-      "title": "Staff Product Designer, Exercise Experience",
-      "url": "https://careers.hingehealth.com/jobs/2295",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-product-designer-program-foundations",
-      "company": "Hinge Health",
-      "title": "Product Designer, Program Foundations",
-      "url": "https://careers.hingehealth.com/jobs/2404",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-staff-product-designer-sf",
-      "company": "Hinge Health",
-      "title": "Staff Product Designer",
-      "url": "https://careers.hingehealth.com/jobs/2483",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-staff-ux-motion-designer",
-      "company": "Hinge Health",
-      "title": "Staff UX Motion Designer",
-      "url": "https://careers.hingehealth.com/jobs/2442",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-senior-product-designer-design-systems-india",
-      "company": "Hinge Health",
-      "title": "Senior Product Designer, Design Systems",
-      "url": "https://careers.hingehealth.com/jobs/2201",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-staff-content-designer",
-      "company": "Hinge Health",
-      "title": "Staff Content Designer",
-      "url": "https://careers.hingehealth.com/jobs/2443",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-senior-product-designer-india",
-      "company": "Hinge Health",
-      "title": "Senior Product Designer",
-      "url": "https://careers.hingehealth.com/jobs/2357",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-growth-visual-designer",
-      "company": "Hinge Health",
-      "title": "Growth Visual Designer",
-      "url": "https://careers.hingehealth.com/jobs/2486",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-motion-designer",
-      "company": "Hinge Health",
-      "title": "Motion Designer",
-      "url": "https://careers.hingehealth.com/jobs/2367",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "hinge-health-creative-director-commercial",
-      "company": "Hinge Health",
-      "title": "Creative Director, Commercial",
-      "url": "https://careers.hingehealth.com/jobs/2461",
-      "pass": false,
-      "reason": "HTTP 404",
-      "status": 404,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "maven-clinic-senior-brand-designer",
@@ -132,7 +32,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "sleep-doctor-ux-designer-service",
@@ -142,7 +42,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "qualified-health-product-designer",
@@ -152,7 +52,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "oura-staff-designer-womens-health",
@@ -162,7 +62,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "oura-staff-designer-fitness",
@@ -172,7 +72,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "oura-staff-product-designer-enterprise",
@@ -182,7 +82,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "betterhelp-senior-mixed-methods-user-researcher",
@@ -192,7 +92,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "grow-therapy-senior-staff-product-designer",
@@ -202,7 +102,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "pearl-health-senior-product-designer",
@@ -212,7 +112,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "virta-health-lead-product-designer-activation",
@@ -222,7 +122,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "leona-health-lead-product-designer",
@@ -232,7 +132,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "silna-health-product-designer-founding",
@@ -242,7 +142,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "spring-health-senior-product-designer-member-growth-sf",
@@ -252,7 +152,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "pomelo-care-senior-product-designer",
@@ -262,7 +162,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "ro-staff-product-designer",
@@ -272,7 +172,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "abridge-senior-product-designer",
@@ -282,7 +182,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "included-health-staff-product-designer-growth-visual",
@@ -292,7 +192,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "samsung-research-staff-product-designer-digital-health",
@@ -302,7 +202,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "layer-health-senior-product-designer",
@@ -312,7 +212,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "garner-health-senior-product-designer",
@@ -322,7 +222,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "flo-health-senior-product-designer-user-centric",
@@ -332,7 +232,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "headway-senior-product-designer-provider-growth",
@@ -342,7 +242,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "headway-staff-product-designer-provider",
@@ -352,7 +252,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "headway-director-product-design-foundations",
@@ -362,7 +262,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "headway-staff-product-designer-provider-sourced-patients",
@@ -372,7 +272,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "blink-health-lead-product-designer",
@@ -382,17 +282,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "solace-product-designer",
-      "company": "Solace",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/Solace/6dc32ee4-b858-46d0-b627-2998edc68c9d",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "openai-lead-product-designer-health-ai",
@@ -402,7 +292,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "candid-health-senior-product-designer",
@@ -412,7 +302,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "hone-health-product-designer-products-integrations",
@@ -422,7 +312,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "hone-health-senior-product-designer-clinical",
@@ -432,7 +322,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "hone-health-senior-product-designer-core",
@@ -442,7 +332,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "overjet-lead-ai-product-designer-flagship",
@@ -452,17 +342,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "overjet-lead-ai-product-designer-new-product",
-      "company": "Overjet",
-      "title": "Lead AI Product Designer, New Product",
-      "url": "https://jobs.ashbyhq.com/Overjet/d34856aa-2e72-4a96-9e12-dece535938ae",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "spring-health-senior-product-designer-member-growth",
@@ -472,7 +352,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "3y-health-ai-product-designer",
@@ -482,7 +362,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "intuscare-senior-ux-researcher",
@@ -492,7 +372,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "nourish-staff-product-designer",
@@ -502,7 +382,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "baba-founding-product-designer",
@@ -512,7 +392,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "weave-product-designer-analytics",
@@ -522,7 +402,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "ladder-lead-product-designer",
@@ -532,7 +412,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "cohere-health-sr-product-designer",
@@ -542,17 +422,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
-    },
-    {
-      "id": "betterhelp-product-designer-design-systems",
-      "company": "BetterHelp",
-      "title": "Product Designer, Design Systems",
-      "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5023307008",
-      "pass": false,
-      "reason": "No live job signals found on page",
-      "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "artera-product-designer",
@@ -562,7 +432,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "k-health-lead-product-designer",
@@ -572,7 +442,7 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "garner-health-staff-product-designer",
@@ -582,23 +452,23 @@
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     },
     {
       "id": "seed-health-lead-product-designer",
       "company": "Seed Health",
       "title": "Lead Product Designer",
       "url": "https://job-boards.greenhouse.io/seed/jobs/7581632003",
-      "pass": true,
-      "reason": "OK",
+      "pass": false,
+      "reason": "No live job signals found on page",
       "status": 200,
-      "checkedAt": "2026-03-11T16:31:13.968Z"
+      "checkedAt": "2026-03-13T16:31:05.249Z"
     }
   ],
-  "lastRun": "2026-03-11T16:31:13.967Z",
+  "lastRun": "2026-03-13T16:31:05.249Z",
   "summary": {
-    "passed": 46,
-    "failed": 13,
-    "total": 59
+    "passed": 45,
+    "failed": 1,
+    "total": 46
   }
 }
