@@ -8,8 +8,8 @@ import jobs from '../data/jobs.json';
 
 const featuredJobs = [...jobs].sort((a, b) => {
   if (!a._verifiedAt && !b._verifiedAt) return 0;
-  if (!a._verifiedAt) return -1;
-  if (!b._verifiedAt) return 1;
+  if (!a._verifiedAt) return 1;
+  if (!b._verifiedAt) return -1;
   return b._verifiedAt.localeCompare(a._verifiedAt);
 }).slice(0, 8);
 ---

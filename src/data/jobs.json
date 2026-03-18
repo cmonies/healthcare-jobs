@@ -47,24 +47,6 @@
     "_notes": "NEW listing (job ID 7685188) — different from existing entry omada-health-staff-product-designer (7235663). Marked 'New' on the Omada job board. Full job description confirmed live via web_fetch."
   },
   {
-    "id": "bevel-product-designer",
-    "title": "Product Designer",
-    "company": "Bevel",
-    "companyUrl": "https://www.bevel.health/",
-    "level": "Mid",
-    "locationType": "Onsite",
-    "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/bevel/a71e6b6d-8153-459e-8fca-4c4843f73fac",
-    "postedDate": "2026-03-05",
-    "tags": [
-      "health",
-      "wellness",
-      "fitness",
-      "nutrition",
-      "sleep"
-    ]
-  },
-  {
     "id": "maven-clinic-senior-brand-designer",
     "title": "Senior Brand Designer",
     "company": "Maven Clinic",
@@ -133,6 +115,44 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/qualifiedhealth",
     "_verifiedAt": "2026-02-27",
     "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error."
+  },
+  {
+    "id": "k-health-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "K Health",
+    "companyUrl": "https://khealth.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/khealthcareers/jobs/5811671004",
+    "postedDate": "2026-02-25",
+    "tags": [
+      "primary care",
+      "clinical AI",
+      "AI",
+      "telehealth",
+      "B2C"
+    ],
+    "_verifiedAt": "2026-02-25"
+  },
+  {
+    "id": "garner-health-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Garner Health",
+    "companyUrl": "https://garnerhealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/5754093004",
+    "postedDate": "2026-02-25",
+    "tags": [
+      "benefits navigation",
+      "design systems",
+      "enterprise",
+      "B2B",
+      "growth"
+    ],
+    "_verifiedAt": "2026-02-25"
   },
   {
     "id": "oura-staff-designer-womens-health",
@@ -338,6 +358,221 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-20"
+  },
+  {
+    "id": "cohere-health-sr-product-designer",
+    "title": "Sr. Product Designer",
+    "company": "Cohere Health",
+    "companyUrl": "https://coherehealth.com",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "Hyderabad, India",
+    "url": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
+    "postedDate": "2026-02-18",
+    "tags": [
+      "healthcare AI",
+      "prior authorization",
+      "design systems",
+      "enterprise",
+      "B2B"
+    ],
+    "_verifiedAt": "2026-02-18"
+  },
+  {
+    "id": "nourish-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Nourish",
+    "companyUrl": "https://usenourish.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
+    "url": "https://job-boards.greenhouse.io/usenourish/jobs/4535318008",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "B2C",
+      "consumer",
+      "startup",
+      "AI"
+    ],
+    "_verifiedAt": "2026-02-16"
+  },
+  {
+    "id": "baba-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Baba",
+    "companyUrl": "https://jobs.ashbyhq.com/baba",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "url": "https://jobs.ashbyhq.com/baba/262c3826-39e0-49aa-891f-03211a8af128",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "AI",
+      "B2B",
+      "startup",
+      "clinical"
+    ],
+    "_verifiedAt": "2026-02-16"
+  },
+  {
+    "id": "weave-product-designer-analytics",
+    "title": "Product Designer, Analytics",
+    "company": "Weave",
+    "companyUrl": "https://www.getweave.com",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "India",
+    "url": "https://jobs.ashbyhq.com/weave/290cffde-dca4-4691-808b-a160bfd51111",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "B2B",
+      "enterprise",
+      "AI"
+    ],
+    "_verifiedAt": "2026-02-16"
+  },
+  {
+    "id": "ladder-lead-product-designer",
+    "title": "Lead Product Designer",
+    "company": "Ladder",
+    "companyUrl": "https://www.ladderlife.com",
+    "level": "Lead",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/ladder/6cbf504f-5987-4721-a487-7a82eaf5fcf9",
+    "postedDate": "2026-02-16",
+    "tags": [
+      "insurtech",
+      "life insurance",
+      "B2C",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-16"
+  },
+  {
+    "id": "hone-health-product-designer-products-integrations",
+    "title": "Product Designer, Products & Integrations",
+    "company": "Hone Health",
+    "companyUrl": "https://www.honehealth.com",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/honehealth/jobs/5012059008",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "telehealth",
+      "B2C",
+      "consumer",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-15"
+  },
+  {
+    "id": "hone-health-senior-product-designer-clinical",
+    "title": "Senior Product Designer, Clinical Experience",
+    "company": "Hone Health",
+    "companyUrl": "https://www.honehealth.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/honehealth/jobs/5043164008",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "telehealth",
+      "B2C",
+      "consumer",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-15"
+  },
+  {
+    "id": "hone-health-senior-product-designer-core",
+    "title": "Senior Product Designer, Core Experience",
+    "company": "Hone Health",
+    "companyUrl": "https://www.honehealth.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://job-boards.greenhouse.io/honehealth/jobs/4986145008",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "telehealth",
+      "B2C",
+      "consumer",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-15"
+  },
+  {
+    "id": "overjet-lead-ai-product-designer-flagship",
+    "title": "Lead AI Product Designer, Flagship Product",
+    "company": "Overjet",
+    "companyUrl": "https://www.overjet.com",
+    "level": "Lead",
+    "locationType": "Hybrid",
+    "location": "San Mateo, CA",
+    "url": "https://jobs.ashbyhq.com/Overjet/c76fd02b-11e1-4630-bfb1-2f5fedb82295",
+    "postedDate": "",
+    "tags": [
+      "dental AI",
+      "B2B",
+      "enterprise",
+      "AI",
+      "diagnostic imaging"
+    ],
+    "_verifiedAt": "2026-02-15"
+  },
+  {
+    "id": "spring-health-senior-product-designer-member-growth",
+    "title": "Senior Product Designer, Member Growth",
+    "company": "Spring Health",
+    "companyUrl": "https://www.springhealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4650623005",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "mental health",
+      "B2C",
+      "consumer",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-15"
+  },
+  {
+    "id": "3y-health-ai-product-designer",
+    "title": "AI Product Designer",
+    "company": "3Y Health",
+    "companyUrl": "https://www.3yhealth.com",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "url": "https://jobs.ashbyhq.com/3y-health/336909dc-704f-4653-9722-d8dfc99e98a8",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "AI",
+      "B2B",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-15"
+  },
+  {
+    "id": "intuscare-senior-ux-researcher",
+    "title": "Senior UX Researcher",
+    "company": "IntusCare",
+    "companyUrl": "https://www.intuscare.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/intus/13777068-4374-47fe-8aa3-858de1c2ab2a",
+    "postedDate": "2026-02-15",
+    "tags": [
+      "B2B",
+      "enterprise",
+      "startup"
+    ],
+    "_verifiedAt": "2026-02-15"
   },
   {
     "id": "ro-staff-product-designer",
@@ -571,256 +806,21 @@
     "_verifiedAt": "2026-02-14"
   },
   {
-    "id": "hone-health-product-designer-products-integrations",
-    "title": "Product Designer, Products & Integrations",
-    "company": "Hone Health",
-    "companyUrl": "https://www.honehealth.com",
+    "id": "bevel-product-designer",
+    "title": "Product Designer",
+    "company": "Bevel",
+    "companyUrl": "https://www.bevel.health/",
     "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/honehealth/jobs/5012059008",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "telehealth",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "hone-health-senior-product-designer-clinical",
-    "title": "Senior Product Designer, Clinical Experience",
-    "company": "Hone Health",
-    "companyUrl": "https://www.honehealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/honehealth/jobs/5043164008",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "telehealth",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "hone-health-senior-product-designer-core",
-    "title": "Senior Product Designer, Core Experience",
-    "company": "Hone Health",
-    "companyUrl": "https://www.honehealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/honehealth/jobs/4986145008",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "telehealth",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "overjet-lead-ai-product-designer-flagship",
-    "title": "Lead AI Product Designer, Flagship Product",
-    "company": "Overjet",
-    "companyUrl": "https://www.overjet.com",
-    "level": "Lead",
-    "locationType": "Hybrid",
-    "location": "San Mateo, CA",
-    "url": "https://jobs.ashbyhq.com/Overjet/c76fd02b-11e1-4630-bfb1-2f5fedb82295",
-    "postedDate": "",
-    "tags": [
-      "dental AI",
-      "B2B",
-      "enterprise",
-      "AI",
-      "diagnostic imaging"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "spring-health-senior-product-designer-member-growth",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Seattle, WA",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4650623005",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "mental health",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "3y-health-ai-product-designer",
-    "title": "AI Product Designer",
-    "company": "3Y Health",
-    "companyUrl": "https://www.3yhealth.com",
-    "level": "Mid",
-    "locationType": "On-site",
+    "locationType": "Onsite",
     "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/3y-health/336909dc-704f-4653-9722-d8dfc99e98a8",
-    "postedDate": "2026-02-15",
+    "url": "https://jobs.ashbyhq.com/bevel/a71e6b6d-8153-459e-8fca-4c4843f73fac",
+    "postedDate": "2026-03-05",
     "tags": [
-      "AI",
-      "B2B",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "intuscare-senior-ux-researcher",
-    "title": "Senior UX Researcher",
-    "company": "IntusCare",
-    "companyUrl": "https://www.intuscare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/intus/13777068-4374-47fe-8aa3-858de1c2ab2a",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "B2B",
-      "enterprise",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "nourish-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Nourish",
-    "companyUrl": "https://usenourish.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://job-boards.greenhouse.io/usenourish/jobs/4535318008",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "B2C",
-      "consumer",
-      "startup",
-      "AI"
-    ],
-    "_verifiedAt": "2026-02-16"
-  },
-  {
-    "id": "baba-founding-product-designer",
-    "title": "Founding Product Designer",
-    "company": "Baba",
-    "companyUrl": "https://jobs.ashbyhq.com/baba",
-    "level": "Mid",
-    "locationType": "On-site",
-    "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/baba/262c3826-39e0-49aa-891f-03211a8af128",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "AI",
-      "B2B",
-      "startup",
-      "clinical"
-    ],
-    "_verifiedAt": "2026-02-16"
-  },
-  {
-    "id": "weave-product-designer-analytics",
-    "title": "Product Designer, Analytics",
-    "company": "Weave",
-    "companyUrl": "https://www.getweave.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "India",
-    "url": "https://jobs.ashbyhq.com/weave/290cffde-dca4-4691-808b-a160bfd51111",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "B2B",
-      "enterprise",
-      "AI"
-    ],
-    "_verifiedAt": "2026-02-16"
-  },
-  {
-    "id": "ladder-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Ladder",
-    "companyUrl": "https://www.ladderlife.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/ladder/6cbf504f-5987-4721-a487-7a82eaf5fcf9",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "insurtech",
-      "life insurance",
-      "B2C",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-16"
-  },
-  {
-    "id": "cohere-health-sr-product-designer",
-    "title": "Sr. Product Designer",
-    "company": "Cohere Health",
-    "companyUrl": "https://coherehealth.com",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Hyderabad, India",
-    "url": "https://job-boards.greenhouse.io/coherehealth/jobs/7620705003",
-    "postedDate": "2026-02-18",
-    "tags": [
-      "healthcare AI",
-      "prior authorization",
-      "design systems",
-      "enterprise",
-      "B2B"
-    ],
-    "_verifiedAt": "2026-02-18"
-  },
-  {
-    "id": "k-health-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "K Health",
-    "companyUrl": "https://khealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/khealthcareers/jobs/5811671004",
-    "postedDate": "2026-02-25",
-    "tags": [
-      "primary care",
-      "clinical AI",
-      "AI",
-      "telehealth",
-      "B2C"
-    ],
-    "_verifiedAt": "2026-02-25"
-  },
-  {
-    "id": "garner-health-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Garner Health",
-    "companyUrl": "https://garnerhealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/5754093004",
-    "postedDate": "2026-02-25",
-    "tags": [
-      "benefits navigation",
-      "design systems",
-      "enterprise",
-      "B2B",
-      "growth"
-    ],
-    "_verifiedAt": "2026-02-25"
+      "health",
+      "wellness",
+      "fitness",
+      "nutrition",
+      "sleep"
+    ]
   }
 ]
