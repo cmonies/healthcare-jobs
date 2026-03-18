@@ -47,6 +47,26 @@
     "_notes": "NEW listing (job ID 7685188) — different from existing entry omada-health-staff-product-designer (7235663). Marked 'New' on the Omada job board. Full job description confirmed live via web_fetch."
   },
   {
+    "id": "bevel-product-designer",
+    "title": "Product Designer",
+    "company": "Bevel",
+    "companyUrl": "https://www.bevel.health/",
+    "level": "Mid",
+    "locationType": "Onsite",
+    "location": "New York, NY",
+    "url": "https://jobs.ashbyhq.com/bevel/a71e6b6d-8153-459e-8fca-4c4843f73fac",
+    "postedDate": "2026-03-05",
+    "tags": [
+      "health",
+      "wellness",
+      "fitness",
+      "nutrition",
+      "sleep"
+    ],
+    "_verifiedAt": "2026-03-05",
+    "_verificationNote": "Backfilled from postedDate — no _verifiedAt at time of entry."
+  },
+  {
     "id": "maven-clinic-senior-brand-designer",
     "title": "Senior Brand Designer",
     "company": "Maven Clinic",
@@ -804,23 +824,5 @@
       "startup"
     ],
     "_verifiedAt": "2026-02-14"
-  },
-  {
-    "id": "bevel-product-designer",
-    "title": "Product Designer",
-    "company": "Bevel",
-    "companyUrl": "https://www.bevel.health/",
-    "level": "Mid",
-    "locationType": "Onsite",
-    "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/bevel/a71e6b6d-8153-459e-8fca-4c4843f73fac",
-    "postedDate": "2026-03-05",
-    "tags": [
-      "health",
-      "wellness",
-      "fitness",
-      "nutrition",
-      "sleep"
-    ]
   }
 ]
