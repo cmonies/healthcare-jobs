@@ -1,53 +1,27 @@
 [
   {
-    "id": "sidecar-health-lead-product-designer",
-    "title": "Lead Product Designer, Member & Provider Experience",
-    "company": "Sidecar Health",
-    "companyUrl": "https://www.sidecarhealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
+    "id": "oura-staff-art-director-product",
+    "title": "Staff Art Director, Product",
+    "company": "Ōura",
+    "companyUrl": "https://ouraring.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4129585009",
     "postedDate": null,
-    "salary": "$160,000 - $180,000",
+    "salary": "$198,050 - $233,000",
     "tags": [
-      "health insurance",
-      "insurtech",
-      "B2C",
+      "wearables",
       "consumer",
-      "design systems",
-      "AI",
-      "mobile",
-      "startup"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health senior staff lead 2026",
-    "_verifiedAt": "2026-03-18",
-    "_verificationNote": "Fetched directly from Greenhouse. Page returned 200 with full job description (rawLength 4874). Full role description confirmed: Lead Product Designer, Member & Provider Experience. US-based. Salary $160-180K. Company is Sidecar Health, redefining health insurance to make healthcare affordable. Role covers end-to-end member + provider experiences across mobile and web. 5+ years required. Not in existing jobs.json."
-  },
-  {
-    "id": "eucalyptus-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Eucalyptus",
-    "companyUrl": "https://www.eucalyptus.health",
-    "level": "Senior",
-    "locationType": "Onsite",
-    "location": "Sydney, Australia",
-    "url": "https://job-boards.greenhouse.io/eucalyptus/jobs/4572138005",
-    "postedDate": null,
-    "tags": [
-      "weight management",
-      "GLP-1",
-      "telehealth",
       "B2C",
-      "consumer",
-      "mobile",
-      "international",
-      "startup"
+      "art direction",
+      "illustration systems",
+      "photography direction",
+      "design systems"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/eucalyptus/jobs/4572138005",
-    "_searchQuery": "site:job-boards.greenhouse.io \"senior product designer\" health telehealth 2026",
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
+    "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"UX researcher\" health telehealth",
     "_verifiedAt": "2026-03-18",
-    "_verificationNote": "Fetched directly from Greenhouse. Page returned 200 with full job description (rawLength 5400). Eucalyptus is the company behind Juniper (weight management/GLP-1), Pilot (men's health), Kin (fertility), Software (skincare). Sydney, Australia HQ — 'What's ahead in Australia?' section confirms Australia location. Role is 3-5+ years, leads design across mobile + web for digital healthcare brands. Not in existing jobs.json. Note: Australia-based, may not be relevant for US-based candidates."
+    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 6799). Found on Oura's live job board under Design department. Staff Art Director, Product — owns visual language (illustration, photography direction, iconography) across Oura App. Hybrid SF. $198,050-$233,000. Not a duplicate of existing Oura entries (oura-staff-designer-womens-health, oura-staff-designer-fitness, oura-staff-product-designer-enterprise)."
   }
 ]
