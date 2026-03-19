@@ -5,50 +5,30 @@
   "failed": 0,
   "results": [
     {
-      "id": "sidecar-health-lead-product-designer",
-      "company": "Sidecar Health",
-      "title": "Lead Product Designer",
-      "url": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-19T19:57:16.761Z"
-    },
-    {
-      "id": "h1-product-designer",
-      "company": "H1",
-      "title": "Product Designer",
-      "url": "https://jobs.lever.co/h1/67f12730-96c2-4695-b1b7-415fa7d31a7c",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-19T19:57:16.761Z"
-    },
-    {
-      "id": "natera-sr-ux-designer",
-      "company": "Natera",
-      "title": "Sr UX Designer",
-      "url": "https://job-boards.greenhouse.io/natera/jobs/5738553004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-19T19:57:16.761Z"
-    },
-    {
-      "id": "spring-health-senior-ux-researcher",
+      "id": "spring-health-senior-product-designer-member-growth-ny",
       "company": "Spring Health",
-      "title": "Senior UX Researcher",
-      "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4668694005",
+      "title": "Senior Product Designer, Member Growth",
+      "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4633473005",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-19T19:57:16.761Z"
+      "checkedAt": "2026-03-19T20:03:38.050Z"
+    },
+    {
+      "id": "spring-health-senior-designer-marketing",
+      "company": "Spring Health",
+      "title": "Senior Designer, Marketing",
+      "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4663334005",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-03-19T20:03:38.050Z"
     }
   ],
-  "lastRun": "2026-03-19T19:57:16.761Z",
+  "lastRun": "2026-03-19T20:03:38.050Z",
   "summary": {
-    "passed": 4,
+    "passed": 2,
     "failed": 0,
-    "total": 4
+    "total": 2
   }
 }
