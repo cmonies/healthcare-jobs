@@ -73,6 +73,23 @@ async function validateUrl(page, url, jobId) {
       return { pass: false, reason: `HTTP ${status}`, status };
     }
 
+    // Check for redirect to error page — e.g. Greenhouse redirects dead job IDs
+    // to /?error=true which still returns HTTP 200
+    const finalUrl = page.url();
+    if (finalUrl !== url) {
+      const finalUrlObj = new URL(finalUrl);
+      const origUrlObj = new URL(url);
+      // Flag if redirected to a different path entirely (e.g. job page → company board root)
+      // or if the final URL contains error indicators
+      if (finalUrlObj.searchParams.get('error') || finalUrl.includes('error=true')) {
+        return { pass: false, reason: `Redirected to error page: ${finalUrl}`, status };
+      }
+      // Flag if redirected away from the original job path (e.g. /jobs/123 → /)
+      if (origUrlObj.pathname.length > 1 && finalUrlObj.pathname !== origUrlObj.pathname) {
+        return { pass: false, reason: `Redirect mismatch: ${url} → ${finalUrl}`, status };
+      }
+    }
+
     // Wait a beat for JS-heavy pages
     if (url.includes('ashbyhq.com')) {
       await page.waitForTimeout(3000);
