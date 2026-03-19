@@ -19,12 +19,6 @@ Healthcare UX is a growing field with unique challenges: regulatory constraints,
 - ♿ **Accessible** — semantic HTML, proper contrast, keyboard navigable
 - 🌙 **Dark mode** — automatic based on system preference, with manual toggle
 
-## Community
-
-Join the conversation — share jobs, ask questions, connect with other healthcare designers:
-
-💬 **[Join our Slack](https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q)**
-
 ## Tech Stack
 
 - [Astro](https://astro.build) 5 — static site framework with server endpoints
