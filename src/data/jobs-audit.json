@@ -5,20 +5,50 @@
   "failed": 0,
   "results": [
     {
-      "id": "oura-staff-art-director-product",
-      "company": "Ōura",
-      "title": "Staff Art Director, Product",
-      "url": "https://job-boards.greenhouse.io/oura/jobs/4129585009",
+      "id": "sidecar-health-lead-product-designer",
+      "company": "Sidecar Health",
+      "title": "Lead Product Designer",
+      "url": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-18T16:15:07.020Z"
+      "checkedAt": "2026-03-19T19:57:16.761Z"
+    },
+    {
+      "id": "h1-product-designer",
+      "company": "H1",
+      "title": "Product Designer",
+      "url": "https://jobs.lever.co/h1/67f12730-96c2-4695-b1b7-415fa7d31a7c",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-03-19T19:57:16.761Z"
+    },
+    {
+      "id": "natera-sr-ux-designer",
+      "company": "Natera",
+      "title": "Sr UX Designer",
+      "url": "https://job-boards.greenhouse.io/natera/jobs/5738553004",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-03-19T19:57:16.761Z"
+    },
+    {
+      "id": "spring-health-senior-ux-researcher",
+      "company": "Spring Health",
+      "title": "Senior UX Researcher",
+      "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4668694005",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-03-19T19:57:16.761Z"
     }
   ],
-  "lastRun": "2026-03-18T16:15:07.019Z",
+  "lastRun": "2026-03-19T19:57:16.761Z",
   "summary": {
-    "passed": 1,
+    "passed": 4,
     "failed": 0,
-    "total": 1
+    "total": 4
   }
 }
