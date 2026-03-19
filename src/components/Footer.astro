@@ -18,25 +18,25 @@ import DarkModeToggle from './DarkModeToggle.astro';
       <div>
         <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Links</h4>
         <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="/jobs" class="hover:text-brand-500 transition-colors">All Jobs</a></li>
-          <li><a href="#newsletter" class="hover:text-brand-500 transition-colors">Newsletter</a></li>
+          <li><a href="/jobs" class="hover:text-brand-500 transition-colors" data-umami-event="footer-jobs-click">All Jobs</a></li>
+          <li><a href="#newsletter" class="hover:text-brand-500 transition-colors" data-umami-event="footer-newsletter-click">Newsletter</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Contribute</h4>
         <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">GitHub Repo <span class="sr-only">(opens in a new tab)</span></a></li>
-          <li><a href="/submit" class="hover:text-brand-500 transition-colors">Submit a Job</a></li>
-          <li><a href="/report" class="hover:text-brand-500 transition-colors">Feedback</a></li>
+          <li><a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors" data-umami-event="footer-github-click">GitHub Repo <span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="/submit" class="hover:text-brand-500 transition-colors" data-umami-event="footer-submit-click">Submit a Job</a></li>
+          <li><a href="/report" class="hover:text-brand-500 transition-colors" data-umami-event="footer-feedback-click">Feedback</a></li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-slate-100 dark:border-slate-700/50 mt-8 pt-6 flex items-center justify-between">
       <p class="text-xs text-slate-400 dark:text-slate-500">
-        Made with care by <a href="https://carmen.cv/" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline">carmen.cv <span class="sr-only">(opens in a new tab)</span></a> for the healthcare design community · Open source on
-        <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline">GitHub <span class="sr-only">(opens in a new tab)</span></a>
+        Made with care by <a href="https://carmen.cv/" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline" data-umami-event="footer-carmencv-click">carmen.cv <span class="sr-only">(opens in a new tab)</span></a> for the healthcare design community · Open source on
+        <a href="https://github.com/cmonies/healthcare-jobs" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:underline" data-umami-event="footer-github-bottom-click">GitHub <span class="sr-only">(opens in a new tab)</span></a>
       </p>
       <DarkModeToggle />
     </div>

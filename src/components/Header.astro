@@ -4,7 +4,7 @@ const currentPath = Astro.url.pathname;
 
 <header role="banner" class="bg-white/80 dark:bg-surface-header/90 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-100 dark:border-slate-700/50">
   <nav aria-label="Main navigation" class="w-full lg:w-[80%] xl:w-[70%] 2xl:w-[60%] max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center group">
+    <a href="/" class="flex items-center group" data-umami-event="nav-logo-click">
       <img src="/logo.svg" alt="Design Jobs" class="h-6 dark:hidden" />
       <img src="/logo-dark.svg" alt="Design Jobs" class="h-6 hidden dark:block" />
     </a>
@@ -20,6 +20,7 @@ const currentPath = Astro.url.pathname;
             ? "text-brand-500"
             : "text-slate-500 dark:text-slate-400 hover:text-brand-500"
         ]}
+        data-umami-event="nav-home-click"
       >
         Home
       </a>
@@ -32,12 +33,14 @@ const currentPath = Astro.url.pathname;
             ? "text-brand-500"
             : "text-slate-500 dark:text-slate-400 hover:text-brand-500"
         ]}
+        data-umami-event="nav-jobs-click"
       >
         Jobs
       </a>
       <a
         href="/submit"
         class="text-sm bg-brand-500 text-white px-5 py-2 rounded-xl hover:bg-brand-600 transition-colors font-medium shadow-soft"
+        data-umami-event="nav-submit-click"
       >
         Submit a Job
       </a>
@@ -55,9 +58,9 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700/50 bg-white dark:bg-surface-header" role="region" aria-label="Mobile menu">
     <div class="px-6 py-4 space-y-3">
-      <a href="/" aria-current={currentPath === "/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Home</a>
-      <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1">Jobs</a>
-      <a href="/submit" class="block text-sm text-brand-500 font-medium py-1">Submit a Job →</a>
+      <a href="/" aria-current={currentPath === "/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1" data-umami-event="nav-mobile-home-click">Home</a>
+      <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors py-1" data-umami-event="nav-mobile-jobs-click">Jobs</a>
+      <a href="/submit" class="block text-sm text-brand-500 font-medium py-1" data-umami-event="nav-mobile-submit-click">Submit a Job →</a>
     </div>
   </div>
 </header>
