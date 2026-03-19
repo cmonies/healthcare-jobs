@@ -9,7 +9,7 @@ interface Job {
   locationType: string;
   location: string;
   url: string;
-  postedDate: string;
+  postedDate?: string | null;
   tags: string[];
 }
 
