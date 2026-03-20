@@ -1,5 +1,30 @@
 [
   {
+    "id": "eli-health-product-designer",
+    "title": "Product Designer",
+    "company": "Eli Health",
+    "companyUrl": "https://www.elimedical.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Montreal, QC / Remote",
+    "url": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
+    "postedDate": "2026-02-17",
+    "tags": [
+      "women's health",
+      "wearables",
+      "consumer",
+      "B2C",
+      "startup",
+      "design systems",
+      "mobile",
+      "hormone health"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-20",
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire — founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer™, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate — Eli Health not in existing jobs.json."
+  },
+  {
     "id": "spring-health-senior-product-designer-member-growth-ny",
     "title": "Senior Product Designer, Member Growth",
     "company": "Spring Health",
