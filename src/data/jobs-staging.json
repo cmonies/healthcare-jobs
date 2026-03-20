@@ -3,50 +3,25 @@
     "id": "eli-health-product-designer",
     "title": "Product Designer",
     "company": "Eli Health",
-    "companyUrl": "https://www.eli.health",
-    "level": "Mid",
+    "companyUrl": "https://www.elimedical.com",
+    "level": "Senior",
     "locationType": "Remote",
-    "location": "Montreal, QC (Remote-friendly)",
+    "location": "Montreal, QC / Remote",
     "url": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
     "postedDate": "2026-02-17",
     "tags": [
-      "consumer health",
-      "hormone monitoring",
+      "women's health",
       "wearables",
+      "consumer",
       "B2C",
       "startup",
-      "founding designer",
+      "design systems",
       "mobile",
-      "AI"
+      "hormone health"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
     "_searchQuery": "site:jobs.ashbyhq.com designer health",
     "_verifiedAt": "2026-03-20",
-    "_verificationNote": "Confirmed live via Ashby API (api.ashbyhq.com/posting-api/job-board/eli). Full job description returned (rawLength 4229). Eli Health is building Hormometer™ — first instant hormone monitoring platform (saliva to mobile app). First Product Designer hire — founding role, owns end-to-end mobile design (iOS + Android), design systems, user research. Remote-friendly, primarily Montreal. Published 2026-02-17. No salary listed."
-  },
-  {
-    "id": "league-inc-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "League",
-    "companyUrl": "https://league.com",
-    "level": "Senior",
-    "locationType": "Onsite",
-    "location": "Toronto, ON",
-    "url": "https://job-boards.greenhouse.io/leagueinc/jobs/5798324004",
-    "postedDate": null,
-    "tags": [
-      "healthcare CX",
-      "B2B",
-      "enterprise",
-      "payers",
-      "providers",
-      "design systems",
-      "UX strategy",
-      "client-facing"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/leagueinc/jobs/5798324004",
-    "_searchQuery": "site:boards.greenhouse.io \"UX researcher\" healthcare",
-    "_verifiedAt": "2026-03-20",
-    "_verificationNote": "Confirmed live via Greenhouse job-boards fetch. Full job description returned (rawLength 3229). League is a leading healthcare consumer experience (CX) platform — $285M raised, reaches 63M+ people. Clients include Highmark Health, Manulife, Medibank. Senior Product Designer on Client Solutions Design Team — consultative/strategic role, 5+ years required, leads workshops, UX strategy, works directly with healthcare payer/provider clients. Toronto onsite. No salary listed."
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire — founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer™, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate — Eli Health not in existing jobs.json."
   }
 ]
