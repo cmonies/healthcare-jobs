@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "decoda-health-product-designer",
+    "title": "Product Designer",
+    "company": "Decoda Health",
+    "companyUrl": "https://www.decodahealth.com",
+    "level": "Mid",
+    "locationType": "Onsite",
+    "location": "Toronto, Ontario, Canada",
+    "url": "https://jobs.ashbyhq.com/decodahealth/4ec1a8b0-701c-42e7-8b07-365974cb4494",
+    "postedDate": "2026-01-30",
+    "tags": [
+      "healthtech",
+      "B2B",
+      "startup",
+      "AI",
+      "clinic management",
+      "YC-backed",
+      "founding role"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/decodahealth/4ec1a8b0-701c-42e7-8b07-365974cb4494",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-23",
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/decodahealth). Full job description confirmed (rawLength 4229). Published 2026-01-30. Generalist product designer role — owns product features end-to-end plus marketing design (website, landing pages, sales collateral). YC-backed, $4.5M raised. AI-native clinic OS for elective care. Toronto on-site. Not a duplicate — Decoda Health not in existing jobs.json."
+  }
+]
