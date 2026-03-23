@@ -1,1 +1,124 @@
-[]
+[
+  {
+    "id": "tennr-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Tennr",
+    "companyUrl": "https://www.tennr.com",
+    "level": "Senior",
+    "locationType": "Onsite",
+    "location": "New York, NY",
+    "url": "https://www.ycombinator.com/companies/tennr/jobs/81hidB8-senior-product-designer",
+    "postedAt": "2026-02-25",
+    "salary": "$180K - $215K",
+    "tags": [
+      "healthcare AI",
+      "patient experience",
+      "referral management",
+      "B2B",
+      "startup",
+      "YC"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-03-23",
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Tennr (YC W23) — Fast, Transparent Patient Experiences. AI-powered referral management that prevents patient delays in the US healthcare system. Senior Product Designer reporting to co-founder, full design ownership across product streams. $180K-$215K, NYC office. Posted ~26 days ago per YC board."
+  },
+  {
+    "id": "reframe-product-designer",
+    "title": "Product Designer",
+    "company": "Reframe",
+    "companyUrl": "https://www.reframeapp.com",
+    "level": "Mid",
+    "locationType": "Onsite",
+    "location": "Atlanta, GA",
+    "url": "https://www.ycombinator.com/companies/reframe/jobs/4PA8ThD-product-designer",
+    "postedAt": "2026-03-04",
+    "salary": "$70K - $120K",
+    "tags": [
+      "mental health",
+      "alcohol/addiction",
+      "behavior change",
+      "B2C",
+      "consumer",
+      "startup",
+      "YC",
+      "mobile"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-03-23",
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Reframe (YC S21) — #1 app to help people cut back on drinking alcohol. 150K+ paying customers, $13M ARR, growing fast. Full-time Product Designer to build new products/features across ecosystems. Will sponsor visa. $70K-$120K, Atlanta GA (onsite). Posted ~19 days ago per YC board."
+  },
+  {
+    "id": "sonia-founding-designer",
+    "title": "Founding Designer",
+    "company": "Sonia",
+    "companyUrl": "https://www.sonia.com",
+    "level": "Mid-Senior",
+    "locationType": "Onsite",
+    "location": "San Francisco, CA",
+    "url": "https://www.ycombinator.com/companies/sonia/jobs/qTPqAFI-founding-designer-at-sonia-w24",
+    "postedAt": "2026-02-25",
+    "salary": "$140K - $200K",
+    "tags": [
+      "mental health",
+      "AI therapy",
+      "B2C",
+      "consumer",
+      "mobile",
+      "startup",
+      "YC",
+      "founding role"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-03-23",
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Sonia (YC W24) — AI Therapy app, clinically as effective as human therapists. $3.5M raised from YC, Moonfire, founders of Verkada/Reddit/Instacart. 6-person team in SF. Founding Designer owns end-to-end design of voice-first iOS app. Reports to founders. $140K-$200K, SF onsite (6 days/week). Posting ~26 days ago per YC board."
+  },
+  {
+    "id": "vitalize-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Vitalize",
+    "companyUrl": "https://www.vitalize.co",
+    "level": "Senior",
+    "locationType": "Onsite",
+    "location": "San Francisco, CA",
+    "url": "https://www.ycombinator.com/companies/vitalize/jobs/vaE7tnq-senior-product-designer",
+    "postedAt": "2026-03-05",
+    "salary": "$170K - $250K",
+    "tags": [
+      "hospital operations",
+      "workforce management",
+      "B2B",
+      "enterprise",
+      "startup",
+      "YC",
+      "data visualization",
+      "design systems"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-03-23",
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Vitalize (YC W23) — Autonomous hospital operations platform, live at 20+ hospitals, near 8-figures in revenue, 3x'ed revenue in last 3 months. Second product designer, joins founding designer. Owns data-dense interfaces (shift schedules, staffing dashboards), builds design system. $170K-$250K, SF HQ. 6+ years required. Posted ~18 days ago per YC board."
+  },
+  {
+    "id": "scispot-senior-ai-product-designer",
+    "title": "Senior AI Product Designer/Manager",
+    "company": "Scispot",
+    "companyUrl": "https://www.scispot.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Ontario, Canada / Remote (Canada)",
+    "url": "https://www.ycombinator.com/companies/scispot-io/jobs/ISpaEFi-senior-ai-product-designer-manager",
+    "postedAt": "2026-02-23",
+    "salary": "$100K - $150K CAD",
+    "tags": [
+      "biotech",
+      "life sciences",
+      "AI",
+      "B2B",
+      "startup",
+      "YC",
+      "research tools"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-03-23",
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Scispot (YC S21) — Best Data Infrastructure for Biotechs. Multi-agent platform for lab operations, AI agents for biotech R&D. Senior AI Product Designer/Manager hybrid role — owns UX design + product management lifecycle. Manages junior designer + QA. Users are scientists and researchers. $100K-$150K CAD, remote Ontario Canada. Posted ~about 1 month ago per YC board."
+  }
+]
