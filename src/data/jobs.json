@@ -323,31 +323,6 @@
     "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) — Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2–3 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta."
   },
   {
-    "id": "oura-staff-art-director-product",
-    "title": "Staff Art Director, Product",
-    "company": "Ōura",
-    "companyUrl": "https://ouraring.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://job-boards.greenhouse.io/oura/jobs/4129585009",
-    "postedDate": null,
-    "salary": "$198,050 - $233,000",
-    "tags": [
-      "wearables",
-      "consumer",
-      "B2C",
-      "art direction",
-      "illustration systems",
-      "photography direction",
-      "design systems"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"UX researcher\" health telehealth",
-    "_verifiedAt": "2026-03-18",
-    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 6799). Found on Oura's live job board under Design department. Staff Art Director, Product — owns visual language (illustration, photography direction, iconography) across Oura App. Hybrid SF. $198,050-$233,000. Not a duplicate of existing Oura entries (oura-staff-designer-womens-health, oura-staff-designer-fitness, oura-staff-product-designer-enterprise)."
-  },
-  {
     "id": "omada-health-staff-product-designer-new",
     "title": "Staff Product Designer",
     "company": "Omada Health",
@@ -550,45 +525,6 @@
       "population health",
       "wearables",
       "data visualization"
-    ],
-    "_verifiedAt": "2026-02-23"
-  },
-  {
-    "id": "betterhelp-senior-mixed-methods-user-researcher",
-    "title": "Senior Mixed-Methods User Researcher",
-    "company": "BetterHelp",
-    "companyUrl": "https://www.betterhelp.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5023260008",
-    "postedDate": "2026-02-23",
-    "tags": [
-      "mental health",
-      "UX research",
-      "mixed-methods",
-      "telehealth",
-      "B2C"
-    ],
-    "_verifiedAt": "2026-02-23"
-  },
-  {
-    "id": "grow-therapy-senior-staff-product-designer",
-    "title": "Senior/Staff Product Designer",
-    "company": "Grow Therapy",
-    "companyUrl": "https://growtherapy.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/growtherapy/jobs/4583852005",
-    "postedDate": "2026-02-23",
-    "tags": [
-      "mental health",
-      "telehealth",
-      "marketplace",
-      "B2C",
-      "startup",
-      "AI"
     ],
     "_verifiedAt": "2026-02-23"
   },
@@ -931,24 +867,6 @@
       "B2C",
       "enterprise",
       "design systems"
-    ],
-    "_verifiedAt": "2026-02-14"
-  },
-  {
-    "id": "samsung-research-staff-product-designer-digital-health",
-    "title": "Staff, Product Designer (Digital Health)",
-    "company": "Samsung Research America",
-    "companyUrl": "https://research.samsung.com",
-    "level": "Staff",
-    "locationType": "On-site",
-    "location": "Mountain View, CA",
-    "url": "https://job-boards.greenhouse.io/samsungresearchamerica/jobs/8419768002",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "medical devices",
-      "consumer",
-      "AI",
-      "B2C"
     ],
     "_verifiedAt": "2026-02-14"
   },
