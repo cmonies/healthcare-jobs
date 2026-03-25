@@ -5,60 +5,20 @@
   "failed": 0,
   "results": [
     {
-      "id": "tennr-senior-product-designer",
-      "company": "Tennr",
+      "id": "mochi-health-senior-product-designer",
+      "company": "Mochi Health",
       "title": "Senior Product Designer",
-      "url": "https://www.ycombinator.com/companies/tennr/jobs/81hidB8-senior-product-designer",
+      "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-03-23T17:31:35.906Z"
-    },
-    {
-      "id": "reframe-product-designer",
-      "company": "Reframe",
-      "title": "Product Designer",
-      "url": "https://www.ycombinator.com/companies/reframe/jobs/4PA8ThD-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-23T17:31:35.906Z"
-    },
-    {
-      "id": "sonia-founding-designer",
-      "company": "Sonia",
-      "title": "Founding Designer",
-      "url": "https://www.ycombinator.com/companies/sonia/jobs/qTPqAFI-founding-designer-at-sonia-w24",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-23T17:31:35.906Z"
-    },
-    {
-      "id": "vitalize-senior-product-designer",
-      "company": "Vitalize",
-      "title": "Senior Product Designer",
-      "url": "https://www.ycombinator.com/companies/vitalize/jobs/vaE7tnq-senior-product-designer",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-23T17:31:35.906Z"
-    },
-    {
-      "id": "scispot-senior-ai-product-designer",
-      "company": "Scispot",
-      "title": "Senior AI Product Designer/Manager",
-      "url": "https://www.ycombinator.com/companies/scispot-io/jobs/ISpaEFi-senior-ai-product-designer-manager",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-03-23T17:31:35.906Z"
+      "checkedAt": "2026-03-25T16:15:08.438Z"
     }
   ],
-  "lastRun": "2026-03-23T17:31:35.906Z",
+  "lastRun": "2026-03-25T16:15:08.438Z",
   "summary": {
-    "passed": 5,
+    "passed": 1,
     "failed": 0,
-    "total": 5
+    "total": 1
   }
 }

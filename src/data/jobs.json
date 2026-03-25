@@ -1,5 +1,31 @@
 [
   {
+    "id": "mochi-health-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Mochi Health",
+    "companyUrl": "https://www.mochihealth.com",
+    "level": "Senior",
+    "locationType": "Onsite",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
+    "postedAt": null,
+    "salary": "$180,000 - $225,000",
+    "tags": [
+      "healthcare marketplace",
+      "AI",
+      "consumer",
+      "B2C",
+      "patient experience",
+      "startup",
+      "design systems",
+      "mobile"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
+    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026",
+    "_verifiedAt": "2026-03-25",
+    "_verificationNote": "Verified live via Greenhouse (200, full job description, rawLength 5229). Mochi Health — AI-driven healthcare marketplace connecting patients to providers, transparent pharmacy pricing, and affordable medications. 'Profitable & explosive growth', no VC funding. Senior Product Designer reports to Head of Design. 3+ years required; ideally founding designer background. Experience with Claude Code, Figma & Framer desired. $180K-$225K base + equity. Onsite San Francisco (5 days/week)."
+  },
+  {
     "id": "tennr-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Tennr",
