@@ -417,29 +417,6 @@
     "_verificationNote": "Verified live on Greenhouse. Maven Clinic virtual clinic for women/families. Senior Brand Designer, 6+ yrs, Adobe+Figma. Hybrid NY or quarterly WTDs. $125-145K + equity."
   },
   {
-    "id": "sleep-doctor-ux-designer-service",
-    "title": "User Experience Designer, Service (Short Term Assignment)",
-    "company": "Sleep Doctor",
-    "companyUrl": "https://sleepdoctor.com",
-    "level": "Senior",
-    "locationType": "On-site",
-    "location": "Seattle, WA",
-    "url": "https://job-boards.greenhouse.io/sleepdoctor/jobs/7636444003",
-    "postedDate": null,
-    "tags": [
-      "sleep health",
-      "healthcare",
-      "service design",
-      "UX research",
-      "contract",
-      "regulated industry"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/sleepdoctor/jobs/7636444003",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"product designer\" health telehealth 2026",
-    "_verifiedAt": "2026-03-02",
-    "_verificationNote": "Fetched directly from Greenhouse. Page returned 200 with live application form content (rawLength 5088). Sleep Doctor job board confirms role actively listed, Seattle location. Search snippet confirms 5+ years UX in healthcare/regulated environments required. Short-term assignment/contract. Company is Teladoc-owned sleep health platform."
-  },
-  {
     "id": "qualified-health-product-designer",
     "title": "Product Designer",
     "company": "Qualified Health",
@@ -701,23 +678,6 @@
     "_verifiedAt": "2026-02-16"
   },
   {
-    "id": "weave-product-designer-analytics",
-    "title": "Product Designer, Analytics",
-    "company": "Weave",
-    "companyUrl": "https://www.getweave.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "India",
-    "url": "https://jobs.ashbyhq.com/weave/290cffde-dca4-4691-808b-a160bfd51111",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "B2B",
-      "enterprise",
-      "AI"
-    ],
-    "_verifiedAt": "2026-02-16"
-  },
-  {
     "id": "ladder-lead-product-designer",
     "title": "Lead Product Designer",
     "company": "Ladder",
@@ -839,23 +799,6 @@
     "tags": [
       "AI",
       "B2B",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "intuscare-senior-ux-researcher",
-    "title": "Senior UX Researcher",
-    "company": "IntusCare",
-    "companyUrl": "https://www.intuscare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/intus/13777068-4374-47fe-8aa3-858de1c2ab2a",
-    "postedDate": "2026-02-15",
-    "tags": [
-      "B2B",
-      "enterprise",
       "startup"
     ],
     "_verifiedAt": "2026-02-15"
