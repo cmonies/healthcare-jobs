@@ -1,9 +1,9 @@
 [
   {
     "id": "readily-founding-design-engineer",
-    "title": "Founding Design Engineer",
+    "title": "🚀 Founding Design Engineer",
     "company": "Readily",
-    "companyUrl": "https://www.readily.ai",
+    "companyUrl": "https://readily.ai",
     "level": "Mid-Senior",
     "locationType": "Onsite",
     "location": "San Francisco, CA",
@@ -17,12 +17,133 @@
       "enterprise",
       "startup",
       "YC",
-      "design systems",
-      "founding role",
-      "design engineer"
+      "design engineering",
+      "founding role"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-30",
-    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 3328). Readily (YC S23) — AI compliance platform for healthcare organizations, 10x YoY revenue growth. Founding Design Engineer owns full design-to-code stack (Figma + React/TypeScript). Works directly with founders. Designs for complex compliance workflows (audit prep, regulatory tracking). Builds and maintains design system. Must be comfortable with data-heavy B2B enterprise UX. Posted ~3 days ago per YC board."
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Readily (YC S23) — AI Compliance Platform for Healthcare Organizations. 30% of U.S. healthcare cost is administration; Readily builds the compliance layer for billion-dollar healthcare organizations. 10x revenue YoY. Founding Design Engineer owns product surface from Figma to React/TypeScript to production — design system, frontend experience, brand. Direct founders collaboration. $150K-$210K, SF onsite. Posted 3 days ago per YC board."
+  },
+  {
+    "id": "hinge-health-staff-product-designer-enterprise-ai",
+    "title": "Staff Product Designer, Enterprise AI",
+    "company": "Hinge Health",
+    "companyUrl": "https://www.hingehealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://jobs.ashbyhq.com/hinge-health/b50a72a4-4734-436f-9733-df30b069c178",
+    "postedAt": null,
+    "salary": null,
+    "tags": [
+      "musculoskeletal",
+      "MSK",
+      "AI",
+      "enterprise",
+      "B2B",
+      "design systems",
+      "health tech"
+    ],
+    "_sourceUrl": "site:jobs.ashbyhq.com designer health",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-30",
+    "_verificationNote": "Verified live via Ashby job page (200, title confirmed: 'Staff Product Designer, Enterprise AI @ Hinge Health'). Search result published '6 days ago'. Hinge Health — MSK care platform for 1.7 billion people worldwide, AI-powered human-centered care, 20M+ member reach, 2,550+ employers. Staff designer joining tight-knit design team. SF hybrid (3 days/week in office)."
+  },
+  {
+    "id": "hinge-health-senior-product-designer-design-systems",
+    "title": "Senior Product Designer, Design Systems",
+    "company": "Hinge Health",
+    "companyUrl": "https://www.hingehealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://jobs.ashbyhq.com/hinge-health/859fe80b-6abc-47a2-b697-c3e140aadcb9",
+    "postedAt": null,
+    "salary": null,
+    "tags": [
+      "musculoskeletal",
+      "MSK",
+      "design systems",
+      "enterprise",
+      "B2B",
+      "health tech",
+      "clinical"
+    ],
+    "_sourceUrl": "site:jobs.ashbyhq.com designer health",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-30",
+    "_verificationNote": "Verified live via Ashby job page (200, title confirmed: 'Senior Product Designer, Design Systems @ Hinge Health'). Hinge Health — MSK care platform. Design Systems specialist role, shaping enterprise tooling for clinical and product teams. Cohesive, accessible, intuitive experiences. SF hybrid."
+  },
+  {
+    "id": "solace-product-designer",
+    "title": "Product Designer",
+    "company": "Solace",
+    "companyUrl": "https://solace.health",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.ashbyhq.com/Solace/6dc32ee4-b858-46d0-b627-2998edc68c9d",
+    "postedAt": null,
+    "salary": null,
+    "tags": [
+      "healthcare navigation",
+      "patient advocacy",
+      "B2C",
+      "consumer",
+      "Series C",
+      "startup"
+    ],
+    "_sourceUrl": "site:jobs.ashbyhq.com designer health",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-30",
+    "_verificationNote": "Verified live via Ashby job page (200, title confirmed: 'Product Designer @ Solace'). Confirmed company context via Ashby API (200, healthcare patient advocacy). Solace — Series C startup ($1B valuation Feb 2026 per Bloomberg), pairing patients with expert advocates to navigate the healthcare system. 88% of US adults lack health literacy to navigate system alone. Remote USA. No salary listed."
+  },
+  {
+    "id": "counsel-health-senior-product-designer-consumer",
+    "title": "Senior Product Designer (Consumer)",
+    "company": "Counsel Health",
+    "companyUrl": "https://counsel.health",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "New York, NY / Boston, MA",
+    "url": "https://jobs.ashbyhq.com/counsel/385e95d2-f576-48f6-ada2-3a79e037a55b",
+    "postedAt": null,
+    "salary": null,
+    "tags": [
+      "AI",
+      "clinical AI",
+      "consumer",
+      "B2C",
+      "startup",
+      "founding-stage"
+    ],
+    "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" startup health",
+    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
+    "_verifiedAt": "2026-03-30",
+    "_verificationNote": "Verified live via Ashby job page (200, title confirmed: 'Senior Product Designer (Consumer) @ Counsel Health'). Confirmed company context via Ashby API — 'fully-vertical, AI-native medical group', custom AI tools making physicians 10x faster, building 'AI-enabled doctor in your pocket'. Mission: multiply world's healthcare capacity. Patients-first values. NY/Boston hybrid. No salary listed."
+  },
+  {
+    "id": "pivotal-health-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Pivotal Health",
+    "companyUrl": "https://pivotalhealth.com",
+    "level": "Mid-Senior",
+    "locationType": "Hybrid",
+    "location": "Santa Monica, CA / New York, NY / San Francisco, CA",
+    "url": "https://jobs.ashbyhq.com/pivotal-health/8884c8a7-b140-4fd9-9334-0610cb38c9a2",
+    "postedAt": "2026-03-09",
+    "salary": null,
+    "tags": [
+      "healthcare reimbursement",
+      "health insurance",
+      "AI",
+      "B2B",
+      "startup",
+      "founding role"
+    ],
+    "_sourceUrl": "site:jobs.ashbyhq.com \"product designer\" startup health",
+    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
+    "_verifiedAt": "2026-03-30",
+    "_verificationNote": "Verified live via Ashby job page (200, title confirmed: 'Founding Product Designer @ Pivotal Health'). Search result published ~3 weeks ago. Confirmed company via API — Pivotal Health is 'the leading technology platform that helps healthcare providers get paid fairly', AI-driven platform for insurance dispute resolution (IDR), helping providers recover underpaid reimbursements. Founding designer role. Hybrid Santa Monica/NY/SF. No salary listed."
   }
 ]
