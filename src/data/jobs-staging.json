@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "readily-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Readily",
+    "companyUrl": "https://www.readily.ai",
+    "level": "Mid-Senior",
+    "locationType": "Onsite",
+    "location": "San Francisco, CA",
+    "url": "https://www.ycombinator.com/companies/readily/jobs/eaFE5YB-founding-design-engineer",
+    "postedAt": "2026-03-27",
+    "salary": "$150K - $210K",
+    "tags": [
+      "healthcare compliance",
+      "AI",
+      "B2B",
+      "enterprise",
+      "startup",
+      "YC",
+      "design systems",
+      "founding role",
+      "design engineer"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-03-30",
+    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 3328). Readily (YC S23) — AI compliance platform for healthcare organizations, 10x YoY revenue growth. Founding Design Engineer owns full design-to-code stack (Figma + React/TypeScript). Works directly with founders. Designs for complex compliance workflows (audit prep, regulatory tracking). Builds and maintains design system. Must be comfortable with data-heavy B2B enterprise UX. Posted ~3 days ago per YC board."
+  }
+]
