@@ -301,31 +301,6 @@
     "_verificationNote": "Fetched from Lever. Full job description confirmed live (rawLength 4229). H1 builds healthcare data/AI platform for medical insights. Product Designer role — 4+ years required, enterprise SaaS or healthcare experience preferred. $110,000–$137,000 + stock options. Remote/flexible."
   },
   {
-    "id": "natera-sr-ux-designer",
-    "title": "Sr UX Designer",
-    "company": "Natera",
-    "companyUrl": "https://www.natera.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/natera/jobs/5738553004",
-    "postedDate": null,
-    "salary": "$128,800 - $161,000",
-    "tags": [
-      "genomics",
-      "women's health",
-      "oncology",
-      "B2B",
-      "B2C",
-      "HIPAA",
-      "clinical"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/natera/jobs/5738553004",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"UX researcher\" health 2026",
-    "_verifiedAt": "2026-03-19",
-    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Natera is global leader in cell-free DNA (cfDNA) testing — oncology, women's health, organ health. Sr UX Designer — 8+ years, works with marketing and enterprise apps teams, PHI/HIPAA access, conducts research + prototyping + A/B testing. $128,800–$161,000 remote USA."
-  },
-  {
     "id": "spring-health-senior-ux-researcher",
     "title": "Senior UX Researcher",
     "company": "Spring Health",
