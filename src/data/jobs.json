@@ -1156,5 +1156,52 @@
     "_searchQuery": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-04-01",
     "_verificationNote": "Verified live (HTTP 200). $150K\u2013$210K + 0.30\u20131.50% equity. YC S23 AI compliance platform for healthcare orgs. Design-engineer hybrid role \u2014 requires Figma + production React/TypeScript code."
+  },
+  {
+    "id": "counsel-health-senior-product-designer-consumer",
+    "title": "Senior Product Designer (Consumer)",
+    "company": "Counsel Health",
+    "companyUrl": "https://www.counselhealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "New York, NY; Boston, MA",
+    "url": "https://jobs.ashbyhq.com/counsel/385e95d2-f576-48f6-ada2-3a79e037a55b",
+    "postedAt": "2026-03-24",
+    "salary": null,
+    "tags": [
+      "AI",
+      "founding stage",
+      "consumer",
+      "medical group",
+      "startup"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/counsel/385e95d2-f576-48f6-ada2-3a79e037a55b",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-31",
+    "_verificationNote": "From Monday scrape. Fully vertical AI-native medical group. Custom AI making physicians 10x faster. Founding-stage company."
+  },
+  {
+    "id": "pivotal-health-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Pivotal Health",
+    "companyUrl": "https://www.pivotalhealth.ai",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Santa Monica, CA; New York, NY; San Francisco, CA",
+    "url": "https://jobs.ashbyhq.com/pivotal-health/8884c8a7-b140-4fd9-9334-0610cb38c9a2",
+    "postedAt": "2026-03-10",
+    "salary": null,
+    "tags": [
+      "AI",
+      "founding designer",
+      "insurance",
+      "healthcare",
+      "IDR",
+      "startup"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/pivotal-health/8884c8a7-b140-4fd9-9334-0610cb38c9a2",
+    "_searchQuery": "site:jobs.ashbyhq.com designer health",
+    "_verifiedAt": "2026-03-31",
+    "_verificationNote": "From Monday scrape. AI platform helping healthcare providers dispute underpaid insurance claims (IDR). Founding designer role."
   }
 ]
