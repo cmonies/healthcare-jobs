@@ -326,22 +326,6 @@
     "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire \u2014 founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer\u2122, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate \u2014 Eli Health not in existing jobs.json."
   },
   {
-    "id": "spring-health-senior-product-designer-member-growth-ny",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4633473005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "tags": [
-      "mental health",
-      "B2B",
-      "product design"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs"
-  },
-  {
     "id": "spring-health-senior-designer-marketing",
     "title": "Senior Designer, Marketing",
     "company": "Spring Health",
@@ -664,24 +648,6 @@
     "_verifiedAt": "2026-02-23"
   },
   {
-    "id": "spring-health-senior-product-designer-member-growth-sf",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4657800005",
-    "postedDate": "2026-02-20",
-    "tags": [
-      "mental health",
-      "B2C",
-      "consumer",
-      "startup"
-    ],
-    "_verifiedAt": "2026-02-20"
-  },
-  {
     "id": "pomelo-care-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Pomelo Care",
@@ -853,7 +819,7 @@
     "companyUrl": "https://www.springhealth.com",
     "level": "Senior",
     "locationType": "Hybrid",
-    "location": "Seattle, WA",
+    "location": "New York, NY / San Francisco, CA / Seattle, WA",
     "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4650623005",
     "postedDate": "2026-02-15",
     "tags": [
