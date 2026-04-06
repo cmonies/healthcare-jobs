@@ -6,11 +6,11 @@ import JobTable from '../components/JobTable.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
-// Default sort: by _verifiedAt (date added) descending; no date → top
+// Default sort: by _verifiedAt (date added to list) descending; no date → bottom
 const sortedJobs = [...jobs].sort((a, b) => {
   if (!a._verifiedAt && !b._verifiedAt) return 0;
-  if (!a._verifiedAt) return -1;
-  if (!b._verifiedAt) return 1;
+  if (!a._verifiedAt) return 1;
+  if (!b._verifiedAt) return -1;
   return b._verifiedAt.localeCompare(a._verifiedAt);
 });
 
