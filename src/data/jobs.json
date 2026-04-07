@@ -622,29 +622,6 @@
     "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Lead Product Designer, Member & Provider Experience — owns experience vision and strategy across mobile and web. Strong emphasis on design systems, AI-forward design practice, accessibility. Competitive salary, bonus, equity. No salary range listed."
   },
   {
-    "id": "h1-product-designer",
-    "title": "Product Designer",
-    "company": "H1",
-    "companyUrl": "https://h1.co",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.lever.co/h1/67f12730-96c2-4695-b1b7-415fa7d31a7c",
-    "postedDate": null,
-    "salary": "$110,000 - $137,000",
-    "tags": [
-      "healthcare data",
-      "life sciences",
-      "B2B",
-      "enterprise",
-      "AI"
-    ],
-    "_sourceUrl": "https://jobs.lever.co/h1/67f12730-96c2-4695-b1b7-415fa7d31a7c",
-    "_searchQuery": "site:jobs.lever.co \"product designer\" healthcare telehealth",
-    "_verifiedAt": "2026-03-19",
-    "_verificationNote": "Fetched from Lever. Full job description confirmed live (rawLength 4229). H1 builds healthcare data/AI platform for medical insights. Product Designer role — 4+ years required, enterprise SaaS or healthcare experience preferred. $110,000–$137,000 + stock options. Remote/flexible."
-  },
-  {
     "id": "spring-health-senior-ux-researcher",
     "title": "Senior UX Researcher",
     "company": "Spring Health",
@@ -668,28 +645,6 @@
     "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) — Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2–3 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta."
   },
   {
-    "id": "omada-health-staff-product-designer-new",
-    "title": "Staff Product Designer",
-    "company": "Omada Health",
-    "companyUrl": "https://www.omadahealth.com",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/omadahealth/jobs/7685188",
-    "postedDate": "2026-03-09",
-    "tags": [
-      "B2C",
-      "consumer",
-      "telehealth",
-      "AI",
-      "behavior change",
-      "chronic disease"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/omadahealth",
-    "_verifiedAt": "2026-03-09",
-    "_notes": "NEW listing (job ID 7685188) — different from existing entry omada-health-staff-product-designer (7235663). Marked 'New' on the Omada job board. Full job description confirmed live via web_fetch."
-  },
-  {
     "id": "bevel-product-designer",
     "title": "Product Designer",
     "company": "Bevel",
@@ -708,32 +663,6 @@
     ],
     "_verifiedAt": "2026-03-05",
     "_verificationNote": "Backfilled from postedDate — no _verifiedAt at time of entry."
-  },
-  {
-    "id": "maven-clinic-senior-brand-designer",
-    "title": "Senior Brand Designer",
-    "company": "Maven Clinic",
-    "companyUrl": "https://mavenclinic.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY (+ SF, Seattle, Boston, Chicago, DC)",
-    "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8422947002",
-    "postedDate": null,
-    "salary": "$125,000 - $145,000",
-    "tags": [
-      "brand design",
-      "visual identity",
-      "healthcare",
-      "womens health",
-      "Figma",
-      "Adobe Creative Suite",
-      "performance marketing",
-      "digital design"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic/jobs/8422947002",
-    "_searchQuery": "community-submitted",
-    "_verifiedAt": "2026-03-03",
-    "_verificationNote": "Verified live on Greenhouse. Maven Clinic virtual clinic for women/families. Senior Brand Designer, 6+ yrs, Adobe+Figma. Hybrid NY or quarterly WTDs. $125-145K + equity."
   },
   {
     "id": "qualified-health-product-designer",
@@ -847,25 +776,6 @@
       "population health",
       "wearables",
       "data visualization"
-    ],
-    "_verifiedAt": "2026-02-23"
-  },
-  {
-    "id": "virta-health-lead-product-designer-activation",
-    "title": "Lead Product Designer, Activation",
-    "company": "Virta Health",
-    "companyUrl": "https://www.virtahealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/virtahealth/7bdb819f-888a-40d2-9aaa-d0b9563aca7c",
-    "postedDate": "2026-02-23",
-    "tags": [
-      "metabolic health",
-      "diabetes",
-      "telehealth",
-      "B2C",
-      "startup"
     ],
     "_verifiedAt": "2026-02-23"
   },
@@ -1105,24 +1015,6 @@
     "_verifiedAt": "2026-02-15"
   },
   {
-    "id": "ro-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Ro",
-    "companyUrl": "https://ro.co",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "telehealth",
-      "B2C",
-      "startup",
-      "design systems"
-    ],
-    "_verifiedAt": "2026-02-14"
-  },
-  {
     "id": "layer-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Layer Health",
@@ -1137,24 +1029,6 @@
       "clinical documentation",
       "B2B",
       "startup"
-    ],
-    "_verifiedAt": "2026-02-14"
-  },
-  {
-    "id": "garner-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Garner Health",
-    "companyUrl": "https://www.getgarner.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/5779456004",
-    "postedDate": "2026-02-14",
-    "tags": [
-      "health insurance",
-      "B2C",
-      "startup",
-      "consumer"
     ],
     "_verifiedAt": "2026-02-14"
   },
@@ -1402,29 +1276,5 @@
     "_searchQuery": "site:jobs.ashbyhq.com designer health",
     "_verifiedAt": "2026-03-31",
     "_verificationNote": "From Monday scrape. Fully vertical AI-native medical group. Custom AI making physicians 10x faster. Founding-stage company."
-  },
-  {
-    "id": "pivotal-health-founding-product-designer",
-    "title": "Founding Product Designer",
-    "company": "Pivotal Health",
-    "companyUrl": "https://www.pivotalhealth.ai",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Santa Monica, CA; New York, NY; San Francisco, CA",
-    "url": "https://jobs.ashbyhq.com/pivotal-health/8884c8a7-b140-4fd9-9334-0610cb38c9a2",
-    "postedAt": "2026-03-10",
-    "salary": null,
-    "tags": [
-      "AI",
-      "founding designer",
-      "insurance",
-      "healthcare",
-      "IDR",
-      "startup"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/pivotal-health/8884c8a7-b140-4fd9-9334-0610cb38c9a2",
-    "_searchQuery": "site:jobs.ashbyhq.com designer health",
-    "_verifiedAt": "2026-03-31",
-    "_verificationNote": "From Monday scrape. AI platform helping healthcare providers dispute underpaid insurance claims (IDR). Founding designer role."
   }
 ]
