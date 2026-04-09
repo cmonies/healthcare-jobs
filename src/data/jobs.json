@@ -410,32 +410,6 @@
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/thirtymadison/jobs/8459930002). Full job description confirmed (rawLength 2229). Published 2026-03-11, updated 2026-03-22. Thirty Madison — consumer telehealth brands: Keeps (men's hair loss), Cove (migraine), Facet (skin), NURX (sexual health). Platform team designer — patient experience across web/mobile, design systems, A/B testing. 2-4 years experience. $100K–$120K + equity. Remote US."
   },
   {
-    "id": "medisearch-founding-designer",
-    "title": "Founding Designer",
-    "company": "MediSearch",
-    "companyUrl": "https://medisearch.io",
-    "level": "Mid-Senior",
-    "locationType": "Onsite",
-    "location": "Bratislava, Slovakia",
-    "url": "https://www.ycombinator.com/companies/medisearch/jobs/bIplNJV-founding-designer",
-    "postedAt": "2026-03-26",
-    "salary": "€35K - €45K EUR",
-    "tags": [
-      "medical information",
-      "AI",
-      "search",
-      "health tech",
-      "B2C",
-      "startup",
-      "YC",
-      "growth design",
-      "founding role"
-    ],
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-03-27",
-    "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2286). MediSearch (YC S23) — search engine for trustworthy medical information, direct answers to medical questions using LLMs. Founding Designer focused primarily on ad creative and growth design, with occasional core product design contribution. Based in Bratislava, Slovakia — requires 50% in-person minimum. 6-person team, founded 2023. €35K-€45K. Any experience level ok, new grads welcome. Posted ~1 day ago per YC board."
-  },
-  {
     "id": "mochi-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Mochi Health",
