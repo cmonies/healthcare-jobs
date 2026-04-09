@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "id": "hinge-health-staff-product-designer-program-experience",
+    "title": "Staff Product Designer, Program Experience",
+    "company": "Hinge Health",
+    "companyUrl": "https://www.hingehealth.com",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "url": "https://jobs.ashbyhq.com/hinge-health/1f4b8241-8d8a-4f44-a680-fbeffc1ef1c6",
+    "postedAt": "2026-03-04",
+    "salary": "$195,000 - $292,000",
+    "tags": [
+      "MSK",
+      "healthcare",
+      "patient experience",
+      "onboarding",
+      "B2C",
+      "mobile",
+      "AI",
+      "design systems"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/1f4b8241-8d8a-4f44-a680-fbeffc1ef1c6",
+    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
+    "_verifiedAt": "2026-04-09",
+    "_verificationNote": "Verified live via Ashby (200, full job description rendered via browse.py). Posted March 4, 2026 (36 days). Hinge Health — AI-powered MSK care platform, 20M+ members, +50% YoY revenue, +30% YoY user growth. Staff Product Designer, Program Experience leads member onboarding experience — designing personalized, habit-forming journeys for joint and muscle health management. Strategy through execution, cross-functional with product and engineering. SF hybrid (3 days/week). $195K–$292K + equity. DISTINCT from existing Hinge Health entries: Program Foundations (bf8919d9), Enterprise AI Staff (b50a72a4), Staff UX Motion (286d29ee), Design Systems Bengaluru (859fe80b)."
+  },
+  {
+    "id": "ro-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Ro",
+    "companyUrl": "https://ro.co",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "New York, NY (or Remote US)",
+    "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
+    "postedAt": null,
+    "salary": "$198,900 - $234,000",
+    "tags": [
+      "telehealth",
+      "patient experience",
+      "clinical tools",
+      "B2C",
+      "design systems",
+      "AI",
+      "consumer health"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
+    "_searchQuery": "site:jobs.lever.co \"product designer\" telehealth",
+    "_verifiedAt": "2026-04-09",
+    "_verificationNote": "Verified live via Lever (browse.py, full job description, 200). No explicit posted date visible in listing. Ro — direct-to-patient telehealth company (nationwide telehealth + labs + pharmacy). Only company offering all three vertically. Staff Product Designer owns internal clinical tools enabling physicians, NPs, nurses and patient advocates to deliver high-quality care. 8+ years required. End-to-end design (research → UX → UI → systems). Design system stewardship. Strong AI fluency expected. $198,900–$234,000 base + equity. NYC Tues/Thurs in office, or fully remote US with periodic on-sites. ⚠️ No posted date — validator should confirm currency. Listing body references 'end of year' suggesting possibly written late 2025; however listing fetched live with no closure signals."
+  }
+]
