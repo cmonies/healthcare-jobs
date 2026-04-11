@@ -106,6 +106,58 @@
     "_verificationNote": "Verified live via Ashby (WebFetch, 200, full job description). Posted January 8, 2026, last updated February 24, 2026. ⚠️ FRESHNESS: 46 days since last update — validator should confirm currency. Tava Health — mental health platform, patient-facing experiences. Sr. PD designs conversion flows, appointment scheduling, payment UX, telehealth interfaces. 5+ years consumer digital products. Remote USA (Salt Lake City area mentioned). No salary listed. No dead-link signals."
   },
   {
+    "id": "candid-health-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Candid Health",
+    "companyUrl": "https://www.candidhealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA (also Denver, CO / New York, NY)",
+    "url": "https://jobs.ashbyhq.com/candidhealth/1f6fd3be-7761-4031-a940-68cd5c3b0162",
+    "postedAt": "2026-02-02",
+    "salary": "$163,000 - $200,000",
+    "tags": [
+      "revenue cycle",
+      "healthcare billing",
+      "B2B",
+      "enterprise",
+      "data visualization",
+      "design systems",
+      "SaaS",
+      "health tech"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/candidhealth/1f6fd3be-7761-4031-a940-68cd5c3b0162",
+    "_searchQuery": "site:jobs.ashbyhq.com \"senior product designer\" health OR clinical OR biotech OR medical 2026",
+    "_verifiedAt": "2026-04-11",
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/candidhealth, 200, full job description). isListed: true, publishedAt: 2026-02-02. Candid Health — healthcare tech company transforming medical billing and revenue cycle management for providers. Senior PD establishes design foundations for visualizing complex payments workflows; builds scalable design systems for data-heavy B2B SaaS; mentors junior designers. 5+ years B2B/enterprise required; complex data/SaaS background essential. 4 days/wk in-office (SF primary; Denver or NYC). $163K–$200K. ⚠️ Posted 68 days ago — listed/active per API, validator should reconfirm."
+  },
+  {
+    "id": "future-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Future",
+    "companyUrl": "https://www.future.co",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA (continental)",
+    "url": "https://job-boards.greenhouse.io/future/jobs/4683185005",
+    "postedAt": "2026-04-08",
+    "salary": "$155,000 - $200,000",
+    "tags": [
+      "fitness",
+      "personal training",
+      "wellness",
+      "B2C",
+      "consumer",
+      "AI",
+      "coaching",
+      "mobile"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/future/jobs/4683185005",
+    "_searchQuery": "site:job-boards.greenhouse.io \"senior product designer\" health 2026",
+    "_verifiedAt": "2026-04-11",
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/future/jobs/4683185005, 200, full job description). Posted April 8, 2026 (3 days ago). Future — nation's largest personal training platform (AI-powered coaching; merged with Autograph by Tom Brady). Senior PD owns core consumer product: onboarding, training flows, coaching interactions across mobile app. AI tools expected in daily workflow. 5–8+ years consumer design. Remote USA. $155K–$200K + equity + wellness stipend + flexible PTO. ⚠️ NOTE: fitness/wellness platform, not clinical healthcare — borderline inclusion, flag for Carmen."
+  },
+  {
     "id": "blink-health-lead-product-designer",
     "title": "Lead Product Designer",
     "company": "Blink Health",
