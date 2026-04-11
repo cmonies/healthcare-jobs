@@ -790,23 +790,6 @@
     "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire — founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer™, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate — Eli Health not in existing jobs.json."
   },
   {
-    "id": "spring-health-senior-designer-marketing",
-    "title": "Senior Designer, Marketing",
-    "company": "Spring Health",
-    "companyUrl": "https://springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4663334005",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Remote",
-    "tags": [
-      "mental health",
-      "B2B",
-      "marketing design"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_verifiedAt": "2026-03-01"
-  },
-  {
     "id": "sidecar-health-lead-product-designer",
     "title": "Lead Product Designer",
     "company": "Sidecar Health",
