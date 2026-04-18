@@ -276,32 +276,6 @@
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/twinhealth/jobs/5855133004, 200, full job description). Posted April 8, 2026 (3 days ago). Twin Health — AI Digital Twin platform for chronic metabolic disease (type 2 diabetes, obesity); builds personalized metabolic models from wearable + health data. Senior PD designs clinical tools for coaches and doctors: coach dashboards, care team interfaces, AI/ML-augmented workflows. 5+ years UX required, 2-3 years healthcare or enterprise. Must be US-authorized, no visa sponsorship. $160K–$165K + equity + full benefits. Remote USA."
   },
   {
-    "id": "ascertain-product-designer",
-    "title": "Product Designer",
-    "company": "Ascertain",
-    "companyUrl": "https://www.ascertain.com",
-    "level": "Mid",
-    "locationType": "Onsite",
-    "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/ascertain/98db42bd-df89-4178-ad50-3125cfd03110",
-    "postedAt": "2026-03-25",
-    "salary": "$130,000 - $185,000",
-    "tags": [
-      "healthcare AI",
-      "health admin",
-      "care teams",
-      "B2B",
-      "enterprise",
-      "AI agents",
-      "SaaS",
-      "startup"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/ascertain/98db42bd-df89-4178-ad50-3125cfd03110",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health 2026",
-    "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Ashby (WebFetch, 200, full job description). Posted March 25, 2026 (17 days ago). Ascertain — builds AI agents that automate administrative work for care teams in major health systems. Product Designer translates complex clinical workflows into intuitive SaaS interfaces. Designs wireframes, interaction flows, prototypes, UI specs; contributes to design system; collaborates directly with customers for research. 4–6+ years required; startup/VC-backed experience preferred. Complex data-heavy SaaS interface experience required. Portfolio required. NYC onsite. $130K–$185K."
-  },
-  {
     "id": "tava-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Tava Health",
@@ -1352,25 +1326,6 @@
       "B2C",
       "consumer",
       "startup"
-    ],
-    "_verifiedAt": "2026-02-15"
-  },
-  {
-    "id": "overjet-lead-ai-product-designer-flagship",
-    "title": "Lead AI Product Designer, Flagship Product",
-    "company": "Overjet",
-    "companyUrl": "https://www.overjet.com",
-    "level": "Lead",
-    "locationType": "Hybrid",
-    "location": "San Mateo, CA",
-    "url": "https://jobs.ashbyhq.com/Overjet/c76fd02b-11e1-4630-bfb1-2f5fedb82295",
-    "postedDate": "",
-    "tags": [
-      "dental AI",
-      "B2B",
-      "enterprise",
-      "AI",
-      "diagnostic imaging"
     ],
     "_verifiedAt": "2026-02-15"
   },
