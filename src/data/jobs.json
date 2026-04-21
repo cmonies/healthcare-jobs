@@ -222,29 +222,6 @@
     "_verificationNote": "Live — confirmed on designproject.io (14 days old as of April 18, posted April 4 2026). Boston onsite required. $155K-$215K. Designs ecommerce and core purchase journeys. WHOOP scaling with 600+ new hires in 2026. ⚠️ Lever direct fetch returns 403; verified via aggregator — validator should confirm via direct browse."
   },
   {
-    "id": "included-health-staff-product-designer-care-clinical-workflows",
-    "title": "Staff Product Designer, Care & Clinical Workflows",
-    "company": "Included Health",
-    "companyUrl": "https://includedhealth.com",
-    "url": "https://jobs.lever.co/includedhealth/8cf2e124-00b8-4aba-a7b0-56a1b5fd0000",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "healthtech",
-      "B2B2C",
-      "clinical workflows",
-      "care navigation",
-      "mental health"
-    ],
-    "postedAt": null,
-    "salary": null,
-    "_sourceUrl": "https://jobs.lever.co/includedhealth/8cf2e124-00b8-4aba-a7b0-56a1b5fd0000",
-    "_searchQuery": "\"digital health\" \"product designer\" job -linkedin -indeed",
-    "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Live — confirmed indexed April 2026. Strategic design leader for internal tools powering Included Health's personalized all-in-one care model. Defines long-term vision for Member Care Advocate and clinical leadership tools. Remote US. ⚠️ Lever direct fetch returns 403; verified via search index — validator should confirm via direct browse."
-  },
-  {
     "id": "finch-care-product-designer",
     "title": "Product Designer",
     "company": "Finch Care",
@@ -983,30 +960,6 @@
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
     "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Scispot (YC S21) — Best Data Infrastructure for Biotechs. Multi-agent platform for lab operations, AI agents for biotech R&D. Senior AI Product Designer/Manager hybrid role — owns UX design + product management lifecycle. Manages junior designer + QA. Users are scientists and researchers. $100K-$150K CAD, remote Ontario Canada. Posted ~about 1 month ago per YC board."
-  },
-  {
-    "id": "decoda-health-product-designer",
-    "title": "Product Designer",
-    "company": "Decoda Health",
-    "companyUrl": "https://decodahealth.com",
-    "level": "Mid",
-    "locationType": "Onsite",
-    "location": "Toronto, ON, Canada",
-    "url": "https://jobs.ashbyhq.com/decodahealth/4ec1a8b0-701c-42e7-8b07-365974cb4494",
-    "postedDate": "2026-01-30",
-    "tags": [
-      "health tech",
-      "clinic operations",
-      "AI",
-      "B2B",
-      "startup",
-      "YC",
-      "generalist"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/decodahealth/4ec1a8b0-701c-42e7-8b07-365974cb4494",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
-    "_verifiedAt": "2026-03-23",
-    "_verificationNote": "Verified live via Ashby API (api.ashbyhq.com/posting-api/job-board/decodahealth). Full job description confirmed (rawLength 4229). Published 2026-01-30, isListed: true as of 2026-03-23. Decoda Health is YC-backed ($4.5M raised), building AI-native OS for elective care clinics. Generalist Product Designer — end-to-end product + marketing design. Onsite Toronto. No salary listed. Not a duplicate — Decoda Health not in existing jobs.json."
   },
   {
     "id": "eli-health-product-designer",
