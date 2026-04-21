@@ -221,6 +221,23 @@
     "_verificationNote": "Confirmed via search results April 2026. Reports to CTO, leads design strategy and team at Ophelia. ⚠️ CAUTION: Ophelia's Greenhouse board showed no active designer roles as of April 2026 — this Lever URL is indexed but currency is uncertain; validator must browser-verify before publishing. Lever returns 403 on direct fetch. Not in existing jobs.json."
   },
   {
+    "id": "brightline-senior-staff-product-designer",
+    "title": "Senior/Staff Product Designer",
+    "company": "Brightline",
+    "companyUrl": "https://www.brightline.com",
+    "url": "https://jobs.ashbyhq.com/hellobrightline/b31584b8-2710-4245-9d00-3d43aa1c022c",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA (Remote)",
+    "tags": ["mental health", "behavioral health", "pediatric", "family care", "clinician tools", "B2B2C"],
+    "postedAt": "2026-04-13",
+    "salary": null,
+    "_sourceUrl": "https://jobs.ashbyhq.com/hellobrightline/b31584b8-2710-4245-9d00-3d43aa1c022c",
+    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" behavioral health OR mental health 2026",
+    "_verifiedAt": "2026-04-21",
+    "_verificationNote": "Posted April 13, 2026 per gettingthenod.substack.com Job of the Day post. Brightline delivers virtual + in-person behavioral and mental health care to families, coaches, and clinicians. Role owns high-complexity end-to-end design initiatives impacting coaches, clinicians, and families; contributes to design systems. Ashby URL confirmed in April 2026 search index. ⚠️ Ashby renders as JS shell on direct fetch — browser verification needed for salary and full description. Not in existing jobs.json."
+  },
+  {
     "id": "timelycare-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "TimelyCare",
