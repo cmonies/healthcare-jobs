@@ -1,5 +1,53 @@
 [
   {
+    "id": "betterhelp-product-designer-client-growth",
+    "title": "Product Designer 1, Client Growth",
+    "company": "BetterHelp",
+    "companyUrl": "https://www.betterhelp.com",
+    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5082314008",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "USA",
+    "tags": [
+      "mental health",
+      "telehealth",
+      "growth",
+      "B2C",
+      "consumer",
+      "online therapy"
+    ],
+    "postedAt": null,
+    "salary": "$95,000 - $105,000",
+    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5082314008",
+    "_searchQuery": "site:boards.greenhouse.io \"product designer\" healthcare",
+    "_verifiedAt": "2026-04-21",
+    "_verificationNote": "Confirmed via Greenhouse search results: $95K–$105K, US Remote, active application form present per search index. Client Growth team — designs acquisition/onboarding flows for new members. 1–2+ years experience required. ⚠️ No posted date — validator should confirm currency via direct browse. Not in existing jobs.json."
+  },
+  {
+    "id": "brightline-senior-staff-product-designer",
+    "title": "Senior/Staff Product Designer",
+    "company": "Brightline",
+    "companyUrl": "https://www.brightline.com",
+    "url": "https://jobs.ashbyhq.com/hellobrightline/b31584b8-2710-4245-9d00-3d43aa1c022c",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA (Remote)",
+    "tags": [
+      "mental health",
+      "behavioral health",
+      "pediatric",
+      "family care",
+      "clinician tools",
+      "B2B2C"
+    ],
+    "postedAt": "2026-04-13",
+    "salary": null,
+    "_sourceUrl": "https://jobs.ashbyhq.com/hellobrightline/b31584b8-2710-4245-9d00-3d43aa1c022c",
+    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" behavioral health OR mental health 2026",
+    "_verifiedAt": "2026-04-21",
+    "_verificationNote": "Posted April 13, 2026 per gettingthenod.substack.com Job of the Day post. Brightline delivers virtual + in-person behavioral and mental health care to families, coaches, and clinicians. Role owns high-complexity end-to-end design initiatives impacting coaches, clinicians, and families; contributes to design systems. Ashby URL confirmed in April 2026 search index. ⚠️ Ashby renders as JS shell on direct fetch — browser verification needed for salary and full description. Not in existing jobs.json."
+  },
+  {
     "id": "counsel-health-senior-product-designer-clinical",
     "title": "Senior Product Designer (Clinical)",
     "company": "Counsel Health",
