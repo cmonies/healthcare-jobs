@@ -321,5 +321,32 @@
     "_searchQuery": "Virta Health \"senior product designer\" site:jobs.ashbyhq.com 2026",
     "_verifiedAt": "2026-04-23",
     "_verificationNote": "Confirmed active on Ashby (posted Feb 2025, still indexed Apr 2026). Mission: reverse metabolic disease in 1 billion people."
+  },
+  {
+    "id": "maven-clinic-senior-product-designer-ai-member-experience",
+    "title": "Senior Product Designer",
+    "company": "Maven Clinic",
+    "companyUrl": "https://www.mavenclinic.com",
+    "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8516677002",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "New York, NY / Remote US (Hub cities)",
+    "tags": [
+      "women's health",
+      "AI",
+      "B2C",
+      "consumer",
+      "mobile",
+      "clinical",
+      "design systems",
+      "maternity",
+      "reproductive health"
+    ],
+    "postedAt": "2026-04-20",
+    "salary": "$180,000 - $200,000",
+    "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic/jobs/8516677002",
+    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" healthcare 2026 new",
+    "_verifiedAt": "2026-04-23",
+    "_verificationNote": "Verified live via WebFetch (200, full job description + active application form). Posted ~3 days ago per search index (estimated April 20, 2026). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. Senior Product Designer leads member-facing experiences with AI-native design strategy: prototypes using AI coding tools, designs AI behavior for women's health contexts, develops scalable design patterns, mentors team members. Strong AI fluency required. $180K-$200K + equity. NY office + US remote hub cities (hybrid). DISTINCT from existing jobs.json entry maven-clinic-product-designer-maternity-experience (job 8493856002, $140-160K, Maternity Experience specific) — this is a newer, more senior role ($180-200K, broader AI strategy scope)."
   }
 ]
