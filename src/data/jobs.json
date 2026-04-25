@@ -672,32 +672,6 @@
     "_verificationNote": "Verified live via Ashby (WebFetch, 200, full job description). Posted January 8, 2026, last updated February 24, 2026. ⚠️ FRESHNESS: 46 days since last update — validator should confirm currency. Tava Health — mental health platform, patient-facing experiences. Sr. PD designs conversion flows, appointment scheduling, payment UX, telehealth interfaces. 5+ years consumer digital products. Remote USA (Salt Lake City area mentioned). No salary listed. No dead-link signals."
   },
   {
-    "id": "candid-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Candid Health",
-    "companyUrl": "https://www.candidhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA (also Denver, CO / New York, NY)",
-    "url": "https://jobs.ashbyhq.com/candidhealth/1f6fd3be-7761-4031-a940-68cd5c3b0162",
-    "postedAt": "2026-02-02",
-    "salary": "$163,000 - $200,000",
-    "tags": [
-      "revenue cycle",
-      "healthcare billing",
-      "B2B",
-      "enterprise",
-      "data visualization",
-      "design systems",
-      "SaaS",
-      "health tech"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/candidhealth/1f6fd3be-7761-4031-a940-68cd5c3b0162",
-    "_searchQuery": "site:jobs.ashbyhq.com \"senior product designer\" health OR clinical OR biotech OR medical 2026",
-    "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/candidhealth, 200, full job description). isListed: true, publishedAt: 2026-02-02. Candid Health — healthcare tech company transforming medical billing and revenue cycle management for providers. Senior PD establishes design foundations for visualizing complex payments workflows; builds scalable design systems for data-heavy B2B SaaS; mentors junior designers. 5+ years B2B/enterprise required; complex data/SaaS background essential. 4 days/wk in-office (SF primary; Denver or NYC). $163K–$200K. ⚠️ Posted 68 days ago — listed/active per API, validator should reconfirm."
-  },
-  {
     "id": "future-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Future",
@@ -1003,32 +977,6 @@
     "_searchQuery": "\"health tech product designer\" job",
     "_verifiedAt": "2026-04-06",
     "_verificationNote": "Verified live via direct company careers page (200, full job description confirmed twice). Medplum is open source, API-first electronic health record (EHR) platform used by digital health companies. Product Designer leads visual platform refresh and design system, designs across website/app/marketing. SF Bay Area, hybrid (twice-weekly in-person). 3+ years B2B product design required. No salary listed. Contact: careers@medplum.com. ⚠️ Non-standard URL (not ATS ID-based) — will not 404 cleanly on close; verify at each validation run."
-  },
-  {
-    "id": "mochi-health-associate-designer",
-    "title": "Associate Designer",
-    "company": "Mochi Health",
-    "companyUrl": "https://www.mochihealth.com",
-    "level": "Mid",
-    "locationType": "Onsite",
-    "location": "San Francisco, CA",
-    "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161102008",
-    "postedAt": "2026-03-20",
-    "salary": "$100,000 - $130,000",
-    "tags": [
-      "healthcare marketplace",
-      "AI",
-      "consumer",
-      "B2C",
-      "web design",
-      "Framer",
-      "marketing",
-      "startup"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/mochihealth/jobs",
-    "_searchQuery": "site:boards.greenhouse.io \"product designer\" healthcare",
-    "_verifiedAt": "2026-04-03",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mochihealth/jobs/5161102008). Full job description confirmed (200, full content). Published 2026-03-20, updated 2026-03-25. Mochi Health — AI-driven healthcare marketplace, transparent pharmacy pricing, affordable medications. Associate Designer focused on high-performance web experiences: designing/building responsive websites and landing pages in Framer. Collaborates with marketing, product, engineering. Reports to Head of Design. $100K-$130K, onsite SF (5 days/week). DISTINCT from existing entry mochi-health-senior-product-designer (job 5161094008). Note: more of a web/marketing designer role than core product UX — flag for Carmen."
   },
   {
     "id": "hinge-health-product-designer-program-foundations",
@@ -1378,26 +1326,6 @@
     "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) — Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2–3 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta."
   },
   {
-    "id": "bevel-product-designer",
-    "title": "Product Designer",
-    "company": "Bevel",
-    "companyUrl": "https://www.bevel.health/",
-    "level": "Mid",
-    "locationType": "Onsite",
-    "location": "New York, NY",
-    "url": "https://jobs.ashbyhq.com/bevel/a71e6b6d-8153-459e-8fca-4c4843f73fac",
-    "postedDate": "2026-03-05",
-    "tags": [
-      "health",
-      "wellness",
-      "fitness",
-      "nutrition",
-      "sleep"
-    ],
-    "_verifiedAt": "2026-03-05",
-    "_verificationNote": "Backfilled from postedDate — no _verifiedAt at time of entry."
-  },
-  {
     "id": "qualified-health-product-designer",
     "title": "Product Designer",
     "company": "Qualified Health",
@@ -1600,24 +1528,6 @@
       "B2B",
       "startup",
       "clinical"
-    ],
-    "_verifiedAt": "2026-02-16"
-  },
-  {
-    "id": "ladder-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "Ladder",
-    "companyUrl": "https://www.ladderlife.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/ladder/6cbf504f-5987-4721-a487-7a82eaf5fcf9",
-    "postedDate": "2026-02-16",
-    "tags": [
-      "insurtech",
-      "life insurance",
-      "B2C",
-      "startup"
     ],
     "_verifiedAt": "2026-02-16"
   },
