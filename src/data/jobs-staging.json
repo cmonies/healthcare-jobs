@@ -23,7 +23,7 @@
     "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
     "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API board scan AND full page WebFetch (200, complete job description with application form confirmed). updated_at: 2026-03-26. NYC hybrid, 2-3 days/week in-office at 60 Madison Avenue. Candidates must be in NYC metro or able to relocate within 90 days. Spring Health ($3.3B valuation) — mental health platform partnering with 450+ companies incl. Microsoft, Target, Delta. Senior PD, Member Growth: owns hypothesis-driven growth design for identification, activation, engagement, retention. 5+ years required, portfolio showing measurable growth impact. $150K-$202,400 + equity. DISTINCT from existing spring-health-senior-product-designer-member-growth (4650623005, Seattle). Salary lower than SF variant due to zone. NYC metro residency required."
+    "_verificationNote": "Verified live via Greenhouse API board scan AND full page WebFetch (200, complete job description with application form confirmed). updated_at: 2026-03-26. NYC hybrid, 2-3 days/week in-office at 60 Madison Avenue. Candidates must be in NYC metro or able to relocate within 90 days. Spring Health ($3.3B valuation) — mental health platform partnering with 450+ companies incl. Microsoft, Target, Delta. Senior PD, Member Growth: owns hypothesis-driven growth design for identification, activation, engagement, retention. 5+ years required, portfolio showing measurable growth impact. $150K-$202,400 + equity. DISTINCT from existing spring-health-senior-product-designer-member-growth (4650623005, Seattle). NYC metro residency required."
   },
   {
     "id": "spring-health-senior-product-designer-member-growth-sf",
@@ -49,7 +49,7 @@
     "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
     "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API board scan AND full page WebFetch (200, complete job description with application form confirmed). updated_at: 2026-03-26. SF hybrid, 2-3 days/week in-office. Candidates must be in SF metro or able to relocate within 90 days. Reports to Senior Design Manager of Member Growth. Same role as NYC variant but SF-based. $165K-$202,500 + equity. DISTINCT from existing spring-health-senior-product-designer-member-growth (4650623005, Seattle) and spring-health-senior-product-designer-member-growth-nyc (4633473005, New York)."
+    "_verificationNote": "Verified live via Greenhouse API board scan AND full page WebFetch (200, complete job description with application form confirmed). updated_at: 2026-03-26. SF hybrid, 2-3 days/week in-office. Candidates must be in SF metro or able to relocate within 90 days. Same role as NYC variant but SF-based. $165K-$202,500 + equity. DISTINCT from existing spring-health-senior-product-designer-member-growth (4650623005, Seattle) and spring-health-senior-product-designer-member-growth-nyc (4633473005, New York)."
   },
   {
     "id": "elation-health-senior-services-designer",
@@ -70,12 +70,12 @@
       "design systems",
       "physician experience"
     ],
-    "postedAt": null,
-    "salary": "$160,000 - $195,000",
+    "postedAt": "2026-02-24",
+    "salary": "$150,000 - $180,000",
     "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/elationhealth/jobs",
     "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/elationhealth/jobs",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (200, full job description, salary confirmed). updated_at: 2026-04-22 (3 days ago). Note: job-boards.greenhouse.io URL redirects to https://www.elationhealth.com/about-us/careers?gh_jid=7644939 — this is normal for Elation's Greenhouse configuration; the job is definitively live and the Greenhouse API confirms the listing. Elation Health — SaaS cloud-based EHR for primary care, clinicians have awarded it 'Best in KLAS' in its category. First service designer at Elation, reports to CPO. Designs complex healthcare workflows, data flows, clinical handoffs, journey maps, service blueprints, and governance models. Conducts qualitative/quantitative research, facilitates co-design workshops. Mentors others in design thinking. Requires deep clinical workflow UX experience. 'Our users do work that affects human lives, and our tools can make or break that work.' $160K-$195K, US or Canada Remote. Not in existing jobs.json."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/elationhealth/jobs/7644939, 200, full job details confirmed). Published February 24, 2026, updated_at April 22, 2026 (3 days ago). Note: job-boards.greenhouse.io URL redirects to elationhealth.com careers page — the Greenhouse API confirms the listing is definitively live. Elation Health — SaaS cloud-based EHR for primary care, Best in KLAS award winner. First service designer at Elation. Designs complex clinical workflows, data flows, handoffs, journey maps, service blueprints. Conducts qualitative/quantitative research, facilitates co-design workshops. $150K-$180K USD / $160K-$195K CAD. US or Canada Remote. ⚠️ FRESHNESS: published 60 days ago, but updated April 22 — still actively listed per API. Not in existing jobs.json."
   },
   {
     "id": "betterhelp-product-designer-therapist-platform",
@@ -95,37 +95,63 @@
       "online therapy",
       "startup"
     ],
-    "postedAt": null,
+    "postedAt": "2026-04-08",
     "salary": "$130,000 - $140,000",
     "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5168402008",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"product designer\" \"mental health\" OR \"telehealth\" 2026",
+    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026 April",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (200, full job description). updated_at: 2026-04-24 (yesterday!). BetterHelp — world's largest online therapy service, 30,000+ licensed therapists, millions of users. Product Designer, Therapist Platform owns end-to-end design for the Therapist domain (clinician-facing product). Leads research and usability efforts, partners with PMs and engineers. Focus on improving experience for therapists using the platform. $130K-$140K + performance bonuses, Remote USA. DISTINCT from existing betterhelp-product-designer-client-growth (5082314008, $95K-$105K, Client Growth team) — this role is therapist-facing (B2B/provider UX) not patient-facing. Fresh listing."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/betterhelpcom/jobs/5168402008, 200, full job details confirmed). Published April 8, 2026, updated April 24, 2026 (yesterday). BetterHelp — world's largest online therapy service, 30,000+ licensed therapists. Product Designer, Therapist Platform owns end-to-end design for therapist-facing product: scheduling, session management, notes, billing. $130K-$140K + performance bonus. Remote USA. DISTINCT from existing betterhelp-product-designer-client-growth (5082314008, $95K-$105K, Client Growth/patient-facing) — this role is therapist-facing. Not in existing jobs.json."
   },
   {
-    "id": "commure-product-designer",
-    "title": "Product Designer",
-    "company": "Commure",
-    "companyUrl": "https://www.commure.com",
-    "url": "https://jobs.ashbyhq.com/commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
-    "level": "Mid-Senior",
-    "locationType": "Onsite",
-    "location": "Mountain View, CA",
+    "id": "flatiron-health-senior-product-designer-clinical-workflows",
+    "title": "Senior Product Designer, Clinical Workflows",
+    "company": "Flatiron Health",
+    "companyUrl": "https://flatiron.com",
+    "url": "https://job-boards.greenhouse.io/flatironhealth/jobs/7834651",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "New York, NY",
     "tags": [
-      "healthcare AI",
-      "ambient documentation",
-      "clinical AI",
-      "provider tools",
-      "revenue cycle",
-      "B2B",
+      "oncology",
+      "EMR",
+      "clinical workflows",
+      "AI",
+      "healthtech",
       "enterprise",
-      "startup"
+      "B2B",
+      "cancer care"
     ],
-    "postedAt": "2026-04-21",
-    "salary": null,
-    "_sourceUrl": "https://jobs.ashbyhq.com/commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" health telehealth clinical April 2026",
+    "postedAt": "2026-04-23",
+    "salary": "$136,000 - $187,000",
+    "_sourceUrl": "https://job-boards.greenhouse.io/flatironhealth/jobs/7834651",
+    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026 April",
     "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/commure, isListed: true, publishedAt: 2026-04-21, 4 days ago). Commure — healthcare AI platform: ambient AI clinical documentation, provider copilots, autonomous coding, revenue cycle management. 500,000+ clinicians, hundreds of care sites, $10B+ flows through systems, 100M+ patient interactions. 300% YoY growth x2 years. Backed by General Catalyst, Sequoia, YC, Lux, Human Capital, 8VC, Greenoaks, Elad Gil. Fortune Future 50 (2025). Product Designer designs intuitive productivity experiences for healthcare providers: UI/UX, wireframes, hi-fi prototypes in Figma/Cursor; user research, journey mapping, UX workflow analysis. 4+ years required. 'This posting covers multiple open roles across Commure.' Full-time onsite Mountain View CA HQ, occasional travel to client sites. No salary listed. Note: onsite-only — flag for Carmen. Not in existing jobs.json."
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/flatironhealth/jobs/7834651, 200, full job details confirmed). Published April 23, 2026 (2 days ago). Requisition ID JR101918. Flatiron Health — oncology data and EHR platform owned by Roche; used by 800+ cancer clinics and academic research centers. Senior Product Designer, Clinical Workflows: designs complex workflow tools for oncologists and care teams. 5+ years designing complex workflows required; healthcare and AI implementation experience preferred. NY hybrid 3 days/week. $136K-$187K. Not in existing jobs.json."
+  },
+  {
+    "id": "strata-decision-technology-ux-researcher",
+    "title": "User Experience Researcher",
+    "company": "Strata Decision Technology",
+    "companyUrl": "https://www.stratadecision.com",
+    "url": "https://job-boards.greenhouse.io/stratacareers/jobs/7704966003",
+    "level": "Mid",
+    "locationType": "Hybrid",
+    "location": "Chicago, IL (or St. Louis, MO)",
+    "tags": [
+      "healthcare analytics",
+      "financial planning",
+      "health systems",
+      "enterprise",
+      "B2B",
+      "SaaS",
+      "UX research",
+      "mixed-methods"
+    ],
+    "postedAt": "2026-04-20",
+    "salary": "$80,000 - $100,000",
+    "_sourceUrl": "https://job-boards.greenhouse.io/stratacareers/jobs/7704966003",
+    "_searchQuery": "site:job-boards.greenhouse.io \"UX researcher\" healthcare 2026",
+    "_verifiedAt": "2026-04-25",
+    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/stratacareers/jobs/7704966003, 200, full job details confirmed). Published April 20, 2026 (5 days ago). Strata Decision Technology — financial planning and analytics SaaS for health systems; primary market is hospitals and healthcare organizations (StrataJazz platform). UX Researcher conducts generative and evaluative research to inform product decisions. 2+ years product research required; SaaS/healthcare background preferred. Pendo analytics experience a plus. Chicago hybrid (2 days/week) or St. Louis. $80K-$100K + variable. ⚠️ NOTE: healthcare-adjacent (financial analytics for health systems), not pure clinical/patient-facing — flag for Carmen. Not in existing jobs.json."
   }
 ]
