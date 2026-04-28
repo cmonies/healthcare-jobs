@@ -953,31 +953,6 @@
     "_verificationNote": "Verified live via Ashby (200, full job description). Posted March 17, 2026. Solace (Series C, $1B valuation) pairs patients with expert healthcare advocates to navigate the fragmented US healthcare system. Product Designer translates complex healthcare concepts into elegant user-centered interfaces. Produces production-ready designs, collaborates cross-functionally, maintains design consistency. 3+ years experience. Remote USA. $100K-$115K. Backed by Inspired Capital, Craft Ventures, Menlo Ventures."
   },
   {
-    "id": "counsel-health-senior-product-designer-consumer",
-    "title": "Senior Product Designer, Consumer",
-    "company": "Counsel Health",
-    "companyUrl": "https://counselhealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/counsel/385e95d2-f576-48f6-ada2-3a79e037a55b",
-    "postedAt": "2026-01-02",
-    "salary": null,
-    "tags": [
-      "clinical AI",
-      "primary care",
-      "B2C",
-      "consumer",
-      "mobile",
-      "AI",
-      "startup"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/counsel/385e95d2-f576-48f6-ada2-3a79e037a55b",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
-    "_verifiedAt": "2026-04-07",
-    "_verificationNote": "Verified live via Ashby (200, full job description). Posted Jan 2, updated March 27, 2026. Counsel Health is an AI-native medical group (founded 2023, $35M raised from a16z, Google Ventures, Pear VC). Serving hundreds of thousands of patients. Sr. PD shapes end-to-end consumer experience: care delivery, prescriptions, labs, referrals. 0-to-1 prototyping, mobile/web design standards. 5+ years consumer product design required. Remote USA. No salary listed."
-  },
-  {
     "id": "readily-founding-design-engineer",
     "title": "Founding Design Engineer",
     "company": "Readily",
@@ -1211,57 +1186,6 @@
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/tebra/jobs/4672601005). Full job description confirmed (rawLength 5229). Published 2026-03-27. Tebra — all-in-one EHR+ platform built exclusively for independent healthcare practices (42,000+ practices). Merges Kareo + PatientPop. Product Designer embedded in cross-functional team. Design system contribution, customer research, AI tool fluency expected. Location: Heredia, Costa Rica (not US-based). No salary listed. ⚠️ Note: Costa Rica location — flag for Carmen as non-US role."
   },
   {
-    "id": "thirty-madison-product-designer-platform",
-    "title": "Product Designer - Platform",
-    "company": "Thirty Madison",
-    "companyUrl": "https://www.thirtymadison.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/thirtymadison/jobs/8459930002",
-    "postedAt": "2026-03-11",
-    "salary": "$100,000 - $120,000",
-    "tags": [
-      "telehealth",
-      "consumer health",
-      "B2C",
-      "design systems",
-      "mobile",
-      "A/B testing",
-      "subscription"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/thirtymadison/jobs/8459930002",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026",
-    "_verifiedAt": "2026-04-01",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/thirtymadison/jobs/8459930002). Full job description confirmed (rawLength 2229). Published 2026-03-11, updated 2026-03-22. Thirty Madison — consumer telehealth brands: Keeps (men's hair loss), Cove (migraine), Facet (skin), NURX (sexual health). Platform team designer — patient experience across web/mobile, design systems, A/B testing. 2-4 years experience. $100K–$120K + equity. Remote US."
-  },
-  {
-    "id": "mochi-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Mochi Health",
-    "companyUrl": "https://www.mochihealth.com",
-    "level": "Senior",
-    "locationType": "Onsite",
-    "location": "San Francisco, CA",
-    "url": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-    "postedAt": null,
-    "salary": "$180,000 - $225,000",
-    "tags": [
-      "healthcare marketplace",
-      "AI",
-      "consumer",
-      "B2C",
-      "patient experience",
-      "startup",
-      "design systems",
-      "mobile"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/mochihealth/jobs/5161094008",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026",
-    "_verifiedAt": "2026-03-25",
-    "_verificationNote": "Verified live via Greenhouse (200, full job description, rawLength 5229). Mochi Health — AI-driven healthcare marketplace connecting patients to providers, transparent pharmacy pricing, and affordable medications. 'Profitable & explosive growth', no VC funding. Senior Product Designer reports to Head of Design. 3+ years required; ideally founding designer background. Experience with Claude Code, Figma & Framer desired. $180K-$225K base + equity. Onsite San Francisco (5 days/week)."
-  },
-  {
     "id": "tennr-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Tennr",
@@ -1474,25 +1398,6 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/qualifiedhealth",
     "_verifiedAt": "2026-02-27",
     "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error."
-  },
-  {
-    "id": "k-health-lead-product-designer",
-    "title": "Lead Product Designer",
-    "company": "K Health",
-    "companyUrl": "https://khealth.com",
-    "level": "Lead",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/khealthcareers/jobs/5811671004",
-    "postedDate": "2026-02-25",
-    "tags": [
-      "primary care",
-      "clinical AI",
-      "AI",
-      "telehealth",
-      "B2C"
-    ],
-    "_verifiedAt": "2026-02-25"
   },
   {
     "id": "garner-health-staff-product-designer",
