@@ -1,5 +1,134 @@
 [
   {
+    "title": "Senior AI-Native Product Designer",
+    "company": "Oura",
+    "companyUrl": "https://ouraring.com",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4207833009",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "tags": [
+      "wearables",
+      "AI",
+      "health tracking",
+      "consumer health"
+    ],
+    "postedAt": "2026-04-27",
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+  },
+  {
+    "title": "Senior Product Designer - Mobile",
+    "company": "Oura",
+    "companyUrl": "https://ouraring.com",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4227724009",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "tags": [
+      "wearables",
+      "mobile",
+      "health tracking",
+      "consumer health"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+  },
+  {
+    "title": "Senior Manager, UX Design",
+    "company": "Oura",
+    "companyUrl": "https://ouraring.com",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4230682009",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "tags": [
+      "wearables",
+      "health tracking",
+      "consumer health",
+      "design leadership"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+  },
+  {
+    "title": "Staff Designer, New Sensing",
+    "company": "Oura",
+    "companyUrl": "https://ouraring.com",
+    "url": "https://job-boards.greenhouse.io/oura/jobs/4193678009",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "San Francisco, CA",
+    "tags": [
+      "wearables",
+      "health tracking",
+      "sensors",
+      "consumer health"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+  },
+  {
+    "title": "Lead Product Designer",
+    "company": "K Health",
+    "companyUrl": "https://khealth.com",
+    "url": "https://job-boards.greenhouse.io/khealthcareers/jobs/5982984004",
+    "level": "Lead",
+    "locationType": "Onsite",
+    "location": "New York, NY",
+    "tags": [
+      "telehealth",
+      "AI",
+      "primary care",
+      "consumer health"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/khealthcareers"
+  },
+  {
+    "title": "Principal Design System Designer",
+    "company": "Twin Health",
+    "companyUrl": "https://twinhealth.com",
+    "url": "https://job-boards.greenhouse.io/twinhealth/jobs/5849866004",
+    "level": "Principal",
+    "locationType": "Remote",
+    "location": "USA",
+    "tags": [
+      "metabolic health",
+      "AI",
+      "digital twin",
+      "design systems"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth"
+  },
+  {
+    "title": "Staff User Researcher",
+    "company": "Nourish",
+    "companyUrl": "https://usenourish.com",
+    "url": "https://job-boards.greenhouse.io/usenourish/jobs/5043059008",
+    "level": "Staff",
+    "locationType": "Onsite",
+    "location": "New York, NY",
+    "tags": [
+      "nutrition",
+      "telehealth",
+      "dietitian",
+      "user research"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/usenourish"
+  },
+  {
+    "title": "Design Intern - Summer 2026",
+    "company": "BetterHelp",
+    "companyUrl": "https://www.betterhelp.com",
+    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5134132008",
+    "level": "Junior",
+    "locationType": "Remote",
+    "location": "USA",
+    "tags": [
+      "mental health",
+      "telehealth",
+      "therapy",
+      "B2C"
+    ],
+    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom"
+  },
+  {
     "id": "spring-health-senior-product-designer-member-growth-nyc",
     "title": "Senior Product Designer, Member Growth",
     "company": "Spring Health",
