@@ -1058,31 +1058,6 @@
     "_verificationNote": "Verified live via direct company careers page (200, full job description confirmed twice). Medplum is open source, API-first electronic health record (EHR) platform used by digital health companies. Product Designer leads visual platform refresh and design system, designs across website/app/marketing. SF Bay Area, hybrid (twice-weekly in-person). 3+ years B2B product design required. No salary listed. Contact: careers@medplum.com. ⚠️ Non-standard URL (not ATS ID-based) — will not 404 cleanly on close; verify at each validation run."
   },
   {
-    "id": "hinge-health-product-designer-program-foundations",
-    "title": "Product Designer, Program Foundations",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://jobs.ashbyhq.com/hinge-health/bf8919d9-8978-47ce-a3e9-fd0e6b0a97ad",
-    "postedAt": null,
-    "salary": "$132,000 - $198,000",
-    "tags": [
-      "MSK",
-      "healthcare",
-      "design systems",
-      "mobile",
-      "patient experience",
-      "B2C",
-      "AI"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/bf8919d9-8978-47ce-a3e9-fd0e6b0a97ad",
-    "_searchQuery": "site:jobs.ashbyhq.com designer health",
-    "_verifiedAt": "2026-04-03",
-    "_verificationNote": "Verified live via browser snapshot (Ashby, full job description rendered). Title: Product Designer, Program Foundations. Department: RnD > Design. Location: San Francisco-HQ, Hybrid (3 days/week in office). Compensation: $132K-$198K (midpoint $165K) + equity. Hinge Health — AI-powered MSK care platform, 20M+ members, 2,550+ employers. Role focuses on multi-condition member experience, program foundations/orchestration, onboarding migration, design system contribution. 3+ years required, mobile experience required. DISTINCT from existing Hinge Health entries (Enterprise AI Staff, Staff UX Motion, Senior Design Systems Bengaluru). Apply link confirmed live."
-  },
-  {
     "id": "zocalo-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Zócalo Health",
@@ -1373,25 +1348,6 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/qualifiedhealth",
     "_verifiedAt": "2026-02-27",
     "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error."
-  },
-  {
-    "id": "garner-health-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Garner Health",
-    "companyUrl": "https://garnerhealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/5754093004",
-    "postedDate": "2026-02-25",
-    "tags": [
-      "benefits navigation",
-      "design systems",
-      "enterprise",
-      "B2B",
-      "growth"
-    ],
-    "_verifiedAt": "2026-02-25"
   },
   {
     "id": "oura-staff-designer-womens-health",
