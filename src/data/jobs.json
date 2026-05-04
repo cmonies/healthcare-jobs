@@ -197,7 +197,8 @@
       "health tracking",
       "consumer health"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
+    "postedAt": "2026-04-28"
   },
   {
     "title": "Senior Manager, UX Design",
@@ -213,7 +214,8 @@
       "consumer health",
       "design leadership"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
+    "postedAt": "2026-04-23"
   },
   {
     "title": "Staff Designer, New Sensing",
@@ -229,7 +231,8 @@
       "sensors",
       "consumer health"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/oura"
+    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
+    "postedAt": "2026-04-20"
   },
   {
     "title": "Lead Product Designer",
@@ -245,7 +248,8 @@
       "primary care",
       "consumer health"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/khealthcareers"
+    "_sourceUrl": "https://job-boards.greenhouse.io/khealthcareers",
+    "postedAt": "2026-04-27"
   },
   {
     "title": "Principal Design System Designer",
@@ -261,7 +265,8 @@
       "digital twin",
       "design systems"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth"
+    "_sourceUrl": "https://job-boards.greenhouse.io/twinhealth",
+    "postedAt": "2026-04-08"
   },
   {
     "title": "Staff User Researcher",
@@ -277,7 +282,8 @@
       "dietitian",
       "user research"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/usenourish"
+    "_sourceUrl": "https://job-boards.greenhouse.io/usenourish",
+    "postedAt": "2026-04-03"
   },
   {
     "title": "Design Intern - Summer 2026",
@@ -293,7 +299,8 @@
       "therapy",
       "B2C"
     ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom"
+    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom",
+    "postedAt": "2026-04-06"
   },
   {
     "id": "spring-health-senior-product-designer-member-growth-nyc",
@@ -314,7 +321,7 @@
       "design systems",
       "AI"
     ],
-    "postedAt": null,
+    "postedAt": "2026-03-26",
     "salary": "$150,000 - $202,400",
     "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
     "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
@@ -340,7 +347,7 @@
       "design systems",
       "AI"
     ],
-    "postedAt": null,
+    "postedAt": "2026-03-26",
     "salary": "$165,000 - $202,500",
     "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
     "_searchQuery": "Greenhouse API scan: boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
@@ -528,7 +535,7 @@
       "web design",
       "contract"
     ],
-    "postedAt": null,
+    "postedAt": "2026-04-14",
     "salary": null,
     "_sourceUrl": "https://jobs.lever.co/everlywell/7b7ac528-ec42-4480-b1fd-11ded686380e",
     "_searchQuery": "site:jobs.lever.co \"senior product designer\" health OR clinical OR telehealth 2026",
@@ -558,33 +565,6 @@
     "_searchQuery": "site:boards.greenhouse.io \"UX researcher\" healthcare",
     "_verifiedAt": "2026-04-23",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/growtherapy/jobs/4661636005, 200, full job details confirmed). Posted April 9, 2026 (14 days ago). Grow Therapy \u2014 mental health therapist marketplace connecting patients with in-network therapists; 3-sided marketplace (patients, therapists, payors). Senior UX Researcher owns mixed-methods research across high-impact moments in member mental health care journey. 5-8+ years required. Hybrid 3 days/week (Tue/Wed/Thu) in NYC, SF, or Seattle; 2-3 annual company travel days. $182K-$227K + equity. NOT a duplicate \u2014 Grow Therapy not in existing jobs.json."
-  },
-  {
-    "id": "included-health-staff-product-designer-care-clinical",
-    "title": "Staff Product Designer, Care & Clinical Workflows",
-    "company": "Included Health",
-    "companyUrl": "https://includedhealth.com",
-    "url": "https://jobs.lever.co/includedhealth/8cf2e124-00b8-4aba-a7b0-56a1b5fd0000",
-    "level": "Staff",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "clinical tools",
-      "care delivery",
-      "internal tools",
-      "AI",
-      "design systems",
-      "telehealth",
-      "B2B2C",
-      "care teams",
-      "virtual care"
-    ],
-    "postedAt": null,
-    "salary": "$149,450 - $274,430 (zone-based)",
-    "_sourceUrl": "https://jobs.lever.co/includedhealth/8cf2e124-00b8-4aba-a7b0-56a1b5fd0000",
-    "_searchQuery": "site:jobs.lever.co \"product designer\" telehealth",
-    "_verifiedAt": "2026-04-23",
-    "_verificationNote": "Verified live via browse.py (200, full job description rendered, active apply button confirmed). No posted date visible. Included Health \u2014 integrated virtual care and navigation platform serving millions; breaks down barriers for high-quality care across acute, chronic, behavioral, and specialty needs. Staff Product Designer, Care & Clinical Workflows: owns design of internal tools for Member Care Advocates, clinicians, and care teams. Sets bar for AI-assisted design at company. 8+ years required; healthcare or clinical ops background strongly preferred. Zone-based salary: Zone A $149,450-$211,100 / Zone B $164,395-$232,210 / Zone C $179,340-$253,320 / Zone D $194,285-$274,430 + equity. Remote USA. NOT a duplicate \u2014 Included Health not in existing jobs.json."
   },
   {
     "id": "maven-clinic-senior-product-designer-ai-platform",
@@ -657,7 +637,7 @@
       "consumer",
       "online therapy"
     ],
-    "postedAt": null,
+    "postedAt": "2026-04-08",
     "salary": "$95,000 - $105,000",
     "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5082314008",
     "_searchQuery": "site:boards.greenhouse.io \"product designer\" healthcare",
@@ -831,7 +811,7 @@
       "skincare",
       "YC"
     ],
-    "postedAt": null,
+    "postedAt": "2026-04-14",
     "salary": "$70,000 - $120,000",
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_searchQuery": "YC job board https://www.ycombinator.com/jobs/role/designer",
@@ -1045,31 +1025,6 @@
     "_verificationNote": "Verified live via Ashby (200, full job description rendered via browse.py). Posted March 4, 2026 (36 days). Hinge Health \u2014 AI-powered MSK care platform, 20M+ members, +50% YoY revenue, +30% YoY user growth. Staff Product Designer, Program Experience leads member onboarding experience \u2014 designing personalized, habit-forming journeys for joint and muscle health management. Strategy through execution, cross-functional with product and engineering. SF hybrid (3 days/week). $195K\u2013$292K + equity. DISTINCT from existing Hinge Health entries: Program Foundations (bf8919d9), Enterprise AI Staff (b50a72a4), Staff UX Motion (286d29ee), Design Systems Bengaluru (859fe80b)."
   },
   {
-    "id": "ro-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Ro",
-    "companyUrl": "https://ro.co",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY (or Remote US)",
-    "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
-    "postedAt": null,
-    "salary": "$198,900 - $234,000",
-    "tags": [
-      "telehealth",
-      "patient experience",
-      "clinical tools",
-      "B2C",
-      "design systems",
-      "AI",
-      "consumer health"
-    ],
-    "_sourceUrl": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
-    "_searchQuery": "site:jobs.lever.co \"product designer\" telehealth",
-    "_verifiedAt": "2026-04-09",
-    "_verificationNote": "Verified live via Lever (browse.py, full job description, 200). No explicit posted date visible in listing. Ro \u2014 direct-to-patient telehealth company (nationwide telehealth + labs + pharmacy). Only company offering all three vertically. Staff Product Designer owns internal clinical tools enabling physicians, NPs, nurses and patient advocates to deliver high-quality care. 8+ years required. End-to-end design (research \u2192 UX \u2192 UI \u2192 systems). Design system stewardship. Strong AI fluency expected. $198,900\u2013$234,000 base + equity. NYC Tues/Thurs in office, or fully remote US with periodic on-sites. \u26a0\ufe0f No posted date \u2014 validator should confirm currency. Listing body references 'end of year' suggesting possibly written late 2025; however listing fetched live with no closure signals."
-  },
-  {
     "id": "openai-lead-product-designer-health-ai",
     "title": "Lead Product Designer, Health AI",
     "company": "OpenAI",
@@ -1207,7 +1162,7 @@
     "locationType": "Hybrid",
     "location": "San Francisco Bay Area",
     "url": "https://www.medplum.com/careers/product-designer",
-    "postedAt": null,
+    "postedAt": "2026-04-06",
     "salary": null,
     "tags": [
       "EHR",
@@ -1447,7 +1402,8 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/eli/084c1b95-4182-487e-84b4-4a27e24367ff",
     "_searchQuery": "site:jobs.ashbyhq.com designer health",
     "_verifiedAt": "2026-03-20",
-    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire \u2014 founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer\u2122, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate \u2014 Eli Health not in existing jobs.json."
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/eli). Full job description confirmed (rawLength 7229). Published 2026-02-17. First Product Designer hire \u2014 founding role, owns end-to-end design for hormone monitoring mobile app (iOS/Android). Eli Health makes the Hormometer\u2122, instant hormone monitoring from saliva. 7+ years required, deep consumer health/health tech experience. Montreal-based, remote-eligible. No salary listed. Not a duplicate \u2014 Eli Health not in existing jobs.json.",
+    "postedAt": "2026-02-17"
   },
   {
     "id": "sidecar-health-lead-product-designer",
@@ -1470,7 +1426,8 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/sidecarhealth/jobs/5821203004",
     "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth 2026",
     "_verifiedAt": "2026-03-19",
-    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Lead Product Designer, Member & Provider Experience \u2014 owns experience vision and strategy across mobile and web. Strong emphasis on design systems, AI-forward design practice, accessibility. Competitive salary, bonus, equity. No salary range listed."
+    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Lead Product Designer, Member & Provider Experience \u2014 owns experience vision and strategy across mobile and web. Strong emphasis on design systems, AI-forward design practice, accessibility. Competitive salary, bonus, equity. No salary range listed.",
+    "postedAt": "2026-04-21"
   },
   {
     "id": "spring-health-senior-ux-researcher",
@@ -1493,7 +1450,8 @@
     "_sourceUrl": "https://job-boards.greenhouse.io/springhealth66/jobs/4668694005",
     "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"UX researcher\" health 2026",
     "_verifiedAt": "2026-03-19",
-    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) \u2014 Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2\u20133 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta."
+    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) \u2014 Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2\u20133 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta.",
+    "postedAt": "2026-03-24"
   },
   {
     "id": "qualified-health-product-designer",
@@ -1514,7 +1472,8 @@
     ],
     "_sourceUrl": "https://job-boards.greenhouse.io/qualifiedhealth",
     "_verifiedAt": "2026-02-27",
-    "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error."
+    "_verificationNote": "Fetched directly. Page returned 200 with live application form and confirmed job title. Found while browsing Qualified Health's job board after stale search result (4947649008) redirected to error.",
+    "postedAt": "2026-03-23"
   },
   {
     "id": "oura-staff-designer-womens-health",
@@ -1533,7 +1492,8 @@
       "consumer",
       "B2C"
     ],
-    "_verifiedAt": "2026-02-23"
+    "_verifiedAt": "2026-02-23",
+    "postedAt": "2026-04-06"
   },
   {
     "id": "oura-staff-product-designer-enterprise",
@@ -1552,7 +1512,8 @@
       "wearables",
       "data visualization"
     ],
-    "_verifiedAt": "2026-02-23"
+    "_verifiedAt": "2026-02-23",
+    "postedAt": "2026-04-06"
   },
   {
     "id": "leona-health-lead-product-designer",
@@ -1570,7 +1531,8 @@
       "B2C",
       "startup"
     ],
-    "_verifiedAt": "2026-02-23"
+    "_verifiedAt": "2026-02-23",
+    "postedAt": "2024-11-22"
   },
   {
     "id": "silna-health-product-designer-founding",
@@ -1587,7 +1549,8 @@
       "startup",
       "founding role"
     ],
-    "_verifiedAt": "2026-02-23"
+    "_verifiedAt": "2026-02-23",
+    "postedAt": "2025-08-15"
   },
   {
     "id": "pomelo-care-senior-product-designer",
@@ -1606,7 +1569,8 @@
       "consumer",
       "startup"
     ],
-    "_verifiedAt": "2026-02-20"
+    "_verifiedAt": "2026-02-20",
+    "postedAt": "2026-03-13"
   },
   {
     "id": "cohere-health-sr-product-designer",
@@ -1625,7 +1589,8 @@
       "enterprise",
       "B2B"
     ],
-    "_verifiedAt": "2026-02-18"
+    "_verifiedAt": "2026-02-18",
+    "postedAt": "2026-04-28"
   },
   {
     "id": "nourish-staff-product-designer",
@@ -1643,7 +1608,8 @@
       "startup",
       "AI"
     ],
-    "_verifiedAt": "2026-02-16"
+    "_verifiedAt": "2026-02-16",
+    "postedAt": "2026-04-03"
   },
   {
     "id": "baba-founding-product-designer",
@@ -1661,7 +1627,8 @@
       "startup",
       "clinical"
     ],
-    "_verifiedAt": "2026-02-16"
+    "_verifiedAt": "2026-02-16",
+    "postedAt": "2026-01-02"
   },
   {
     "id": "hone-health-senior-product-designer-clinical",
@@ -1679,7 +1646,8 @@
       "consumer",
       "startup"
     ],
-    "_verifiedAt": "2026-02-15"
+    "_verifiedAt": "2026-02-15",
+    "postedAt": "2026-02-10"
   },
   {
     "id": "spring-health-senior-product-designer-member-growth",
@@ -1697,7 +1665,8 @@
       "consumer",
       "startup"
     ],
-    "_verifiedAt": "2026-02-15"
+    "_verifiedAt": "2026-02-15",
+    "postedAt": "2026-03-26"
   },
   {
     "id": "3y-health-ai-product-designer",
@@ -1714,7 +1683,8 @@
       "B2B",
       "startup"
     ],
-    "_verifiedAt": "2026-02-15"
+    "_verifiedAt": "2026-02-15",
+    "postedAt": "2025-09-08"
   },
   {
     "id": "layer-health-senior-product-designer",
@@ -1732,7 +1702,8 @@
       "B2B",
       "startup"
     ],
-    "_verifiedAt": "2026-02-14"
+    "_verifiedAt": "2026-02-14",
+    "postedAt": "2026-04-13"
   },
   {
     "id": "flo-health-senior-product-designer-user-centric",
@@ -1749,7 +1720,8 @@
       "consumer",
       "startup"
     ],
-    "_verifiedAt": "2026-02-14"
+    "_verifiedAt": "2026-02-14",
+    "postedAt": "2026-04-14"
   },
   {
     "id": "headway-senior-product-designer-provider-growth",
@@ -1767,7 +1739,8 @@
       "startup",
       "consumer"
     ],
-    "_verifiedAt": "2026-02-14"
+    "_verifiedAt": "2026-02-14",
+    "postedAt": "2026-04-06"
   },
   {
     "id": "headway-director-product-design-foundations",
@@ -1785,7 +1758,8 @@
       "startup",
       "design systems"
     ],
-    "_verifiedAt": "2026-02-14"
+    "_verifiedAt": "2026-02-14",
+    "postedAt": "2026-03-16"
   },
   {
     "id": "hinge-health-staff-product-designer-enterprise-ai",
