@@ -7,10 +7,10 @@ import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
 
 const featuredJobs = [...jobs].sort((a, b) => {
-  if (!a._verifiedAt && !b._verifiedAt) return 0;
-  if (!a._verifiedAt) return 1;
-  if (!b._verifiedAt) return -1;
-  return b._verifiedAt.localeCompare(a._verifiedAt);
+  if (!a.postedAt && !b.postedAt) return 0;
+  if (!a.postedAt) return 1;
+  if (!b.postedAt) return -1;
+  return b.postedAt.localeCompare(a.postedAt);
 }).slice(0, 8);
 ---
 
