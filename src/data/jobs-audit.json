@@ -5,90 +5,50 @@
   "failed": 0,
   "results": [
     {
-      "id": "headway-staff-researcher-provider-growth",
-      "company": "Headway",
-      "title": "Staff Researcher, Provider Growth",
-      "url": "https://job-boards.greenhouse.io/headway/jobs/5838460004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "abridge-design-imagineer",
-      "company": "Abridge",
-      "title": "Design Imagineer",
-      "url": "https://jobs.ashbyhq.com/abridge/d6baf8ee-02f8-41d2-a6e8-46fd31401350",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "abridge-staff-product-designer",
-      "company": "Abridge",
-      "title": "Staff Product Designer",
-      "url": "https://jobs.ashbyhq.com/abridge/d48553c1-a360-4509-a1e0-9df6d8b480f6",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "abridge-senior-product-designer",
-      "company": "Abridge",
-      "title": "Senior Product Designer",
-      "url": "https://jobs.ashbyhq.com/abridge/6aab826b-a60a-434e-889d-e4648f289305",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "abridge-staff-designer-art-direction",
-      "company": "Abridge",
-      "title": "Staff Designer, Art Direction",
-      "url": "https://jobs.ashbyhq.com/abridge/fa37e174-023b-4c8b-b827-2c15fc7b8960",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "pomelo-care-senior-brand-designer",
-      "company": "Pomelo Care",
-      "title": "Senior Brand Designer",
-      "url": "https://job-boards.greenhouse.io/pomelocare/jobs/5984777004",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "benchling-product-designer-app-foundations",
-      "company": "Benchling",
-      "title": "Product Designer, App Foundations",
-      "url": "https://jobs.ashbyhq.com/benchling/de57b36f-7e37-4154-ab41-b4bcae92f1f0",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
-    },
-    {
-      "id": "commure-product-designer",
-      "company": "Commure",
+      "id": "assort-health-product-designer",
+      "company": "Assort Health",
       "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/Commure/8134d3bd-9fcc-452a-96ed-4890a2de2e65",
+      "url": "https://jobs.ashbyhq.com/assorthealth/37e3a179-e08d-43ba-b8d3-2314358a6674",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-05-04T20:26:47.191Z"
+      "checkedAt": "2026-05-05T16:15:14.824Z"
+    },
+    {
+      "id": "ro-staff-product-designer",
+      "company": "Ro",
+      "title": "Staff Product Designer",
+      "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-05-05T16:15:14.824Z"
+    },
+    {
+      "id": "sprinter-health-senior-product-designer-2026",
+      "company": "Sprinter Health",
+      "title": "Senior Product Designer",
+      "url": "https://jobs.ashbyhq.com/sprinter-health/ae98584c-937d-4316-81ae-5bee39afe7e5",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-05-05T16:15:14.824Z"
+    },
+    {
+      "id": "pointclickcare-senior-ux-designer-senior-care",
+      "company": "PointClickCare",
+      "title": "Senior UX Designer (Senior Care)",
+      "url": "https://jobs.lever.co/pointclickcare/3429a3c0-309a-4197-853b-a65f193be5de",
+      "pass": true,
+      "reason": "OK",
+      "status": 200,
+      "checkedAt": "2026-05-05T16:15:14.824Z"
     }
   ],
-  "lastRun": "2026-05-04T20:26:47.191Z",
+  "lastRun": "2026-05-05T16:15:14.824Z",
   "summary": {
-    "passed": 8,
+    "passed": 4,
     "failed": 0,
-    "total": 8
+    "total": 4
   }
 }
