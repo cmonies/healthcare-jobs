@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "assort-health-product-designer",
+    "title": "Product Designer",
+    "company": "Assort Health",
+    "companyUrl": "https://www.assort.health",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "url": "https://jobs.ashbyhq.com/assorthealth/37e3a179-e08d-43ba-b8d3-2314358a6674",
+    "postedAt": null,
+    "salary": "$145,000 - $160,000",
+    "tags": ["AI", "patient experience", "specialty care", "B2B", "healthcare"],
+    "_sourceUrl": "https://jobs.ashbyhq.com/assorthealth/37e3a179-e08d-43ba-b8d3-2314358a6674",
+    "_verifiedAt": "2026-05-05"
+  },
+  {
+    "id": "ro-staff-product-designer",
+    "title": "Staff Product Designer",
+    "company": "Ro",
+    "companyUrl": "https://ro.co",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "New York, NY (or Remote USA)",
+    "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
+    "postedAt": null,
+    "salary": "$198,900 - $234,000",
+    "tags": ["telehealth", "consumer health", "pharmacy", "patient experience"],
+    "_sourceUrl": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
+    "_verifiedAt": "2026-05-05"
+  },
+  {
+    "id": "sprinter-health-senior-product-designer-2026",
+    "title": "Senior Product Designer",
+    "company": "Sprinter Health",
+    "companyUrl": "https://www.sprinterhealth.com",
+    "level": "Senior",
+    "locationType": "Hybrid",
+    "location": "Menlo Park, CA (SF Bay Area)",
+    "url": "https://jobs.ashbyhq.com/sprinter-health/ae98584c-937d-4316-81ae-5bee39afe7e5",
+    "postedAt": null,
+    "salary": "$160,000 - $205,000",
+    "tags": ["home health", "in-home care", "mobile workforce", "startup", "AI"],
+    "_sourceUrl": "https://jobs.ashbyhq.com/sprinter-health/ae98584c-937d-4316-81ae-5bee39afe7e5",
+    "_verifiedAt": "2026-05-05"
+  },
+  {
+    "id": "pointclickcare-senior-ux-designer-senior-care",
+    "title": "Senior UX Designer (Senior Care)",
+    "company": "PointClickCare",
+    "companyUrl": "https://pointclickcare.com",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "USA",
+    "url": "https://jobs.lever.co/pointclickcare/3429a3c0-309a-4197-853b-a65f193be5de",
+    "postedAt": null,
+    "salary": null,
+    "tags": ["senior care", "long-term care", "EHR", "B2B", "post-acute care"],
+    "_sourceUrl": "https://jobs.lever.co/pointclickcare/3429a3c0-309a-4197-853b-a65f193be5de",
+    "_verifiedAt": "2026-05-05"
+  }
+]
