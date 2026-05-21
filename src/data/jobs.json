@@ -1717,50 +1717,5 @@
     ],
     "_verifiedAt": "2026-02-14",
     "postedAt": "2026-03-16"
-  },
-  {
-    "id": "hinge-health-staff-ux-motion-designer",
-    "title": "Staff UX Motion Designer",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://jobs.ashbyhq.com/hinge-health/286d29ee-6de2-49a6-8fbe-19ca07fc763c",
-    "postedAt": "2026-03-04",
-    "salary": "$195,000 - $292,000",
-    "tags": [
-      "motion design",
-      "mobile",
-      "micro-interactions",
-      "design systems",
-      "equity",
-      "staff"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/286d29ee-6de2-49a6-8fbe-19ca07fc763c",
-    "_searchQuery": "site:jobs.ashbyhq.com designer health",
-    "_verifiedAt": "2026-04-01",
-    "_verificationNote": "Verified live (HTTP 200). $195K–$292K + equity. Sole motion design role at company. Shapes transitions, micro-interactions, system-level behaviors across mobile."
-  },
-  {
-    "id": "hinge-health-senior-product-designer-design-systems-bengaluru",
-    "title": "Senior Product Designer, Design Systems",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Bengaluru, India",
-    "url": "https://jobs.ashbyhq.com/hinge-health/859fe80b-6abc-47a2-b697-c3e140aadcb9",
-    "postedAt": "2026-03-25",
-    "salary": null,
-    "tags": [
-      "design systems",
-      "component library",
-      "India"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/859fe80b-6abc-47a2-b697-c3e140aadcb9",
-    "_searchQuery": "site:jobs.ashbyhq.com designer health",
-    "_verifiedAt": "2026-04-01",
-    "_verificationNote": "Verified live (HTTP 200). No salary listed. Design systems/component library focus. India-based role."
   }
 ]
