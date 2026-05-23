@@ -1362,33 +1362,6 @@
     "_verificationNote": "Verified live via Ashby (200, full job description). Posted March 10, 2026, updated March 18, 2026. Application deadline listed as March 27 — validator should re-confirm liveness. Cylinder Health (founded 2021) delivers personalized clinician-backed virtual care for digestive/gut health as an employer benefit. Sole product designer reporting to CPO. End-to-end ownership: research to hi-fi design to implementation handoff. Figma required, AI design tools expected. 3+ years minimum. $115K-$125K + equity. Remote USA."
   },
   {
-    "id": "zocalo-health-senior-product-designer",
-    "title": "Senior Product Designer",
-    "company": "Zócalo Health",
-    "companyUrl": "https://zocalohealth.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/zocalohealth/jobs/5164755008",
-    "postedAt": "2026-03-24",
-    "salary": "$145,000 - $155,000",
-    "tags": [
-      "primary care",
-      "value-based care",
-      "community health",
-      "Medicaid",
-      "B2B",
-      "internal tools",
-      "design systems",
-      "data visualization",
-      "underserved populations"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/zocalohealth/jobs/5164755008",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health 2026",
-    "_verifiedAt": "2026-04-01",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/zocalohealth/jobs/5164755008). Full job description confirmed (rawLength 5229). Published 2026-03-24, updated 2026-03-24. Zócalo Health — tech-enabled primary care for underserved populations, value-based care, culturally competent care delivery. Senior Product Designer founding member of product team. Designs workflow-heavy tools for Community Health Workers, clinicians, care coordinators. $145K–$155K remote USA. 5+ years required. Founded 2021, backed by healthcare/mission-aligned investors. Preferred: experience with Medicaid, bilingual/culturally sensitive UX (Spanish a plus). Reports to VP of Product."
-  },
-  {
     "id": "tennr-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Tennr",
