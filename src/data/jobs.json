@@ -28,32 +28,6 @@
     "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Hinge Health — AI-powered MSK care platform, 20M+ members, +50% YoY revenue. Staff PD, Home & Explore owns member home screen and content discovery experience — IA, personalization, habit-forming journeys, engagement with PT/health coaching. 10+ years required. $195K-$292K + equity, SF hybrid. DISTINCT from existing Hinge Health entries: program-experience (1f4b8241), senior-manager (131ba92a), ux-motion (286d29ee), design-systems-bengaluru (859fe80b). NOT a duplicate."
   },
   {
-    "id": "modern-health-product-designer",
-    "title": "Product Designer",
-    "company": "Modern Health",
-    "companyUrl": "https://joinmodernhealth.com",
-    "url": "https://job-boards.greenhouse.io/modernhealth/jobs/8550516002",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote (USA)",
-    "postedAt": "2026-05-18",
-    "salary": null,
-    "tags": [
-      "mental health",
-      "employee wellness",
-      "B2B",
-      "benefits platform",
-      "clinical",
-      "mobile",
-      "design systems",
-      "remote",
-      "startup"
-    ],
-    "_sourceUrl": "https://boards.greenhouse.io/modernhealth/jobs/4587489002",
-    "_verifiedAt": "2026-05-21",
-    "_verificationNote": "Verified live via browse.py (Greenhouse page rendered, full job description confirmed, Apply button present). Published May 18, 2026 per Greenhouse API. Modern Health — mental health benefits platform, $1.17B unicorn, Kleiner Perkins + Founders Fund, 330+ enterprise clients (Lyft, Pixar, Okta). Mid-level PD (2-4 years) owns full design process for features impacting member mental health journeys. Figma required; mobile + web. No salary listed. Remote US. NOT a duplicate — Modern Health not in existing jobs.json."
-  },
-  {
     "id": "vetrec-product-design-lead",
     "title": "Product Design Lead",
     "company": "VetRec",
@@ -952,30 +926,6 @@
     "_searchQuery": "Greenhouse board check: boards-api.greenhouse.io/v1/boards/transcarent/jobs",
     "_verifiedAt": "2026-04-23",
     "_verificationNote": "Verified live via Greenhouse API and full page fetch (200, active application form confirmed, first_published 2026-04-08). Published April 8, 2026 (15 days ago). Transcarent — AI-powered \"One Place for Health and Care\" serving 21M members across 1,700+ employers and health plans; combines medical, pharmacy, and care solutions. Staff UX Designer owns experiences for Cancer care and Expert Second Opinion products. Reports to Senior Director of Product Design. 7+ years required; healthcare industry background preferred; Figma proficiency required. $145K-$165K USD remote. NOT a duplicate — Transcarent not in existing jobs.json."
-  },
-  {
-    "id": "betterhelp-product-designer-client-growth",
-    "title": "Product Designer 1, Client Growth",
-    "company": "BetterHelp",
-    "companyUrl": "https://www.betterhelp.com",
-    "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5082314008",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "mental health",
-      "telehealth",
-      "growth",
-      "B2C",
-      "consumer",
-      "online therapy"
-    ],
-    "postedAt": "2026-04-08",
-    "salary": "$95,000 - $105,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5082314008",
-    "_searchQuery": "site:boards.greenhouse.io \"product designer\" healthcare",
-    "_verifiedAt": "2026-04-21",
-    "_verificationNote": "Confirmed via Greenhouse search results: $95K–$105K, US Remote, active application form present per search index. Client Growth team — designs acquisition/onboarding flows for new members. 1–2+ years experience required. ⚠️ No posted date — validator should confirm currency via direct browse. Not in existing jobs.json."
   },
   {
     "id": "counsel-health-senior-product-designer-clinical",
