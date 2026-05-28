@@ -1,33 +1,5 @@
 [
   {
-    "id": "hinge-health-staff-product-designer-home-explore",
-    "title": "Staff Product Designer, Home & Explore",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "url": "https://jobs.ashbyhq.com/hinge-health/ab18ebb5-fd12-4b15-b49d-f1ed73b70cbc",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA (3 days/week)",
-    "postedAt": "2026-05-21",
-    "salary": "$195,000 - $292,000",
-    "tags": [
-      "MSK",
-      "musculoskeletal",
-      "patient experience",
-      "member engagement",
-      "personalization",
-      "habit formation",
-      "AI",
-      "consumer health",
-      "B2C",
-      "mobile",
-      "design systems"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/ab18ebb5-fd12-4b15-b49d-f1ed73b70cbc",
-    "_verifiedAt": "2026-05-21",
-    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). No posted date visible; using today's date. Hinge Health — AI-powered MSK care platform, 20M+ members, +50% YoY revenue. Staff PD, Home & Explore owns member home screen and content discovery experience — IA, personalization, habit-forming journeys, engagement with PT/health coaching. 10+ years required. $195K-$292K + equity, SF hybrid. DISTINCT from existing Hinge Health entries: program-experience (1f4b8241), senior-manager (131ba92a), ux-motion (286d29ee), design-systems-bengaluru (859fe80b). NOT a duplicate."
-  },
-  {
     "id": "vetrec-product-design-lead",
     "title": "Product Design Lead",
     "company": "VetRec",
@@ -767,35 +739,6 @@
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mavenclinic/jobs/8508157002, 200, full job description confirmed). Published April 15, 2026 (10 days ago). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. Staff Product Designer takes joint ownership of member-facing experience; shapes future of AI-native design; defines how AI behaves in women's and family health contexts (uncertainty, clinical deferrals); builds functional prototypes using Claude and Cursor; develops scalable AI patterns and design system standards; mentors designers and cross-functional partners. Daily AI tool proficiency required; shipping production code expected. $200K–$220K + equity. NY office + US remote hub cities (hybrid). DISTINCT from existing Maven entries: maven-clinic-senior-product-designer-ai-platform (8516677002, $180–200K, Senior) and maven-clinic-product-designer-maternity-experience (8493856002, $140–160K, mid-senior). This is Staff level. NOT a duplicate."
   },
   {
-    "id": "amae-health-head-product-design-user-research",
-    "title": "Head of Product Design & User Research",
-    "company": "Amae Health",
-    "companyUrl": "https://amaehealth.com",
-    "url": "https://job-boards.greenhouse.io/amaehealth/jobs/4184954009",
-    "level": "Lead",
-    "locationType": "Onsite",
-    "location": "San Francisco, CA",
-    "tags": [
-      "mental health",
-      "severe mental illness",
-      "schizophrenia",
-      "bipolar",
-      "clinical tools",
-      "clinician-facing",
-      "patient-facing",
-      "B2B",
-      "Series B",
-      "startup",
-      "founding role"
-    ],
-    "postedAt": "2026-03-17",
-    "salary": "$215,000 - $255,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/amaehealth/jobs/4184954009",
-    "_searchQuery": "site:job-boards.greenhouse.io OR site:jobs.ashbyhq.com \"product designer\" \"mental health\" OR \"behavioral health\" 2026",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/amaehealth/jobs/4184954009, 200, full job description confirmed). Published March 17, 2026 (39 days ago). Last updated March 31, 2026 (25 days ago). ⚠️ FRESHNESS: 39 days since posting — validator should reconfirm liveness. Amae Health — Series B Public Benefit Corporation delivering specialized outpatient care for severe mental illness (schizophrenia, schizoaffective disorder, bipolar I, treatment-resistant depression); operates high-acuity clinics nationwide in partnership with New York-Presbyterian, Cedars-Sinai, and Mass General Brigham. First Head of Product Design & User Research; owns Amae Care (clinician-facing) and Amae Better (patient-facing) platforms. Partners with CPO; conducts direct user research in clinics; builds AI-optimized design workflows. 5+ years high-fidelity product design; experience designing for vulnerable populations preferred. Full-time in-person SF required. $215K–$255K + equity. NOT a duplicate — Amae Health not in existing jobs.json."
-  },
-  {
     "id": "casechek-senior-ux-researcher-analyst",
     "title": "Senior UX Researcher & Analyst",
     "company": "Casechek",
@@ -1235,32 +1178,6 @@
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/blinkhealth/jobs/8420880002, 200, full job description). Posted February 12, 2026, updated February 25, 2026. ⚠️ FRESHNESS: 45 days since last update — validator should confirm currency. Blink Health — healthcare tech company making prescriptions accessible and affordable (BlinkRx + Quick Save). Lead PD manages design for cross-functional product team: UX for prescription supply chain, user research, design systems, wireframes/prototypes. 7+ years required, Figma + Adobe CC. Remote USA. No salary listed."
   },
   {
-    "id": "hinge-health-staff-product-designer-program-experience",
-    "title": "Staff Product Designer, Program Experience",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://jobs.ashbyhq.com/hinge-health/1f4b8241-8d8a-4f44-a680-fbeffc1ef1c6",
-    "postedAt": "2026-03-04",
-    "salary": "$195,000 - $292,000",
-    "tags": [
-      "MSK",
-      "healthcare",
-      "patient experience",
-      "onboarding",
-      "B2C",
-      "mobile",
-      "AI",
-      "design systems"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health/1f4b8241-8d8a-4f44-a680-fbeffc1ef1c6",
-    "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
-    "_verifiedAt": "2026-04-09",
-    "_verificationNote": "Verified live via Ashby (200, full job description rendered via browse.py). Posted March 4, 2026 (36 days). Hinge Health — AI-powered MSK care platform, 20M+ members, +50% YoY revenue, +30% YoY user growth. Staff Product Designer, Program Experience leads member onboarding experience — designing personalized, habit-forming journeys for joint and muscle health management. Strategy through execution, cross-functional with product and engineering. SF hybrid (3 days/week). $195K–$292K + equity. DISTINCT from existing Hinge Health entries: Program Foundations (bf8919d9), Enterprise AI Staff (b50a72a4), Staff UX Motion (286d29ee), Design Systems Bengaluru (859fe80b)."
-  },
-  {
     "id": "readily-founding-design-engineer",
     "title": "Founding Design Engineer",
     "company": "Readily",
@@ -1285,31 +1202,6 @@
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-04-07",
     "_verificationNote": "Verified live via YC job board (200, full job description). Posted March 27, 2026. Readily (YC S23) builds an AI compliance layer for healthcare organizations — automates audit/regulation readiness. 10x YoY revenue growth. First design hire: owns design system, frontend (React/TypeScript), and all customer-facing surfaces. Figma to React/TypeScript to production. 0.30%-1.50% equity. SF onsite. Requires B2B/enterprise design portfolio. Note: design engineer hybrid role, not pure UX."
-  },
-  {
-    "id": "cylinder-health-product-designer",
-    "title": "Product Designer",
-    "company": "Cylinder Health",
-    "companyUrl": "https://cylinderhealth.com",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://jobs.ashbyhq.com/CylinderHealth/6c989a10-0a49-4035-b8d6-07d30ab693bd",
-    "postedAt": "2026-03-10",
-    "salary": "$115,000 - $125,000",
-    "tags": [
-      "digestive health",
-      "gut health",
-      "employer benefits",
-      "B2B",
-      "B2C",
-      "startup",
-      "clinical"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/CylinderHealth/6c989a10-0a49-4035-b8d6-07d30ab693bd",
-    "_searchQuery": "site:jobs.ashbyhq.com designer health",
-    "_verifiedAt": "2026-04-07",
-    "_verificationNote": "Verified live via Ashby (200, full job description). Posted March 10, 2026, updated March 18, 2026. Application deadline listed as March 27 — validator should re-confirm liveness. Cylinder Health (founded 2021) delivers personalized clinician-backed virtual care for digestive/gut health as an employer benefit. Sole product designer reporting to CPO. End-to-end ownership: research to hi-fi design to implementation handoff. Figma required, AI design tools expected. 3+ years minimum. $115K-$125K + equity. Remote USA."
   },
   {
     "id": "tennr-senior-product-designer",
