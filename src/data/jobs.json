@@ -76,31 +76,6 @@
     "_verificationNote": "Verified live via Playwright (200, no dead signals)"
   },
   {
-    "id": "parsley-health-product-designer-part-time-contract",
-    "title": "Product Designer (Part-Time Contract)",
-    "company": "Parsley Health",
-    "companyUrl": "https://www.parsleyhealth.com",
-    "url": "https://job-boards.greenhouse.io/parsleyhealth/jobs/7712555003",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "Remote (US)",
-    "postedAt": "2026-04-23",
-    "salary": "$75 - $200/hr",
-    "tags": [
-      "functional medicine",
-      "B2C",
-      "consumer",
-      "clinician tools",
-      "design systems",
-      "mobile",
-      "fractional",
-      "contract"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/parsleyhealth/jobs/7712555003",
-    "_verifiedAt": "2026-05-18",
-    "_verificationNote": "Verified live via Playwright (200, no dead signals)"
-  },
-  {
     "id": "cofertility-part-time-product-designer",
     "title": "Part-Time Product Designer",
     "company": "Cofertility",
@@ -791,30 +766,6 @@
     "_searchQuery": "site:jobs.lever.co \"senior product designer\" health OR clinical OR telehealth 2026",
     "_verifiedAt": "2026-04-25",
     "_verificationNote": "Verified live via browse.py (Lever page rendered, full job description confirmed, active APPLY FOR THIS JOB button present, no dead-link signals). No posted date visible. Everlywell — pioneered at-home lab testing; expanded into advanced diagnostics, telehealth, and AI-powered health guidance; serves millions of consumers plus major health plans and enterprise partners. Visual Senior Product Designer (Contract) designs and scales web experiences: conversion-focused consumer flows, design system (Figma component library), high-fidelity UI and interactive prototypes. 6+ years consumer web/mobile design required; healthtech experience a bonus. Remote US, Contract (not full-time). No salary listed. ⚠️ NOTE: Contract role — flag for Carmen. NOT a duplicate — Everlywell not in existing jobs.json."
-  },
-  {
-    "id": "grow-therapy-senior-ux-researcher",
-    "title": "Senior UX Researcher",
-    "company": "Grow Therapy",
-    "companyUrl": "https://growtherapy.com",
-    "url": "https://job-boards.greenhouse.io/growtherapy/jobs/4661636005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY; San Francisco, CA; or Seattle, WA",
-    "tags": [
-      "mental health",
-      "therapy marketplace",
-      "insurance",
-      "mixed-methods research",
-      "B2B2C",
-      "startup"
-    ],
-    "postedAt": "2026-04-09",
-    "salary": "$182,000 - $227,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/growtherapy/jobs/4661636005",
-    "_searchQuery": "site:boards.greenhouse.io \"UX researcher\" healthcare",
-    "_verifiedAt": "2026-04-23",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/growtherapy/jobs/4661636005, 200, full job details confirmed). Posted April 9, 2026 (14 days ago). Grow Therapy — mental health therapist marketplace connecting patients with in-network therapists; 3-sided marketplace (patients, therapists, payors). Senior UX Researcher owns mixed-methods research across high-impact moments in member mental health care journey. 5-8+ years required. Hybrid 3 days/week (Tue/Wed/Thu) in NYC, SF, or Seattle; 2-3 annual company travel days. $182K-$227K + equity. NOT a duplicate — Grow Therapy not in existing jobs.json."
   },
   {
     "id": "maven-clinic-senior-product-designer-ai-platform",
