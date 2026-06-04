@@ -28,30 +28,6 @@
     "_verificationNote": "Verified live via browse.py (YC job page rendered, full job description confirmed). No posted date visible; using today's date. VetRec (YC S23) — enterprise-grade AI veterinary assistant for medical note generation, dental charts, discharge instructions, and patient record summaries. 25-person team, founded 2023. First in-house product designer hire. Owns end-to-end UX across Webapp, iOS, Android, and Chrome extension for veterinarians, vet techs, medical directors, and practice managers. AI tool fluency required (Claude, Cursor, Figma Make). 5+ years B2B or clinical software required. $100K-$130K + equity. Remote US or Seattle HQ. ⚠️ NOTE: Veterinary medicine, not human healthcare — borderline inclusion. NOT a duplicate."
   },
   {
-    "id": "trase-systems-ux-designer-contract",
-    "title": "UX Designer (Contract)",
-    "company": "Trase Systems",
-    "companyUrl": "https://trase.ai",
-    "url": "https://job-boards.greenhouse.io/redcellpartners/jobs/5095257007",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "Remote",
-    "postedAt": "2026-05-18",
-    "salary": "$75 - $100/hr",
-    "tags": [
-      "healthcare AI",
-      "enterprise AI",
-      "product design",
-      "multi-surface",
-      "Figma",
-      "presentation design",
-      "contract"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/redcellpartners/jobs/5095257007",
-    "_verifiedAt": "2026-05-18",
-    "_verificationNote": "Verified live via Playwright (200, no dead signals)"
-  },
-  {
     "id": "chorus-innovations-principal-product-designer-contract",
     "title": "Principal Product Designer (Contract-to-Hire)",
     "company": "Chorus Innovations",
@@ -364,27 +340,6 @@
     "_verifiedAt": "2026-05-04"
   },
   {
-    "id": "abridge-design-imagineer",
-    "title": "Design Imagineer",
-    "company": "Abridge",
-    "companyUrl": "https://www.abridge.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA / New York, NY",
-    "url": "https://jobs.ashbyhq.com/abridge/d6baf8ee-02f8-41d2-a6e8-46fd31401350",
-    "postedAt": "2026-05-04",
-    "salary": "$216,750 - $255,000",
-    "tags": [
-      "AI",
-      "ambient scribe",
-      "clinical documentation",
-      "startup",
-      "B2B"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
-    "_verifiedAt": "2026-05-04"
-  },
-  {
     "id": "abridge-staff-product-designer",
     "title": "Staff Product Designer",
     "company": "Abridge",
@@ -422,28 +377,6 @@
       "clinical documentation",
       "startup",
       "B2B"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
-    "_verifiedAt": "2026-05-04"
-  },
-  {
-    "id": "abridge-staff-designer-art-direction",
-    "title": "Staff Designer, Art Direction",
-    "company": "Abridge",
-    "companyUrl": "https://www.abridge.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA / New York, NY",
-    "url": "https://jobs.ashbyhq.com/abridge/fa37e174-023b-4c8b-b827-2c15fc7b8960",
-    "postedAt": "2026-05-04",
-    "salary": "$175,000 - $215,000",
-    "tags": [
-      "AI",
-      "brand",
-      "art direction",
-      "marketing design",
-      "clinical documentation",
-      "startup"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
     "_verifiedAt": "2026-05-04"
