@@ -77,31 +77,6 @@
     "_verificationNote": "Verified live via Playwright (200, no dead signals)"
   },
   {
-    "id": "spring-health-senior-product-designer-member-growth-nyc",
-    "title": "Senior Product Designer, Member Growth",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4694164005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY (2-3 days/week on-site)",
-    "postedAt": "2026-05-11",
-    "salary": "$150,000 - $202,400",
-    "tags": [
-      "mental health",
-      "precision mental health",
-      "B2C",
-      "consumer",
-      "member experience",
-      "mobile",
-      "design systems",
-      "startup"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
-    "_verifiedAt": "2026-05-16",
-    "_verificationNote": "Verified live via Greenhouse API (200, full job description confirmed). Posted May 11, 2026. Spring Health — Precision Mental Healthcare platform, $3.3B valuation (Series E), 450+ enterprise clients including Microsoft and Delta, 10M+ members. Senior PD, Member Growth designs elegant, intuitive member-facing experiences across core platform. Collaborates with product, eng, and data to drive conversion, engagement, and retention. Requires 5+ years product design, strong visual craft, Figma expertise. $150K-$202K. NYC hybrid 2-3 days/week (60 Madison Ave). DISTINCT from existing spring-health-senior-ux-researcher (4668694005). Same role also posted for SF (4694168005) and Seattle (4694166005)."
-  },
-  {
     "id": "spring-health-senior-product-designer-member-growth-sf",
     "title": "Senior Product Designer, Member Growth",
     "company": "Spring Health",
@@ -409,23 +384,6 @@
     "postedAt": "2026-04-28"
   },
   {
-    "title": "Senior Manager, UX Design",
-    "company": "Oura",
-    "companyUrl": "https://ouraring.com",
-    "url": "https://job-boards.greenhouse.io/oura/jobs/4230682009",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "tags": [
-      "wearables",
-      "health tracking",
-      "consumer health",
-      "design leadership"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/oura",
-    "postedAt": "2026-04-23"
-  },
-  {
     "title": "Staff Designer, New Sensing",
     "company": "Oura",
     "companyUrl": "https://ouraring.com",
@@ -509,33 +467,6 @@
     "_searchQuery": "site:job-boards.greenhouse.io \"UX researcher\" healthcare 2026",
     "_verifiedAt": "2026-04-25",
     "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/stratacareers/jobs/7704966003, 200, full job details confirmed). Published April 20, 2026 (5 days ago). Strata Decision Technology — financial planning and analytics SaaS for health systems; primary market is hospitals and healthcare organizations (StrataJazz platform). UX Researcher conducts generative and evaluative research to inform product decisions. 2+ years product research required; SaaS/healthcare background preferred. Pendo analytics experience a plus. Chicago hybrid (2 days/week) or St. Louis. $80K-$100K + variable. ⚠️ NOTE: healthcare-adjacent (financial analytics for health systems), not pure clinical/patient-facing — flag for Carmen. Not in existing jobs.json."
-  },
-  {
-    "id": "casechek-senior-ux-researcher-analyst",
-    "title": "Senior UX Researcher & Analyst",
-    "company": "Casechek",
-    "companyUrl": "https://www.casechek.com",
-    "url": "https://job-boards.greenhouse.io/casechek/jobs/4671999006",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "tags": [
-      "healthcare tech",
-      "surgical supply chain",
-      "implants",
-      "B2B",
-      "hospital operations",
-      "startup",
-      "sole designer",
-      "research",
-      "AI"
-    ],
-    "postedAt": "2026-04-09",
-    "salary": "$130,000 - $150,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/casechek/jobs/4671999006",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX researcher\" OR \"product designer\" \"health\" \"April 2026\"",
-    "_verifiedAt": "2026-04-25",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/casechek/jobs/4671999006, 200, full job description confirmed). Published April 9, 2026 (16 days ago). Casechek — healthcare technology automating workflows for vendor-supported surgical procedures; helps hospitals manage surgical cases involving implantable medical devices, identify cost reduction and revenue opportunities. Senior UX Researcher & Analyst is a full-cycle design role: owns entire design function, manages research, analysis, and production-ready design output independently; sole designer reporting to leadership with direct customer access. AI tool fluency required. $130K–$150K, Remote USA. NOT a duplicate — Casechek not in existing jobs.json."
   },
   {
     "id": "everlywell-visual-senior-product-designer-contract",
@@ -1012,26 +943,6 @@
       "wearables",
       "consumer",
       "B2C"
-    ],
-    "_verifiedAt": "2026-02-23",
-    "postedAt": "2026-04-06"
-  },
-  {
-    "id": "oura-staff-product-designer-enterprise",
-    "title": "Staff Product Designer, Enterprise Products",
-    "company": "Ōura",
-    "companyUrl": "https://ouraring.com",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://job-boards.greenhouse.io/oura/jobs/4068982009",
-    "postedDate": "2026-02-23",
-    "tags": [
-      "enterprise",
-      "B2B",
-      "population health",
-      "wearables",
-      "data visualization"
     ],
     "_verifiedAt": "2026-02-23",
     "postedAt": "2026-04-06"
