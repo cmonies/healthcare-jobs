@@ -281,32 +281,6 @@
     "_verificationNote": "Verified live via Greenhouse API (200, full job description confirmed). Posted May 11, 2026. Same role as NYC (4694164005) and SF (4694168005) listings but based in Seattle. Spring Health Precision Mental Healthcare, $3.3B Series E. Senior PD Member Growth — member-facing experience design, design system contribution. 5+ years required. Seattle hybrid 2-3 days/week. Slightly lower salary ceiling ($196K vs $202K in NYC/SF)."
   },
   {
-    "id": "garner-health-staff-product-designer-visual-systems",
-    "title": "Staff Product Designer (Visual + Systems)",
-    "company": "Garner Health",
-    "companyUrl": "https://www.garnerhealth.com",
-    "url": "https://job-boards.greenhouse.io/garnerhealth/jobs/5985995004",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY (3 days/week Tue-Thu on-site)",
-    "postedAt": "2026-04-30",
-    "salary": "$239,000 - $270,000",
-    "tags": [
-      "employer health",
-      "value-based care",
-      "health benefits",
-      "B2B",
-      "design systems",
-      "consumer",
-      "growth",
-      "onboarding",
-      "data-driven"
-    ],
-    "_sourceUrl": "https://boards-api.greenhouse.io/v1/boards/garnerhealth/jobs",
-    "_verifiedAt": "2026-05-16",
-    "_verificationNote": "Verified live via Greenhouse API (200, full job description confirmed). Posted April 30, 2026; last updated May 6, 2026. Garner Health — transforms healthcare economy by partnering with employers to redesign benefits; guides employees to high-quality affordable care using data-driven insights; rewards physicians for quality over volume. Staff PD (Visual + Systems) leads Growth team UX: owns app architecture and core design systems, develops engagement features (onboarding, notifications), collaborates with commercial stakeholders. 8+ years consumer product design required, proven design system expertise. $239K-$270K. NYC hybrid 3 days/week (Tue-Thu). NOT a duplicate — Garner Health not in existing jobs.json."
-  },
-  {
     "id": "alpaca-health-founding-product-designer",
     "title": "Founding Product Designer",
     "company": "Alpaca Health",
@@ -703,30 +677,6 @@
     "_searchQuery": "site:jobs.ashbyhq.com \"product designer\" startup health",
     "_verifiedAt": "2026-04-18",
     "_verificationNote": "Verified live via browse.py (200, full job description rendered). Published February 13, 2026 per Ashby API (isListed: true). ⚠️ FRESHNESS: 64 days since posting — validator should reconfirm liveness. Amperos Health — leading provider of multi-modal RCM agents for healthcare clinics; founded 2023, backed by Uncork, Neo, Nebular.vc, plus angels from OpenAI/Stripe/Twilio. First full-time PD hire. Designs workqueue software for claim tracking, internal service team tools, analytics dashboards, AI agent workflow UX. Strong B2B/healthcare product discovery skills required; design system 0-1 experience; AI-native design tools (Figma Make, Claude Code, Cursor). $200K–$250K + equity. Onsite NYC (WFH Fridays). Not a duplicate — Amperos Health not in existing jobs.json."
-  },
-  {
-    "id": "mdalgorithms-designer-ai-healthcare",
-    "title": "Designer for a Rapidly Growing Consumer AI Healthcare Startup",
-    "company": "MDalgorithms Inc.",
-    "companyUrl": "https://mdacne.com",
-    "url": "https://www.ycombinator.com/companies/mdalgorithms-inc/jobs/8oa5Be8-designer-for-a-rapidly-growing-consumer-ai-healthcare-startup",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "USA / UK",
-    "tags": [
-      "healthcare",
-      "consumer health",
-      "AI",
-      "dermatology",
-      "skincare",
-      "YC"
-    ],
-    "postedAt": "2026-04-14",
-    "salary": "$70,000 - $120,000",
-    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_searchQuery": "YC job board https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-04-18",
-    "_verificationNote": "Confirmed active via YC Work at a Startup (job ID 93110). MDalgorithms runs MDacne (#1 dermatology app, 5M+ downloads, US & UK App Store), MDhair personalized hair regrowth, and Nuvane longevity skincare. Remote US/UK. $70-120K. Apply via workatastartup.com. YC company (W21)."
   },
   {
     "id": "whoop-senior-product-designer-growth",
