@@ -374,31 +374,6 @@
     "_verifiedAt": "2026-06-23"
   },
   {
-    "id": "spring-health-senior-ux-researcher-seattle",
-    "title": "Senior UX Researcher",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4704735005",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "Seattle, WA (2-3 days/week, 255 King St)",
-    "postedAt": "2026-06-10",
-    "salary": "$150,000 - $196,880",
-    "tags": [
-      "mental health",
-      "precision mental health",
-      "UX research",
-      "mixed-methods",
-      "B2C",
-      "B2B",
-      "enterprise",
-      "AI",
-      "startup"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/springhealth66",
-    "_verifiedAt": "2026-06-23"
-  },
-  {
     "id": "mochi-health-senior-product-designer",
     "title": "Senior Product Designer",
     "company": "Mochi Health",
@@ -817,26 +792,6 @@
     "_verifiedAt": "2026-05-04"
   },
   {
-    "id": "benchling-product-designer-app-foundations",
-    "title": "Product Designer, App Foundations",
-    "company": "Benchling",
-    "companyUrl": "https://www.benchling.com",
-    "level": "Mid",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "url": "https://jobs.ashbyhq.com/benchling/de57b36f-7e37-4154-ab41-b4bcae92f1f0",
-    "postedAt": "2026-05-04",
-    "tags": [
-      "biotech",
-      "life sciences",
-      "design systems",
-      "B2B",
-      "startup"
-    ],
-    "_sourceUrl": "https://jobs.ashbyhq.com/benchling",
-    "_verifiedAt": "2026-05-04"
-  },
-  {
     "id": "commure-product-designer",
     "title": "Product Designer",
     "company": "Commure",
@@ -977,34 +932,6 @@
     "_verificationNote": "Verified live via browse.py (Lever page rendered, full job description confirmed, active APPLY FOR THIS JOB button present, no dead-link signals). No posted date visible. Everlywell — pioneered at-home lab testing; expanded into advanced diagnostics, telehealth, and AI-powered health guidance; serves millions of consumers plus major health plans and enterprise partners. Visual Senior Product Designer (Contract) designs and scales web experiences: conversion-focused consumer flows, design system (Figma component library), high-fidelity UI and interactive prototypes. 6+ years consumer web/mobile design required; healthtech experience a bonus. Remote US, Contract (not full-time). No salary listed. ⚠️ NOTE: Contract role — flag for Carmen. NOT a duplicate — Everlywell not in existing jobs.json."
   },
   {
-    "id": "maven-clinic-senior-product-designer-ai-platform",
-    "title": "Senior Product Designer",
-    "company": "Maven Clinic",
-    "companyUrl": "https://www.mavenclinic.com",
-    "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8516677002",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY / Remote US (Hub cities)",
-    "tags": [
-      "women's health",
-      "fertility",
-      "maternity",
-      "reproductive health",
-      "menopause",
-      "B2C",
-      "consumer",
-      "AI",
-      "mobile",
-      "design systems"
-    ],
-    "postedAt": "2026-04-21",
-    "salary": "$180,000 - $200,000",
-    "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic/jobs/8516677002",
-    "_searchQuery": "site:job-boards.greenhouse.io \"senior product designer\" OR \"staff product designer\" health telehealth clinical 2026",
-    "_verifiedAt": "2026-04-23",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mavenclinic/jobs/8516677002, 200, full job description, last updated April 21 2026). Posted April 21, 2026 (2 days ago). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. DISTINCT from existing entry maven-clinic-product-designer-maternity-experience (job 8493856002, $140K-$160K, posted April 7, Maternity Experience team). This new role covers the full Maven platform: fertility & family building, maternity & newborn care, parenting & pediatrics, menopause & midlife. Owns member-facing experiences end-to-end. Expected to define AI behavior in women's health contexts, prototype with Claude/Cursor/Figma AI, ship code to production. $180K-$200K + equity. NY hybrid or US remote hub cities."
-  },
-  {
     "id": "counsel-health-senior-product-designer-clinical",
     "title": "Senior Product Designer (Clinical)",
     "company": "Counsel Health",
@@ -1105,33 +1032,6 @@
     "_searchQuery": "site:jobs.ashbyhq.com designer health",
     "_verifiedAt": "2026-04-14",
     "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/finch, isListed: true, publishedAt: 2026-04-02). Finch Care — mental health self-care app built around a virtual pet companion; 20M+ users, profitable, 100% remote team, backed by indie growth. Product Designer role: 4+ years consumer mobile app design at scale. Designs mental health exercises, gaming mechanics, and growth loops. Emphasis on balancing aesthetics with pragmatism. Full-time, remote North/South America. No salary disclosed. Company description: founded 2021 by two friends who struggled with anxiety and depression. NOT a duplicate — Finch Care not in existing jobs.json."
-  },
-  {
-    "id": "maven-clinic-product-designer-maternity-experience",
-    "title": "Product Designer, Maternity Experience",
-    "company": "Maven Clinic",
-    "companyUrl": "https://www.mavenclinic.com",
-    "level": "Mid-Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY / Remote US (Hub cities)",
-    "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8493856002",
-    "postedAt": "2026-04-07",
-    "salary": "$140,000 - $160,000",
-    "tags": [
-      "women's health",
-      "maternity",
-      "reproductive health",
-      "fertility",
-      "B2C",
-      "consumer",
-      "AI",
-      "mobile",
-      "clinical"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/mavenclinic/jobs/8493856002",
-    "_searchQuery": "site:job-boards.greenhouse.io \"product designer\" health telehealth April 2026",
-    "_verifiedAt": "2026-04-11",
-    "_verificationNote": "Verified live via Greenhouse API (boards-api.greenhouse.io/v1/boards/mavenclinic/jobs/8493856002, 200, full job description). Posted April 7, 2026 (4 days ago). Maven Clinic — world's largest virtual clinic for women and families; 2,000+ employers and health plans. Product Designer, Maternity Experience designs AI-native maternity journeys end-to-end. Expected to build functional prototypes with AI coding tools (Cursor, Claude), define how AI handles uncertainty in healthcare contexts, and contribute to design systems. Healthcare background a plus. $140K–$160K + equity. NY office + US remote hub cities (hybrid)."
   },
   {
     "id": "tava-health-senior-product-designer",
@@ -1308,30 +1208,6 @@
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verifiedAt": "2026-03-23",
     "_verificationNote": "Verified live via YC job page (200, full job description, rawLength 2229). Vitalize (YC W23) — Autonomous hospital operations platform, live at 20+ hospitals, near 8-figures in revenue, 3x'ed revenue in last 3 months. Second product designer, joins founding designer. Owns data-dense interfaces (shift schedules, staffing dashboards), builds design system. $170K-$250K, SF HQ. 6+ years required. Posted ~18 days ago per YC board."
-  },
-  {
-    "id": "spring-health-senior-ux-researcher",
-    "title": "Senior UX Researcher",
-    "company": "Spring Health",
-    "companyUrl": "https://www.springhealth.com",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "New York, NY",
-    "url": "https://job-boards.greenhouse.io/springhealth66/jobs/4668694005",
-    "postedDate": null,
-    "tags": [
-      "mental health",
-      "B2C",
-      "enterprise",
-      "UX research",
-      "mixed-methods",
-      "startup"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/springhealth66/jobs/4668694005",
-    "_searchQuery": "site:job-boards.greenhouse.io \"UX designer\" OR \"UX researcher\" health 2026",
-    "_verifiedAt": "2026-03-19",
-    "_verificationNote": "Fetched directly from Greenhouse. Full job description confirmed live (rawLength 4229). Spring Health ($3.3B valuation) — Senior UX Researcher for member mental health experience. 5+ years required, hybrid NYC (2–3 days/week, 60 Madison Ave). Qualitative + quantitative mixed-methods. Partners with 450+ companies incl. Microsoft, Target, Delta.",
-    "postedAt": "2026-03-24"
   },
   {
     "id": "oura-staff-designer-womens-health",
