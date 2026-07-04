@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "id": "decoda-health-product-designer",
+    "title": "Product Designer",
+    "company": "Decoda Health",
+    "companyUrl": "https://www.decodahealth.com",
+    "url": "https://jobs.ashbyhq.com/decodahealth/5d90f7ca-eae1-406e-a4cf-461e7a30886c",
+    "level": "Mid",
+    "locationType": "Onsite",
+    "location": "Toronto, ON (onsite)",
+    "postedAt": "2026-06-04",
+    "salary": "CA$140,000 - CA$180,000",
+    "tags": [
+      "EMR",
+      "medical practice management",
+      "elective care",
+      "design systems",
+      "B2B",
+      "startup",
+      "YC"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/decodahealth",
+    "_verifiedAt": "2026-07-04",
+    "_verificationNote": "Verified live via Ashby job board API (api.ashbyhq.com/posting-api/job-board/decodahealth, isListed: true, publishedAt: 2026-06-04). Company confirmed: AI-powered EMR and practice management platform for elective care clinics (med spas, wellness centers, weight loss practices). YC-backed. Product Designer owns full-stack features, design systems, and consults with engineers on layout/typography. 3+ years desktop/web SaaS design required. CA$140K-CA$180K + equity. Toronto onsite. ⚠️ NOTE: Toronto onsite; Canadian company — flag for Carmen."
+  },
+  {
+    "id": "tava-health-senior-product-designer",
+    "title": "Senior Product Designer",
+    "company": "Tava Health",
+    "companyUrl": "https://www.tavahealth.com",
+    "url": "https://jobs.ashbyhq.com/TavaHealth/7fecb520-3c13-4792-9a1d-3231620cb36d",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-01",
+    "salary": null,
+    "tags": [
+      "mental health",
+      "behavioral health",
+      "telehealth",
+      "patient experience",
+      "employee benefits",
+      "B2B2C",
+      "AI",
+      "startup",
+      "consumer"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/TavaHealth",
+    "_verifiedAt": "2026-07-04",
+    "_verificationNote": "Verified live via browse.py (Ashby page rendered, full job description confirmed, Apply button present). Published 2026-07-01. Tava Health — venture-backed startup scaling access to behavioral healthcare; partners with organizations to bring mental health care to employees/members/communities. Senior PD leads patient-facing product experiences: conversion flows, onboarding, provider matching, booking, billing, and in-session telehealth. 5+ years consumer product design required; conversion funnels and payment experience; AI tool integration encouraged. Competitive salary + stock options + covered medical/dental. Remote US. New company not in jobs.json."
+  }
+]
