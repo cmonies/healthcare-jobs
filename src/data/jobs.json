@@ -86,24 +86,6 @@
     "_verifiedAt": "2026-06-23"
   },
   {
-    "id": "hinge-health-senior-ux-researcher",
-    "title": "Senior UX Researcher",
-    "company": "Hinge Health",
-    "companyUrl": "https://www.hingehealth.com",
-    "url": "https://jobs.ashbyhq.com/hinge-health/470a2f53-482a-4995-8353-f0a4f2990210",
-    "level": "Senior",
-    "locationType": "Hybrid",
-    "location": "San Francisco, CA",
-    "tags": [
-      "musculoskeletal",
-      "user research",
-      "digital therapeutics"
-    ],
-    "postedAt": "2026-06-15",
-    "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
-    "_verifiedAt": "2026-06-23"
-  },
-  {
     "id": "hinge-health-senior-product-designer-education",
     "title": "Senior Product Designer, Education",
     "company": "Hinge Health",
@@ -681,26 +663,6 @@
     "_verifiedAt": "2026-05-09"
   },
   {
-    "id": "ro-staff-product-designer",
-    "title": "Staff Product Designer",
-    "company": "Ro",
-    "companyUrl": "https://ro.co",
-    "level": "Staff",
-    "locationType": "Hybrid",
-    "location": "New York, NY (or Remote USA)",
-    "url": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
-    "postedAt": null,
-    "salary": "$198,900 - $234,000",
-    "tags": [
-      "telehealth",
-      "consumer health",
-      "pharmacy",
-      "patient experience"
-    ],
-    "_sourceUrl": "https://jobs.lever.co/ro/00fcfca5-6e4c-4759-badc-9be92bc9c2c4",
-    "_verifiedAt": "2026-05-05"
-  },
-  {
     "id": "abridge-staff-product-designer",
     "title": "Staff Product Designer",
     "company": "Abridge",
@@ -740,27 +702,6 @@
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/abridge",
-    "_verifiedAt": "2026-05-04"
-  },
-  {
-    "id": "pomelo-care-senior-brand-designer",
-    "title": "Senior Brand Designer",
-    "company": "Pomelo Care",
-    "companyUrl": "https://www.pomelocare.com",
-    "level": "Senior",
-    "locationType": "Remote",
-    "location": "USA",
-    "url": "https://job-boards.greenhouse.io/pomelocare/jobs/5984777004",
-    "postedAt": "2026-05-04",
-    "salary": "$145,000 - $155,000",
-    "tags": [
-      "maternal health",
-      "women's health",
-      "brand",
-      "remote",
-      "startup"
-    ],
-    "_sourceUrl": "https://job-boards.greenhouse.io/pomelocare",
     "_verifiedAt": "2026-05-04"
   },
   {
