@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id?: string;
   title: string;
   company: string;
   companyUrl: string;
@@ -18,7 +19,7 @@ interface Props {
 }
 
 const {
-  title, company, level, locationType, location, url, tags,
+  id, title, company, level, locationType, location, url, tags,
   vertical = 'Healthcare', employmentType = 'Full-time', salary, index = 0,
 } = Astro.props;
 
@@ -28,11 +29,11 @@ const isContract = employmentType === 'Contract' || employmentType === 'Freelanc
 // Title size is uniform — the masonry gets its rhythm from tile grounds and title length.
 const treatments = [
   { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2E2C27]',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#24211A] dark:text-slate-100',                           meta: 'text-[#55524B] dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#232322] dark:text-slate-100',                           meta: 'text-[#54534E] dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
   { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2E2C27]',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
   { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-[#2E2C27]',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  { key: 'olive',  tile: 'bg-tile-olive text-[#F2F1EC] border border-transparent',                                                           meta: 'text-[#E9E8DE]',                   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#24211A] dark:text-slate-100',                           meta: 'text-[#55524B] dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'graphite', tile: 'bg-[#3B3B39] text-[#F2F2F0] border border-transparent dark:bg-[#3F3F3D]',                                        meta: 'text-[#C4C4C0]',                   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#232322] dark:text-slate-100',                           meta: 'text-[#54534E] dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
 ];
 
 // Contract roles always take the inverted treatment — the boldest tile on the wall:
@@ -40,7 +41,7 @@ const treatments = [
 const contractTreatment = {
   key: 'contract',
   tile: 'bg-tile-ink text-[#F2F1EC] border border-transparent dark:bg-[#EDEBE4] dark:text-ink',
-  meta: 'text-[#A3A099] dark:text-[#55524B]',
+  meta: 'text-[#A3A099] dark:text-[#54534E]',
   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6',
 };
 
@@ -62,7 +63,7 @@ const metaBits = [level, locationType, locationRedundant ? null : shortLocation]
   data-umami-event-title={title}
   data-umami-event-company={company}
 >
-  <div class="flex items-start justify-between gap-3">
+  <div class="flex items-start justify-between gap-3 pr-8">
     <span class={`font-mono text-[11px] uppercase tracking-[0.14em] ${t.meta}`}>{company}</span>
     {isContract && (
       <span class="font-mono text-[11px] uppercase tracking-[0.14em] font-bold shrink-0">Contract</span>
@@ -85,3 +86,18 @@ const metaBits = [level, locationType, locationRedundant ? null : shortLocation]
     </span>
   </div>
 </a>
+
+{id && (
+  <button
+    type="button"
+    class="bookmark-btn absolute top-3 right-3 z-10 p-2 rounded-full bg-paper/85 dark:bg-surface-card/85 backdrop-blur-sm border border-line dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-ink dark:hover:text-white hover:border-ink dark:hover:border-slate-400 transition-colors opacity-0 group-bookmark"
+    data-job-id={id}
+    aria-pressed="false"
+    aria-label={`Save ${title} at ${company}`}
+    title="Save job"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+    </svg>
+  </button>
+)}

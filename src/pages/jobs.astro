@@ -14,7 +14,8 @@ const sortedJobs = [...jobs].sort((a, b) => {
 });
 
 const levelOrder = ['Entry', 'Junior', 'Mid', 'Mid-Senior', 'Senior', 'Staff', 'Lead', 'Principal', 'Manager', 'Director'];
-const levels = levelOrder.filter(l => jobs.some(j => j.level === l));
+// Entry is always offered — the board actively tracks entry-level roles even when none are live
+const levels = levelOrder.filter(l => l === 'Entry' || jobs.some(j => j.level === l));
 const locationTypes = [...new Set(jobs.map(j => j.locationType))];
 const locations = allLocationBuckets(jobs);
 const verticals = [...new Set(jobs.map(j => j.vertical || 'Healthcare'))].sort();
@@ -115,6 +116,20 @@ const employmentOptions = [
           <path d="m6 9 6 6 6-6" />
         </svg>
       </div>
+
+      <!-- Saved (bookmarks) toggle -->
+      <button
+        type="button"
+        id="saved-toggle"
+        aria-pressed="false"
+        class="flex items-center gap-2 px-4 py-3 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-sm font-medium text-ink-soft dark:text-slate-300 hover:border-ink dark:hover:border-slate-400 transition-[border-color,background-color,color] duration-150 cursor-pointer whitespace-nowrap"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+        </svg>
+        Saved
+        <span id="saved-count" class="hidden text-xs bg-ink text-paper dark:bg-slate-100 dark:text-ink rounded-full w-5 h-5 inline-flex items-center justify-center font-semibold">0</span>
+      </button>
 
       <!-- Category dropdown -->
       <div class="relative dj-dropdown" data-dropdown="category">
@@ -222,7 +237,7 @@ const employmentOptions = [
   <!-- Jobs wall -->
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-20">
     <h2 class="sr-only">Open roles</h2>
-    <JobTable jobs={sortedJobs} filterable id="jobs-list" delayStep={30} />
+    <JobTable jobs={sortedJobs} filterable id="jobs-list" delayStep={45} maxDelay={270} />
     <div id="no-results" class="text-center py-12 hidden">
       <p class="text-slate-400 mb-4">No jobs match your current filters.</p>
       <button id="clear-all-filters" class="px-5 py-2.5 text-sm font-medium text-ink-soft dark:text-slate-300 bg-transparent border border-line dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
@@ -305,6 +320,36 @@ const employmentOptions = [
   const clearFilters = document.getElementById('clear-filters');
   const checkboxes = document.querySelectorAll('.filter-checkbox') as NodeListOf<HTMLInputElement>;
   const dropdowns = document.querySelectorAll('.dj-dropdown') as NodeListOf<HTMLElement>;
+  const savedToggle = document.getElementById('saved-toggle');
+  const savedCountBadge = document.getElementById('saved-count');
+  let savedOnly = false;
+  const readBookmarks = (): Set<string> => { try { return new Set(JSON.parse(localStorage.getItem('dj-bookmarks') || '[]')); } catch { return new Set(); } };
+  let bookmarks = readBookmarks();
+
+  function syncSavedUI() {
+    bookmarks = readBookmarks();
+    if (savedCountBadge) {
+      savedCountBadge.textContent = String(bookmarks.size);
+      savedCountBadge.classList.toggle('hidden', bookmarks.size === 0);
+    }
+    savedToggle?.setAttribute('aria-pressed', String(savedOnly));
+    savedToggle?.classList.toggle('bg-ink', savedOnly);
+    savedToggle?.classList.toggle('text-paper', savedOnly);
+    savedToggle?.classList.toggle('border-ink', savedOnly);
+    savedToggle?.classList.toggle('dark:bg-slate-100', savedOnly);
+    savedToggle?.classList.toggle('dark:text-ink', savedOnly);
+  }
+
+  savedToggle?.addEventListener('click', () => {
+    savedOnly = !savedOnly;
+    syncSavedUI();
+    applyFilters();
+  });
+
+  document.addEventListener('dj-bookmarks-changed', () => {
+    syncSavedUI();
+    if (savedOnly) applyFilters();
+  });
 
   // Restore saved filters (with migration from the old single-value shape)
   const saved = JSON.parse(localStorage.getItem('dj-filters') || '{}');
@@ -381,6 +426,7 @@ const employmentOptions = [
     const value = cb.dataset.value || '';
     if (sets[type]?.has(value)) cb.checked = true;
   });
+  syncSavedUI();
   const anyActive = searchQuery || activeLocation || Object.values(sets).some(s => s.size);
   if (anyActive) {
     requestAnimationFrame(() => { updatePills(); applyFilters(); });
@@ -465,8 +511,13 @@ const employmentOptions = [
       const el = item as HTMLElement;
       let show = true;
 
+      // Saved-only mode (bookmarks live in localStorage — no accounts)
+      if (savedOnly) {
+        show = bookmarks.has(el.dataset.jobId || '');
+      }
+
       // Category multi-select
-      if (sets.vertical.size > 0) {
+      if (show && sets.vertical.size > 0) {
         show = sets.vertical.has(el.dataset.vertical || 'Healthcare');
       }
 

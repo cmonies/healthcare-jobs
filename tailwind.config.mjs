@@ -11,14 +11,13 @@ export default {
           DEFAULT: '#161512',
           soft: '#3C3A34',
         },
-        muted: '#77746B',
-        line: '#EAE8E2',
+        muted: '#706F6A',
+        line: '#E8E8E6',
         // Tile treatments — typographic poster grounds
         tile: {
-          cream: '#F1EFE8',
-          olive: '#575A45',
+          cream: '#F1F1EF',
           ink: '#1A1917',
-          invert: '#EDEBE4',
+          invert: '#ECECEA',
         },
         // Crust amber — the single accent. Semantic: contract roles + brand mark.
         crust: {
@@ -58,9 +57,9 @@ export default {
         // Warm grays (light) / cool neutrals (dark) — hairlines warmed
         slate: {
           50: '#FAFAF9',
-          100: '#F1F0EC',
-          200: '#EAE8E2',
-          300: '#D8D5CD',
+          100: '#F2F2F1',
+          200: '#E8E8E6',
+          300: '#D6D6D3',
           400: '#A3A099',
           500: '#77746B',
           600: '#55524B',

@@ -196,6 +196,17 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
   .js-ready .reveal.reveal-fade.visible {
     transform: none;
   }
+  /* Job tiles: a real entrance — rise + fade, exponential ease-out, staggered per tile */
+  .js-ready .reveal.reveal-tile {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 380ms cubic-bezier(0.23, 1, 0.32, 1), transform 380ms cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform, opacity;
+  }
+  .js-ready .reveal.reveal-tile.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   /* Global focus visible styles */
   :root { --focus-ring: #161512; }
@@ -223,7 +234,8 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
       opacity: 1;
     }
     .js-ready .reveal,
-    .js-ready .reveal.reveal-fade {
+    .js-ready .reveal.reveal-fade,
+    .js-ready .reveal.reveal-tile {
       transition: none;
       opacity: 1;
       transform: none;
