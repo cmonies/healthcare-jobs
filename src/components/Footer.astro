@@ -3,9 +3,9 @@ import DarkModeToggle from './DarkModeToggle.astro';
 ---
 
 <footer role="contentinfo" class="bg-paper dark:bg-surface-footer border-t border-line dark:border-slate-700/50 mt-8">
-  <div class="w-full max-w-5xl mx-auto px-6 py-12">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div>
+  <div class="w-full max-w-[1800px] mx-auto px-4 md:px-6 py-12">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <div class="max-w-sm">
         <div class="flex items-center gap-2.5 mb-3 text-ink dark:text-slate-100">
           <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" class="text-crust-500">
             <path d="m30.47 4.57 -1.52 0 0 -1.52 -1.53 0 0 -1.53 -3.04 0 0 -1.52L7.61 0l0 1.52 10.67 0 0 1.53 3.05 0 0 1.52 1.52 0 0 1.53 1.53 0 0 7.61 -1.53 0 0 1.53 -1.52 0 0 15.24 -16.76 0 0 1.52 21.33 0 0 -1.52 1.52 0 0 -1.53 1.53 0 0 -1.52 1.52 0 0 -13.72 1.53 0 0 -7.61 -1.53 0 0 -1.53z"/>
@@ -18,6 +18,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
         </p>
       </div>
 
+      <div class="flex gap-16 lg:gap-24 md:pr-8">
       <div>
         <h4 class="text-sm font-semibold text-ink dark:text-white mb-3">Links</h4>
         <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
@@ -34,6 +35,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
           <li><a href="/submit" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-submit-click">Submit a job</a></li>
           <li><a href="/report" class="hover:text-ink dark:hover:text-white transition-colors" data-umami-event="footer-feedback-click">Feedback</a></li>
         </ul>
+      </div>
       </div>
     </div>
 
