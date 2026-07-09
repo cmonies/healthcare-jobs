@@ -74,9 +74,9 @@ export default {
           page: '#111110',
           header: '#111110',
           footer: '#0C0C0B',
-          card: '#181816',
+          card: '#1C1B18',
           newsletter: '#181816',
-          'card-hover': '#1F1E1A',
+          'card-hover': '#23211C',
         },
       },
       fontFamily: {

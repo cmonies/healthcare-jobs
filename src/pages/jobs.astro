@@ -71,7 +71,7 @@ const employmentOptions = [
 
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pt-12 pb-6">
     <h1 class="animate-fade-in stagger-1 font-display text-3xl md:text-4xl font-semibold tracking-tight mb-2">All jobs</h1>
-    <p class="animate-fade-in stagger-1 text-base text-muted dark:text-slate-400"><span id="visible-count">{jobs.length}</span> design roles currently open</p>
+    <p class="animate-fade-in stagger-1 text-base text-muted dark:text-slate-400"><span id="visible-count">{jobs.length}</span> <span id="count-label">design roles currently open</span></p>
   </section>
 
   <!-- Search + filter row: one cohesive bar; selections become dismissible pills below -->
@@ -134,7 +134,7 @@ const employmentOptions = [
               <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                 <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="vertical" data-value={v} />
                 <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{v}</span>
-                <span class="text-xs text-slate-400 dark:text-slate-500">{verticalCounts[v]}</span>
+                <span class="text-xs text-slate-500 dark:text-slate-400">{verticalCounts[v]}</span>
               </label>
             ))}
           </div>
@@ -159,7 +159,7 @@ const employmentOptions = [
               <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                 <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="employment" data-value={opt.value} />
                 <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{opt.value}</span>
-                <span class="text-xs text-slate-400 dark:text-slate-500">{opt.count}</span>
+                <span class="text-xs text-slate-500 dark:text-slate-400">{opt.count}</span>
               </label>
             ))}
           </div>
@@ -183,25 +183,25 @@ const employmentOptions = [
         <div class="dj-dropdown-panel hidden absolute right-0 top-full mt-2 w-72 bg-paper dark:bg-surface-card border border-line dark:border-slate-700 rounded-2xl shadow-soft-lg z-50 overflow-hidden">
           <div class="p-4 space-y-4">
             <div>
-              <p class="font-mono text-[10px] font-semibold text-muted dark:text-slate-500 uppercase tracking-[0.14em] mb-2">Level</p>
+              <p class="font-mono text-[11px] font-semibold text-muted dark:text-slate-500 uppercase tracking-[0.14em] mb-2">Level</p>
               <div class="space-y-1.5">
                 {levels.map(level => (
                   <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                     <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="level" data-value={level} />
                     <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{level}</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">{levelCounts[level]}</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">{levelCounts[level]}</span>
                   </label>
                 ))}
               </div>
             </div>
             <div class="border-t border-line dark:border-slate-700/50 pt-4">
-              <p class="font-mono text-[10px] font-semibold text-muted dark:text-slate-500 uppercase tracking-[0.14em] mb-2">Work type</p>
+              <p class="font-mono text-[11px] font-semibold text-muted dark:text-slate-500 uppercase tracking-[0.14em] mb-2">Work type</p>
               <div class="space-y-1.5">
                 {locationTypes.map(lt => (
                   <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                     <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="locationType" data-value={lt} />
                     <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{lt}</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">{locationCounts[lt]}</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">{locationCounts[lt]}</span>
                   </label>
                 ))}
               </div>
@@ -213,7 +213,7 @@ const employmentOptions = [
 
     <!-- Active filter pills (selections from any dropdown land here, dismissible) -->
     <div id="active-filters" class="hidden flex flex-wrap items-center gap-2 mt-3">
-      <span class="text-xs text-slate-400 dark:text-slate-500">Filtered by:</span>
+      <span class="text-xs text-slate-500 dark:text-slate-400">Filtered by:</span>
       <div id="active-pills" class="flex flex-wrap gap-1.5"></div>
       <button id="clear-filters" class="text-xs text-ink dark:text-slate-200 hover:underline font-medium ml-1 transition-colors">Clear all</button>
     </div>
@@ -502,6 +502,9 @@ const employmentOptions = [
 
     if (noResults) noResults.classList.toggle('hidden', visible > 0);
     if (visibleCount) visibleCount.textContent = String(visible);
+    const countLabel = document.getElementById('count-label');
+    const filtered = visible !== items.length;
+    if (countLabel) countLabel.textContent = filtered ? `of ${items.length} design roles shown` : 'design roles currently open';
   }
 
   searchInput?.addEventListener('input', () => {

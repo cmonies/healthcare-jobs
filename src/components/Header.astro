@@ -4,7 +4,7 @@ const currentPath = Astro.url.pathname;
 
 <header role="banner" class="bg-paper/90 dark:bg-surface-header/90 backdrop-blur-xl sticky top-0 z-50 border-b border-line dark:border-slate-700/50">
   <nav aria-label="Main navigation" class="w-full max-w-[1800px] mx-auto px-4 md:px-6 py-3.5 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5 group text-ink dark:text-slate-100" data-umami-event="nav-logo-click">
+    <a href="/" class="flex items-center gap-2.5 group text-ink dark:text-slate-100 py-2.5 -my-2.5" data-umami-event="nav-logo-click">
       <!-- Pixel bread mark -->
       <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" class="shrink-0 text-crust-500 group-hover:text-crust-600 transition-colors">
         <path d="m30.47 4.57 -1.52 0 0 -1.52 -1.53 0 0 -1.53 -3.04 0 0 -1.52L7.61 0l0 1.52 10.67 0 0 1.53 3.05 0 0 1.52 1.52 0 0 1.53 1.53 0 0 7.61 -1.53 0 0 1.53 -1.52 0 0 15.24 -16.76 0 0 1.52 21.33 0 0 -1.52 1.52 0 0 -1.53 1.53 0 0 -1.52 1.52 0 0 -13.72 1.53 0 0 -7.61 -1.53 0 0 -1.53z"/>
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile -->
     <div class="flex md:hidden items-center gap-2">
-      <button type="button" id="mobile-menu-btn" class="p-2 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button type="button" id="mobile-menu-btn" class="p-2.5 -m-0.5 text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
         <svg id="menu-close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
       </button>
