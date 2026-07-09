@@ -25,16 +25,16 @@ const {
 const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
 
 // Typographic poster treatments, cycled deterministically.
-// Sizes vary so the masonry gets its rhythm from type scale, not images.
+// Title size is uniform — the masonry gets its rhythm from tile grounds and title length.
 const treatments = [
   { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-slate-700/60',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#1D1C17] dark:text-slate-100',                           meta: 'text-muted dark:text-slate-400',   titleSize: 'text-3xl md:text-4xl',      pad: 'p-7 md:p-8' },
-  { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-slate-700/60',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-xl md:text-2xl',       pad: 'p-6' },
-  { key: 'ink',    tile: 'bg-tile-ink text-[#F2F1EC] border border-transparent dark:border-slate-700/60',                                    meta: 'text-[#A3A099]',                   titleSize: 'text-3xl md:text-4xl',      pad: 'p-7 md:p-8' },
+  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#1D1C17] dark:text-slate-100',                           meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
   { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-slate-700/60',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
-  { key: 'olive',  tile: 'bg-tile-olive text-[#F2F1EC] border border-transparent',                                                           meta: 'text-[#C9C8BD]',                   titleSize: 'text-2xl md:text-3xl',      pad: 'p-7' },
-  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#1D1C17] dark:text-slate-100',                           meta: 'text-muted dark:text-slate-400',   titleSize: 'text-xl md:text-2xl',       pad: 'p-6' },
-  { key: 'invert', tile: 'bg-tile-invert text-ink border border-transparent dark:bg-[#EDEBE4] dark:text-ink',                                meta: 'text-ink-soft dark:text-[#55524B]', titleSize: 'text-3xl md:text-4xl',      pad: 'p-7 md:p-8' },
+  { key: 'ink',    tile: 'bg-tile-ink text-[#F2F1EC] border border-transparent dark:border-slate-700/60',                                    meta: 'text-[#A3A099]',                   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'plain',  tile: 'bg-paper text-ink border border-line dark:bg-surface-card dark:text-slate-100 dark:border-slate-700/60',          meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'olive',  tile: 'bg-tile-olive text-[#F2F1EC] border border-transparent',                                                           meta: 'text-[#C9C8BD]',                   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'cream',  tile: 'bg-tile-cream text-ink border border-transparent dark:bg-[#1D1C17] dark:text-slate-100',                           meta: 'text-muted dark:text-slate-400',   titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
+  { key: 'invert', tile: 'bg-tile-invert text-ink border border-transparent dark:bg-[#EDEBE4] dark:text-ink',                                meta: 'text-ink-soft dark:text-[#55524B]', titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6' },
 ];
 
 // Contract roles always take the crust treatment — the one accent, spent here.
@@ -42,8 +42,7 @@ const crust = {
   key: 'crust',
   tile: 'bg-crust-100 text-crust-900 border border-crust-200 dark:bg-[#2A1D0F] dark:text-crust-100 dark:border-crust-800',
   meta: 'text-crust-700 dark:text-crust-300',
-  titleSize: 'text-3xl md:text-4xl',
-  pad: 'p-7 md:p-8',
+  titleSize: 'text-2xl md:text-[1.7rem]', pad: 'p-6',
 };
 
 const t = isContract ? crust : treatments[index % treatments.length];
