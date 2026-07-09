@@ -1,5 +1,6 @@
 ---
 import JobCard from './JobCard.astro';
+import { locationBuckets } from '../lib/locations';
 
 interface Job {
   title: string;
@@ -44,7 +45,7 @@ const { jobs, filterable = false, maxDelay = 150, delayStep = 20, id } = Astro.p
       {...(filterable ? {
         "data-level": job.level,
         "data-location-type": job.locationType,
-        "data-location": job.location,
+        "data-location-buckets": locationBuckets(job.location, job.locationType).join('|'),
         "data-vertical": job.vertical || 'Healthcare',
         "data-employment-type": job.employmentType || 'Full-time',
         "data-search": `${job.title} ${job.company} ${job.location} ${job.vertical || ''} ${job.tags.join(' ')}`.toLowerCase(),

@@ -170,8 +170,10 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
   }
 
   /* Global focus visible styles */
+  :root { --focus-ring: #161512; }
+  .dark { --focus-ring: #F1F0EC; }
   :where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
-    outline: 2px solid #C0722A;
+    outline: 2px solid var(--focus-ring);
     outline-offset: 2px;
   }
 

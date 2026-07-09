@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import JobTable from '../components/JobTable.astro';
 import Newsletter from '../components/Newsletter.astro';
 import jobs from '../data/jobs.json';
+import { allLocationBuckets } from '../lib/locations';
 
 const sortedJobs = [...jobs].sort((a, b) => {
   if (!a.postedAt && !b.postedAt) return 0;
@@ -16,7 +17,7 @@ const sortedJobs = [...jobs].sort((a, b) => {
 const levelOrder = ['Junior', 'Mid', 'Mid-Senior', 'Senior', 'Staff', 'Lead', 'Principal', 'Manager', 'Director'];
 const levels = levelOrder.filter(l => jobs.some(j => j.level === l));
 const locationTypes = [...new Set(jobs.map(j => j.locationType))];
-const locations = [...new Set(jobs.map(j => j.location))].sort();
+const locations = allLocationBuckets(jobs);
 const verticals = [...new Set(jobs.map(j => j.vertical || 'Healthcare'))].sort();
 
 const levelCounts: Record<string, number> = {};
@@ -77,7 +78,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
       <button type="button" data-emp="Full-time" class="emp-chip px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-fulltime">
         Full-time <span class="opacity-60">{fullTimeCount}</span>
       </button>
-      <button type="button" data-emp="Contract" class="emp-chip emp-chip-crust px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-contract">
+      <button type="button" data-emp="Contract" class="emp-chip px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-contract">
         Contract <span class="opacity-60">{contractCount}</span>
       </button>
     </div>
@@ -170,7 +171,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
               <div class="space-y-1.5">
                 {levels.map(level => (
                   <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                    <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-crust-500 focus:ring-crust-500" data-type="level" data-value={level} />
+                    <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="level" data-value={level} />
                     <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{level}</span>
                     <span class="text-xs text-slate-400 dark:text-slate-500">{levelCounts[level]}</span>
                   </label>
@@ -184,7 +185,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
               <div class="space-y-1.5">
                 {locationTypes.map(lt => (
                   <label class="flex items-center gap-3 cursor-pointer py-1 px-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                    <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-crust-500 focus:ring-crust-500" data-type="locationType" data-value={lt} />
+                    <input type="checkbox" class="filter-checkbox rounded border-slate-300 dark:border-slate-600 text-ink focus:ring-slate-400" data-type="locationType" data-value={lt} />
                     <span class="text-sm text-ink-soft dark:text-slate-300 flex-1">{lt}</span>
                     <span class="text-xs text-slate-400 dark:text-slate-500">{locationCounts[lt]}</span>
                   </label>
@@ -200,7 +201,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     <div id="active-filters" class="hidden flex flex-wrap items-center gap-2 mt-3">
       <span class="text-xs text-slate-400 dark:text-slate-500">Filtered by:</span>
       <div id="active-pills" class="flex flex-wrap gap-1.5"></div>
-      <button id="clear-filters" class="text-xs text-crust-600 dark:text-crust-300 hover:text-crust-700 font-medium ml-1 transition-colors">Clear all</button>
+      <button id="clear-filters" class="text-xs text-ink dark:text-slate-200 hover:underline font-medium ml-1 transition-colors">Clear all</button>
     </div>
   </section>
 
@@ -216,7 +217,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   </section>
 
   <!-- Newsletter -->
-  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-10">
+  <section class="w-full max-w-5xl mx-auto px-4 md:px-6 pb-10">
     <Newsletter />
   </section>
 
@@ -238,15 +239,9 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     border-color: #161512;
     color: #FFFFFF;
   }
-  .emp-chip-crust { color: #A05C1F; border-color: #ECC89D; }
-  .emp-chip-crust:hover { border-color: #C0722A; background: #FBF3E9; }
-  .emp-chip-crust.emp-chip-active { background: #C0722A; border-color: #C0722A; color: #FFFFFF; }
   .dark .emp-chip { border-color: #26251F; background: #181816; color: #A3A099; }
   .dark .emp-chip:hover { border-color: #A3A099; }
   .dark .emp-chip-active { background: #F1F0EC; border-color: #F1F0EC; color: #161512; }
-  .dark .emp-chip-crust { color: #E0A96A; border-color: #5C3312; }
-  .dark .emp-chip-crust:hover { border-color: #C0722A; background: rgba(59, 32, 11, 0.3); }
-  .dark .emp-chip-crust.emp-chip-active { background: #C0722A; border-color: #C0722A; color: #FFFFFF; }
 
   .filter-pill {
     display: inline-flex;
@@ -264,8 +259,8 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     white-space: nowrap;
   }
   .filter-pill:hover {
-    border-color: #E0A96A;
-    background: #FBF3E9;
+    border-color: #161512;
+    background: #F5F4F1;
   }
   .dark .filter-pill {
     border-color: #26251F;
@@ -273,7 +268,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     color: #A3A099;
   }
   .dark .filter-pill:hover {
-    border-color: #C0722A;
+    border-color: #A3A099;
     background: #1F1E1A;
   }
   .filter-pill .pill-x {
@@ -290,7 +285,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     transition: background-color 0.15s ease, color 0.15s ease;
   }
   .filter-pill:hover .pill-x {
-    background: #C0722A;
+    background: #161512;
     color: white;
   }
   .dark .filter-pill .pill-x {
@@ -298,8 +293,8 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     color: #A3A099;
   }
   .dark .filter-pill:hover .pill-x {
-    background: #C0722A;
-    color: white;
+    background: #F1F0EC;
+    color: #161512;
   }
 </style>
 
@@ -500,9 +495,9 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
         show = activeLocationTypes.has(el.dataset.locationType || '');
       }
 
-      // Location dropdown
+      // Location dropdown — matches any of the job's normalized buckets
       if (show && activeLocation) {
-        show = el.dataset.location === activeLocation;
+        show = (el.dataset.locationBuckets || '').split('|').includes(activeLocation);
       }
 
       // Search

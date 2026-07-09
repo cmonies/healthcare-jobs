@@ -216,7 +216,7 @@
   },
   {
     "id": "maven-clinic-head-of-design",
-    "title": "Head of Design",
+    "title": "VP of Design",
     "company": "Maven Clinic",
     "companyUrl": "https://mavenclinic.com",
     "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8594275002",
@@ -236,7 +236,7 @@
   },
   {
     "id": "maven-clinic-senior-staff-product-designer",
-    "title": "Senior Staff Product Designer",
+    "title": "Senior Staff Product Designer, Care Delivery",
     "company": "Maven Clinic",
     "companyUrl": "https://mavenclinic.com",
     "url": "https://job-boards.greenhouse.io/mavenclinic/jobs/8599242002",
@@ -317,7 +317,7 @@
   },
   {
     "id": "whoop-senior-product-designer-ai",
-    "title": "Senior Product Designer, AI & Emerging Technology",
+    "title": "Senior Product Designer, AI & Emerging Technology Focus",
     "company": "WHOOP",
     "companyUrl": "https://www.whoop.com",
     "url": "https://jobs.lever.co/whoop/a7971d82-ef9c-4ba2-b249-97c0ae924c06",
@@ -378,11 +378,11 @@
   },
   {
     "id": "blink-health-staff-design-systems-engineer-ny",
-    "title": "Staff Design Systems Engineer",
+    "title": "Senior Design Systems Engineer II",
     "company": "Blink Health",
     "companyUrl": "https://www.blinkhealth.com",
     "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8603510002",
-    "level": "Staff",
+    "level": "Senior",
     "locationType": "On-site",
     "location": "New York, NY",
     "tags": [
@@ -399,11 +399,11 @@
   },
   {
     "id": "blink-health-staff-design-systems-engineer-pittsburgh",
-    "title": "Staff Design Systems Engineer",
+    "title": "Senior Design Systems Engineer II",
     "company": "Blink Health",
     "companyUrl": "https://www.blinkhealth.com",
     "url": "https://job-boards.greenhouse.io/blinkhealth/jobs/8603511002",
-    "level": "Staff",
+    "level": "Senior",
     "locationType": "On-site",
     "location": "Pittsburgh, PA",
     "tags": [
@@ -420,7 +420,7 @@
   },
   {
     "id": "9amhealth-senior-product-designer-member-app",
-    "title": "Senior Product Designer, Member App",
+    "title": "Senior Product Designer",
     "company": "9amHealth",
     "companyUrl": "https://join9am.com",
     "url": "https://jobs.ashbyhq.com/join9am/b3042574-12a3-46e7-a45d-5381d681b9ca",
@@ -477,7 +477,7 @@
   },
   {
     "id": "omada-health-staff-product-designer",
-    "title": "Staff Product Designer",
+    "title": "Product Designer, AI Experience",
     "company": "Omada Health",
     "companyUrl": "https://www.omadahealth.com",
     "url": "https://job-boards.greenhouse.io/omadahealth/jobs/7821718",
@@ -831,7 +831,7 @@
     "employmentType": "Full-time"
   },
   {
-    "title": "Staff Designer, New Sensing",
+    "title": "Staff Product Designer",
     "company": "Oura",
     "companyUrl": "https://ouraring.com",
     "url": "https://job-boards.greenhouse.io/oura/jobs/4193678009",
@@ -870,7 +870,7 @@
   },
   {
     "id": "betterhelp-product-designer-therapist-platform",
-    "title": "Product Designer, Therapist Platform",
+    "title": "Product Designer",
     "company": "BetterHelp",
     "companyUrl": "https://www.betterhelp.com",
     "url": "https://job-boards.greenhouse.io/betterhelpcom/jobs/5168402008",
@@ -897,7 +897,7 @@
   },
   {
     "id": "everlywell-visual-senior-product-designer-contract",
-    "title": "Visual Senior Product Designer (Contract)",
+    "title": "Visual Senior Product Designer (Remote/Contract)",
     "company": "Everlywell",
     "companyUrl": "https://www.everlywell.com",
     "url": "https://jobs.lever.co/everlywell/7b7ac528-ec42-4480-b1fd-11ded686380e",
@@ -1276,7 +1276,7 @@
   },
   {
     "id": "flo-health-senior-product-designer-user-centric",
-    "title": "Senior Product Designer (User-Centric)",
+    "title": "Senior Product Designer (Virtual Clinics)",
     "company": "Flo Health",
     "companyUrl": "https://flo.health",
     "level": "Senior",

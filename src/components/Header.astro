@@ -30,7 +30,7 @@ const currentPath = Astro.url.pathname;
       </a>
       <a
         href="/jobs?type=Contract"
-        class="text-sm font-medium text-crust-600 dark:text-crust-300 hover:text-crust-700 dark:hover:text-crust-200 transition-colors"
+        class="text-sm font-medium text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors"
         data-umami-event="nav-contract-click"
       >
         Contract
@@ -57,7 +57,7 @@ const currentPath = Astro.url.pathname;
   <div id="mobile-menu" class="hidden md:hidden border-t border-line dark:border-slate-700/50 bg-paper dark:bg-surface-header" role="region" aria-label="Mobile menu">
     <div class="px-6 py-4 space-y-3">
       <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-ink-soft dark:text-slate-300 hover:text-ink dark:hover:text-white transition-colors py-1" data-umami-event="nav-mobile-jobs-click">Jobs</a>
-      <a href="/jobs?type=Contract" class="block text-sm font-medium text-crust-600 dark:text-crust-300 py-1" data-umami-event="nav-mobile-contract-click">Contract roles</a>
+      <a href="/jobs?type=Contract" class="block text-sm font-medium text-ink-soft dark:text-slate-300 py-1" data-umami-event="nav-mobile-contract-click">Contract roles</a>
       <a href="/submit" class="block text-sm font-medium text-ink dark:text-slate-100 py-1" data-umami-event="nav-mobile-submit-click">Submit a job →</a>
     </div>
   </div>

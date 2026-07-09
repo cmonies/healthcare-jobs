@@ -48,7 +48,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
         <a href="/jobs" class="px-5 py-2.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity" data-umami-event="hero-alljobs-click">
           {jobs.length} open roles
         </a>
-        <a href="/jobs?type=Contract" class="px-5 py-2.5 rounded-full border border-crust-300 dark:border-crust-700 text-crust-600 dark:text-crust-300 text-sm font-medium hover:bg-crust-50 dark:hover:bg-crust-900/30 transition-colors" data-umami-event="hero-contract-click">
+        <a href="/jobs?type=Contract" class="px-5 py-2.5 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 text-sm font-medium hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors" data-umami-event="hero-contract-click">
           Contract{contractCount > 0 ? ` (${contractCount})` : ''}
         </a>
       </div>
@@ -71,7 +71,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
 
   <!-- Why this board exists — quiet, three lines, no icon cards -->
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
-    <div class="border-t border-line dark:border-slate-700/50 pt-10 grid md:grid-cols-3 gap-8 max-w-5xl">
+    <div class="border-t border-line dark:border-slate-700/50 pt-12 grid md:grid-cols-3 gap-10 md:gap-14 max-w-5xl mx-auto text-center">
       <div class="reveal" data-delay="0">
         <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">No ghost jobs</h3>
         <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Every listing is browser-verified before it's published, and re-checked while it's live. If it's here, it's real.</p>
@@ -88,7 +88,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   </section>
 
   <!-- Newsletter -->
-  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-12">
+  <section class="w-full max-w-5xl mx-auto px-4 md:px-6 pb-12">
     <div class="reveal" data-delay="0">
       <Newsletter />
     </div>

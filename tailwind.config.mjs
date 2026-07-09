@@ -33,18 +33,18 @@ export default {
           800: '#5C3312',
           900: '#3B200B',
         },
-        // `brand` remapped to crust so untouched pages inherit the new palette
+        // `brand` = ink neutrals (cosmos monochrome). Crust amber is the LOGO's color only.
         brand: {
-          50: '#FBF3E9',
-          100: '#F6E4CE',
-          200: '#ECC89D',
-          300: '#E0A96A',
-          400: '#D18C43',
-          500: '#C0722A',
-          600: '#A05C1F',
-          700: '#7E4718',
-          800: '#5C3312',
-          900: '#3B200B',
+          50: '#F5F4F1',
+          100: '#EAE8E2',
+          200: '#D8D5CD',
+          300: '#A3A099',
+          400: '#55524B',
+          500: '#161512',
+          600: '#0C0C0A',
+          700: '#0C0C0A',
+          800: '#000000',
+          900: '#000000',
         },
         // Legacy alias: pages still using warm-50 as page bg now get pure white
         warm: {
