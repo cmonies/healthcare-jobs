@@ -51,6 +51,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
 
@@ -97,12 +98,34 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
   @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
   @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
-  /* Button press feedback */
-  button[type="submit"] {
-    transition: background-color 150ms ease, transform 100ms var(--ease-out-cubic);
+  /* Button press feedback — instant "the UI heard you" signal */
+  button[type="submit"],
+  .emp-chip,
+  a[class*="rounded-full"] {
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 100ms var(--ease-out-cubic);
   }
-  button[type="submit"]:active {
+  button[type="submit"]:active,
+  .emp-chip:active,
+  a[class*="rounded-full"]:active {
     transform: scale(0.97);
+  }
+
+  /* Filter apply: brief settle so the masonry reflow reads as one motion, not a jump */
+  .filtering {
+    opacity: 0.5;
+    transition: opacity 80ms var(--ease-out-cubic);
+  }
+  .filter-settle {
+    opacity: 1;
+    transition: opacity 180ms var(--ease-out-quart);
+  }
+
+  /* Touch devices: no hover lift (tap would trigger it falsely) */
+  @media (hover: none) {
+    .job-tile:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
 
   /* Stagger fade-in animations */
@@ -199,6 +222,11 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
       transition: none;
       opacity: 1;
       transform: none;
+    }
+    .filtering,
+    .filter-settle {
+      transition: none;
+      opacity: 1;
     }
   }
 </style>

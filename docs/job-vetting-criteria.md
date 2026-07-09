@@ -11,16 +11,18 @@ design at product companies, design leadership. No pure marketing/graphic-produc
 roles at agencies.
 
 **Verticals** (use these exact values in the `vertical` field):
-`Healthcare`, `AI/ML`, `Fintech`, `Climate`, `Consumer`, `Enterprise/SaaS`,
-`Gov/Civic`, `Education`, `Other`
+`Healthcare`, `AI`, `Fintech`, `Climate`, `Consumer`, `Enterprise/SaaS`,
+`Trades`, `Gov/Civic`, `Education`, `Other`
 
 Priority targets:
 1. **Contract / freelance / contract-to-hire roles** — anywhere, any vertical. These are
    rare on ATS boards and most valuable to our audience.
-2. **AI-native startups** hiring designers (AI/ML vertical)
+2. **AI-native startups** hiring designers (AI vertical)
 3. **Non-traditional verticals** — companies doing design work where tech isn't the
    default career path: logistics, agriculture, construction, manufacturing, legal,
-   maritime, energy, defense-adjacent civic tech. Tag `Other` with descriptive tags.
+   maritime, energy, defense-adjacent civic tech. **Trades tech** (software for
+   electricians, plumbers, HVAC, home services, construction — ServiceTitan, Jobber,
+   Housecall Pro, Procore, BuildOps and their peers) gets the `Trades` vertical.
 4. **Healthcare** — keep sourcing; it's our deepest vertical and existing audience.
 
 **Employment type** (use these exact values in `employmentType`):
@@ -105,7 +107,7 @@ Each staged job in `jobs-staging.json` — ALL of these fields are required
   "locationType": "Remote",
   "location": "Remote (US)",
   "postedAt": "2026-07-01",
-  "vertical": "AI/ML",
+  "vertical": "AI",
   "employmentType": "Contract",
   "tags": ["design systems", "B2B", "0-to-1"],
   "_sourceUrl": "https://... (where the lead was found)"

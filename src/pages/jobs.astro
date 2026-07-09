@@ -25,6 +25,9 @@ levels.forEach(l => { levelCounts[l] = jobs.filter(j => j.level === l).length; }
 const locationCounts: Record<string, number> = {};
 locationTypes.forEach(lt => { locationCounts[lt] = jobs.filter(j => j.locationType === lt).length; });
 
+const verticalCounts: Record<string, number> = {};
+verticals.forEach(v => { verticalCounts[v] = jobs.filter(j => (j.vertical || 'Healthcare') === v).length; });
+
 const fullTimeCount = jobs.filter(j => (j.employmentType || 'Full-time') === 'Full-time').length;
 const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.employmentType === 'Freelance').length;
 ---
@@ -69,8 +72,18 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     <p class="animate-fade-in stagger-1 text-base text-muted dark:text-slate-400"><span id="visible-count">{jobs.length}</span> design roles currently open</p>
   </section>
 
-  <!-- Employment type chips — contract front and center -->
-  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-3">
+  <!-- Category + employment chips — the two core ways to slice the board -->
+  <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-3 space-y-2">
+    <div class="animate-fade-in stagger-2 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by category">
+      <button type="button" data-vert="" class="vert-chip emp-chip emp-chip-active px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-vert-all">
+        All categories
+      </button>
+      {verticals.map(v => (
+        <button type="button" data-vert={v} class="vert-chip emp-chip px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-vert">
+          {v} <span class="opacity-60">{verticalCounts[v]}</span>
+        </button>
+      ))}
+    </div>
     <div class="animate-fade-in stagger-2 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by employment type">
       <button type="button" data-emp="" class="emp-chip emp-chip-active px-4 py-2 rounded-full border text-sm font-medium transition-colors" data-umami-event="filter-emp-all">
         All roles
@@ -106,23 +119,6 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
         </button>
       </div>
 
-      {verticals.length > 1 && (
-        <div class="relative sm:w-44">
-          <select
-            id="vertical-select"
-            aria-label="Filter by vertical"
-            class="w-full appearance-none pl-4 pr-8 py-3 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-surface-card text-base md:text-sm text-ink dark:text-slate-100 focus:outline-none focus:border-ink dark:focus:border-slate-400 transition-[border-color] duration-150 cursor-pointer"
-          >
-            <option value="">All verticals</option>
-            {verticals.map(v => (
-              <option value={v}>{v}</option>
-            ))}
-          </select>
-          <svg class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </div>
-      )}
 
       <!-- Location dropdown -->
       <div class="relative sm:w-48">
@@ -207,6 +203,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
 
   <!-- Jobs wall -->
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-20">
+    <h2 class="sr-only">Open roles</h2>
     <JobTable jobs={sortedJobs} filterable id="jobs-list" delayStep={30} />
     <div id="no-results" class="text-center py-12 hidden">
       <p class="text-slate-400 mb-4">No jobs match your current filters.</p>
@@ -304,7 +301,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const searchClear = document.getElementById('search-clear');
   const locationSelect = document.getElementById('location-select') as HTMLSelectElement;
-  const verticalSelect = document.getElementById('vertical-select') as HTMLSelectElement | null;
+  const vertChips = document.querySelectorAll('.vert-chip') as NodeListOf<HTMLButtonElement>;
   const visibleCount = document.getElementById('visible-count');
   const filterBtn = document.getElementById('filter-btn');
   const filterDropdown = document.getElementById('filter-dropdown');
@@ -324,11 +321,14 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   let activeLevels: Set<string> = new Set(saved.levels || []);
   let activeLocationTypes: Set<string> = new Set(saved.locationTypes || []);
 
-  // URL param takes precedence: /jobs?type=Contract
-  const urlType = new URLSearchParams(window.location.search).get('type');
+  // URL params take precedence: /jobs?type=Contract, /jobs?category=AI
+  const params = new URLSearchParams(window.location.search);
+  const urlType = params.get('type');
   if (urlType === 'Contract' || urlType === 'Full-time') {
     activeEmployment = urlType;
   }
+  const urlCategory = params.get('category');
+  if (urlCategory) activeVertical = urlCategory;
 
   function saveFilters() {
     localStorage.setItem('dj-filters', JSON.stringify({
@@ -343,15 +343,22 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
 
   function syncEmpChips() {
     empChips.forEach(chip => {
+      if (chip.classList.contains('vert-chip')) return;
       chip.classList.toggle('emp-chip-active', (chip.dataset.emp || '') === activeEmployment);
+    });
+  }
+
+  function syncVertChips() {
+    vertChips.forEach(chip => {
+      chip.classList.toggle('emp-chip-active', (chip.dataset.vert || '') === activeVertical);
     });
   }
 
   // Restore UI state from saved filters
   if (searchInput && searchQuery) { searchInput.value = searchQuery; searchClear?.classList.remove('hidden'); }
   if (locationSelect && activeLocation) locationSelect.value = activeLocation;
-  if (verticalSelect && activeVertical) verticalSelect.value = activeVertical;
   syncEmpChips();
+  syncVertChips();
   checkboxes.forEach(cb => {
     const type = cb.dataset.type;
     const value = cb.dataset.value || '';
@@ -365,11 +372,24 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
 
   // Employment chips
   empChips.forEach(chip => {
+    if (chip.classList.contains('vert-chip')) return;
     chip.addEventListener('click', () => {
       const val = chip.dataset.emp || '';
       activeEmployment = (activeEmployment === val) ? '' : val;
       if (val === '') activeEmployment = '';
       syncEmpChips();
+      applyFilters();
+      saveFilters();
+    });
+  });
+
+  // Category chips
+  vertChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const val = chip.dataset.vert || '';
+      activeVertical = (activeVertical === val) ? '' : val;
+      if (val === '') activeVertical = '';
+      syncVertChips();
       applyFilters();
       saveFilters();
     });
@@ -466,7 +486,19 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     activeLocationTypes.forEach(v => activePills.appendChild(createPill(v, 'locationType', v)));
   }
 
+  let settleTimer: ReturnType<typeof setTimeout> | undefined;
   function applyFilters() {
+    // Mask the columns reflow with a quick settle fade (GPU-only, opacity)
+    const list = document.getElementById('jobs-list');
+    if (list) {
+      list.classList.remove('filter-settle');
+      list.classList.add('filtering');
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(() => {
+        list.classList.remove('filtering');
+        list.classList.add('filter-settle');
+      }, 80);
+    }
     let visible = 0;
     items.forEach(item => {
       const el = item as HTMLElement;
@@ -523,7 +555,6 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
   document.getElementById('clear-all-filters')?.addEventListener('click', () => {
     if (searchInput) searchInput.value = '';
     if (locationSelect) locationSelect.value = '';
-    if (verticalSelect) verticalSelect.value = '';
     searchQuery = '';
     activeLocation = '';
     activeVertical = '';
@@ -533,6 +564,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     checkboxes.forEach(cb => cb.checked = false);
     searchClear?.classList.add('hidden');
     syncEmpChips();
+    syncVertChips();
     updatePills();
     applyFilters();
     saveFilters();
@@ -554,9 +586,4 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
     saveFilters();
   });
 
-  verticalSelect?.addEventListener('change', () => {
-    activeVertical = verticalSelect.value;
-    applyFilters();
-    saveFilters();
-  });
 </script>

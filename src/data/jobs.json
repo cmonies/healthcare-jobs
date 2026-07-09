@@ -1,5 +1,132 @@
 [
   {
+    "id": "zello-product-designer-design-systems-contract",
+    "title": "Product Designer - Design Systems (Contract)",
+    "company": "Zello",
+    "companyUrl": "https://zello.com",
+    "url": "https://jobs.ashbyhq.com/Zello/36471a0a-9aa6-4fe2-b663-6e2f9c995757",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Austin, TX (Remote OK)",
+    "postedAt": "2026-05-08",
+    "vertical": "Enterprise/SaaS",
+    "employmentType": "Contract",
+    "tags": [
+      "design systems",
+      "frontline communication",
+      "B2B",
+      "contract"
+    ],
+    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/zello",
+    "_verifiedAt": "2026-07-09"
+  },
+  {
+    "id": "sentra-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Sentra",
+    "companyUrl": "https://www.sentra.app",
+    "url": "https://jobs.ashbyhq.com/sentra/9717d4c7-7500-47af-a5f5-964ae51c1258",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "San Francisco / Bay Area",
+    "postedAt": "2026-04-23",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "0-to-1",
+      "founding role",
+      "company memory",
+      "startup"
+    ],
+    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/sentra",
+    "_verifiedAt": "2026-07-09"
+  },
+  {
+    "id": "assembled-product-designer-ai-agents",
+    "title": "Product Designer, AI Agents",
+    "company": "Assembled",
+    "companyUrl": "https://www.assembled.com",
+    "url": "https://jobs.ashbyhq.com/assembledhq/1e6165e1-4274-4ed6-9410-5ebb05639486",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-06-26",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "AI agents",
+      "customer support",
+      "B2B",
+      "startup"
+    ],
+    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/assembledhq",
+    "_verifiedAt": "2026-07-09"
+  },
+  {
+    "id": "read-ai-product-designer-growth",
+    "title": "Product Designer - Growth",
+    "company": "Read AI",
+    "companyUrl": "https://www.read.ai",
+    "url": "https://jobs.ashbyhq.com/read-ai/28f8d16a-949b-4523-b8e3-3ef57386ef2b",
+    "level": "Mid",
+    "locationType": "Remote",
+    "location": "Seattle, WA (Remote OK)",
+    "postedAt": "2026-06-16",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "growth",
+      "meeting intelligence",
+      "consumer",
+      "startup"
+    ],
+    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/read-ai",
+    "_verifiedAt": "2026-07-09"
+  },
+  {
+    "id": "jobber-senior-product-designer-franchise",
+    "title": "Senior Product Designer, Franchise",
+    "company": "Jobber",
+    "companyUrl": "https://getjobber.com",
+    "url": "https://jobs.ashbyhq.com/jobber/e858c010-ee02-4090-aba0-b105bdb0d575",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Toronto, ON (Remote, Canada)",
+    "postedAt": "2026-06-26",
+    "vertical": "Trades",
+    "employmentType": "Full-time",
+    "tags": [
+      "home services",
+      "plumbers & electricians",
+      "small business",
+      "B2B"
+    ],
+    "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/jobber",
+    "_verifiedAt": "2026-07-09"
+  },
+  {
+    "id": "finix-senior-product-designer-contract",
+    "title": "Senior Product Designer",
+    "company": "Finix",
+    "companyUrl": "https://finix.com",
+    "url": "https://jobs.lever.co/finix/37f01087-8ea0-4bc2-a699-a0023bffaa21",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-04-29",
+    "salary": "$170,000 - $245,000",
+    "vertical": "Fintech",
+    "employmentType": "Contract",
+    "tags": [
+      "payments",
+      "fintech",
+      "B2B",
+      "contract"
+    ],
+    "_sourceUrl": "https://api.lever.co/v0/postings/finix",
+    "_verifiedAt": "2026-07-09"
+  },
+  {
     "id": "decoda-health-product-designer",
     "title": "Product Designer",
     "company": "Decoda Health",

@@ -57,6 +57,7 @@ const contractCount = jobs.filter(j => j.employmentType === 'Contract' || j.empl
 
   <!-- The wall: latest roles as typographic tiles -->
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pb-16">
+    <h2 class="sr-only">Latest roles</h2>
     <JobTable jobs={featuredJobs} maxDelay={200} />
     <div class="reveal text-center mt-10" data-delay="100">
       <a
