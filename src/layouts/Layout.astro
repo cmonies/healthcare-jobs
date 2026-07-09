@@ -77,6 +77,11 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
   @tailwind components;
   @tailwind utilities;
 
+  /* Footer must end the page — main absorbs leftover viewport height */
+  main {
+    flex: 1 1 auto;
+  }
+
   /* Custom easing curves (stronger than defaults) */
   :root {
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
