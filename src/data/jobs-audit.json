@@ -5,70 +5,60 @@
   "failed": 0,
   "results": [
     {
-      "id": "nex-product-designer-contract",
-      "company": "Nex",
-      "title": "Product Designer (Contract)",
-      "url": "https://job-boards.greenhouse.io/nex/jobs/5289200008",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-14T17:47:43.898Z"
-    },
-    {
-      "id": "centralize-founding-designer",
-      "company": "Centralize",
-      "title": "Founding Designer",
-      "url": "https://jobs.ashbyhq.com/Centralize/8debce91-6f36-482a-91be-e5c91ffe79e2",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-14T17:47:43.898Z"
-    },
-    {
-      "id": "elevenlabs-product-designer",
-      "company": "ElevenLabs",
-      "title": "Product Designer",
-      "url": "https://jobs.ashbyhq.com/elevenlabs/89da00ec-11b0-4359-913b-c3a89c1013bc",
-      "pass": true,
-      "reason": "OK",
-      "status": 200,
-      "checkedAt": "2026-07-14T17:47:43.898Z"
-    },
-    {
-      "id": "sleeper-sr-product-designer-contract",
+      "id": "sleeper-product-designer-mid-level-contract",
       "company": "Sleeper",
-      "title": "Sr. Product Designer",
-      "url": "https://jobs.ashbyhq.com/sleeper/71eca74a-98e7-449c-936e-8aadbf723673",
+      "title": "Product Designer (Mid-Level)",
+      "url": "https://jobs.ashbyhq.com/sleeper/4ddc246a-aaaa-4cb2-a8c9-54bb24c34021",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-14T17:47:43.898Z"
+      "checkedAt": "2026-07-16T16:15:17.247Z"
     },
     {
-      "id": "branchlab-sr-product-designer",
-      "company": "BranchLab",
-      "title": "Sr. Product Designer",
-      "url": "https://jobs.ashbyhq.com/BranchLab/bf367c84-6420-439a-b3b9-aaaa9804ff09",
+      "id": "notion-product-designer",
+      "company": "Notion",
+      "title": "Product Designer",
+      "url": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-14T17:47:43.898Z"
+      "checkedAt": "2026-07-16T16:15:17.247Z"
     },
     {
-      "id": "nyc-oti-senior-product-designer",
-      "company": "NYC Office of Technology and Innovation",
-      "title": "Senior Product Designer",
-      "url": "https://cityjobs.nyc.gov/job/senior-product-designer-in-brooklyn-jid-44505",
+      "id": "wefunder-visual-micro-interaction-designer",
+      "company": "Wefunder",
+      "title": "Visual & Micro-Interaction Designer",
+      "url": "https://wefunder.com/jobs/micro-interaction-designer",
+      "pass": false,
+      "reason": "No live job signals found on page",
+      "status": 200,
+      "checkedAt": "2026-07-16T16:15:17.247Z"
+    },
+    {
+      "id": "finta-founding-designer",
+      "company": "Finta",
+      "title": "Founding Designer",
+      "url": "https://www.workatastartup.com/jobs/66636",
+      "pass": false,
+      "reason": "No live job signals found on page",
+      "status": 200,
+      "checkedAt": "2026-07-16T16:15:17.247Z"
+    },
+    {
+      "id": "yarn-founding-product-designer",
+      "company": "Yarn",
+      "title": "Founding Product Designer",
+      "url": "https://www.ycombinator.com/companies/yarn-2/jobs/knZEX3U-founding-product-designer",
       "pass": true,
       "reason": "OK",
       "status": 200,
-      "checkedAt": "2026-07-14T17:47:43.898Z"
+      "checkedAt": "2026-07-16T16:15:17.247Z"
     }
   ],
-  "lastRun": "2026-07-14T17:47:43.897Z",
+  "lastRun": "2026-07-16T16:15:17.247Z",
   "summary": {
-    "passed": 6,
-    "failed": 0,
-    "total": 6
+    "passed": 3,
+    "failed": 2,
+    "total": 5
   }
 }
