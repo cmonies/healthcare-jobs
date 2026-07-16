@@ -85,9 +85,12 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
     }
 
     const isBugReport = body.type === 'bug-report';
+    const isProcess = isBugReport && body.issueType === 'process';
 
     // 2. Required fields validation
-    const required = isBugReport
+    const required = isProcess
+      ? ['company']
+      : isBugReport
       ? ['issueType', 'description']
       : ['submitterName', 'submitterEmail', 'title', 'company', 'companyUrl', 'url', 'level', 'locationType', 'location'];
     for (const field of required) {
@@ -156,7 +159,53 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       let issueBody: string;
       let labels: string[];
 
-      if (isBugReport) {
+      if (isProcess) {
+        // Structured interview-process report — no free text by design.
+        const roundTypes = (body.roundTypes || '').toString().trim();
+        const fields: Array<[string, string]> = [
+          ['Job', body.jobTitle || 'Unknown role'],
+          ['Company', body.company],
+          ['Job ID', body.jobId || 'n/a'],
+          ['Rounds', body.rounds || 'not reported'],
+          ['Round types', roundTypes || 'not reported'],
+          ['Timeline', body.timeline || 'not reported'],
+          ['Take-home', body.hasAssessment || 'not reported'],
+          ['Assessment type', body.assessmentType || 'n/a'],
+          ['Heard back after interviewing', body.gotFeedback || 'not reported'],
+        ];
+        const answered = ['rounds', 'roundTypes', 'timeline', 'hasAssessment', 'gotFeedback']
+          .some(k => (body[k] || '').toString().trim());
+        if (!answered) {
+          return new Response(JSON.stringify({ ok: false, error: 'Please fill in at least one field.' }), {
+            status: 400,
+            headers: { 'Content-Type': 'application/json' },
+          });
+        }
+        issueTitle = `Process report: ${body.company}${body.jobTitle ? ` — ${body.jobTitle}` : ''}`;
+        issueBody = [
+          ...fields.map(([k, v]) => `**${k}:** ${v}`),
+          '',
+          '```json',
+          JSON.stringify({
+            jobId: body.jobId || null,
+            company: body.company,
+            interviewProcess: {
+              ...(body.rounds ? { rounds: parseInt(body.rounds, 10) || body.rounds } : {}),
+              ...(roundTypes ? { roundTypes: roundTypes.split(',').map(s => s.trim()).filter(Boolean) } : {}),
+              ...(body.timeline ? { timeline: body.timeline } : {}),
+              ...(body.hasAssessment ? { hasAssessment: body.hasAssessment === 'yes' } : {}),
+              ...(body.assessmentType ? { assessmentType: body.assessmentType } : {}),
+              ...(body.gotFeedback ? { gotFeedback: body.gotFeedback === 'yes' } : {}),
+              source: 'community report',
+            },
+          }, null, 2),
+          '```',
+          '',
+          '---',
+          '_Community process report via designjobs.cv — review before merging into jobs.json_',
+        ].join('\n');
+        labels = ['community-data', 'interview-process'];
+      } else if (isBugReport) {
         const issueTypeLabels: Record<string, string> = {
           'dead-link': 'dead-link',
           'wrong-info': 'wrong-info',

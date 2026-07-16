@@ -420,7 +420,7 @@ import Footer from '../components/Footer.astro';
       return val;
     }
 
-    const payload = {
+    const payload: Record<string, string | string[]> = {
       type: 'bug-report',
       reporterName: data.get('reporterName') as string || '',
       reporterEmail: data.get('reporterEmail') as string || '',
@@ -432,6 +432,21 @@ import Footer from '../components/Footer.astro';
       website_url: data.get('website_url') as string || '',
       turnstileToken,
     };
+
+    // Process reports carry structured fields the API files as community data
+    if (category === 'process') {
+      const pageUrl = payload.pageUrl as string;
+      const jobIdMatch = /\/jobs\/([^/?#]+)/.exec(pageUrl);
+      payload.jobId = jobIdMatch ? jobIdMatch[1] : '';
+      payload.company = urlParamCompany || 'Unknown — see linked page';
+      payload.jobTitle = '';
+      payload.rounds = data.get('process_rounds') as string || '';
+      payload.roundTypes = data.getAll('process_roundTypes').join(', ');
+      payload.timeline = data.get('process_timeline') as string || '';
+      payload.hasAssessment = data.get('process_hasAssessment') as string || '';
+      payload.assessmentType = data.get('process_assessmentType') as string || '';
+      payload.gotFeedback = data.get('process_gotFeedback') as string || '';
+    }
 
     try {
       const res = await fetch('/api/submit', {
