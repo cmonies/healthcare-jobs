@@ -1,0 +1,380 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import jobs from '../../data/jobs.json';
+import jobDetails from '../../data/job-details.json';
+
+export function getStaticPaths() {
+  return jobs
+    .filter((job): job is typeof job & { id: string } => !!job.id)
+    .map(job => ({
+      params: { id: job.id },
+      props: { job },
+    }));
+}
+
+const { job } = Astro.props;
+const {
+  id, title, company, companyUrl, url, level, locationType, location,
+  postedAt, tags = [], vertical, employmentType = 'Full-time', salary,
+  interviewProcess = null,
+} = job;
+
+const details = (jobDetails as Record<string, { descriptionHtml: string; salaryText: string | null; source: string; fetchedAt: string }>)[id] ?? null;
+const salaryDisplay = salary || details?.salaryText || null;
+
+const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
+const locationStr = locationType === 'Remote'
+  ? 'Remote'
+  : location ? `${locationType} — ${location}` : locationType;
+
+const pageTitle = `${title} at ${company} | designjobs.cv`;
+const description = `${level} ${title} at ${company}. ${employmentType}, ${locationStr}. Verified listing on designjobs.cv — the community design jobs board.`;
+
+const atsDomain = (() => {
+  try { return new URL(url).hostname.replace('www.', ''); }
+  catch { return 'company careers page'; }
+})();
+
+const postedFormatted = postedAt
+  ? new Date(postedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+
+const daysAgo = postedAt
+  ? Math.floor((Date.now() - new Date(postedAt + 'T12:00:00').getTime()) / 86400000)
+  : null;
+
+const freshnessLabel = (() => {
+  if (daysAgo === null) return null;
+  if (daysAgo === 0) return 'Posted today';
+  if (daysAgo === 1) return 'Posted yesterday';
+  if (daysAgo < 7) return `Posted ${daysAgo} days ago`;
+  if (daysAgo < 14) return 'Posted 1 week ago';
+  if (daysAgo < 21) return 'Posted 2 weeks ago';
+  if (daysAgo < 30) return 'Posted 3 weeks ago';
+  return `Posted ${daysAgo} days ago`;
+})();
+
+const isStale = daysAgo !== null && daysAgo >= 21;
+const isVeryStale = daysAgo !== null && daysAgo >= 30;
+
+const reportUrl = `/report?category=dead-link&job=${encodeURIComponent(id)}&url=${encodeURIComponent(url)}`;
+
+const descriptionPlain = details
+  ? details.descriptionHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 5000)
+  : null;
+
+const jobPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": title,
+  "datePosted": postedAt || new Date().toISOString().split('T')[0],
+  ...(descriptionPlain ? { "description": descriptionPlain } : {}),
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": company,
+    "sameAs": companyUrl,
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      ...(locationType !== 'Remote' && location ? { "addressLocality": location } : {}),
+    },
+  },
+  ...(locationType === 'Remote' ? {
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": { "@type": "Country", "name": "United States" },
+  } : {}),
+  "employmentType": isContract ? "CONTRACTOR" : "FULL_TIME",
+  "url": `https://designjobs.cv/jobs/${id}`,
+  "directApply": false,
+  ...(salaryDisplay ? { "baseSalary": { "@type": "MonetaryAmount", "description": salaryDisplay } } : {}),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "designjobs.cv", "item": "https://designjobs.cv" },
+    { "@type": "ListItem", "position": 2, "name": "All jobs", "item": "https://designjobs.cv/jobs" },
+    { "@type": "ListItem", "position": 3, "name": `${title} at ${company}`, "item": `https://designjobs.cv/jobs/${id}` },
+  ],
+};
+
+const facts: Array<{ label: string; value: string }> = [
+  { label: 'Level', value: level },
+  { label: 'Type', value: employmentType },
+  { label: 'Location', value: locationStr },
+  ...(vertical ? [{ label: 'Vertical', value: vertical }] : []),
+  ...(salaryDisplay ? [{ label: 'Comp', value: salaryDisplay }] : []),
+  ...(postedFormatted ? [{ label: 'Posted', value: postedFormatted }] : []),
+];
+---
+
+<Layout title={pageTitle} description={description}>
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+    <script type="application/ld+json" set:html={JSON.stringify(jobPostingSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <div class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-8 pb-2">
+      <nav aria-label="Breadcrumb">
+        <a href="/jobs" class="inline-flex items-center gap-1.5 text-sm text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          All design jobs
+        </a>
+      </nav>
+    </div>
+
+    <section class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-16">
+
+      <!-- Page header: title block left, apply action right -->
+      <header class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-8 border-b border-line dark:border-slate-700/50">
+        <div class="min-w-0">
+          <div class="flex items-center gap-3 mb-4">
+            <a href={companyUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
+              {company}
+            </a>
+            {isContract && (
+              <span class="font-mono text-[10px] uppercase tracking-[0.12em] font-bold px-2.5 py-1 rounded-full bg-tile-ink text-[#F2F1EC] dark:bg-[#EDEBE4] dark:text-ink">
+                Contract
+              </span>
+            )}
+          </div>
+
+          <h1 class="font-display font-semibold text-[2rem] md:text-[2.75rem] leading-[1.04] tracking-tight [text-wrap:balance] mb-4">
+            {title}
+          </h1>
+
+          <div class="flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-400">
+            <span>{level}</span>
+            <span>{employmentType}</span>
+            <span>{locationStr}</span>
+            {freshnessLabel && (
+              <span class:list={[
+                isVeryStale ? 'text-amber-500 dark:text-amber-400' :
+                isStale     ? 'text-amber-500/70 dark:text-amber-400/70' :
+                              'text-muted dark:text-slate-400'
+              ]}>
+                {freshnessLabel}
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div class="shrink-0 flex flex-col md:items-end gap-2">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2.5 w-full md:w-auto px-7 py-3.5 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-[15px] font-semibold hover:opacity-85 transition-opacity whitespace-nowrap"
+          >
+            Apply at {company}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+            </svg>
+          </a>
+          <p class="text-[11px] text-slate-400 dark:text-slate-500 md:text-right">
+            Verified listing on {atsDomain}
+          </p>
+        </div>
+      </header>
+
+      {isVeryStale && (
+        <div class="flex items-start gap-2 mt-6 px-3 py-2.5 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/40">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="shrink-0 mt-0.5 text-amber-500" aria-hidden="true">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+          </svg>
+          <p class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed">
+            This listing is 30+ days old. Verify it's still open before applying — roles at this age are sometimes filled or quietly closed.
+          </p>
+        </div>
+      )}
+
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12 lg:gap-16 pt-10">
+
+        <!-- Main column: the role itself -->
+        <article class="min-w-0">
+          {details ? (
+            <>
+              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">About the role</h2>
+              <div class="job-desc" set:html={details.descriptionHtml} />
+              <p class="mt-8 text-[11px] text-slate-400 dark:text-slate-500">
+                Pulled from {company}'s listing on {atsDomain} · last checked {details.fetchedAt}. The listing itself is the source of truth.
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">About the role</h2>
+              <p class="text-[15px] text-ink-soft dark:text-slate-300 leading-relaxed max-w-prose">
+                {company}'s listing doesn't allow automated preview — the full description, requirements, and process live on their official posting.
+              </p>
+            </>
+          )}
+
+          <div class="border-t border-line dark:border-slate-700/50 mt-10 pt-8">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-base font-semibold hover:opacity-85 transition-opacity"
+            >
+              Apply at {company}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+              </svg>
+            </a>
+            <p class="mt-3 text-xs text-slate-400 dark:text-slate-500">
+              Opens {company}'s official listing on {atsDomain}. All links on designjobs.cv are verified against the company's real ATS.
+            </p>
+          </div>
+        </article>
+
+        <!-- Right rail: facts, tags, interview process, flag -->
+        <aside class="lg:pt-1">
+          <div class="lg:sticky lg:top-24 space-y-10">
+
+            <div>
+              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">At a glance</h2>
+              <dl class="space-y-2.5">
+                {facts.map(f => (
+                  <div class="flex items-baseline justify-between gap-4">
+                    <dt class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 shrink-0">{f.label}</dt>
+                    <dd class="text-sm text-ink dark:text-slate-100 text-right">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            {tags.length > 0 && (
+              <div>
+                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-3">Focus</h2>
+                <div class="flex flex-wrap gap-2">
+                  {tags.map(tag => (
+                    <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div>
+              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">Interview process</h2>
+              {interviewProcess ? (
+                <div class="space-y-3">
+                  {interviewProcess.rounds && (
+                    <div class="flex items-start gap-3">
+                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Rounds</span>
+                      <div>
+                        <span class="text-sm text-ink dark:text-slate-100">{interviewProcess.rounds} rounds</span>
+                        {interviewProcess.roundTypes && interviewProcess.roundTypes.length > 0 && (
+                          <div class="flex flex-wrap gap-1.5 mt-1.5">
+                            {interviewProcess.roundTypes.map((rt: string) => (
+                              <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-ink-soft dark:text-slate-300 font-mono">{rt}</span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  {interviewProcess.hasAssessment !== undefined && (
+                    <div class="flex items-start gap-3">
+                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Take-home</span>
+                      <span class="text-sm text-ink dark:text-slate-100">
+                        {interviewProcess.hasAssessment
+                          ? (interviewProcess.assessmentType || 'Yes')
+                          : 'None reported'}
+                      </span>
+                    </div>
+                  )}
+                  {interviewProcess.timeline && (
+                    <div class="flex items-start gap-3">
+                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Timeline</span>
+                      <span class="text-sm text-ink dark:text-slate-100">{interviewProcess.timeline}</span>
+                    </div>
+                  )}
+                  {interviewProcess.source && (
+                    <p class="text-xs text-slate-400 dark:text-slate-500 pt-1">Source: {interviewProcess.source}</p>
+                  )}
+                </div>
+              ) : (
+                <div>
+                  <p class="text-sm text-ink-soft dark:text-slate-400 leading-relaxed">
+                    No process details yet — rounds, timeline, take-home. Be the first to share what it's like to apply here.
+                  </p>
+                  <a
+                    href={`/report?category=process&job=${encodeURIComponent(id)}&company=${encodeURIComponent(company)}`}
+                    class="inline-block mt-2.5 text-xs font-mono uppercase tracking-[0.1em] text-ink dark:text-slate-300 hover:underline underline-offset-2 transition-colors"
+                  >
+                    Share what I know →
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <div class="pt-2 border-t border-line dark:border-slate-700/50">
+              <a
+                href={reportUrl}
+                class="inline-flex items-center gap-1.5 pt-4 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                Looks like this job is closed? Flag it.
+              </a>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  /* Scraped ATS description — typographic defaults for whitelisted tags only */
+  .job-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3B3A36;
+    max-width: 72ch;
+  }
+  :root.dark .job-desc { color: #CBD5E1; }
+  .job-desc p { margin: 0 0 1em; }
+  .job-desc h3, .job-desc h4, .job-desc h5 {
+    font-family: 'Bricolage Grotesque', 'Be Vietnam Pro', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1A1917;
+    margin: 2em 0 0.65em;
+  }
+  :root.dark .job-desc h3, :root.dark .job-desc h4, :root.dark .job-desc h5 { color: #F1F5F9; }
+  .job-desc h3 { font-size: 1.2em; }
+  .job-desc h4 { font-size: 1.05em; }
+  .job-desc h5 { font-size: 1em; }
+  .job-desc > :first-child { margin-top: 0; }
+  .job-desc ul, .job-desc ol { margin: 0 0 1.25em; padding-left: 1.35em; }
+  .job-desc ul { list-style: disc; }
+  .job-desc ol { list-style: decimal; }
+  .job-desc li { margin: 0.35em 0; padding-left: 0.15em; }
+  .job-desc li p { margin: 0; }
+  .job-desc li::marker { color: #A8A69E; }
+  :root.dark .job-desc li::marker { color: #64748B; }
+  .job-desc strong, .job-desc b { font-weight: 600; color: #1A1917; }
+  :root.dark .job-desc strong, :root.dark .job-desc b { color: #F1F5F9; }
+  .job-desc a { text-decoration: underline; text-underline-offset: 2px; }
+  .job-desc hr { border: 0; border-top: 1px solid #E8E8E6; margin: 2em 0; }
+  :root.dark .job-desc hr { border-top-color: rgb(51 65 85 / 0.5); }
+  .job-desc blockquote { border-left: 2px solid #E8E8E6; padding-left: 1em; color: #706F6A; margin: 0 0 1.25em; }
+  :root.dark .job-desc blockquote { border-left-color: rgb(51 65 85 / 0.5); color: #94A3B8; }
+</style>

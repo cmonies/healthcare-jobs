@@ -1,10 +1,11 @@
 ---
 const currentPath = Astro.url.pathname;
+const isJobsRoute = currentPath === "/jobs" || currentPath === "/jobs/" || currentPath.startsWith("/jobs/");
 ---
 
 <header role="banner" class="bg-paper/90 dark:bg-surface-header/90 backdrop-blur-xl sticky top-0 z-50 border-b border-line dark:border-slate-700/50">
   <nav aria-label="Main navigation" class="w-full max-w-[1800px] mx-auto px-4 md:px-6 py-3.5 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5 group text-ink dark:text-slate-100 py-2.5 -my-2.5" data-umami-event="nav-logo-click">
+    <a href="/" class="flex items-center gap-2.5 group text-ink dark:text-slate-100 py-2.5 -my-2.5" >
       <!-- Pixel bread mark -->
       <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" class="shrink-0 text-crust-500 group-hover:text-crust-600 transition-colors">
         <path d="m30.47 4.57 -1.52 0 0 -1.52 -1.53 0 0 -1.53 -3.04 0 0 -1.52L7.61 0l0 1.52 10.67 0 0 1.53 3.05 0 0 1.52 1.52 0 0 1.53 1.53 0 0 7.61 -1.53 0 0 1.53 -1.52 0 0 15.24 -16.76 0 0 1.52 21.33 0 0 -1.52 1.52 0 0 -1.53 1.53 0 0 -1.52 1.52 0 0 -13.72 1.53 0 0 -7.61 -1.53 0 0 -1.53z"/>
@@ -17,28 +18,28 @@ const currentPath = Astro.url.pathname;
     <div class="hidden md:flex items-center gap-7">
       <a
         href="/jobs"
-        aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined}
+        aria-current={isJobsRoute ? "page" : undefined}
         class:list={[
           "text-sm font-medium transition-colors",
-          currentPath === "/jobs" || currentPath === "/jobs/"
+          isJobsRoute
             ? "text-ink dark:text-white"
             : "text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white"
         ]}
-        data-umami-event="nav-jobs-click"
+       
       >
         Jobs
       </a>
       <a
         href="/jobs?type=Contract"
         class="text-sm font-medium text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors"
-        data-umami-event="nav-contract-click"
+       
       >
         Contract
       </a>
       <a
         href="/submit"
         class="text-sm font-medium px-4 py-1.5 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors"
-        data-umami-event="nav-submit-click"
+       
       >
         Submit a job
       </a>
@@ -56,9 +57,9 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-line dark:border-slate-700/50 bg-paper dark:bg-surface-header" role="region" aria-label="Mobile menu">
     <div class="px-6 py-4 space-y-3">
-      <a href="/jobs" aria-current={currentPath === "/jobs" || currentPath === "/jobs/" ? "page" : undefined} class="block text-sm font-medium text-ink-soft dark:text-slate-300 hover:text-ink dark:hover:text-white transition-colors py-1" data-umami-event="nav-mobile-jobs-click">Jobs</a>
-      <a href="/jobs?type=Contract" class="block text-sm font-medium text-ink-soft dark:text-slate-300 py-1" data-umami-event="nav-mobile-contract-click">Contract roles</a>
-      <a href="/submit" class="block text-sm font-medium text-ink dark:text-slate-100 py-1" data-umami-event="nav-mobile-submit-click">Submit a job →</a>
+      <a href="/jobs" aria-current={isJobsRoute ? "page" : undefined} class="block text-sm font-medium text-ink-soft dark:text-slate-300 hover:text-ink dark:hover:text-white transition-colors py-1">Jobs</a>
+      <a href="/jobs?type=Contract" class="block text-sm font-medium text-ink-soft dark:text-slate-300 py-1">Contract roles</a>
+      <a href="/submit" class="block text-sm font-medium text-ink dark:text-slate-100 py-1">Submit a job →</a>
     </div>
   </div>
 </header>

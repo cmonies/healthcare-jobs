@@ -19,19 +19,30 @@ const featuredJobs = [...jobs].sort((a, b) => {
 
   <main id="main-content" tabindex="-1">
 
-  <!-- JSON-LD: Website structured data -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "designjobs.cv",
-    "url": "https://designjobs.cv",
-    "description": "Design jobs at startups across healthcare, AI, and unexpected verticals. Full-time and contract, every listing verified.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://designjobs.cv/jobs?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+  <!-- JSON-LD: WebSite + Organization -->
+  <script type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "designjobs.cv",
+      "url": "https://designjobs.cv",
+      "description": "Community-sourced design jobs board. Verified listings at startups across healthcare, AI, fintech, climate, and more. Full-time and contract.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://designjobs.cv/jobs?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "designjobs.cv",
+      "url": "https://designjobs.cv",
+      "logo": "https://designjobs.cv/og-image.png",
+      "description": "Community-sourced design jobs board covering product design, UX, and design leadership at startups.",
+      "sameAs": ["https://github.com/cmonies/healthcare-jobs"]
     }
-  })} />
+  ])} />
 
   <!-- Statement — the page opens like a gallery wall label, then the work -->
   <section class="w-full max-w-[1800px] mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-12 md:pb-16">
@@ -42,7 +53,7 @@ const featuredJobs = [...jobs].sort((a, b) => {
       <p class="text-base md:text-lg text-muted dark:text-slate-400 leading-relaxed max-w-2xl">
         A community-curated board of design roles at startups: healthcare, AI, and the verticals nobody's watching. Every link goes to the real posting.
       </p>
-      <a href="/jobs" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity" data-umami-event="hero-alljobs-click">
+      <a href="/jobs" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-paper dark:bg-slate-100 dark:text-ink text-sm font-medium hover:opacity-85 transition-opacity">
         View {jobs.length} jobs
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
       </a>
@@ -57,7 +68,7 @@ const featuredJobs = [...jobs].sort((a, b) => {
       <a
         href="/jobs"
         class="inline-flex px-7 py-3 rounded-full border border-ink dark:border-slate-300 text-ink dark:text-slate-100 font-medium text-sm hover:bg-ink hover:text-paper dark:hover:bg-slate-100 dark:hover:text-ink transition-colors"
-        data-umami-event="home-viewall-click"
+       
       >
         View all {jobs.length} jobs →
       </a>
@@ -76,8 +87,8 @@ const featuredJobs = [...jobs].sort((a, b) => {
         <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Straight to the company's own posting — never a LinkedIn wall, never an aggregator loop.</p>
       </div>
       <div class="reveal" data-delay="120">
-        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">Community-built</h3>
-        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Open source, free forever. Anyone can submit a role, flag an issue, or improve the code.</p>
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-2">Know before you apply</h3>
+        <p class="text-sm text-ink-soft dark:text-slate-300 leading-relaxed">Process details, round counts, and timelines — community-reported on every listing. Not rumors. Facts.</p>
       </div>
     </div>
   </section>

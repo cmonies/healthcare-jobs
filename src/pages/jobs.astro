@@ -40,32 +40,38 @@ const employmentOptions = [
 
   <main id="main-content" tabindex="-1">
 
-  <!-- JSON-LD: JobPosting structured data for search engines -->
+  <!-- JSON-LD: JobPosting structured data — all listings -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Design Jobs",
-    "description": "Curated design roles at startups — verified listings, full-time and contract",
+    "name": "Design Jobs at Startups",
+    "description": "Verified design roles at startups across healthcare, AI, fintech, climate, and more. Full-time and contract.",
     "numberOfItems": jobs.length,
-    "itemListElement": jobs.slice(0, 50).map((job, i) => ({
+    "url": "https://designjobs.cv/jobs",
+    "itemListElement": sortedJobs.map((job, i) => ({
       "@type": "ListItem",
       "position": i + 1,
       "item": {
         "@type": "JobPosting",
         "title": job.title,
-        "datePosted": job.postedAt || job.postedDate,
+        "datePosted": job.postedAt || job.postedDate || '2026-01-01',
         "hiringOrganization": {
           "@type": "Organization",
           "name": job.company,
-          "sameAs": job.companyUrl
+          "sameAs": job.companyUrl,
         },
         "jobLocation": {
           "@type": "Place",
-          "address": job.locationType === 'Remote' ? { "@type": "PostalAddress", "addressCountry": "US" } : { "@type": "PostalAddress", "addressLocality": job.location }
+          "address": job.locationType === 'Remote'
+            ? { "@type": "PostalAddress", "addressCountry": "US" }
+            : { "@type": "PostalAddress", "addressLocality": job.location, "addressCountry": "US" },
         },
-        "jobLocationType": job.locationType === 'Remote' ? "TELECOMMUTE" : undefined,
-        "url": job.url,
-        "employmentType": (job.employmentType === 'Contract' || job.employmentType === 'Freelance') ? "CONTRACTOR" : "FULL_TIME"
+        ...(job.locationType === 'Remote' ? {
+          "jobLocationType": "TELECOMMUTE",
+          "applicantLocationRequirements": { "@type": "Country", "name": "United States" },
+        } : {}),
+        "url": job.id ? `https://designjobs.cv/jobs/${job.id}` : job.url,
+        "employmentType": (job.employmentType === 'Contract' || job.employmentType === 'Freelance') ? "CONTRACTOR" : "FULL_TIME",
       }
     }))
   })} />

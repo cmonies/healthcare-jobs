@@ -46,8 +46,10 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://designjobs.cv');
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="alternate" type="application/rss+xml" title="designjobs.cv feed" href="/rss.xml" />
 
-    <!-- Umami Analytics (no cookies, privacy-friendly) -->
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="304941a8-35cd-4473-ad1a-2c131d7bbad5"></script>
+    <link rel="alternate" type="application/json" title="designjobs.cv job data" href="/jobs.json" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="designjobs.cv — verified design jobs at startups" />
+    <meta name="twitter:creator" content="@carmen_cv" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

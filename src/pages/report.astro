@@ -44,6 +44,9 @@ import Footer from '../components/Footer.astro';
           <label for="category" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">What kind of feedback? <span class="text-red-400">*</span></label>
           <select id="category" name="category" required class="form-input">
             <option value="">Select category</option>
+            <optgroup label="Share what you know">
+              <option value="process">📋 Share interview process details</option>
+            </optgroup>
             <optgroup label="Report an issue">
               <option value="dead-link">🔗 Dead or broken job link</option>
               <option value="wrong-info">📝 Wrong job information</option>
@@ -57,6 +60,81 @@ import Footer from '../components/Footer.astro';
             </optgroup>
             <option value="other">💬 Other</option>
           </select>
+        </div>
+
+        <!-- Process-specific fields (shown when category=process) -->
+        <div id="process-fields" class="hidden border border-line dark:border-slate-700 rounded-2xl p-5 space-y-4">
+          <p class="text-sm font-medium text-slate-700 dark:text-slate-300">Interview process details</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">These get added as structured data on the job page — not free-text reviews, just facts.</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="process_rounds" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Number of rounds</label>
+              <select id="process_rounds" name="process_rounds" class="form-input">
+                <option value="">Unknown</option>
+                <option value="1">1 round</option>
+                <option value="2">2 rounds</option>
+                <option value="3">3 rounds</option>
+                <option value="4">4 rounds</option>
+                <option value="5">5+ rounds</option>
+              </select>
+            </div>
+            <div>
+              <label for="process_timeline" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Total timeline</label>
+              <select id="process_timeline" name="process_timeline" class="form-input">
+                <option value="">Unknown</option>
+                <option value="under 1 week">Under 1 week</option>
+                <option value="1-2 weeks">1–2 weeks</option>
+                <option value="2-4 weeks">2–4 weeks</option>
+                <option value="4-6 weeks">4–6 weeks</option>
+                <option value="6+ weeks">6+ weeks</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Round types (check all that apply)</label>
+            <div class="grid sm:grid-cols-2 gap-1.5">
+              {['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive', 'reference check'].map(rt => (
+                <label class="flex items-center gap-2 cursor-pointer py-1">
+                  <input type="checkbox" name="process_roundTypes" value={rt} class="mt-0 rounded" />
+                  <span class="text-sm text-slate-600 dark:text-slate-400">{rt}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Take-home assessment?</label>
+            <div class="flex gap-4">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="process_hasAssessment" value="yes" />
+                <span class="text-sm text-slate-600 dark:text-slate-400">Yes</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="process_hasAssessment" value="no" />
+                <span class="text-sm text-slate-600 dark:text-slate-400">No</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="process_hasAssessment" value="unknown" />
+                <span class="text-sm text-slate-600 dark:text-slate-400">Don't know</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="process_assessmentType" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">If yes — paid, unpaid, or timed?</label>
+            <select id="process_assessmentType" name="process_assessmentType" class="form-input">
+              <option value="">N/A or unknown</option>
+              <option value="paid take-home">Paid take-home</option>
+              <option value="unpaid take-home">Unpaid take-home</option>
+              <option value="timed exercise">Timed exercise (live)</option>
+            </select>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Did you hear back either way after interviewing?
+            <label class="inline-flex items-center gap-1.5 ml-2 cursor-pointer">
+              <input type="radio" name="process_gotFeedback" value="yes" /> Yes
+            </label>
+            <label class="inline-flex items-center gap-1.5 ml-2 cursor-pointer">
+              <input type="radio" name="process_gotFeedback" value="no" /> No (ghosted)
+            </label>
+          </p>
         </div>
 
         <!-- Page URL (contextual — required for bugs, optional for features) -->
@@ -210,7 +288,13 @@ import Footer from '../components/Footer.astro';
 </script>
 
 <script>
-  // Category-dependent form behavior
+  // Pre-fill from URL params (e.g. from job detail page links)
+  const params = new URLSearchParams(window.location.search);
+  const urlParamCategory = params.get('category');
+  const urlParamJob = params.get('job');
+  const urlParamUrl = params.get('url');
+  const urlParamCompany = params.get('company');
+
   const categorySelect = document.getElementById('category') as HTMLSelectElement;
   const urlField = document.getElementById('url-field');
   const urlInput = document.getElementById('pageUrl') as HTMLInputElement;
@@ -220,14 +304,38 @@ import Footer from '../components/Footer.astro';
   const titleInput = document.getElementById('title') as HTMLInputElement;
   const descLabel = document.getElementById('desc-label');
   const descInput = document.getElementById('description') as HTMLTextAreaElement;
+  const processFields = document.getElementById('process-fields');
 
   const bugTypes = ['dead-link', 'wrong-info', 'spam', 'site-bug'];
   const featureTypes = ['feature-request', 'enhancement', 'content'];
+
+  // Pre-fill category from URL
+  if (urlParamCategory && categorySelect) {
+    categorySelect.value = urlParamCategory;
+  }
+  // Pre-fill job URL or page URL
+  if (urlInput) {
+    if (urlParamUrl) {
+      urlInput.value = urlParamUrl;
+    } else if (urlParamJob) {
+      urlInput.value = `https://designjobs.cv/jobs/${urlParamJob}`;
+    }
+  }
+
+  function updateProcessFields(val: string) {
+    if (processFields) {
+      processFields.classList.toggle('hidden', val !== 'process');
+    }
+  }
+
+  // Also update the form heading for process submissions
+  const formHeading = document.querySelector('#form-container h1') as HTMLElement;
 
   categorySelect?.addEventListener('change', () => {
     const val = categorySelect.value;
     const isBug = bugTypes.includes(val);
     const isFeature = featureTypes.includes(val);
+    updateProcessFields(val);
 
     // URL field: required for bugs, optional for features
     if (isBug) {
@@ -264,6 +372,11 @@ import Footer from '../components/Footer.astro';
     }
   });
 
+  // Initialize process fields visibility on page load (handles URL param pre-fill)
+  if (urlParamCategory) {
+    updateProcessFields(urlParamCategory);
+  }
+
   // Character counter
   const charCount = document.getElementById('char-count');
   descInput?.addEventListener('input', () => {
@@ -272,6 +385,7 @@ import Footer from '../components/Footer.astro';
 
   // GitHub label mapping
   const labelMap: Record<string, string[]> = {
+    'process': ['community-data', 'interview-process'],
     'dead-link': ['bug', 'dead-link'],
     'wrong-info': ['bug', 'wrong-info'],
     'spam': ['bug', 'spam'],

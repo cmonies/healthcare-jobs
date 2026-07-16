@@ -91,8 +91,8 @@ async function validateUrl(page, url, jobId) {
     }
 
     // Wait a beat for JS-heavy pages
-    if (url.includes('ashbyhq.com')) {
-      await page.waitForTimeout(3000);
+    if (url.includes('ashbyhq.com') || url.includes('jobs.gem.com')) {
+      await page.waitForTimeout(4000);
     } else if (url.includes('myworkdayjobs.com') || url.includes('workday.com')) {
       // Workday is very JS-heavy — wait for the job title heading to appear
       try {

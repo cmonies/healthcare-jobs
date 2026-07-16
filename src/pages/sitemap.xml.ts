@@ -4,17 +4,30 @@ import jobs from '../data/jobs.json';
 export function GET(context: APIContext) {
   const site = context.site || new URL('https://designjobs.cv');
 
-  // Use most recent job's posted date as lastmod for dynamic pages
   const latestDate = jobs.length > 0
-    ? jobs.reduce((latest, job) => (job.postedAt || job.postedDate) > latest ? (job.postedAt || job.postedDate) : latest, (jobs[0].postedAt || jobs[0].postedDate))
+    ? jobs.reduce((latest, job) => {
+        const d = job.postedAt || job.postedDate;
+        return d && d > latest ? d : latest;
+      }, jobs[0].postedAt || jobs[0].postedDate || '')
     : new Date().toISOString().split('T')[0];
 
-  const pages = [
-    { path: '', changefreq: 'daily', priority: '1.0', lastmod: latestDate },
-    { path: '/jobs', changefreq: 'daily', priority: '0.9', lastmod: latestDate },
+  const staticPages = [
+    { path: '',        changefreq: 'daily',   priority: '1.0', lastmod: latestDate },
+    { path: '/jobs',   changefreq: 'daily',   priority: '0.9', lastmod: latestDate },
     { path: '/submit', changefreq: 'monthly', priority: '0.5', lastmod: '2026-02-14' },
     { path: '/report', changefreq: 'monthly', priority: '0.3', lastmod: '2026-02-14' },
   ];
+
+  const jobPages = jobs
+    .filter(j => j.id)
+    .map(j => ({
+      path: `/jobs/${j.id}`,
+      changefreq: 'weekly',
+      priority: '0.7',
+      lastmod: j.postedAt || j.postedDate || latestDate,
+    }));
+
+  const pages = [...staticPages, ...jobPages];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

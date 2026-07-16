@@ -1,54 +1,31 @@
-# Health Design Jobs — Design Jobs (Full Context)
+# designjobs.cv — Extended LLM Context
 
-Health Design Jobs is a community-sourced design jobs board. Open source, verified listings, and free forever. Find design roles where your work actually matters.
+For the complete machine-readable job listing (all current roles in structured format), see:
+https://designjobs.cv/llms-jobs.txt
 
-## Overview
+For structured JSON data on all jobs:
+https://designjobs.cv/jobs.json
 
-Health Design Jobs (designjobs.cv) is a free, open-source job board focused exclusively on UX and product design roles at healthcare and health-tech companies. It is community-built, community-maintained, and has no paywalls, ads, or recruiter spam. Listings are updated on a rolling basis — roles are added when found and removed as soon as they go dead.
+---
 
-## How It Works
+## About designjobs.cv
 
-- **Community-sourced**: Anyone can submit job listings via the website or contribute directly on GitHub
-- **Verified listings**: Every job is checked with real browser validation against the company's ATS (Greenhouse, Lever, Ashby, Workday, etc.). If the listing is dead, it gets removed
-- **No ghost jobs**: Unlike major job boards, we don't keep stale or expired listings. If it's on the board, it's live
-- **Open source**: The entire codebase, job data, and validation scripts are public on GitHub
-
-## Job Categories
-
-All listings are UX/product design roles at healthcare companies, including:
-- Product Designers
-- UX Designers
-- UX Researchers
-- Content Designers
-- Design Directors/Leads
-- Staff/Principal Designers
-
-At companies spanning:
-- Digital health startups
-- Health-tech platforms
-- Telehealth providers
-- Health insurance tech
-- Clinical software
-- Medical device companies
-- Big tech healthcare divisions
+designjobs.cv is a community-sourced board for UX/product design roles at startups.
+Coverage spans healthcare, AI, fintech, climate, consumer, enterprise/SaaS, trades
+technology, gov/civic, and education verticals. Both full-time and contract/freelance
+roles are listed. Every listing is browser-verified against the company's official
+ATS (Greenhouse, Lever, Ashby, Workday, Gem, etc.) before publication.
 
 ## Technical Details
 
-- Built with Astro + Tailwind CSS
-- Hosted on Cloudflare Pages
-- Job data stored as JSON, validated via automated scripts
-- Listings verified via Playwright against live ATS systems
-- RSS feed available at /rss.xml
-- Sitemap at /sitemap.xml
+- Built with Astro + Tailwind CSS, hosted on Vercel
+- Job data as JSON at /jobs.json (public API, CORS open)
+- Individual job pages at /jobs/{id} with full Schema.org JobPosting markup
+- Sitemap at /sitemap.xml includes all job pages
+- RSS feed at /rss.xml with pub dates
+- Source: https://github.com/cmonies/healthcare-jobs
 
-## Links
+## Data Schema (per job)
 
-- Website: https://designjobs.cv
-- Jobs: https://designjobs.cv/jobs
-- Submit: https://designjobs.cv/submit
-- GitHub: https://github.com/cmonies/healthcare-jobs
-- RSS: https://designjobs.cv/rss.xml
-
-## Contact
-
-Created and maintained by carmen.cv for the design community.
+id, title, company, companyUrl, url (ATS link), level, locationType,
+location, postedAt, vertical, employmentType, tags[], salary (when available)
