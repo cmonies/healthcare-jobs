@@ -72,7 +72,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
             {ROUND_TYPES.map(rt => (
               <label class="pm-pill">
                 <input type="checkbox" name="roundTypes" value={rt} class="sr-only" />
-                <span>{rt}</span>
+                <span>{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
               </label>
             ))}
           </div>
@@ -111,6 +111,19 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
             ))}
           </div>
         </fieldset>
+
+        <div>
+          <label for="pm-notes" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Anything else — optional</label>
+          <textarea
+            id="pm-notes"
+            name="notes"
+            rows="3"
+            maxlength="280"
+            placeholder="Keep it factual — panel format, who you met, how prepared they were…"
+            class="pm-input resize-none !bg-none"
+          ></textarea>
+          <p class="text-[10px] text-slate-400 dark:text-slate-500 text-right mt-1"><span id="pm-notes-count">0</span>/280</p>
+        </div>
 
         <div id="pm-turnstile" class="[&_iframe]:rounded-xl"></div>
         <div id="pm-error" class="hidden text-sm text-red-600 dark:text-red-400"></div>
@@ -274,6 +287,10 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
     if (e.target === modal) modal.close();
   });
 
+  const notesEl = document.getElementById('pm-notes');
+  const notesCount = document.getElementById('pm-notes-count');
+  notesEl.addEventListener('input', () => { notesCount.textContent = String(notesEl.value.length); });
+
   // Take-home = yes reveals the paid/unpaid/timed follow-up
   const atypeWrap = document.getElementById('pm-assessment-type');
   form.querySelectorAll('input[name="hasAssessment"]').forEach(r => {
@@ -301,6 +318,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
       hasAssessment: data.get('hasAssessment') || '',
       assessmentType: data.get('hasAssessment') === 'yes' ? (data.get('assessmentType') || '') : '',
       gotFeedback: data.get('gotFeedback') || '',
+      notes: (data.get('notes') || '').toString().trim(),
       website_url: data.get('website_url') || '',
       turnstileToken,
     };

@@ -344,7 +344,7 @@ const facts: Array<{ label: string; value: string }> = [
                         {interviewProcess.roundTypes && interviewProcess.roundTypes.length > 0 && (
                           <div class="flex flex-wrap gap-1.5 mt-1.5">
                             {interviewProcess.roundTypes.map((rt: string) => (
-                              <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-ink-soft dark:text-slate-300 font-mono">{rt}</span>
+                              <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-ink-soft dark:text-slate-300 font-mono">{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
                             ))}
                           </div>
                         )}
@@ -356,7 +356,7 @@ const facts: Array<{ label: string; value: string }> = [
                       <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Take-home</span>
                       <span class="text-sm text-ink dark:text-slate-100">
                         {interviewProcess.hasAssessment
-                          ? (interviewProcess.assessmentType || 'Yes')
+                          ? (interviewProcess.assessmentType ? interviewProcess.assessmentType.charAt(0).toUpperCase() + interviewProcess.assessmentType.slice(1) : 'Yes')
                           : 'None reported'}
                       </span>
                     </div>
@@ -365,6 +365,14 @@ const facts: Array<{ label: string; value: string }> = [
                     <div class="flex items-start gap-3">
                       <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Timeline</span>
                       <span class="text-sm text-ink dark:text-slate-100">{interviewProcess.timeline}</span>
+                    </div>
+                  )}
+                  {typeof interviewProcess.gotFeedback === 'boolean' && (
+                    <div class="flex items-start gap-3">
+                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Heard back</span>
+                      <span class:list={["text-sm", interviewProcess.gotFeedback ? 'text-ink dark:text-slate-100' : 'text-amber-600 dark:text-amber-400']}>
+                        {interviewProcess.gotFeedback ? 'Yes — they responded either way' : 'Ghosting reported'}
+                      </span>
                     </div>
                   )}
                   {interviewProcess.source && (
