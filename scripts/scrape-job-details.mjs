@@ -21,10 +21,16 @@ const MAX_HTML = 60_000;
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', mdash: '—', ndash: '–', hellip: '…' };
 
 function decodeEntities(s) {
-  return s
-    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
-    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
-    .replace(/&([a-z]+);/gi, (m, name) => ENTITIES[name.toLowerCase()] ?? m);
+  // some ATSes double-encode (&amp;nbsp;) — decode until stable, max 3 passes
+  for (let i = 0; i < 3; i++) {
+    const out = s
+      .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+      .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+      .replace(/&([a-z]+);/gi, (m, name) => ENTITIES[name.toLowerCase()] ?? m);
+    if (out === s) break;
+    s = out;
+  }
+  return s;
 }
 
 const KEEP_TAGS = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'u', 'a', 'h3', 'h4', 'h5', 'blockquote', 'hr']);
@@ -58,14 +64,23 @@ function sanitizeHtml(html) {
     return `<${tag}>`;
   });
 
-  // Tidy: collapse whitespace, nuke empty paragraphs and stray breaks
+  // Tidy: collapse whitespace, nuke empty paragraphs/headings and stray breaks
   s = s
-    .replace(/ /g, ' ')
+    .replace(/\u00a0/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
     .replace(/[ \t]+/g, ' ')
     .replace(/(<br \/>\s*){3,}/gi, '<br /><br />')
-    .replace(/<p>(\s|<br \/>)*<\/p>/gi, '')
+    .replace(/<(p|h3|h4|h5|strong|b|em|i|u|li)>(\s|<br \/>)*<\/\1>/gi, '')
     .replace(/<a>\s*<\/a>/gi, '')
     .replace(/\s*(<\/?(?:p|ul|ol|li|h3|h4|h5|blockquote)>)\s*/g, '$1')
+    .trim();
+  // second pass — removing inner empties can expose newly-empty outer blocks
+  s = s.replace(/<(p|h3|h4|h5|strong|b|em|i|u|li)>(\s|<br \/>)*<\/\1>/gi, '').trim();
+  // dividers, breaks, and orphaned <p> wrappers (auto-closed by browsers)
+  // at the very start or end of the content are noise
+  s = s
+    .replace(/^(\s|<hr \/>|<br \/>|<p>(?=\s*<(?:hr|p|ul|ol|h3|h4|h5|blockquote)))+/i, '')
+    .replace(/(\s|<hr \/>|<br \/>)+$/i, '')
     .trim();
 
   if (s.length > MAX_HTML) {
