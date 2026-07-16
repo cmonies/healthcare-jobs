@@ -88,11 +88,12 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
     const isProcess = isBugReport && body.issueType === 'process';
 
     // 2. Required fields validation
+    // Job submissions only require what we can't scrape from the posting URL
     const required = isProcess
       ? ['company']
       : isBugReport
       ? ['issueType', 'description']
-      : ['submitterName', 'submitterEmail', 'title', 'company', 'companyUrl', 'url', 'level', 'locationType', 'location'];
+      : ['submitterName', 'submitterEmail', 'url'];
     for (const field of required) {
       if (!body[field]?.trim()) {
         return new Response(JSON.stringify({ ok: false, error: `Missing required field: ${field}` }), {
@@ -114,7 +115,9 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
     }
 
     // 4. URL validation (skip empty optional fields)
-    const urlFields = isBugReport ? ['pageUrl'] : ['companyUrl', 'url'];
+    const urlFields = isBugReport
+      ? ['pageUrl']
+      : ['url', ...(body.contactUrl && !body.contactUrl.includes('@') ? ['contactUrl'] : [])];
     for (const urlField of urlFields) {
       if (!body[urlField]?.trim()) continue;
       try {
@@ -226,22 +229,69 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
         ].join('\n');
         labels = ['bug-report', issueTypeLabels[body.issueType] || 'other'];
       } else {
-        issueTitle = `Add: ${body.title} at ${body.company}`;
+        // Minimal submission: URL + title + insider info. Everything else
+        // (company, level, location, comp, description) is scraped from the
+        // posting by the review pipeline.
+        const relationshipLabels: Record<string, string> = {
+          'work-here': 'Works at this company',
+          'know-team': 'Knows the hiring team',
+          'found-it': 'Found it posted',
+        };
+        const urgencyLabels: Record<string, string> = {
+          'asap': 'Actively interviewing — ASAP',
+          'within-month': 'Within the next month',
+          'few-months': 'Next few months',
+          'evergreen': 'Evergreen — always open',
+        };
+        const roundTypes = (body.roundTypes || '').toString().trim();
+        const hasProcess = !!(body.rounds || roundTypes || body.timeline || body.assessmentType);
+
+        const urlHost = (() => {
+          try { return new URL(body.url).hostname.replace('www.', ''); }
+          catch { return body.url; }
+        })();
+        issueTitle = `Add: ${body.title || `job at ${urlHost}`}`;
         issueBody = [
-          `**Job Title:** ${body.title}`,
-          `**Company:** ${body.company}`,
-          `**Company URL:** ${body.companyUrl}`,
+          ...(body.title ? [`**Job Title:** ${body.title}`] : []),
           `**Job URL:** ${body.url}`,
-          `**Level:** ${body.level}`,
-          `**Location Type:** ${body.locationType}`,
-          `**Employment Type:** ${body.employmentType || 'Full-time'}`,
-          `**Vertical:** ${body.vertical || 'Other'}`,
-          `**Location:** ${body.location}`,
           `**Tags:** ${body.tags || 'N/A'}`,
+          `**Relationship:** ${relationshipLabels[body.relationship] || 'Not stated'}`,
+          `**Hiring urgency:** ${urgencyLabels[body.urgency] || 'Not stated'}`,
+          `**Contact:** ${body.contactName || 'n/a'}${body.contactUrl ? ` — ${body.contactUrl}` : ''}`,
+          ...(hasProcess ? [
+            `**Process rounds:** ${body.rounds || 'not reported'}`,
+            `**Process round types:** ${roundTypes || 'not reported'}`,
+            `**Process timeline:** ${body.timeline || 'not reported'}`,
+            `**Process take-home:** ${body.assessmentType || 'not reported'}`,
+          ] : []),
+          '',
+          '```json',
+          JSON.stringify({
+            ...(body.title ? { title: body.title } : {}),
+            url: body.url,
+            tags: (body.tags || '').split(',').map((t: string) => t.trim()).filter(Boolean),
+            _needsEnrichment: true,
+            ...(body.urgency ? { hiringUrgency: body.urgency } : {}),
+            ...(body.relationship ? { submitterRelationship: body.relationship } : {}),
+            ...(body.contactName ? { contact: { name: body.contactName, url: body.contactUrl || null } } : {}),
+            ...(hasProcess ? {
+              interviewProcess: {
+                ...(body.rounds ? { rounds: parseInt(body.rounds, 10) || body.rounds } : {}),
+                ...(roundTypes ? { roundTypes: roundTypes.split(',').map((s: string) => s.trim()).filter(Boolean) } : {}),
+                ...(body.timeline ? { timeline: body.timeline } : {}),
+                ...(body.assessmentType ? {
+                  hasAssessment: body.assessmentType !== 'none',
+                  ...(body.assessmentType !== 'none' ? { assessmentType: body.assessmentType } : {}),
+                } : {}),
+                source: body.relationship === 'work-here' ? 'recruiter' : 'community report',
+              },
+            } : {}),
+          }, null, 2),
+          '```',
           '',
           '---',
           `**Submitted by:** ${body.submitterName} (${body.submitterEmail})`,
-          '_Submitted via designjobs.cv_',
+          '_Submitted via designjobs.cv — scrape the Job URL for company, level, location, comp, and description._',
         ].join('\n');
         labels = ['job-submission'];
       }

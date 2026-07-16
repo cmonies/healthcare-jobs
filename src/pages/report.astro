@@ -93,7 +93,7 @@ import Footer from '../components/Footer.astro';
           <div>
             <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Round types (check all that apply)</label>
             <div class="grid sm:grid-cols-2 gap-1.5">
-              {['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive', 'reference check'].map(rt => (
+              {['recruiter screen', 'hiring manager', 'portfolio review', 'design exercise', 'take-home assessment', 'panel', 'executive screen', 'reference check'].map(rt => (
                 <label class="flex items-center gap-2 cursor-pointer py-1">
                   <input type="checkbox" name="process_roundTypes" value={rt} class="mt-0 rounded" />
                   <span class="text-sm text-slate-600 dark:text-slate-400">{rt}</span>

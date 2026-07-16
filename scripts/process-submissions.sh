@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # process-submissions.sh — Process job-submission GitHub issues nightly
-# Checks for open issues with "job-submission" label, scrapes the job URL,
-# extracts accurate data, adds to jobs.json, commits, and closes the issue.
+# Submissions are minimal (URL + title + insider info); this script verifies
+# the link, dedupes, and stages the job in jobs-staging.json with
+# _needsEnrichment for the validation pipeline to scrape (company, level,
+# location, comp, description) and promote into jobs.json.
 
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 JOBS_FILE="$REPO_DIR/src/data/jobs.json"
+STAGING_FILE="$REPO_DIR/src/data/jobs-staging.json"
 REPO="cmonies/healthcare-jobs"
 
 cd "$REPO_DIR"
@@ -23,7 +26,7 @@ if [ -z "$ISSUES" ]; then
   exit 0
 fi
 
-# Helper: extract a field from issue body using Python (macOS-compatible, no grep -P)
+# Helper: extract a **Field:** value from issue body (macOS-compatible, no grep -P)
 extract_field() {
   local body="$1"
   local field="$2"
@@ -36,6 +39,8 @@ print(m.group(1).strip() if m else '')
 "
 }
 
+STAGED_ANY=0
+
 echo "$ISSUES" | while read -r ISSUE_B64; do
   NUMBER=$(echo "$ISSUE_B64" | base64 -d | python3 -c "import json,sys; print(json.loads(sys.stdin.read())['number'])")
   TITLE=$(echo "$ISSUE_B64" | base64 -d | python3 -c "import json,sys; print(json.loads(sys.stdin.read())['title'])")
@@ -43,20 +48,8 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
 
   echo "Processing issue #$NUMBER: $TITLE"
 
-  # Extract fields using Python (macOS-compatible)
   JOB_URL=$(extract_field "$BODY" "Job URL")
-  COMPANY=$(extract_field "$BODY" "Company")
-  COMPANY_URL=$(extract_field "$BODY" "Company URL")
-  LEVEL=$(extract_field "$BODY" "Level")
-  LOCATION_TYPE=$(extract_field "$BODY" "Location Type")
-  EMPLOYMENT_TYPE=$(extract_field "$BODY" "Employment Type")
-  VERTICAL=$(extract_field "$BODY" "Vertical")
-  LOCATION=$(extract_field "$BODY" "Location")
-  TAGS=$(extract_field "$BODY" "Tags")
   JOB_TITLE_FROM_ISSUE=$(extract_field "$BODY" "Job Title")
-  # Defaults for older submissions that predate these fields
-  [ -z "$EMPLOYMENT_TYPE" ] && EMPLOYMENT_TYPE="Full-time"
-  [ -z "$VERTICAL" ] && VERTICAL="Other"
 
   if [ -z "$JOB_URL" ]; then
     echo "  No job URL found in issue #$NUMBER — skipping"
@@ -66,10 +59,20 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
 
   echo "  Job URL: $JOB_URL"
 
-  # Check if URL is already in jobs.json
-  if python3 -c "import json; data=json.load(open('$JOBS_FILE')); exit(0 if any(j['url']=='$JOB_URL' for j in data) else 1)" 2>/dev/null; then
-    echo "  URL already exists in jobs.json — closing as duplicate"
-    gh issue comment "$NUMBER" --repo "$REPO" --body "This job is already listed on the site! Closing as duplicate. Thanks for submitting though! 🙏"
+  # Duplicate check against live jobs and the staging queue
+  if JOBS_FILE="$JOBS_FILE" STAGING_FILE="$STAGING_FILE" JOB_URL="$JOB_URL" python3 - <<'PYEOF'
+import json, os, sys
+url = os.environ["JOB_URL"]
+live = json.load(open(os.environ["JOBS_FILE"]))
+try:
+    staged = json.load(open(os.environ["STAGING_FILE"]))
+except (FileNotFoundError, json.JSONDecodeError):
+    staged = []
+sys.exit(0 if any(j.get("url") == url for j in live + staged) else 1)
+PYEOF
+  then
+    echo "  URL already listed or staged — closing as duplicate"
+    gh issue comment "$NUMBER" --repo "$REPO" --body "This job is already listed (or queued for review)! Closing as duplicate. Thanks for submitting though! 🙏"
     gh issue close "$NUMBER" --repo "$REPO" --reason "not planned"
     continue
   fi
@@ -84,74 +87,55 @@ echo "$ISSUES" | while read -r ISSUE_B64; do
     continue
   fi
 
-  # Generate ID from title and company
-  JOB_ID=$(echo "${COMPANY}-${JOB_TITLE_FROM_ISSUE}" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
+  # Stage the submission: prefer the machine-readable JSON block, fall back to fields
+  STAGING_FILE="$STAGING_FILE" ISSUE_BODY="$BODY" ISSUE_NUMBER="$NUMBER" \
+  JOB_URL="$JOB_URL" JOB_TITLE="$JOB_TITLE_FROM_ISSUE" python3 - <<'PYEOF'
+import json, os, re
+from datetime import date
 
-  # Check for ID collision and make unique
-  if python3 -c "import json; data=json.load(open('$JOBS_FILE')); exit(0 if any(j['id']=='$JOB_ID' for j in data) else 1)" 2>/dev/null; then
-    JOB_ID="${JOB_ID}-$(date +%s | tail -c 5)"
-  fi
+staging_file = os.environ["STAGING_FILE"]
+body = os.environ["ISSUE_BODY"]
 
-  TODAY=$(date +%Y-%m-%d)
+entry = None
+m = re.search(r"```json\s*(\{.*?\})\s*```", body, re.S)
+if m:
+    try:
+        entry = json.loads(m.group(1))
+    except json.JSONDecodeError:
+        entry = None
 
-  # Format tags as JSON array
-  if [ -z "$TAGS" ] || [ "$TAGS" = "N/A" ]; then
-    TAGS_JSON="[]"
-  else
-    TAGS_JSON=$(echo "$TAGS" | python3 -c "import sys,json; print(json.dumps([t.strip() for t in sys.stdin.read().strip().split(',') if t.strip()]))")
-  fi
+if entry is None:
+    # Legacy / hand-written issue: minimal entry from fields
+    entry = {
+        "title": os.environ["JOB_TITLE"] or "Unknown role",
+        "url": os.environ["JOB_URL"],
+        "tags": [],
+        "_needsEnrichment": True,
+    }
 
-  # Add to jobs.json
-  JOBS_FILE="$JOBS_FILE" JOB_ID="$JOB_ID" JOB_TITLE="$JOB_TITLE_FROM_ISSUE" \
-  COMPANY="$COMPANY" COMPANY_URL="$COMPANY_URL" LEVEL="$LEVEL" \
-  LOCATION_TYPE="$LOCATION_TYPE" LOCATION="$LOCATION" JOB_URL="$JOB_URL" \
-  EMPLOYMENT_TYPE="$EMPLOYMENT_TYPE" VERTICAL="$VERTICAL" \
-  TODAY="$TODAY" TAGS_JSON="$TAGS_JSON" python3 - <<'PYEOF'
-import json, os
+entry["_needsEnrichment"] = True
+entry["_issueNumber"] = int(os.environ["ISSUE_NUMBER"])
+entry["_submittedAt"] = date.today().isoformat()
 
-jobs_file = os.environ["JOBS_FILE"]
-with open(jobs_file, "r") as f:
-    jobs = json.load(f)
+try:
+    staged = json.load(open(staging_file))
+except (FileNotFoundError, json.JSONDecodeError):
+    staged = []
 
-new_job = {
-    "id": os.environ["JOB_ID"],
-    "title": os.environ["JOB_TITLE"],
-    "company": os.environ["COMPANY"],
-    "companyUrl": os.environ["COMPANY_URL"],
-    "level": os.environ["LEVEL"],
-    "locationType": os.environ["LOCATION_TYPE"],
-    "location": os.environ["LOCATION"],
-    "url": os.environ["JOB_URL"],
-    "postedAt": os.environ["TODAY"],
-    "employmentType": os.environ["EMPLOYMENT_TYPE"],
-    "vertical": os.environ["VERTICAL"],
-    "tags": json.loads(os.environ["TAGS_JSON"]),
-}
-
-# Add at the beginning (newest first)
-jobs.insert(0, new_job)
-
-with open(jobs_file, "w") as f:
-    json.dump(jobs, f, indent=2)
+staged.append(entry)
+with open(staging_file, "w") as f:
+    json.dump(staged, f, indent=2)
     f.write("\n")
 
-print(f"  Added: {new_job['title']} at {new_job['company']}")
+print(f"  Staged: {entry.get('title')} ({entry.get('url')})")
 PYEOF
 
-  # Commit and push
-  git add "$JOBS_FILE"
-  git commit -m "Add: ${JOB_TITLE_FROM_ISSUE} at ${COMPANY} (issue #${NUMBER})"
+  git add "$STAGING_FILE"
+  git commit -m "Stage submission: ${JOB_TITLE_FROM_ISSUE:-$TITLE} (issue #${NUMBER})"
 
-  # Close the issue with confirmation
-  gh issue comment "$NUMBER" --repo "$REPO" --body "✅ Added to the site! Thanks for the submission 🎉
+  gh issue comment "$NUMBER" --repo "$REPO" --body "✅ Verified the link and queued this for review! We'll pull the full details from the posting and publish after validation — usually within a day.
 
-**Listed as:**
-- **Title:** $JOB_TITLE_FROM_ISSUE
-- **Company:** $COMPANY
-- **Level:** $LEVEL
-- **Location:** $LOCATION ($LOCATION_TYPE)
-
-The job should appear on [health.designjobs.cv](https://health.designjobs.cv) after the next deploy."
+The job will appear on [designjobs.cv](https://designjobs.cv/jobs) once it clears the validator."
   gh issue close "$NUMBER" --repo "$REPO"
 
   echo "  Done processing issue #$NUMBER"
