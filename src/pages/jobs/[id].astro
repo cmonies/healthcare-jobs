@@ -32,6 +32,7 @@ const roleLabel: Record<string, string> = {
   'recruiter': 'Recruiter',
   'design-leader': 'Design lead',
 };
+const sentence = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const salaryDisplay = salary || details?.salaryText || null;
 
 const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
@@ -46,10 +47,6 @@ const atsDomain = (() => {
   try { return new URL(url).hostname.replace('www.', ''); }
   catch { return 'company careers page'; }
 })();
-
-const postedFormatted = postedAt
-  ? new Date(postedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-  : null;
 
 const daysAgo = postedAt
   ? Math.floor((Date.now() - new Date(postedAt + 'T12:00:00').getTime()) / 86400000)
@@ -114,14 +111,6 @@ const breadcrumbSchema = {
   ],
 };
 
-const facts: Array<{ label: string; value: string }> = [
-  { label: 'Level', value: level },
-  { label: 'Type', value: employmentType },
-  { label: 'Location', value: locationStr },
-  ...(vertical ? [{ label: 'Vertical', value: vertical }] : []),
-  ...(salaryDisplay ? [{ label: 'Comp', value: salaryDisplay }] : []),
-  ...(postedFormatted ? [{ label: 'Posted', value: postedFormatted }] : []),
-];
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -131,7 +120,7 @@ const facts: Array<{ label: string; value: string }> = [
     <script type="application/ld+json" set:html={JSON.stringify(jobPostingSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-    <div class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-8 pb-2">
+    <div class="w-full max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-0">
       <nav aria-label="Breadcrumb">
         <a href="/jobs" class="inline-flex items-center gap-1.5 text-sm text-muted dark:text-slate-400 hover:text-ink dark:hover:text-white transition-colors">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -166,6 +155,7 @@ const facts: Array<{ label: string; value: string }> = [
             <span>{level}</span>
             <span>{employmentType}</span>
             <span>{locationStr}</span>
+            {vertical && <span>{vertical}</span>}
             {freshnessLabel && (
               <span class:list={[
                 isVeryStale ? 'text-amber-500 dark:text-amber-400' :
@@ -176,6 +166,20 @@ const facts: Array<{ label: string; value: string }> = [
               </span>
             )}
           </div>
+
+          {salaryDisplay && (
+            <p class="font-mono text-sm text-ink-soft dark:text-slate-300 mt-3">{salaryDisplay}</p>
+          )}
+
+          {tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-5">
+              {tags.map(tag => (
+                <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
+                  {sentence(tag)}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         <div class="shrink-0 flex flex-col md:items-end gap-2">
@@ -211,18 +215,6 @@ const facts: Array<{ label: string; value: string }> = [
 
         <!-- Main column: the role itself -->
         <article class="min-w-0">
-          <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-5">About the role</h2>
-
-          {tags.length > 0 && (
-            <div class="flex flex-wrap gap-2 mb-7">
-              {tags.map(tag => (
-                <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-
           {details ? (
             <>
               <div class="job-desc" set:html={details.descriptionHtml} />
@@ -250,7 +242,7 @@ const facts: Array<{ label: string; value: string }> = [
             </a>
             <a
               href={reportUrl}
-              class="flex lg:hidden w-fit mt-8 items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
+              class="flex w-fit mt-8 items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                 <path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
@@ -262,12 +254,18 @@ const facts: Array<{ label: string; value: string }> = [
 
         <!-- Right rail on desktop; collapsible sections above the description on mobile -->
         <aside class="-order-1 lg:order-none lg:pt-1">
-          <div class="lg:sticky lg:top-24 lg:space-y-10 border-y lg:border-y-0 border-line dark:border-slate-700/50 divide-y lg:divide-y-0 divide-line dark:divide-slate-700/50">
+          <div class="lg:sticky lg:top-24 border-y lg:border-y-0 border-line dark:border-slate-700/50 divide-y divide-line dark:divide-slate-700/50">
 
             {contacts.length > 0 && (
               <details class="rail-section group" open data-default-open>
                 <summary class="rail-summary">
-                  <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
+                  <span class="flex items-center gap-1.5">
+                    <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
+                    <span class="rail-tip" tabindex="0" role="note" aria-label="Our best guess from public profiles — they look involved in hiring, but we could be wrong.">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                      <span class="tip-body">Our best guess from public profiles — they look involved in hiring, but we could be wrong.</span>
+                    </span>
+                  </span>
                   <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
                 <div class="rail-content">
@@ -296,69 +294,79 @@ const facts: Array<{ label: string; value: string }> = [
                     </li>
                   ))}
                 </ul>
-                <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-3 leading-snug">
-                  Best guess from public profiles — likely involved in hiring, but not confirmed by {company}.
-                </p>
                 </div>
               </details>
             )}
 
-            <details class="rail-section group" open>
+            <details class="rail-section group" open {...(contacts.length === 0 ? { 'data-default-open': true } : {})}>
               <summary class="rail-summary">
-                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Interview process</h2>
+                <span class="flex items-center gap-1.5">
+                  <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Interview process</h2>
+                  {interviewProcess && (
+                    <span class="rail-tip" tabindex="0" role="note" aria-label="Gathered from community reports of past interviews — processes change and details may be off.">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                      <span class="tip-body">Gathered from community reports of past interviews — processes change and details may be off.</span>
+                    </span>
+                  )}
+                </span>
                 <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </summary>
               <div class="rail-content">
               {interviewProcess ? (
-                <div class="space-y-3">
-                  {interviewProcess.rounds && (
-                    <div class="flex items-start gap-3">
-                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Rounds</span>
-                      <div>
-                        <span class="text-sm text-ink dark:text-slate-100">{interviewProcess.rounds} rounds</span>
-                        {interviewProcess.roundTypes && interviewProcess.roundTypes.length > 0 && (
-                          <div class="flex flex-wrap gap-1.5 mt-1.5">
-                            {interviewProcess.roundTypes.map((rt: string) => (
-                              <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-ink-soft dark:text-slate-300 font-mono">{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                <div>
+                  {(interviewProcess.rounds || interviewProcess.timeline) && (
+                    <p class="text-sm font-medium text-ink dark:text-slate-100 mb-4">
+                      {interviewProcess.rounds && interviewProcess.timeline
+                        ? `${interviewProcess.rounds} rounds over ${interviewProcess.timeline}`
+                        : interviewProcess.rounds
+                        ? `${interviewProcess.rounds} rounds`
+                        : `Typically ${interviewProcess.timeline}`}
+                    </p>
                   )}
-                  {interviewProcess.hasAssessment !== undefined && (
-                    <div class="flex items-start gap-3">
-                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Take-home</span>
-                      <span class="text-sm text-ink dark:text-slate-100">
-                        {interviewProcess.hasAssessment
-                          ? (interviewProcess.assessmentType ? interviewProcess.assessmentType.charAt(0).toUpperCase() + interviewProcess.assessmentType.slice(1) : 'Yes')
-                          : 'None reported'}
-                      </span>
-                    </div>
+
+                  {interviewProcess.roundTypes && interviewProcess.roundTypes.length > 0 && (
+                    <ol>
+                      {interviewProcess.roundTypes.map((rt: string, i: number) => (
+                        <li class="relative flex items-center gap-3 pb-3.5 last:pb-0">
+                          {i < interviewProcess.roundTypes.length - 1 && (
+                            <span class="absolute left-[9px] top-[21px] bottom-0.5 w-px bg-line dark:bg-slate-700/60" aria-hidden="true"></span>
+                          )}
+                          <span class="w-[19px] h-[19px] shrink-0 rounded-full border border-line dark:border-slate-700 bg-paper dark:bg-transparent font-mono text-[10px] text-muted dark:text-slate-400 inline-flex items-center justify-center leading-none">{i + 1}</span>
+                          <span class="text-sm text-ink dark:text-slate-100">{sentence(rt)}</span>
+                        </li>
+                      ))}
+                    </ol>
                   )}
-                  {interviewProcess.timeline && (
-                    <div class="flex items-start gap-3">
-                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Timeline</span>
-                      <span class="text-sm text-ink dark:text-slate-100">{interviewProcess.timeline}</span>
-                    </div>
+
+                  {(interviewProcess.hasAssessment !== undefined || typeof interviewProcess.gotFeedback === 'boolean') && (
+                    <ul class="mt-5 space-y-2">
+                      {interviewProcess.hasAssessment !== undefined && (
+                        <li class="flex items-center gap-2 text-sm text-ink-soft dark:text-slate-300">
+                          <svg class="shrink-0 text-muted dark:text-slate-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                          {interviewProcess.hasAssessment
+                            ? sentence(interviewProcess.assessmentType || 'take-home exercise')
+                            : 'No take-home reported'}
+                        </li>
+                      )}
+                      {typeof interviewProcess.gotFeedback === 'boolean' && (
+                        <li class:list={["flex items-center gap-2 text-sm", interviewProcess.gotFeedback ? 'text-ink-soft dark:text-slate-300' : 'text-amber-600 dark:text-amber-400']}>
+                          {interviewProcess.gotFeedback ? (
+                            <svg class="shrink-0 text-muted dark:text-slate-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="m9 11 2 2 4-4"/></svg>
+                          ) : (
+                            <svg class="shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8Z"/></svg>
+                          )}
+                          {interviewProcess.gotFeedback ? 'Candidates hear back either way' : 'Ghosting reported'}
+                        </li>
+                      )}
+                    </ul>
                   )}
-                  {typeof interviewProcess.gotFeedback === 'boolean' && (
-                    <div class="flex items-start gap-3">
-                      <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5 w-20 shrink-0">Heard back</span>
-                      <span class:list={["text-sm", interviewProcess.gotFeedback ? 'text-ink dark:text-slate-100' : 'text-amber-600 dark:text-amber-400']}>
-                        {interviewProcess.gotFeedback ? 'Yes — they responded either way' : 'Ghosting reported'}
-                      </span>
-                    </div>
-                  )}
-                  {interviewProcess.source && (
-                    <p class="text-xs text-slate-400 dark:text-slate-500 pt-1">Source: {interviewProcess.source}</p>
-                  )}
+
                   <button
                     type="button"
                     data-open-process-modal
-                    class="inline-block mt-1 text-xs font-mono uppercase tracking-[0.1em] text-muted dark:text-slate-400 hover:text-ink dark:hover:text-slate-200 hover:underline underline-offset-2 transition-colors"
+                    class="inline-flex items-center justify-center mt-5 px-4 py-1.5 rounded-full border border-ink/25 dark:border-slate-600 text-[13px] font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors"
                   >
-                    Add or correct details →
+                    Add or correct details
                   </button>
                 </div>
               ) : (
@@ -377,35 +385,6 @@ const facts: Array<{ label: string; value: string }> = [
               )}
               </div>
             </details>
-
-            <details class="rail-section group" open {...(contacts.length === 0 ? { 'data-default-open': true } : {})}>
-              <summary class="rail-summary">
-                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">At a glance</h2>
-                <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="rail-content">
-              <dl class="space-y-2.5">
-                {facts.map(f => (
-                  <div class="flex items-baseline justify-between gap-4">
-                    <dt class="font-mono text-[11px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 shrink-0">{f.label}</dt>
-                    <dd class="text-sm text-ink dark:text-slate-100 text-right">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              </div>
-            </details>
-
-            <div class="hidden lg:block pt-2 border-t border-line dark:border-slate-700/50">
-              <a
-                href={reportUrl}
-                class="inline-flex items-center gap-1.5 pt-4 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                  <path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-                </svg>
-                Looks like this job is closed? Flag it.
-              </a>
-            </div>
 
           </div>
         </aside>
@@ -456,6 +435,47 @@ const facts: Array<{ label: string; value: string }> = [
     .rail-summary { padding: 0; margin-bottom: 1rem; cursor: default; pointer-events: none; }
     .rail-chevron { display: none; }
     .rail-content { padding-bottom: 0; }
+    .rail-summary .rail-tip { pointer-events: auto; }
+    .rail-section { padding: 1.75rem 0; }
+    .rail-section:first-child { padding-top: 0; }
+  }
+
+  /* Info-icon tooltips in rail section headers */
+  .rail-tip {
+    position: relative;
+    display: inline-flex;
+    color: #A8A69E;
+    cursor: help;
+    outline: none;
+  }
+  .rail-tip:hover, .rail-tip:focus-visible { color: #706F6A; }
+  :root.dark .rail-tip { color: #64748B; }
+  :root.dark .rail-tip:hover, :root.dark .rail-tip:focus-visible { color: #94A3B8; }
+  .rail-tip .tip-body {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.6rem;
+    background: #1A1917;
+    color: #F2F1EC;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+    z-index: 40;
+  }
+  :root.dark .rail-tip .tip-body { background: #EDEBE4; color: #1A1917; }
+  .rail-tip:hover .tip-body, .rail-tip:focus-visible .tip-body { opacity: 1; }
+  @media (min-width: 1024px) {
+    .rail-tip .tip-body { left: auto; right: -10px; transform: none; }
   }
 
   /* Scraped ATS description — typographic defaults for whitelisted tags only */

@@ -45,7 +45,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
           <div>
             <label for="pm-rounds" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Rounds</label>
             <select id="pm-rounds" name="rounds" class="pm-input">
-              <option value="">Unknown</option>
+              <option value="" disabled selected>Select</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -56,7 +56,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
           <div>
             <label for="pm-timeline" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Total timeline</label>
             <select id="pm-timeline" name="timeline" class="pm-input">
-              <option value="">Unknown</option>
+              <option value="" disabled selected>Select</option>
               <option value="under 1 week">Under 1 week</option>
               <option value="1-2 weeks">1–2 weeks</option>
               <option value="2-4 weeks">2–4 weeks</option>
@@ -67,12 +67,12 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
         </div>
 
         <fieldset>
-          <legend class="font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-2">Round types — pick all that apply</legend>
+          <legend class="font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-2">Round types — tap in the order they happened</legend>
           <div class="flex flex-wrap gap-1.5">
             {ROUND_TYPES.map(rt => (
               <label class="pm-pill">
                 <input type="checkbox" name="roundTypes" value={rt} class="sr-only" />
-                <span>{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
+                <span><b class="pm-ord" aria-hidden="true"></b>{rt.charAt(0).toUpperCase() + rt.slice(1)}</span>
               </label>
             ))}
           </div>
@@ -93,7 +93,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
         <div id="pm-assessment-type" class="hidden">
           <label for="pm-atype" class="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted dark:text-slate-500 mb-1.5">Paid, unpaid, or timed?</label>
           <select id="pm-atype" name="assessmentType" class="pm-input">
-            <option value="">Unknown</option>
+            <option value="" disabled selected>Select</option>
             <option value="paid take-home">Paid take-home</option>
             <option value="unpaid take-home">Unpaid take-home</option>
             <option value="timed exercise">Timed exercise (live)</option>
@@ -226,6 +226,8 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
     border-color: #1A1917;
     color: #F2F1EC;
   }
+  .pm-pill .pm-ord { font-weight: 700; margin-right: 0.35rem; }
+  .pm-pill .pm-ord:empty { display: none; }
   .pm-pill input:focus-visible + span {
     outline: 2px solid #1A1917;
     outline-offset: 2px;
@@ -291,6 +293,21 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
   const notesCount = document.getElementById('pm-notes-count');
   notesEl.addEventListener('input', () => { notesCount.textContent = String(notesEl.value.length); });
 
+  // Round types are ordered by tap sequence — the badge shows each pill's
+  // position, and the payload preserves that order.
+  const roundOrder = [];
+  const roundInputs = [...form.querySelectorAll('input[name="roundTypes"]')];
+  roundInputs.forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) roundOrder.push(cb.value);
+      else roundOrder.splice(roundOrder.indexOf(cb.value), 1);
+      roundInputs.forEach(c => {
+        const i = roundOrder.indexOf(c.value);
+        c.nextElementSibling.querySelector('.pm-ord').textContent = i >= 0 ? String(i + 1) : '';
+      });
+    });
+  });
+
   // Take-home = yes reveals the paid/unpaid/timed follow-up
   const atypeWrap = document.getElementById('pm-assessment-type');
   form.querySelectorAll('input[name="hasAssessment"]').forEach(r => {
@@ -313,7 +330,7 @@ const TURNSTILE_SITEKEY = '0x4AAAAAACckLBTY6z74gBae';
       company: data.get('company') || '',
       jobTitle: data.get('jobTitle') || '',
       rounds: data.get('rounds') || '',
-      roundTypes: data.getAll('roundTypes').join(', '),
+      roundTypes: roundOrder.join(', '),
       timeline: data.get('timeline') || '',
       hasAssessment: data.get('hasAssessment') || '',
       assessmentType: data.get('hasAssessment') === 'yes' ? (data.get('assessmentType') || '') : '',
