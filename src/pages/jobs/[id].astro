@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import ProcessModal from '../../components/ProcessModal.astro';
 import jobs from '../../data/jobs.json';
 import jobDetails from '../../data/job-details.json';
+import jobContacts from '../../data/job-contacts.json';
 
 export function getStaticPaths() {
   return jobs
@@ -23,6 +24,14 @@ const {
 } = job;
 
 const details = (jobDetails as Record<string, { descriptionHtml: string; salaryText: string | null; source: string; fetchedAt: string }>)[id] ?? null;
+
+type Contact = { name: string; title: string; linkedinUrl: string; role: string; source: string; verifiedAt: string };
+const contacts = ((jobContacts as Record<string, Contact[]>)[id] ?? []).slice(0, 3);
+const roleLabel: Record<string, string> = {
+  'founder': 'Founder',
+  'recruiter': 'Recruiter',
+  'design-leader': 'Design lead',
+};
 const salaryDisplay = salary || details?.salaryText || null;
 
 const isContract = employmentType === 'Contract' || employmentType === 'Freelance';
@@ -263,6 +272,40 @@ const facts: Array<{ label: string; value: string }> = [
                     </span>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {contacts.length > 0 && (
+              <div>
+                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">Who to contact</h2>
+                <ul class="space-y-3">
+                  {contacts.map(c => (
+                    <li>
+                      <a
+                        href={c.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex items-start justify-between gap-3"
+                      >
+                        <span class="min-w-0">
+                          <span class="block text-sm text-ink dark:text-slate-100 group-hover:underline underline-offset-2">{c.name}</span>
+                          {c.title && c.title.toLowerCase() !== (roleLabel[c.role] || '').toLowerCase() && (
+                            <span class="block text-xs text-muted dark:text-slate-400 leading-snug mt-0.5 line-clamp-2">{c.title}</span>
+                          )}
+                        </span>
+                        <span class="shrink-0 inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.1em] text-muted dark:text-slate-500 mt-0.5">
+                          {roleLabel[c.role] || c.role}
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-3 leading-snug">
+                  Best guess from public profiles — likely involved in hiring, but not confirmed by {company}.
+                </p>
               </div>
             )}
 
