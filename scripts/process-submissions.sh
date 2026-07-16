@@ -10,7 +10,7 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 JOBS_FILE="$REPO_DIR/src/data/jobs.json"
 STAGING_FILE="$REPO_DIR/src/data/jobs-staging.json"
-REPO="cmonies/healthcare-jobs"
+REPO="cmonies/design-jobs-cv"
 
 cd "$REPO_DIR"
 

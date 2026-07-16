@@ -58,7 +58,7 @@ Been through a company's interview loop? Use **"Share what I know"** on any job 
 
 ### 🐛 Report a Bug
 
-Use the **Feedback** link on the site, or [open an issue](https://github.com/cmonies/healthcare-jobs/issues/new) with:
+Use the **Feedback** link on the site, or [open an issue](https://github.com/cmonies/design-jobs-cv/issues/new) with:
 - What you expected to happen
 - What actually happened
 - Browser/device info if relevant
@@ -66,7 +66,7 @@ Use the **Feedback** link on the site, or [open an issue](https://github.com/cmo
 
 ### 💡 Suggest a Feature
 
-[Open an issue](https://github.com/cmonies/healthcare-jobs/issues/new) with the `enhancement` label. Describe the problem you're trying to solve and your proposed solution.
+[Open an issue](https://github.com/cmonies/design-jobs-cv/issues/new) with the `enhancement` label. Describe the problem you're trying to solve and your proposed solution.
 
 ### 🛠️ Submit Code Changes
 
@@ -80,8 +80,8 @@ Use the **Feedback** link on the site, or [open an issue](https://github.com/cmo
 **Development setup:**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/healthcare-jobs.git
-cd healthcare-jobs
+git clone https://github.com/YOUR-USERNAME/design-jobs-cv.git
+cd design-jobs-cv
 npm install
 npm run dev
 ```
@@ -101,7 +101,7 @@ All contributions are reviewed by a maintainer before merging. We aim to review 
 
 ## Questions?
 
-Drop a message in [Slack](https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q) or [open an issue](https://github.com/cmonies/healthcare-jobs/issues/new) — we're happy to help.
+Drop a message in [Slack](https://join.slack.com/t/designjobs-healthcare/shared_invite/zt-3qc39yhhw-ssTCfSUEXoLHvVVXTYwS_Q) or [open an issue](https://github.com/cmonies/design-jobs-cv/issues/new) — we're happy to help.
 
 ---
 

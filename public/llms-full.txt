@@ -23,7 +23,7 @@ ATS (Greenhouse, Lever, Ashby, Workday, Gem, etc.) before publication.
 - Individual job pages at /jobs/{id} with full Schema.org JobPosting markup
 - Sitemap at /sitemap.xml includes all job pages
 - RSS feed at /rss.xml with pub dates
-- Source: https://github.com/cmonies/healthcare-jobs
+- Source: https://github.com/cmonies/design-jobs-cv
 
 ## Data Schema (per job)
 

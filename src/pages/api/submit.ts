@@ -70,7 +70,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
   const KV = runtime.SUBMISSIONS_KV as KVNamespace | undefined;
   const TURNSTILE_SECRET = runtime.TURNSTILE_SECRET_KEY || import.meta.env.TURNSTILE_SECRET_KEY || '';
   const GITHUB_TOKEN = runtime.GITHUB_TOKEN || import.meta.env.GITHUB_TOKEN || '';
-  const GITHUB_REPO = runtime.GITHUB_REPO || import.meta.env.GITHUB_REPO || 'cmonies/healthcare-jobs';
+  const GITHUB_REPO = runtime.GITHUB_REPO || import.meta.env.GITHUB_REPO || 'cmonies/design-jobs-cv';
 
   try {
     const body = await request.json() as Record<string, string>;

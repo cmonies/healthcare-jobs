@@ -33,8 +33,8 @@ A free, open-source job board for **designers** — product design, UX, research
 
 ```bash
 # Clone the repo
-git clone https://github.com/cmonies/healthcare-jobs.git
-cd healthcare-jobs
+git clone https://github.com/cmonies/design-jobs-cv.git
+cd design-jobs-cv
 
 # Install dependencies
 npm install
@@ -95,7 +95,7 @@ For the submission API to work, set these in your hosting provider:
 |----------|-------------|
 | `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key |
 | `GITHUB_TOKEN` | GitHub fine-grained token (Issues read/write) |
-| `GITHUB_REPO` | Repository for issue creation (e.g. `cmonies/healthcare-jobs`) |
+| `GITHUB_REPO` | Repository for issue creation (e.g. `cmonies/design-jobs-cv`) |
 
 ## License
 

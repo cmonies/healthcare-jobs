@@ -7,7 +7,7 @@ No ghost jobs. No LinkedIn walls. No recruiter spam. Open source, free forever.
 ## About
 
 - Website: https://designjobs.cv
-- Source: https://github.com/cmonies/healthcare-jobs
+- Source: https://github.com/cmonies/design-jobs-cv
 - License: Open source, community-driven
 
 ## Coverage
