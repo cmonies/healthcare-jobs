@@ -240,18 +240,28 @@ const facts: Array<{ label: string; value: string }> = [
                 <path d="M7 17L17 7" /><path d="M7 7h10v10" />
               </svg>
             </a>
-            <p class="mt-3 text-xs text-slate-400 dark:text-slate-500">
-              Opens {company}'s official listing on {atsDomain}. All links on designjobs.cv are verified against the company's real ATS.
-            </p>
+            <a
+              href={reportUrl}
+              class="flex lg:hidden w-fit mt-8 items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              Looks like this job is closed? Flag it.
+            </a>
           </div>
         </article>
 
-        <!-- Right rail: facts, tags, interview process, flag -->
-        <aside class="lg:pt-1">
-          <div class="lg:sticky lg:top-24 space-y-10">
+        <!-- Right rail on desktop; collapsible sections above the description on mobile -->
+        <aside class="-order-1 lg:order-none lg:pt-1">
+          <div class="lg:sticky lg:top-24 lg:space-y-10 border-y lg:border-y-0 border-line dark:border-slate-700/50 divide-y lg:divide-y-0 divide-line dark:divide-slate-700/50">
 
-            <div>
-              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">At a glance</h2>
+            <details class="rail-section group" open data-default-open>
+              <summary class="rail-summary">
+                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">At a glance</h2>
+                <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="rail-content">
               <dl class="space-y-2.5">
                 {facts.map(f => (
                   <div class="flex items-baseline justify-between gap-4">
@@ -260,24 +270,32 @@ const facts: Array<{ label: string; value: string }> = [
                   </div>
                 ))}
               </dl>
-            </div>
+              </div>
+            </details>
 
             {tags.length > 0 && (
-              <div>
-                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-3">Focus</h2>
-                <div class="flex flex-wrap gap-2">
+              <details class="rail-section group" open>
+                <summary class="rail-summary">
+                  <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Focus</h2>
+                  <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="rail-content flex flex-wrap gap-2">
                   {tags.map(tag => (
                     <span class="px-3 py-1 rounded-full border border-line dark:border-slate-700 text-xs text-ink-soft dark:text-slate-300 font-mono">
                       {tag}
                     </span>
                   ))}
                 </div>
-              </div>
+              </details>
             )}
 
             {contacts.length > 0 && (
-              <div>
-                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">Who to contact</h2>
+              <details class="rail-section group" open>
+                <summary class="rail-summary">
+                  <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Who to contact</h2>
+                  <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="rail-content">
                 <ul class="space-y-3">
                   {contacts.map(c => (
                     <li>
@@ -306,11 +324,16 @@ const facts: Array<{ label: string; value: string }> = [
                 <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-3 leading-snug">
                   Best guess from public profiles — likely involved in hiring, but not confirmed by {company}.
                 </p>
-              </div>
+                </div>
+              </details>
             )}
 
-            <div>
-              <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500 mb-4">Interview process</h2>
+            <details class="rail-section group" open>
+              <summary class="rail-summary">
+                <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted dark:text-slate-500">Interview process</h2>
+                <svg class="rail-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="rail-content">
               {interviewProcess ? (
                 <div class="space-y-3">
                   {interviewProcess.rounds && (
@@ -363,15 +386,16 @@ const facts: Array<{ label: string; value: string }> = [
                   <button
                     type="button"
                     data-open-process-modal
-                    class="inline-block mt-2.5 text-xs font-mono uppercase tracking-[0.1em] text-ink dark:text-slate-300 hover:underline underline-offset-2 transition-colors"
+                    class="inline-flex items-center justify-center mt-4 px-5 py-2.5 rounded-full border border-ink/25 dark:border-slate-600 text-sm font-semibold text-ink dark:text-slate-200 hover:border-ink dark:hover:border-slate-300 hover:bg-ink/[0.03] dark:hover:bg-white/[0.04] transition-colors"
                   >
-                    Share what I know →
+                    Share what I know
                   </button>
                 </div>
               )}
-            </div>
+              </div>
+            </details>
 
-            <div class="pt-2 border-t border-line dark:border-slate-700/50">
+            <div class="hidden lg:block pt-2 border-t border-line dark:border-slate-700/50">
               <a
                 href={reportUrl}
                 class="inline-flex items-center gap-1.5 pt-4 text-xs text-slate-400 dark:text-slate-500 hover:text-ink dark:hover:text-slate-300 transition-colors"
@@ -395,7 +419,45 @@ const facts: Array<{ label: string; value: string }> = [
   <Footer />
 </Layout>
 
+<script>
+  // Rail sections: open panel on desktop, accordions on mobile.
+  // SSR renders everything open (desktop-first, no-JS safe); on mobile we
+  // collapse all but the data-default-open section.
+  const railSections = document.querySelectorAll('details.rail-section');
+  const railMq = window.matchMedia('(min-width: 1024px)');
+  const applyRailState = () => {
+    railSections.forEach(d => {
+      (d as HTMLDetailsElement).open = railMq.matches || d.hasAttribute('data-default-open');
+    });
+  };
+  applyRailState();
+  railMq.addEventListener('change', applyRailState);
+</script>
+
 <style is:global>
+  /* Rail sections — static headings on desktop, accordions on mobile */
+  .rail-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    list-style: none;
+    cursor: pointer;
+    padding: 0.9rem 0;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .rail-summary::-webkit-details-marker { display: none; }
+  .rail-chevron { color: #706F6A; transition: transform 0.15s ease; flex-shrink: 0; }
+  :root.dark .rail-chevron { color: #64748B; }
+  details[open] > .rail-summary .rail-chevron { transform: rotate(180deg); }
+  .rail-content { padding-bottom: 1.25rem; }
+  @media (min-width: 1024px) {
+    .rail-summary { padding: 0; margin-bottom: 1rem; cursor: default; pointer-events: none; }
+    .rail-chevron { display: none; }
+    .rail-content { padding-bottom: 0; }
+  }
+
   /* Scraped ATS description — typographic defaults for whitelisted tags only */
   .job-desc {
     font-size: 15px;
