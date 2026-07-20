@@ -214,8 +214,10 @@ function handlerFor(url) {
 
 // ---------- main ----------
 
-const only = process.argv.includes('--only') ? process.argv[process.argv.indexOf('--only') + 1] : null;
-const jobs = JSON.parse(readFileSync(JOBS_PATH, 'utf8')).filter(j => j.id && j.url && (!only || j.id === only));
+// --only takes one id or a comma-separated list. Pass ALL ids in one invocation —
+// concurrent --only processes race on the read-merge-write of job-details.json.
+const only = process.argv.includes('--only') ? new Set(process.argv[process.argv.indexOf('--only') + 1].split(',')) : null;
+const jobs = JSON.parse(readFileSync(JOBS_PATH, 'utf8')).filter(j => j.id && j.url && (!only || only.has(j.id)));
 
 let existing = {};
 try { existing = JSON.parse(readFileSync(OUT_PATH, 'utf8')); } catch { /* first run */ }
