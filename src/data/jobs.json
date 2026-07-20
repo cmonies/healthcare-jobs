@@ -1,7 +1,7 @@
 [
   {
     "id": "everlywell-visual-senior-product-designer-contract",
-    "title": "Visual Senior Product Designer (Contract)",
+    "title": "Visual Senior Product Designer (Remote/Contract)",
     "company": "Everlywell",
     "companyUrl": "https://www.everlywell.com",
     "url": "https://jobs.lever.co/everlywell/7b7ac528-ec42-4480-b1fd-11ded686380e",
@@ -23,7 +23,7 @@
   },
   {
     "id": "samsara-senior-product-designer-ai-agentic-workflows-contract",
-    "title": "Senior Product Designer - AI / Agentic Workflows (Contract)",
+    "title": "Senior Product Designer - AI / Agentic Workflows @ Samsara (Remote, Contract)",
     "company": "Samsara",
     "companyUrl": "https://www.samsara.com",
     "url": "https://jobs.lever.co/Academy/0b68460b-280f-41d1-aeb2-b7e2d0c234b1",
@@ -108,7 +108,8 @@
       "fundraising"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/givebutter/ea7b5e5d-972e-4f8a-a9d9-71542d60177e",
-    "_verifiedAt": "2026-07-18"
+    "_verifiedAt": "2026-07-18",
+    "salary": "$200,000 - $225,000"
   },
   {
     "id": "sekai-founding-product-designer",
@@ -140,11 +141,11 @@
     "companyUrl": "https://www.sleeper.com",
     "url": "https://jobs.ashbyhq.com/sleeper/4ddc246a-aaaa-4cb2-a8c9-54bb24c34021",
     "level": "Mid",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA / Seattle, WA (Hybrid)",
     "postedAt": "2026-07-16",
     "vertical": "Consumer",
-    "employmentType": "Contract",
+    "employmentType": "Full-time",
     "tags": [
       "mobile",
       "iOS",
@@ -163,7 +164,7 @@
     "companyUrl": "https://www.notion.com",
     "url": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA / New York, NY (Hybrid)",
     "postedAt": "2026-07-16",
     "vertical": "Enterprise/SaaS",
@@ -199,7 +200,8 @@
       "YC W24"
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
-    "_verifiedAt": "2026-07-16"
+    "_verifiedAt": "2026-07-16",
+    "salary": "$150,000 - $219,995"
   },
   {
     "id": "nex-product-designer-contract",
@@ -277,11 +279,11 @@
     "companyUrl": "https://sleeper.com",
     "url": "https://jobs.ashbyhq.com/sleeper/71eca74a-98e7-449c-936e-8aadbf723673",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA / Seattle, WA",
     "postedAt": "2026-07-14",
     "vertical": "Consumer",
-    "employmentType": "Contract",
+    "employmentType": "Full-time",
     "salary": "$90,000 - $125,000 (FTE conversion)",
     "tags": [
       "sports",
@@ -302,12 +304,12 @@
     "companyUrl": "https://branchlab.com",
     "url": "https://jobs.ashbyhq.com/BranchLab/bf367c84-6420-439a-b3b9-aaaa9804ff09",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "Boulder, CO",
     "postedAt": "2026-07-14",
     "vertical": "Healthcare",
     "employmentType": "Full-time",
-    "salary": "$125,000 - $150,000",
+    "salary": "$150,000 - $170,000",
     "tags": [
       "healthcare AI",
       "pharma",
@@ -403,7 +405,8 @@
       "consumer AI"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/suno",
-    "_verifiedAt": "2026-07-13"
+    "_verifiedAt": "2026-07-13",
+    "salary": "$200,000 - $250,000"
   },
   {
     "id": "suno-senior-staff-design-engineer-ios",
@@ -424,7 +427,8 @@
       "Swift"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/suno",
-    "_verifiedAt": "2026-07-13"
+    "_verifiedAt": "2026-07-13",
+    "salary": "$220,000 - $280,000"
   },
   {
     "id": "ramp-product-designer",
@@ -445,7 +449,8 @@
       "B2B SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/ramp",
-    "_verifiedAt": "2026-07-13"
+    "_verifiedAt": "2026-07-13",
+    "salary": "$172,000 - $440,000"
   },
   {
     "id": "tomo-product-designer",
@@ -653,7 +658,8 @@
       "B2B SaaS"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/bubble",
-    "_verifiedAt": "2026-07-13"
+    "_verifiedAt": "2026-07-13",
+    "salary": "$162,000 - $209,000"
   },
   {
     "id": "n8n-senior-staff-product-designer",
@@ -776,20 +782,21 @@
       "B2B SaaS"
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=product%20designer%20startup",
-    "_verifiedAt": "2026-07-13"
+    "_verifiedAt": "2026-07-13",
+    "salary": "$100,000 - $150,000"
   },
   {
     "id": "handshake-founding-product-designer-contract",
-    "title": "Founding Product Designer (Contract), Handshake AI Enterprise",
+    "title": "Founding Staff Product Designer, Handshake AI Enterprise",
     "company": "Handshake",
     "companyUrl": "https://joinhandshake.com",
     "url": "https://jobs.ashbyhq.com/handshake/d2f94a5f-077f-4361-8f67-7bf65f10562f",
     "level": "Lead",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA / New York, NY",
     "postedAt": "2026-07-09",
     "vertical": "AI",
-    "employmentType": "Contract",
+    "employmentType": "Full-time",
     "tags": [
       "founding",
       "enterprise",
@@ -799,7 +806,8 @@
     ],
     "_sourceUrl": "https://www.linkedin.com/jobs/search/?keywords=contract%20product%20designer&f_JT=C",
     "_verificationNote": "LinkedIn discovery lead resolved to company Ashby board; found on live board + WebFetch confirmed title/company. No linkedin URL published.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$190,000 - $240,000"
   },
   {
     "id": "unlearn-product-designer-contract",
@@ -843,7 +851,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $75-125K",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$75,000 - $125,000"
   },
   {
     "id": "vitvio-product-designer-ai-native-contract",
@@ -871,7 +880,7 @@
   },
   {
     "id": "samsara-senior-product-designer-design-systems-contract",
-    "title": "Senior Product Designer - Design Systems / Rebrand (Contract)",
+    "title": "Senior Product Designer - Design Systems/Rebrand @ Samsara (Remote, Contract)",
     "company": "Samsara",
     "companyUrl": "https://www.samsara.com",
     "url": "https://jobs.lever.co/Academy/21696500-1257-472f-bdb9-3d77edb46107",
@@ -1001,7 +1010,8 @@
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com designer climate",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/ambrook): isListed true, publishedAt 2026-06-09, FullTime, isRemote true, comp $140K-$210K + equity.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$140,000 - $210,000"
   },
   {
     "id": "funxyz-staff-product-designer",
@@ -1033,7 +1043,7 @@
     "companyUrl": "https://sydecar.io",
     "url": "https://jobs.ashbyhq.com/sydecar/4008e0a7-88c9-4218-ab30-791d5017c6a1",
     "level": "Staff",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-06-22",
     "vertical": "Fintech",
@@ -1047,7 +1057,8 @@
     ],
     "_sourceUrl": "site:jobs.ashbyhq.com designer fintech",
     "_verificationNote": "Confirmed live via Ashby posting-api (job-board/sydecar): isListed true, publishedDate 2026-06-22, SF hybrid, FullTime, comp $200K-$250K + equity.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$200,000 - $250,000"
   },
   {
     "id": "gusto-product-designer-contractors",
@@ -1091,7 +1102,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply-to-role button, $150-260K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$150,000 - $260,000"
   },
   {
     "id": "cardboard-founding-designer",
@@ -1133,7 +1145,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, apply via email/Bookface, $180-210K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$180,000 - $210,000"
   },
   {
     "id": "jinba-founding-design-engineer",
@@ -1155,7 +1168,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $150-250K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$150,000 - $250,000"
   },
   {
     "id": "pocket-senior-product-designer-ai-hardware",
@@ -1176,7 +1190,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $165-200K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$165,000 - $200,000"
   },
   {
     "id": "voicepanel-founding-designer",
@@ -1198,7 +1213,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $125-175K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$125,000 - $175,000"
   },
   {
     "id": "cyble-product-designer",
@@ -1220,7 +1236,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$20,000 - $30,000"
   },
   {
     "id": "boldvoice-senior-product-designer-nyc",
@@ -1241,7 +1258,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, apply via portfolio, $150-200K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$150,000 - $200,000"
   },
   {
     "id": "domu-ui-ux-product-designer",
@@ -1262,7 +1280,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$120,000 - $160,000"
   },
   {
     "id": "respan-designer-product-web",
@@ -1271,7 +1290,7 @@
     "companyUrl": "https://www.ycombinator.com/companies/respan",
     "url": "https://www.ycombinator.com/companies/respan/jobs/0EkyqeY-designer-product-web",
     "level": "Mid",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "Alameda, CA / Remote (IN)",
     "postedAt": "2026-06-09",
     "vertical": "AI",
@@ -1284,7 +1303,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $100K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$100,000"
   },
   {
     "id": "slashy-founding-designer",
@@ -1306,7 +1326,8 @@
     ],
     "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
     "_verificationNote": "WebFetch confirmed live: title, company, Apply button, $140-200K.",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$140,000 - $200,000"
   },
   {
     "id": "zello-product-designer-design-systems-contract",
@@ -1348,7 +1369,8 @@
       "startup"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/sentra",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$150,000 - $170,000"
   },
   {
     "id": "assembled-product-designer-ai-agents",
@@ -1369,7 +1391,8 @@
       "startup"
     ],
     "_sourceUrl": "https://api.ashbyhq.com/posting-api/job-board/assembledhq",
-    "_verifiedAt": "2026-07-09"
+    "_verifiedAt": "2026-07-09",
+    "salary": "$130,000 - $180,000"
   },
   {
     "id": "read-ai-product-designer-growth",
@@ -1439,7 +1462,7 @@
     "postedAt": "2026-04-29",
     "salary": "$170,000 - $245,000",
     "vertical": "Fintech",
-    "employmentType": "Contract",
+    "employmentType": "Full-time",
     "tags": [
       "payments",
       "fintech",
@@ -1510,7 +1533,7 @@
     "companyUrl": "https://www.hingehealth.com",
     "url": "https://jobs.ashbyhq.com/hinge-health/b7e7a706-2ac2-4ad1-adec-5c8550e2d01e",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "tags": [
       "musculoskeletal",
@@ -1521,7 +1544,8 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
-    "employmentType": "Full-time"
+    "employmentType": "Full-time",
+    "salary": "$160,000 - $220,000"
   },
   {
     "id": "hinge-health-staff-product-designer-outcomes",
@@ -1530,7 +1554,7 @@
     "companyUrl": "https://www.hingehealth.com",
     "url": "https://jobs.ashbyhq.com/hinge-health/ebb10992-73df-4efb-85b1-979aba7f046d",
     "level": "Staff",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "tags": [
       "musculoskeletal",
@@ -1541,7 +1565,8 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
-    "employmentType": "Full-time"
+    "employmentType": "Full-time",
+    "salary": "$195,000 - $275,000"
   },
   {
     "id": "hinge-health-senior-product-designer-education",
@@ -1550,7 +1575,7 @@
     "companyUrl": "https://www.hingehealth.com",
     "url": "https://jobs.ashbyhq.com/hinge-health/1bef7f8c-cab6-4f58-bebb-329aaefb45fe",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "tags": [
       "musculoskeletal",
@@ -1561,7 +1586,8 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/hinge-health",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
-    "employmentType": "Full-time"
+    "employmentType": "Full-time",
+    "salary": "$160,000 - $220,000"
   },
   {
     "id": "headway-staff-product-designer-provider-onboarding",
@@ -1581,7 +1607,8 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/headway",
     "_verifiedAt": "2026-06-23",
     "vertical": "Healthcare",
-    "employmentType": "Full-time"
+    "employmentType": "Full-time",
+    "salary": "$212,000 - $265,000"
   },
   {
     "id": "maven-clinic-design-lead-consumer",
@@ -1885,7 +1912,7 @@
     "companyUrl": "https://www.hingehealth.com",
     "url": "https://jobs.ashbyhq.com/hinge-health/a30e2a1e-c3cb-4717-a840-9c03305ffbd1",
     "level": "Staff",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA (3 days/week)",
     "postedAt": "2026-06-16",
     "salary": "$195,000 - $275,000",
@@ -2023,7 +2050,7 @@
     "company": "Abridge",
     "companyUrl": "https://www.abridge.com",
     "level": "Staff",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA / New York, NY",
     "url": "https://jobs.ashbyhq.com/abridge/d48553c1-a360-4509-a1e0-9df6d8b480f6",
     "postedAt": "2026-05-04",
@@ -2046,7 +2073,7 @@
     "company": "Abridge",
     "companyUrl": "https://www.abridge.com",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA / New York, NY",
     "url": "https://jobs.ashbyhq.com/abridge/6aab826b-a60a-434e-889d-e4648f289305",
     "postedAt": "2026-05-04",
@@ -2083,7 +2110,8 @@
     "_sourceUrl": "https://jobs.ashbyhq.com/Commure",
     "_verifiedAt": "2026-05-04",
     "vertical": "Healthcare",
-    "employmentType": "Full-time"
+    "employmentType": "Full-time",
+    "salary": "$170,000 - $200,000"
   },
   {
     "id": "betterhelp-product-designer-therapist-platform",
