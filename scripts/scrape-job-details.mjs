@@ -229,7 +229,13 @@ async function worker() {
   while (cursor < jobs.length) {
     const job = jobs[cursor++];
     try {
-      const detail = await handlerFor(job.url)(job.url);
+      const handler = handlerFor(job.url);
+      let detail = await handler(job.url);
+      // ATS API said no (removed posting, blocked API) but the public page may
+      // still carry JSON-LD — fall back to the generic extractor.
+      if ((!detail || textLength(detail.descriptionHtml) <= 100) && handler !== generic) {
+        detail = await generic(job.url);
+      }
       if (detail && textLength(detail.descriptionHtml) > 100) {
         results[job.id] = { ...detail, fetchedAt: new Date().toISOString().slice(0, 10) };
         process.stdout.write(`  ok   ${job.id} (${detail.source}, ${textLength(detail.descriptionHtml)} chars)\n`);
@@ -244,8 +250,21 @@ async function worker() {
 
 await Promise.all(Array.from({ length: pool }, worker));
 
-// --only runs merge into the existing file; full runs replace it (dead jobs drop out)
-const out = only ? { ...existing, ...results } : results;
+// --only runs merge into the existing file. Full runs rebuild it (entries for
+// jobs removed from jobs.json drop out) but keep the previous entry for any job
+// whose fetch failed this run — a stale description beats the no-preview fallback.
+let out;
+if (only) {
+  out = { ...existing, ...results };
+} else {
+  out = { ...results };
+  for (const job of jobs) {
+    if (!out[job.id] && existing[job.id]) {
+      out[job.id] = existing[job.id];
+      process.stdout.write(`  kept ${job.id} (previous ${existing[job.id].source} entry; fetch failed this run)\n`);
+    }
+  }
+}
 writeFileSync(OUT_PATH, JSON.stringify(Object.fromEntries(Object.entries(out).sort(([a], [b]) => a.localeCompare(b))), null, 1) + '\n');
 
 console.log(`\n${Object.keys(results).length}/${jobs.length} scraped → ${OUT_PATH}`);
