@@ -42,7 +42,8 @@
       "AI employees"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/artisan/93bca429-26b2-4cca-a8a1-26c024656ca4",
-    "_verifiedAt": "2026-07-21"
+    "_verifiedAt": "2026-07-21",
+    "salary": "$175,000 - $275,000"
   },
   {
     "id": "render-senior-product-designer",
@@ -64,7 +65,8 @@
       "Series C"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/render/0f0ccf3e-4caf-4586-9a66-411dbf49fcc5",
-    "_verifiedAt": "2026-07-21"
+    "_verifiedAt": "2026-07-21",
+    "salary": "$195,000 - $268,000"
   },
   {
     "id": "euphoric-lead-product-designer",
@@ -117,7 +119,7 @@
     "companyUrl": "https://vapi.ai",
     "url": "https://jobs.ashbyhq.com/vapi/4fbfa699-a543-49da-857c-64a2c990fd06",
     "level": "Senior",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "San Francisco, CA",
     "postedAt": "2026-07-20",
     "vertical": "AI",
@@ -129,7 +131,8 @@
       "B2B"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/vapi/4fbfa699-a543-49da-857c-64a2c990fd06",
-    "_verifiedAt": "2026-07-20"
+    "_verifiedAt": "2026-07-20",
+    "salary": "$180,000 - $280,000"
   },
   {
     "id": "clutch-product-designer",
@@ -171,7 +174,8 @@
       "SMB"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/highbeam/35cffce8-c092-479a-8747-f3d4d152b9b6",
-    "_verifiedAt": "2026-07-20"
+    "_verifiedAt": "2026-07-20",
+    "salary": "$200,000 - $250,000"
   },
   {
     "id": "valence-principal-product-designer",
@@ -180,7 +184,7 @@
     "companyUrl": "https://www.valence.co",
     "url": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07",
     "level": "Principal",
-    "locationType": "Hybrid",
+    "locationType": "Remote",
     "location": "New York, NY",
     "postedAt": "2026-07-20",
     "vertical": "AI",
@@ -192,27 +196,6 @@
       "design systems"
     ],
     "_sourceUrl": "https://jobs.ashbyhq.com/jobs-valence/bf637910-24ac-4314-ac04-f6950c2f7e07",
-    "_verifiedAt": "2026-07-20"
-  },
-  {
-    "id": "cloudwalk-product-designer",
-    "title": "Product Designer",
-    "company": "CloudWalk",
-    "companyUrl": "https://www.cloudwalk.io",
-    "url": "https://jobs.lever.co/cloudwalk/7660a1c8-ce19-417c-9e01-7f41bf393875",
-    "level": "Mid",
-    "locationType": "Remote",
-    "location": "São Paulo, Brazil (Remote)",
-    "postedAt": "2026-07-20",
-    "vertical": "Fintech",
-    "employmentType": "Full-time",
-    "tags": [
-      "payments",
-      "fintech",
-      "mobile",
-      "AI"
-    ],
-    "_sourceUrl": "https://jobs.lever.co/cloudwalk/7660a1c8-ce19-417c-9e01-7f41bf393875",
     "_verifiedAt": "2026-07-20"
   },
   {
@@ -2317,7 +2300,7 @@
   },
   {
     "id": "commure-product-designer",
-    "title": "Product Designer",
+    "title": "Senior Product Designer",
     "company": "Commure",
     "companyUrl": "https://www.commure.com",
     "level": "Mid",
