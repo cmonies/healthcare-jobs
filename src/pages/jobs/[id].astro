@@ -148,15 +148,11 @@ const breadcrumbSchema = {
       aria-label="Page sections"
       class="fixed inset-x-0 top-0 z-[60] bg-paper/95 dark:bg-surface-header/95 backdrop-blur-xl border-b border-line dark:border-slate-700/50 -translate-y-full opacity-0 pointer-events-none transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none"
     >
-      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between gap-4">
-        <div class="flex items-center self-stretch overflow-x-auto no-scrollbar">
-          <a href="#overview" data-section-link="overview" class="section-link" aria-current="true">Overview</a>
-          <a href="#about" data-section-link="about" class="section-link" aria-current="false">About the role</a>
-          <a href="#s-process" data-section-link="s-process" class="section-link" aria-current="false">Candidate experience</a>
-          {contacts.length > 0 && (
-            <a href="#s-contact" data-section-link="s-contact" class="section-link" aria-current="false">Contacts</a>
-          )}
-        </div>
+      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 h-full min-h-14 flex items-center justify-between gap-4">
+        <button type="button" id="nav-to-top" class="group min-w-0 flex items-baseline gap-2.5 text-left cursor-pointer" aria-label="Back to top">
+          <span class="truncate text-[15px] font-semibold text-ink dark:text-slate-100 group-hover:opacity-75 transition-opacity">{title}</span>
+          <span class="hidden sm:inline font-mono text-[11px] uppercase tracking-[0.12em] text-muted dark:text-slate-400 shrink-0">{company}</span>
+        </button>
         <div class="flex items-center gap-4 shrink-0">
           {salaryDisplay && (
             <span class="hidden md:block font-mono text-[11px] text-muted dark:text-slate-400 whitespace-nowrap">{salaryDisplay}</span>
@@ -678,47 +674,25 @@ const breadcrumbSchema = {
   const sectionNav = document.getElementById('section-nav');
   const overviewEl = document.getElementById('overview');
   if (sectionNav && overviewEl) {
-    const links = [...sectionNav.querySelectorAll<HTMLAnchorElement>('[data-section-link]')];
-    const setActive = (id: string) =>
-      links.forEach(l => l.setAttribute('aria-current', l.dataset.sectionLink === id ? 'true' : 'false'));
+    // Cover the site header exactly — a shorter bar lets the header's own
+    // bottom border peek out underneath, reading as a double divider
+    const siteHeader = document.querySelector<HTMLElement>('header[role="banner"]');
+    const sizeNav = () => { sectionNav.style.height = `${siteHeader?.offsetHeight || 57}px`; };
+    sizeNav();
+    window.addEventListener('resize', sizeNav, { passive: true });
 
     new IntersectionObserver(([entry]) => {
       const show = !entry.isIntersecting && entry.boundingClientRect.top < 0;
       sectionNav.classList.toggle('section-nav--visible', show);
     }, { threshold: 0 }).observe(overviewEl);
 
-    // Scroll spy: the section whose top most recently crossed the reading
-    // line (just under the bar) is active. Position-based rather than an
-    // IntersectionObserver so it tracks the VISUAL order — the rail is
-    // reordered above the article on mobile.
-    const targets = links
-      .map(l => document.getElementById(l.dataset.sectionLink || ''))
-      .filter((el): el is HTMLElement => !!el);
-    let spyTick = false;
-    const updateSpy = () => {
-      spyTick = false;
-      let current: { id: string; top: number } | null = null;
-      for (const t of targets) {
-        const top = t.getBoundingClientRect().top;
-        if (top <= 96 && (!current || top > current.top)) current = { id: t.id, top };
-      }
-      setActive(current ? current.id : targets[0]?.id || '');
-    };
-    window.addEventListener('scroll', () => {
-      if (!spyTick) { spyTick = true; requestAnimationFrame(updateSpy); }
-    }, { passive: true });
-    updateSpy();
-
-    links.forEach(l => l.addEventListener('click', e => {
-      const target = document.getElementById(l.dataset.sectionLink || '');
-      if (!target) return;
-      e.preventDefault();
-      if (target instanceof HTMLDetailsElement) target.open = true;
+    // Listings vary too much for section anchors to behave predictably
+    // (sticky rail, optional sections, wildly different description lengths).
+    // The bar is context + action: title returns to top, Apply stays at hand.
+    document.getElementById('nav-to-top')?.addEventListener('click', () => {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      setActive(l.dataset.sectionLink || '');
-      history.replaceState(null, '', `#${l.dataset.sectionLink}`);
-    }));
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
   }
 
   // Grade breakdown dialog
@@ -866,33 +840,12 @@ const breadcrumbSchema = {
     .rail-tip .tip-body { left: auto; right: -10px; transform: none; }
   }
 
-  /* Sticky section nav */
+  /* Sticky context bar */
   #section-nav.section-nav--visible {
     transform: none;
     opacity: 1;
     pointer-events: auto;
   }
-  .no-scrollbar { scrollbar-width: none; }
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .section-link {
-    display: inline-flex;
-    align-items: center;
-    align-self: stretch;
-    padding: 0 0.75rem;
-    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: #706F6A;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: color 0.12s ease;
-  }
-  .section-link:first-child { padding-left: 0.25rem; }
-  .section-link:hover { color: #1A1917; }
-  .section-link[aria-current="true"] { color: #1A1917; border-bottom-color: #1A1917; }
-  :root.dark .section-link { color: #A3A099; }
-  :root.dark .section-link:hover { color: #F2F1EC; }
-  :root.dark .section-link[aria-current="true"] { color: #F2F1EC; border-bottom-color: #F2F1EC; }
 
   /* Candidate experience grade tile */
   .grade-chip-lg {

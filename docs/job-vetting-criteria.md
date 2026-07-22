@@ -119,13 +119,14 @@ Each staged job in `jobs-staging.json` — ALL of these fields are required
   they're underrepresented on the board and valuable to early-career designers.
 - `locationType`: `Remote`, `Hybrid`, or `On-site` (with the hyphen)
 - `postedAt`: YYYY-MM-DD; extract from the page, else today. The site sorts by it.
-- `tags`: 3–6 tags from the CONTROLLED VOCABULARY in `scripts/lint-tags.mjs` (the
-  `VOCAB` list) — disciplines, domains, and role shape only. Anything outside the
-  vocabulary is dropped by the linter: tech stacks (React), company jargon
-  (clearinghouse), drug/condition names, funding stages, investor names.
-  ALWAYS run `node scripts/lint-tags.mjs --staging --fix` after staging jobs.
-  If a genuinely new domain emerges, add it to VOCAB deliberately — never invent
-  tags inline.
+- `tags`: 3–6 descriptive tags — disciplines, domains, role shape, product
+  categories (AI-native, EMR, consumer health, design leadership are all fine).
+  NEVER: tech stacks/frameworks (React, Next.js), investor names or funding
+  stages (YC, Series C), redundant-on-a-design-board terms (product design,
+  remote, startup), internal company jargon (clearinghouse), or drug/condition
+  names (GLP-1). The DENY list in `scripts/lint-tags.mjs` enforces this —
+  ALWAYS run `node scripts/lint-tags.mjs --staging --fix` after staging jobs,
+  and add new garbage to DENY when you see it.
 - `_verifiedAt` is set by the validator at promotion — never set it manually.
 
 ## Golden rules
