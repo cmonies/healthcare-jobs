@@ -846,6 +846,11 @@ const jobIndex = Object.fromEntries(
      Tailwind's .hidden — without this the footer stays visible on success,
      leaving a dead "Sending…" button and the Turnstile badge on screen. */
   .fw-footer.hidden { display: none; }
+  /* The question block is centered by a pair of auto margins — margin-top on
+     .fw-body and margin-bottom on .fw-footer. Hiding the footer removes half
+     the pair, so the body would sink to the bottom of the viewport. On the
+     success screen the body has to carry both. */
+  .fw-container--done .fw-body { margin-bottom: auto; }
   .fw-continue-btn {
     display: inline-flex;
     align-items: center;
@@ -1284,6 +1289,7 @@ const jobIndex = Object.fromEntries(
         // Show success step
         submitted = true;
         document.getElementById('fw-footer').classList.add('hidden');
+        document.querySelector('.fw-container')?.classList.add('fw-container--done');
         document.querySelectorAll('.fw-seg').forEach(s => {
           s.classList.add('fw-seg--done');
           s.classList.remove('fw-seg--link');
