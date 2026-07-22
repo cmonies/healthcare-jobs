@@ -732,7 +732,13 @@ const jobIndex = Object.fromEntries(
   /* Over-limit highlighting: a backdrop renders the text (overflow span in
      red) behind a transparent-text textarea — caret and selection stay live */
   .fw-notes-wrap { position: relative; }
-  .fw-notes-backdrop {
+  /* textarea is inline-block by default — the baseline gap made the wrapper
+     taller than the field, exposing the backdrop's edge as a second line */
+  .fw-notes-input { display: block; }
+  /* The dark-mode .fw-textarea rule outranks a bare .fw-notes-backdrop, so
+     the backdrop's border has to be silenced in both themes explicitly. */
+  .fw-textarea.fw-notes-backdrop,
+  :root.dark .fw-textarea.fw-notes-backdrop {
     position: absolute;
     inset: 0;
     border-color: transparent;
