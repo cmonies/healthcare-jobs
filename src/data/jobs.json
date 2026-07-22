@@ -1,5 +1,111 @@
 [
   {
+    "id": "superhuman-senior-visual-designer-contract",
+    "title": "Senior Visual Designer (Contract)",
+    "company": "Superhuman",
+    "companyUrl": "https://superhuman.com",
+    "url": "https://jobs.lever.co/Academy/f5ac9ee7-5513-4ef2-9c79-e151c9ac6601",
+    "level": "Senior",
+    "locationType": "Remote",
+    "location": "Remote (US)",
+    "postedAt": "2026-07-15",
+    "vertical": "AI",
+    "employmentType": "Contract",
+    "tags": [
+      "visual design",
+      "brand",
+      "AI",
+      "productivity"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/Academy/f5ac9ee7-5513-4ef2-9c79-e151c9ac6601",
+    "_verifiedAt": "2026-07-22"
+  },
+  {
+    "id": "clarion-founding-product-designer",
+    "title": "Founding Product Designer",
+    "company": "Clarion",
+    "companyUrl": "https://www.clarionhealth.com",
+    "url": "https://jobs.ashbyhq.com/clarion/c2b3a050-8588-47e9-9610-c0913e4e718b",
+    "level": "Mid",
+    "locationType": "On-site",
+    "location": "New York, NY",
+    "postedAt": "2026-07-22",
+    "vertical": "Healthcare",
+    "employmentType": "Full-time",
+    "tags": [
+      "voice AI",
+      "conversational design",
+      "0-to-1",
+      "brand"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/clarion",
+    "_verifiedAt": "2026-07-22"
+  },
+  {
+    "id": "patch-product-designer",
+    "title": "Product Designer",
+    "company": "Patch",
+    "companyUrl": "https://www.patch.io",
+    "url": "https://jobs.ashbyhq.com/patch.io/84da9a54-c3b7-40c8-851b-a4718323165f",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "San Francisco, CA",
+    "postedAt": "2026-07-22",
+    "vertical": "Climate",
+    "employmentType": "Full-time",
+    "tags": [
+      "carbon removal",
+      "environmental markets",
+      "AI-native",
+      "data visualization"
+    ],
+    "_sourceUrl": "https://jobs.ashbyhq.com/patch.io",
+    "_verifiedAt": "2026-07-22"
+  },
+  {
+    "id": "credal-founding-design-engineer",
+    "title": "Founding Design Engineer",
+    "company": "Credal",
+    "companyUrl": "https://www.credal.ai",
+    "url": "https://jobs.ashbyhq.com/credal/8dd2d9b6-d07a-4318-8178-99b3aa855191",
+    "level": "Senior",
+    "locationType": "On-site",
+    "location": "Brooklyn, NY",
+    "postedAt": "2026-07-22",
+    "vertical": "AI",
+    "employmentType": "Full-time",
+    "tags": [
+      "design systems",
+      "design engineering",
+      "enterprise AI",
+      "agent platform"
+    ],
+    "_sourceUrl": "https://www.ycombinator.com/jobs/role/designer",
+    "_verifiedAt": "2026-07-22"
+  },
+  {
+    "id": "amber-electric-staff-product-designer",
+    "title": "Staff/Principal Product Designer",
+    "company": "Amber Electric",
+    "companyUrl": "https://www.amber.com.au",
+    "url": "https://jobs.lever.co/amberelectric/231ccb7e-b488-45a3-b4f7-7640fe0a7378",
+    "level": "Staff",
+    "locationType": "Hybrid",
+    "location": "Melbourne, Australia",
+    "postedAt": "2026-07-22",
+    "vertical": "Climate",
+    "employmentType": "Full-time",
+    "tags": [
+      "renewable energy",
+      "mobile",
+      "battery automation",
+      "EV charging",
+      "energy marketplace"
+    ],
+    "_sourceUrl": "https://jobs.lever.co/amberelectric",
+    "_verifiedAt": "2026-07-22"
+  },
+  {
     "id": "stedi-product-designer",
     "title": "Product Designer",
     "company": "Stedi",
