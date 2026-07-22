@@ -371,16 +371,16 @@ const jobIndex = Object.fromEntries(
         <!-- Success state -->
         <section class="fw-step" data-step="success" aria-hidden="true">
           <div class="text-center py-8">
-            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full border border-line dark:border-slate-700 mb-6">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 6 9 17l-5-5" />
+            <div class="fw-check-badge inline-flex items-center justify-center w-14 h-14 rounded-full border border-line dark:border-slate-700 mb-6">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path class="fw-check-path" d="M20 6 9 17l-5-5" />
               </svg>
             </div>
-            <h2 class="font-display font-semibold text-2xl tracking-tight mb-3">Thank you</h2>
-            <p class="text-sm text-ink-soft dark:text-slate-400 max-w-xs mx-auto leading-relaxed mb-6">
+            <h2 class="fw-done-1 font-display font-semibold text-2xl tracking-tight mb-3">Thank you</h2>
+            <p class="fw-done-2 text-sm text-ink-soft dark:text-slate-400 max-w-xs mx-auto leading-relaxed mb-6">
               Your experience is in the review queue. Once verified, it'll help other designers know what to expect here.
             </p>
-            <a href="/jobs" class="inline-flex items-center justify-center px-7 py-3 rounded-full border border-line dark:border-slate-700 text-sm font-semibold hover:border-ink dark:hover:border-slate-400 transition-colors">
+            <a href="/jobs" class="fw-done-3 inline-flex items-center justify-center px-7 py-3 rounded-full border border-line dark:border-slate-700 text-sm font-semibold hover:border-ink dark:hover:border-slate-400 transition-colors">
               Back to jobs
             </a>
           </div>
@@ -851,6 +851,72 @@ const jobIndex = Object.fromEntries(
      the pair, so the body would sink to the bottom of the viewport. On the
      success screen the body has to carry both. */
   .fw-container--done .fw-body { margin-bottom: auto; }
+
+  /* ── Success choreography ────────────────────────────────────────────────
+     Four layers, ~800ms total: the badge drops in and overshoots slightly
+     before settling (the "weight"), a ring radiates out of it on impact
+     (the "ching"), the check draws itself, then the copy rises in sequence.
+     This screen is seen once per submission, so a little ceremony is earned
+     — the rest of the survey stays fast and plain. */
+  [data-step="success"].fw-step--active {
+    animation: fw-done-fade 200ms ease-out both;
+  }
+  @keyframes fw-done-fade { from { opacity: 0 } to { opacity: 1 } }
+
+  .fw-check-badge {
+    position: relative;
+    transform-origin: center;
+    animation: fw-badge-land 520ms cubic-bezier(0.34, 1.4, 0.5, 1) 60ms both;
+  }
+  /* overshoot past 1 then settle — the landing */
+  @keyframes fw-badge-land {
+    0%   { opacity: 0; transform: scale(0.4) translateY(-14px); }
+    55%  { opacity: 1; transform: scale(1.14) translateY(0); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* Impact ring — expands and dissolves as the badge lands */
+  .fw-check-badge::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 9999px;
+    border: 2px solid currentColor;
+    opacity: 0;
+    animation: fw-ring-out 620ms cubic-bezier(0.19, 1, 0.22, 1) 300ms both;
+  }
+  @keyframes fw-ring-out {
+    0%   { opacity: 0.45; transform: scale(1); }
+    100% { opacity: 0;    transform: scale(1.85); }
+  }
+
+  /* The check draws itself once the badge has settled */
+  .fw-check-path {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    animation: fw-check-draw 340ms cubic-bezier(0.65, 0, 0.35, 1) 330ms both;
+  }
+  @keyframes fw-check-draw { to { stroke-dashoffset: 0; } }
+
+  .fw-done-1, .fw-done-2, .fw-done-3 {
+    animation: fw-done-rise 420ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .fw-done-1 { animation-delay: 430ms; }
+  .fw-done-2 { animation-delay: 510ms; }
+  .fw-done-3 { animation-delay: 590ms; }
+  @keyframes fw-done-rise {
+    from { opacity: 0; transform: translateY(9px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Motion here is decorative — strip it entirely, keep the content */
+  @media (prefers-reduced-motion: reduce) {
+    [data-step="success"].fw-step--active,
+    .fw-check-badge,
+    .fw-done-1, .fw-done-2, .fw-done-3 { animation: none; }
+    .fw-check-badge::after { animation: none; opacity: 0; }
+    .fw-check-path { animation: none; stroke-dashoffset: 0; }
+  }
   .fw-continue-btn {
     display: inline-flex;
     align-items: center;
