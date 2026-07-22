@@ -80,7 +80,7 @@ async function createGitHubIssue(
   title: string,
   body: string,
   labels: string[] = ['job-submission']
-): Promise<{ ok: boolean; url?: string; error?: string }> {
+): Promise<{ ok: boolean; url?: string; error?: string; status?: number }> {
   const res = await fetch(`https://api.github.com/repos/${repo}/issues`, {
     method: 'POST',
     headers: {
@@ -98,7 +98,7 @@ async function createGitHubIssue(
 
   if (!res.ok) {
     const err = await res.text();
-    return { ok: false, error: err };
+    return { ok: false, error: err, status: res.status };
   }
 
   const data = await res.json() as { html_url: string };
@@ -420,8 +420,15 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
 
       const result = await createGitHubIssue(GITHUB_TOKEN, GITHUB_REPO, issueTitle, issueBody, labels);
       if (!result.ok) {
-        console.error('GitHub issue creation failed:', result.error);
-        return new Response(JSON.stringify({ ok: false, error: 'Failed to create submission. Please try again later.' }), {
+        console.error('GitHub issue creation failed:', result.status, result.error);
+        // Surface only GitHub's status code — enough to tell a dead token
+        // (401) from a permissions gap (403) or a bad label (422) without
+        // leaking anything sensitive to the caller.
+        return new Response(JSON.stringify({
+          ok: false,
+          error: 'Failed to create submission. Please try again later.',
+          code: result.status ?? 0,
+        }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
         });
