@@ -107,6 +107,11 @@ async function createGitHubIssue(
 
 export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
   const runtime = (locals as any).runtime?.env || {};
+  // NOTE: SUBMISSIONS_KV is a Cloudflare Workers binding (see wrangler.toml).
+  // This site deploys to VERCEL, where locals.runtime is undefined — so KV is
+  // always undefined here and every rate-limit branch below is inert. Turnstile
+  // is the live front-door protection. To get real rate limiting on Vercel,
+  // swap these helpers for Upstash Redis (REST, needs only env vars).
   const KV = runtime.SUBMISSIONS_KV as KVNamespace | undefined;
   const TURNSTILE_SECRET = runtime.TURNSTILE_SECRET_KEY || import.meta.env.TURNSTILE_SECRET_KEY || '';
   const GITHUB_TOKEN = runtime.GITHUB_TOKEN || import.meta.env.GITHUB_TOKEN || '';
@@ -175,7 +180,16 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
     }
 
     // 5. Turnstile verification
-    if (TURNSTILE_SECRET && body.turnstileToken) {
+    // A missing token used to skip verification entirely — omit the field and
+    // you were waved through. When the secret is configured, the token is now
+    // REQUIRED. (Unset secret = local dev, where checks are skipped.)
+    if (TURNSTILE_SECRET) {
+      if (!body.turnstileToken) {
+        return new Response(JSON.stringify({ ok: false, error: 'Bot verification required. Please reload and try again.' }), {
+          status: 403,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
       const ip = clientAddress || request.headers.get('cf-connecting-ip') || '0.0.0.0';
       const valid = await verifyTurnstile(body.turnstileToken, TURNSTILE_SECRET, ip);
       if (!valid) {
