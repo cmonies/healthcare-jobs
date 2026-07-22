@@ -34,6 +34,46 @@ async function incrementRateLimit(kv: KVNamespace, email: string): Promise<void>
   await kv.put(key, String(count + 1), { expirationTtl: DAY_IN_SECONDS });
 }
 
+// ── Anonymous-survey abuse controls ─────────────────────────────────────────
+// The feedback survey has no email to key on, so we gate on the IP instead:
+// one report per company per week, and a daily ceiling overall. Neither the
+// IP nor the derived key is ever stored in the repo — only in KV, expiring.
+const MAX_FEEDBACK_PER_DAY = 3;
+const WEEK_IN_SECONDS = 604800;
+
+// Salted SHA-256, truncated. Lets the processor spot "same submitter, same
+// company, many reports" without anyone's IP ever touching a GitHub issue.
+async function fingerprint(...parts: string[]): Promise<string> {
+  const data = new TextEncoder().encode(parts.join('|'));
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return [...new Uint8Array(digest)].slice(0, 8).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function checkFeedbackLimits(
+  kv: KVNamespace, ip: string, company: string, salt: string,
+): Promise<{ allowed: boolean; reason?: string }> {
+  const who = await fingerprint(ip, salt);
+  const dayKey = `fb:day:${who}`;
+  const dayCount = parseInt((await kv.get(dayKey)) || '0', 10);
+  if (dayCount >= MAX_FEEDBACK_PER_DAY) {
+    return { allowed: false, reason: "You've submitted several reports today. Try again tomorrow." };
+  }
+  const companyKey = `fb:co:${await fingerprint(ip, company.toLowerCase().trim(), salt)}`;
+  if (await kv.get(companyKey)) {
+    return { allowed: false, reason: 'You already shared an experience for this company recently. Thank you!' };
+  }
+  return { allowed: true };
+}
+
+async function recordFeedback(kv: KVNamespace, ip: string, company: string, salt: string): Promise<void> {
+  const who = await fingerprint(ip, salt);
+  const dayKey = `fb:day:${who}`;
+  const dayCount = parseInt((await kv.get(dayKey)) || '0', 10);
+  await kv.put(dayKey, String(dayCount + 1), { expirationTtl: DAY_IN_SECONDS });
+  const companyKey = `fb:co:${await fingerprint(ip, company.toLowerCase().trim(), salt)}`;
+  await kv.put(companyKey, '1', { expirationTtl: WEEK_IN_SECONDS });
+}
+
 async function createGitHubIssue(
   token: string,
   repo: string,
@@ -141,6 +181,19 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       if (!valid) {
         return new Response(JSON.stringify({ ok: false, error: 'Bot verification failed. Please try again.' }), {
           status: 403,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // 5b. Anonymous survey limits (per-IP; the email limiter can't apply)
+    if (KV && isFeedback) {
+      const ip = clientAddress || request.headers.get('cf-connecting-ip') || '0.0.0.0';
+      const salt = runtime.FEEDBACK_SALT || TURNSTILE_SECRET || 'designjobs';
+      const { allowed, reason } = await checkFeedbackLimits(KV, ip, body.company, salt);
+      if (!allowed) {
+        return new Response(JSON.stringify({ ok: false, error: reason }), {
+          status: 429,
           headers: { 'Content-Type': 'application/json' },
         });
       }
@@ -256,6 +309,10 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
           ...(body.overallRating ? [['Overall rating', `${body.overallRating}/5`] as [string, string]] : []),
           ...(body.wouldRecommend ? [['Would recommend', body.wouldRecommend] as [string, string]] : []),
         ];
+        // Anonymous, non-reversible submitter tag: lets the processor detect
+        // one person flooding a company without ever storing an IP.
+        const fbIp = clientAddress || request.headers.get('cf-connecting-ip') || '0.0.0.0';
+        const submitter = await fingerprint(fbIp, runtime.FEEDBACK_SALT || TURNSTILE_SECRET || 'designjobs');
         issueBody = [
           ...summaryFields.map(([k, v]) => `**${k}:** ${v}`),
           '',
@@ -265,6 +322,7 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
             jobId: body.jobId || null,
             company: body.company,
             jobTitle: body.jobTitle || null,
+            submitter,
             report,
           }, null, 2),
           '```',
@@ -372,6 +430,10 @@ export const POST: APIRoute = async ({ request, clientAddress, locals }) => {
       // Record successful submission for rate limiting (job submissions only)
       if (KV && !isBugReport && !isFeedback) {
         await incrementRateLimit(KV, body.submitterEmail);
+      }
+      if (KV && isFeedback) {
+        const ip = clientAddress || request.headers.get('cf-connecting-ip') || '0.0.0.0';
+        await recordFeedback(KV, ip, body.company, runtime.FEEDBACK_SALT || TURNSTILE_SECRET || 'designjobs');
       }
 
       return new Response(JSON.stringify({ ok: true, issueUrl: result.url }), {

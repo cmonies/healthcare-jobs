@@ -25,9 +25,24 @@ A free, open-source job board for **designers** — product design, UX, research
 
 - [Astro](https://astro.build) 5 — static site framework with server endpoints
 - [Tailwind CSS](https://tailwindcss.com) — utility-first styling
+- **Crumb** — our design system: colors, typography, components, and motion
+  tokens, documented live at [designjobs.cv/design](https://designjobs.cv/design)
 - [Vercel](https://vercel.com) — hosting
 - [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) — bot protection
 - Jobs stored as JSON (`src/data/jobs.json`), enriched by scraper scripts
+
+## Crumb (design system)
+
+Every surface is built from one vocabulary — white gallery ground, warm ink,
+a single amber accent reserved for the bread mark and contract roles, and a
+warm-char dark mode. The library at `/design` (`src/pages/design.astro`) is
+the reference: per-theme color breakdowns with OKLCH values, the type scale,
+buttons, form controls, chips, grade tiles, progress meters, and motion
+tokens. Colors are derived in OKLCH and shipped as hex.
+
+**When adding UI:** use the tokens in `tailwind.config.mjs` and the patterns
+on `/design` rather than inventing new ones. Never introduce cool grays —
+`slate-*` and `gray-*` are both remapped to the warm ramp on purpose.
 
 ## Getting Started
 

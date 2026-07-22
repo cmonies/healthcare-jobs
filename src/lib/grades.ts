@@ -18,6 +18,8 @@ export interface FeedbackReport {
   overallRating?: number | null;
   wouldRecommend?: boolean | null;
   timelineMatch?: boolean | null;
+  /** anonymous, non-reversible submitter tag — one vote per company */
+  submitter?: string | null;
   applicationSource?: 'direct' | 'referral' | 'recruiter-outreach' | 'cold-outreach' | null;
   didOutreach?: boolean | null;
   appliedAgo?: string | null;
@@ -74,7 +76,18 @@ function scoreToGrade(score: number): string {
   return 'F';
 }
 
-export function computeGrade(reports: FeedbackReport[]): GradeResult {
+export function computeGrade(allReports: FeedbackReport[]): GradeResult {
+  // Defense in depth: even if a duplicate reaches the data file, one submitter
+  // gets one vote per company — their most recent report wins.
+  const seen = new Set<string>();
+  const reports = [...allReports]
+    .sort((a, b) => (b.submittedAt || '').localeCompare(a.submittedAt || ''))
+    .filter(r => {
+      if (!r.submitter) return true;
+      if (seen.has(r.submitter)) return false;
+      seen.add(r.submitter);
+      return true;
+    });
   const reportCount = reports.length;
   // Ghosting = silence at a stage where a response was owed. Mid-process
   // reporters answering "no — long silences" hurt the communication score

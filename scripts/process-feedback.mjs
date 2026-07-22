@@ -105,6 +105,54 @@ function validate(report) {
   return true;
 }
 
+// ── Abuse detection ─────────────────────────────────────────────────────────
+// Three ways someone games this: resubmitting for the same company, flooding
+// from many IPs (brigading), or a company astroturfing praise. We can't stop
+// a determined attacker with fresh IPs, but we can make it expensive, cap the
+// damage, and quarantine anything that looks coordinated for human review.
+const MAX_PER_SUBMITTER_PER_COMPANY = 1;   // one voice, one report
+const BRIGADE_WINDOW_DAYS = 3;
+const BRIGADE_THRESHOLD = 4;               // 4+ reports in 3 days on one company
+const RECENT_DUPE_DAYS = 30;
+
+const daysBetween = (a, b) =>
+  Math.abs((new Date(a + 'T12:00:00') - new Date(b + 'T12:00:00')) / 86400000);
+
+// Do the substantive answers match an existing report? Two people genuinely
+// having the same experience differ somewhere; a copy-paste resubmit won't.
+function contentMatches(a, b) {
+  const fields = ['stage', 'rounds', 'timeline', 'assessmentType', 'takeHomeHours',
+                  'gotFeedback', 'compDisclosure', 'interviewerPrep',
+                  'processRelevance', 'overallRating', 'wouldRecommend', 'notes'];
+  const present = fields.filter(f => a[f] !== undefined || b[f] !== undefined);
+  if (present.length < 3) return false; // too sparse to call
+  return present.every(f => JSON.stringify(a[f]) === JSON.stringify(b[f]));
+}
+
+// Returns a reason string when the report should NOT be auto-published.
+function abuseCheck(entry, report, submitter) {
+  const existing = entry.reports || [];
+
+  if (submitter) {
+    const mine = existing.filter(r => r.submitter === submitter);
+    if (mine.length >= MAX_PER_SUBMITTER_PER_COMPANY) {
+      return `same submitter already has ${mine.length} report(s) for this company`;
+    }
+  }
+
+  const dupe = existing.find(r =>
+    daysBetween(r.submittedAt, report.submittedAt) <= RECENT_DUPE_DAYS && contentMatches(r, report)
+  );
+  if (dupe) return 'near-identical to an existing recent report';
+
+  const recent = existing.filter(r => daysBetween(r.submittedAt, report.submittedAt) <= BRIGADE_WINDOW_DAYS);
+  if (recent.length + 1 >= BRIGADE_THRESHOLD) {
+    return `burst: ${recent.length + 1} reports for this company within ${BRIGADE_WINDOW_DAYS} days`;
+  }
+
+  return null;
+}
+
 function sanitize(raw) {
   const out = { stage: raw.stage, submittedAt: raw.submittedAt };
   if (typeof raw.rounds === 'number' && raw.rounds >= 1 && raw.rounds <= 20) out.rounds = Math.round(raw.rounds);
@@ -133,8 +181,11 @@ async function main() {
 
   let processed = 0;
   let skipped = 0;
+  let quarantined = 0;
 
   for (const issue of issues) {
+    // already flagged for a human — leave it alone
+    if ((issue.labels || []).some(l => (l.name || l) === 'needs-review')) continue;
     console.log(`Issue #${issue.number}: ${issue.title}`);
     const parsed = extractJson(issue.body);
 
@@ -144,7 +195,7 @@ async function main() {
       continue;
     }
 
-    const { jobId, company, jobTitle, report: rawReport } = parsed;
+    const { jobId, company, jobTitle, submitter, report: rawReport } = parsed;
 
     if (!validate(rawReport)) {
       console.log('  → skip: validation failed\n');
@@ -160,16 +211,27 @@ async function main() {
       feedbackData[key] = { company, jobId: resolvedId ?? null, jobTitle: jobTitle ?? null, reportCount: 0, lastUpdated: '', reports: [] };
     }
 
-    // Dedupe: same submittedAt + stage is a resubmit
-    const isDupe = feedbackData[key].reports.some(r =>
-      r.submittedAt === report.submittedAt && r.stage === report.stage
-    );
-    if (isDupe) {
-      console.log('  → skip: duplicate\n');
-      skipped++;
+    // Abuse gate: repeats, copy-paste resubmits, and coordinated bursts get
+    // labeled for a human instead of silently published or silently dropped.
+    const abuse = abuseCheck(feedbackData[key], report, submitter);
+    if (abuse) {
+      console.log(`  → QUARANTINE: ${abuse}\n`);
+      if (!DRY_RUN) {
+        await gh(`/issues/${issue.number}/labels`, {
+          method: 'POST', body: JSON.stringify({ labels: ['needs-review'] }),
+        }).catch(() => {});
+        await gh(`/issues/${issue.number}/comments`, {
+          method: 'POST',
+          body: JSON.stringify({
+            body: `Held for review — ${abuse}.\n\nNot published. A maintainer can publish it by removing the \`needs-review\` label after checking, or close it.\n\n_designjobs.cv automated review_`,
+          }),
+        }).catch(() => {});
+      }
+      quarantined++;
       continue;
     }
 
+    if (submitter) report.submitter = submitter;
     feedbackData[key].reports.push(report);
     feedbackData[key].reportCount = feedbackData[key].reports.length;
     feedbackData[key].lastUpdated = new Date().toISOString().split('T')[0];
@@ -195,7 +257,7 @@ async function main() {
     console.log(`[dry-run] Would write ${processed} report(s) to job-feedback.json`);
   }
 
-  console.log(`Done — processed: ${processed}, skipped: ${skipped}`);
+  console.log(`Done — processed: ${processed}, skipped: ${skipped}, quarantined: ${quarantined}`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
